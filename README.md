@@ -5,7 +5,7 @@
 [![Jina](https://github.com/jina-ai/jina/blob/master/.github/badges/license-badge.svg?raw=true  "Jina is licensed under Apache-2.0")](#license)
 [![Jina Docs](https://github.com/jina-ai/jina/blob/master/.github/badges/docs-badge.svg?raw=true  "Checkout our docs and learn Jina")](https://docs.jina.ai)
 
-The schema of Jina command line interface exposed as JSON and YAML files. They can be used and refered in the 3rd-party applications. The schema is tagged with version given by `jina -v`. This repository is maintained by [jina-bot](https://github.com/jina-bot), it gets updated everytime jina-ai/jina is updated or released.
+The schema of Jina command line interface exposed as JSON and YAML files. They can be used and refered in the 3rd-party applications. The schema is tagged with [the Jina's version](https://github.com/jina-ai/jina/blob/master/RELEASE.md#version-explained). This repository is maintained by [jina-bot](https://github.com/jina-bot), it gets updated everytime jina-ai/jina is updated or released.
 
 
 ## Schema URL
