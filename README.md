@@ -7,6 +7,7 @@
 
 The schema of Jina command line interface exposed as JSON and YAML files. They can be used and refered in the 3rd-party applications. The schema is tagged with version given by `jina -v`. This repository is maintained by [jina-bot](https://github.com/jina-bot), it gets updated everytime jina-ai/jina is updated or released.
 
+
 ## Schema URL
 
 You can directly download or use GET request on
@@ -16,7 +17,13 @@ https://api.jina.ai/VER.json
 https://api.jina.ai/VER.yml
 ```
 
-where `VER` is Jina version, e.g. [`https://api.jina.ai/0.1.5.yml`](https://api.jina.ai/0.1.5.yml)
+where `VER` is [the Jina's version](https://github.com/jina-ai/jina/blob/master/RELEASE.md#version-explained), e.g. [`https://api.jina.ai/0.1.5.yml`](https://api.jina.ai/0.1.5.yml)
+
+In particular,
+
+- https://api.jina.ai/latest.json gives you the latest stable API schema (corresponds to the last Friday release)
+- https://api.jina.ai/devel.json gives you the latest development API schema (corresponds to the last master update of [jina-ai/jina](https://github.com/jina-ai/jina))
+
 
 ## Description
 
