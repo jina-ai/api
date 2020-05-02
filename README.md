@@ -1,4 +1,4 @@
-# API Schema
+# Jina API Schema
 
 ![API Schema](https://github.com/jina-ai/jina/workflows/API%20Schema/badge.svg)
 [![Jina](https://github.com/jina-ai/jina/blob/master/.github/badges/jina-badge.svg?raw=true  "We fully commit to open-source")](https://jina.ai)
