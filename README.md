@@ -16,7 +16,7 @@ https://api.jina.ai/VER.json
 https://api.jina.ai/VER.yml
 ```
 
-where VER is Jina version, e.g. [`https://api.jina.ai/0.1.5.yml`](https://api.jina.ai/0.1.5.yml)
+where `VER` is Jina version, e.g. [`https://api.jina.ai/0.1.5.yml`](https://api.jina.ai/0.1.5.yml)
 
 ## Description
 
