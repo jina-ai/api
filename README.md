@@ -10,7 +10,10 @@ The schema of Jina command line interface exposed as JSON and YAML files. They c
 
 ## Schema URL
 
-You can directly download or use GET request on
+- [`https://api.jina.ai/latest`](https://api.jina.ai/latest) gives you the latest stable API schema (corresponds to the last Friday release) in JSON
+- [`https://api.jina.ai/devel`](`https://api.jina.ai/devel`) gives you the latest development API schema (corresponds to the last master update of [jina-ai/jina](https://github.com/jina-ai/jina)) in JSON
+
+You can specify the verion and format via:
 
 ```text
 https://api.jina.ai/VER.json
@@ -18,11 +21,6 @@ https://api.jina.ai/VER.yml
 ```
 
 where `VER` is [the Jina's version](https://github.com/jina-ai/jina/blob/master/RELEASE.md#version-explained), e.g. [`https://api.jina.ai/0.1.5.yml`](https://api.jina.ai/0.1.5.yml)
-
-In particular,
-
-- https://api.jina.ai/latest gives you the latest stable API schema (corresponds to the last Friday release) in JSON
-- https://api.jina.ai/devel gives you the latest development API schema (corresponds to the last master update of [jina-ai/jina](https://github.com/jina-ai/jina)) in JSON
 
 
 ## Description
