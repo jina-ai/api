@@ -16,7 +16,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: b1bb4a781e
+    default: '6e49420052'
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -87,7 +87,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 58737
+    default: 33037
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -96,7 +96,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 41171
+    default: 35263
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -165,7 +165,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 35659
+    default: 34103
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -385,7 +385,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 56669
+    default: 40341
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -478,7 +478,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 2e35afdfaf
+    default: 0abf7781da
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -549,7 +549,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 33969
+    default: 42605
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -558,7 +558,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 58549
+    default: 33877
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -627,7 +627,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 48155
+    default: 58535
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -847,7 +847,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 51531
+    default: 55867
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -948,7 +948,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 54161
+    default: 55113
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -1072,7 +1072,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: c0669edd42
+    default: a16e805fd4
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -1143,7 +1143,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 54987
+    default: 51439
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -1152,7 +1152,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 36289
+    default: 40281
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -1221,7 +1221,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 43461
+    default: 57117
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1441,7 +1441,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 34025
+    default: 40401
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -1498,7 +1498,7 @@ methods:
 - name: hello-world
   options:
   - choices: null
-    default: d5dd6d19cf
+    default: 4228cf9fd7
     default_random: true
     help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
