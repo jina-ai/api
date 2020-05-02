@@ -12,11 +12,11 @@ The schema of Jina command line interface exposed as JSON and YAML files. They c
 You can directly download or use GET request on
 
 ```text
-https://api.jina.ai/jina-api-VER.json
-https://api.jina.ai/jina-api-VER.yml
+https://api.jina.ai/VER.json
+https://api.jina.ai/VER.yml
 ```
 
-where VER is Jina version, e.g. [`https://api.jina.ai/jina-api-0.1.5.yml`](https://api.jina.ai/jina-api-0.1.5.yml)
+where VER is Jina version, e.g. [`https://api.jina.ai/0.1.5.yml`](https://api.jina.ai/0.1.5.yml)
 
 ## Description
 
