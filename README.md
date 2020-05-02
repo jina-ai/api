@@ -5,7 +5,7 @@
 [![Jina](https://github.com/jina-ai/jina/blob/master/.github/badges/license-badge.svg?raw=true  "Jina is licensed under Apache-2.0")](#license)
 [![Jina Docs](https://github.com/jina-ai/jina/blob/master/.github/badges/docs-badge.svg?raw=true  "Checkout our docs and learn Jina")](https://docs.jina.ai)
 
-The schema of Jina command line interface exposed as JSON and YAML files. They can be used and refered in the 3rd-party applications. The schema is tagged with [the Jina's version](https://github.com/jina-ai/jina/blob/master/RELEASE.md#version-explained). This repository is maintained by [jina-bot](https://github.com/jina-bot), it gets updated everytime jina-ai/jina is updated or released.
+Every time [jina-ai/jina](https://github.com/jina-ai/jina) is updated or released, the schema of Jina command line interface is exposed to JSON and YAML files. They can be used or referred in the 3rd-party applications. For example, [our dashboard](https://dashboard.jina.ai) is using this schema to arrange UI elements. The schema is tagged with [the Jina's version](https://github.com/jina-ai/jina/blob/master/RELEASE.md#version-explained). 
 
 
 ## Schema URL
@@ -19,7 +19,7 @@ The schema of Jina command line interface exposed as JSON and YAML files. They c
 {"authors": "dev-team@jina.ai", "description": "Jina is the cloud-native neural search solution powered by state-of-the-art AI and deep learning technology", "docs": "https://docs.jina.ai", "license": "Apache 2.0", "methods": [{"name": "pod", "options": [{"choices": null, "default": null, "default_random": false, "help": "the name of this pea, used to identify the pod and its logs.", "name": "name", "option_strings": ["--name"], "required": false, "type": "str"},
 ```
 
-You can specify the verion and format via:
+You can specify the version and the schema format via:
 
 ```text
 https://api.jina.ai/VER.json
