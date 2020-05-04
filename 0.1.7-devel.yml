@@ -16,7 +16,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: f0f1db444d
+    default: 60bcbe5bf9
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -87,7 +87,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 43559
+    default: 38291
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -96,7 +96,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 39471
+    default: 46883
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -165,7 +165,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 52849
+    default: 49995
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -385,7 +385,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 51339
+    default: 50233
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -478,7 +478,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 61fc293c6f
+    default: d01ac6e279
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -549,7 +549,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 36929
+    default: 45341
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -558,7 +558,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 33405
+    default: 36011
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -627,7 +627,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 58705
+    default: 40985
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -847,7 +847,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 59119
+    default: 57311
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -948,7 +948,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 48359
+    default: 56937
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -1072,7 +1072,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 53cf72ed45
+    default: f3512e4022
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -1143,7 +1143,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 44645
+    default: 47073
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -1152,7 +1152,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 56663
+    default: 40343
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -1221,7 +1221,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 43205
+    default: 34211
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1441,7 +1441,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 58125
+    default: 55265
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -1498,7 +1498,7 @@ methods:
 - name: hello-world
   options:
   - choices: null
-    default: 85c855e596
+    default: dee2779a6b
     default_random: true
     help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
