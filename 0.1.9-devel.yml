@@ -16,7 +16,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 6fdd47cd0f
+    default: 350503a3a4
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -87,7 +87,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 53523
+    default: 43991
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -96,7 +96,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 51059
+    default: 41909
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -165,7 +165,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 33241
+    default: 39175
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -401,7 +401,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 36923
+    default: 56317
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -494,7 +494,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 461ca9a278
+    default: b6ab0abe52
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -565,7 +565,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 45073
+    default: 53607
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -574,7 +574,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 37013
+    default: 59449
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -643,7 +643,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 34587
+    default: 44977
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -879,7 +879,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 39295
+    default: 57517
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -927,7 +927,7 @@ methods:
     required: false
     type: bool
   - choices: null
-    default: /opt/hostedtoolcache/Python/3.7.6/x64/lib/python3.7/site-packages/jina/resources/logserver.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.7/x64/lib/python3.7/site-packages/jina/resources/logserver.default.yml
     default_random: false
     help: the yaml config of the log server
     name: logserver_config
@@ -980,7 +980,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 38741
+    default: 45015
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -1104,7 +1104,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 92e8d491f1
+    default: 203fa355a0
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -1175,7 +1175,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 40105
+    default: 42535
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -1184,7 +1184,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 50543
+    default: 55779
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -1253,7 +1253,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 33403
+    default: 47615
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1489,7 +1489,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 33781
+    default: 39259
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -1546,7 +1546,7 @@ methods:
 - name: hello-world
   options:
   - choices: null
-    default: 40e6be162d
+    default: 885ffbf714
     default_random: true
     help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
@@ -1583,7 +1583,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: /opt/hostedtoolcache/Python/3.7.6/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.index.yml
+    default: /opt/hostedtoolcache/Python/3.7.7/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.index.yml
     default_random: false
     help: the yaml path of the index flow
     name: index_yaml_path
@@ -1610,7 +1610,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: /opt/hostedtoolcache/Python/3.7.6/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.query.yml
+    default: /opt/hostedtoolcache/Python/3.7.7/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.query.yml
     default_random: false
     help: the yaml path of the query flow
     name: query_yaml_path
