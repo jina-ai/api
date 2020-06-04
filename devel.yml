@@ -7,7 +7,7 @@ methods:
 - name: hello-world
   options:
   - choices: null
-    default: e61854f627
+    default: c668ab34ea
     default_random: true
     help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
@@ -127,7 +127,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: c197725a29
+    default: 4cfb58eaa3
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -198,7 +198,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 32783
+    default: 38289
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -207,7 +207,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 53467
+    default: 39277
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -276,7 +276,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 52961
+    default: 41259
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -512,7 +512,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 45613
+    default: 48991
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -667,7 +667,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 0815e75ed6
+    default: 4f1bd620c4
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -738,7 +738,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 39685
+    default: 47409
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -747,7 +747,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 53707
+    default: 57673
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -816,7 +816,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 53095
+    default: 48643
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1052,7 +1052,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 57883
+    default: 55169
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -1202,7 +1202,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 2e3b72d2e3
+    default: b4dc9914b2
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -1273,7 +1273,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 59499
+    default: 41209
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -1282,7 +1282,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 45891
+    default: 40255
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -1351,7 +1351,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 37269
+    default: 48273
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1587,7 +1587,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 51337
+    default: 37451
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -1646,7 +1646,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 56719
+    default: 40461
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -1758,6 +1758,15 @@ methods:
     - --timeout-ready
     required: false
     type: int
+  - choices: null
+    default: null
+    default_random: false
+    help: field names to query on
+    name: filter_by
+    option_strings:
+    - --filter-by
+    required: false
+    type: str
 - name: export-api
   options:
   - choices: null
