@@ -7,7 +7,7 @@ methods:
 - name: hello-world
   options:
   - choices: null
-    default: ba98c2ef79
+    default: 559f1db074
     default_random: true
     help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
@@ -136,7 +136,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 9fc986511b
+    default: 84acfff6f2
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -207,7 +207,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 42563
+    default: 49087
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -216,7 +216,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 45395
+    default: 56767
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -285,7 +285,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 35127
+    default: 37631
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -433,6 +433,7 @@ methods:
     - HEAD
     - TAIL
     - SHARD
+    - SINGLETON
     default: null
     default_random: false
     help: the role of this pea in a pod
@@ -521,7 +522,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 45271
+    default: 58755
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -676,7 +677,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: '060916e918'
+    default: fa4190a1ef
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -747,7 +748,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 39015
+    default: 35221
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -756,7 +757,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 42417
+    default: 48339
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -825,7 +826,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 47821
+    default: 51511
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -973,6 +974,7 @@ methods:
     - HEAD
     - TAIL
     - SHARD
+    - SINGLETON
     default: null
     default_random: false
     help: the role of this pea in a pod
@@ -1061,7 +1063,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 56471
+    default: 52015
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -1211,7 +1213,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 6ff584fd65
+    default: 3f2abafa5a
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -1282,7 +1284,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 35519
+    default: 44123
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -1291,7 +1293,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 49149
+    default: 54333
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -1360,7 +1362,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 43019
+    default: 45225
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1508,6 +1510,7 @@ methods:
     - HEAD
     - TAIL
     - SHARD
+    - SINGLETON
     default: null
     default_random: false
     help: the role of this pea in a pod
@@ -1596,7 +1599,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 52611
+    default: 57153
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
@@ -1655,7 +1658,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 45607
+    default: 53919
     default_random: true
     help: host port of the grpc gateway
     name: port_grpc
