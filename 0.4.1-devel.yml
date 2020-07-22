@@ -7,7 +7,7 @@ methods:
 - name: hello-world
   options:
   - choices: null
-    default: d9ae0b4f51
+    default: e9cb1664a1
     default_random: true
     help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
@@ -65,9 +65,9 @@ methods:
     default: /opt/hostedtoolcache/Python/3.7.8/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.index.yml
     default_random: false
     help: the yaml path of the index flow
-    name: index_yaml_path
+    name: index_uses
     option_strings:
-    - --index-yaml-path
+    - --index-uses
     required: false
     type: str
   - choices: null
@@ -92,9 +92,9 @@ methods:
     default: /opt/hostedtoolcache/Python/3.7.8/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.query.yml
     default_random: false
     help: the yaml path of the query flow
-    name: query_yaml_path
+    name: query_uses
     option_strings:
-    - --query-yaml-path
+    - --query-uses
     required: false
     type: str
   - choices: null
@@ -145,7 +145,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 1c80980a72
+    default: 0dee134e58
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -156,12 +156,12 @@ methods:
   - choices: null
     default: BaseExecutor
     default_random: false
-    help: the yaml config of the executor, it could be > a YAML file path, > a supported
+    help: the config of the executor, it could be > a YAML file path, > a supported
       executor's class name, > one of "_clear", "_route", "_forward", "_logforward",
-      "_merge" > the content of YAML config (must starts with "!")
-    name: yaml_path
+      "_merge" > the content of YAML config (must starts with "!")> a docker image
+    name: uses
     option_strings:
-    - --yaml-path
+    - --uses
     required: false
     type: str
   - choices: null
@@ -174,15 +174,13 @@ methods:
     required: false
     type: str
   - choices: null
-    default: null
+    default: BaseExecutor
     default_random: false
-    help: the name of the docker image that this pea runs with. it is also served
-      as an indicator of containerization. when this and --yaml-path are both given
-      then the docker image is used and its original yaml configuration is replaced
-      by the given --yaml-path
-    name: image
+    help: 'The executor config that is passed to the docker image if a docker image
+      is used in uses. It cannot be another docker image '
+    name: uses_internal
     option_strings:
-    - --image
+    - --uses-internal
     required: false
     type: str
   - choices: null
@@ -216,7 +214,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 48035
+    default: 57695
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -225,7 +223,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 44733
+    default: 43015
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -294,7 +292,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 33001
+    default: 43723
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -545,7 +543,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 34195
+    default: 52467
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -612,10 +610,10 @@ methods:
     default: _merge
     default_random: false
     help: the executor used for reducing the result from all replicas, accepted type
-      follows "--yaml-path"
-    name: reducing_yaml_path
+      follows "--uses"
+    name: uses_reducing
     option_strings:
-    - --reducing-yaml-path
+    - --uses-reducing
     required: false
     type: str
   - choices: null
@@ -701,7 +699,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: efe2d18681
+    default: 3c241574f6
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -712,12 +710,12 @@ methods:
   - choices: null
     default: BaseExecutor
     default_random: false
-    help: the yaml config of the executor, it could be > a YAML file path, > a supported
+    help: the config of the executor, it could be > a YAML file path, > a supported
       executor's class name, > one of "_clear", "_route", "_forward", "_logforward",
-      "_merge" > the content of YAML config (must starts with "!")
-    name: yaml_path
+      "_merge" > the content of YAML config (must starts with "!")> a docker image
+    name: uses
     option_strings:
-    - --yaml-path
+    - --uses
     required: false
     type: str
   - choices: null
@@ -730,15 +728,13 @@ methods:
     required: false
     type: str
   - choices: null
-    default: null
+    default: BaseExecutor
     default_random: false
-    help: the name of the docker image that this pea runs with. it is also served
-      as an indicator of containerization. when this and --yaml-path are both given
-      then the docker image is used and its original yaml configuration is replaced
-      by the given --yaml-path
-    name: image
+    help: 'The executor config that is passed to the docker image if a docker image
+      is used in uses. It cannot be another docker image '
+    name: uses_internal
     option_strings:
-    - --image
+    - --uses-internal
     required: false
     type: str
   - choices: null
@@ -772,7 +768,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 44365
+    default: 57097
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -781,7 +777,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 48363
+    default: 43365
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -850,7 +846,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 43559
+    default: 34947
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1101,7 +1097,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 46291
+    default: 47679
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1245,7 +1241,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 7bb31c847c
+    default: 9ddd288607
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -1256,12 +1252,12 @@ methods:
   - choices: null
     default: BaseExecutor
     default_random: false
-    help: the yaml config of the executor, it could be > a YAML file path, > a supported
+    help: the config of the executor, it could be > a YAML file path, > a supported
       executor's class name, > one of "_clear", "_route", "_forward", "_logforward",
-      "_merge" > the content of YAML config (must starts with "!")
-    name: yaml_path
+      "_merge" > the content of YAML config (must starts with "!")> a docker image
+    name: uses
     option_strings:
-    - --yaml-path
+    - --uses
     required: false
     type: str
   - choices: null
@@ -1274,15 +1270,13 @@ methods:
     required: false
     type: str
   - choices: null
-    default: null
+    default: BaseExecutor
     default_random: false
-    help: the name of the docker image that this pea runs with. it is also served
-      as an indicator of containerization. when this and --yaml-path are both given
-      then the docker image is used and its original yaml configuration is replaced
-      by the given --yaml-path
-    name: image
+    help: 'The executor config that is passed to the docker image if a docker image
+      is used in uses. It cannot be another docker image '
+    name: uses_internal
     option_strings:
-    - --image
+    - --uses-internal
     required: false
     type: str
   - choices: null
@@ -1316,7 +1310,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 55987
+    default: 35483
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -1325,7 +1319,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 57823
+    default: 41729
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -1394,7 +1388,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 59583
+    default: 60407
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1645,7 +1639,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 49771
+    default: 42375
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1705,7 +1699,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 58873
+    default: 50703
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
