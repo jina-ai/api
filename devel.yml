@@ -7,7 +7,7 @@ methods:
 - name: hello-world
   options:
   - choices: null
-    default: 41d747c274
+    default: 5b4f382fda
     default_random: true
     help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
@@ -55,10 +55,10 @@ methods:
   - choices: null
     default: 2
     default_random: false
-    help: number of replicas when index and query
-    name: replicas
+    help: number of parallel when index and query
+    name: parallel
     option_strings:
-    - --replicas
+    - --parallel
     required: false
     type: int
   - choices: null
@@ -145,7 +145,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 9b498e0498
+    default: 41889b2e1a
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -214,7 +214,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 58519
+    default: 35699
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -223,7 +223,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 55721
+    default: 42991
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -292,7 +292,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 47155
+    default: 57919
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -368,7 +368,7 @@ methods:
     default: false
     default_random: false
     help: the data and config files are separated for each pea in this pod, only effective
-      when BasePod's `replicas` > 1
+      when BasePod's `parallel` > 1
     name: separated_workspace
     option_strings:
     - --separated-workspace
@@ -543,7 +543,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 39277
+    default: 49541
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -574,12 +574,13 @@ methods:
   - choices: null
     default: 1
     default_random: false
-    help: number of parallel peas in the pod running at the same time (i.e. replicas),
-      `port_in` and `port_out` will be set to random, and routers will be added automatically
-      when necessary
-    name: replicas
+    help: number of parallel peas in the pod running at the same time, `port_in` and
+      `port_out` will be set to random, and routers will be added automatically when
+      necessary
+    name: parallel
     option_strings:
-    - --replicas
+    - --parallel
+    - --shards
     required: false
     type: int
   - choices:
@@ -609,7 +610,7 @@ methods:
   - choices: null
     default: _merge
     default_random: false
-    help: the executor used for reducing the result from all replicas, accepted type
+    help: the executor used for reducing the result from all parallel, accepted type
       follows "--uses"
     name: uses_reducing
     option_strings:
@@ -699,7 +700,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: b282d34d25
+    default: bebdd51c0d
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -768,7 +769,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 58211
+    default: 54531
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -777,7 +778,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 46293
+    default: 35929
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -846,7 +847,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 37653
+    default: 54073
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -922,7 +923,7 @@ methods:
     default: false
     default_random: false
     help: the data and config files are separated for each pea in this pod, only effective
-      when BasePod's `replicas` > 1
+      when BasePod's `parallel` > 1
     name: separated_workspace
     option_strings:
     - --separated-workspace
@@ -1097,7 +1098,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 46275
+    default: 38911
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1241,7 +1242,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: a6135f2a9c
+    default: 11b8f225ef
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -1310,7 +1311,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 53893
+    default: 40935
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -1319,7 +1320,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 53797
+    default: 55669
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -1388,7 +1389,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 56285
+    default: 48155
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1464,7 +1465,7 @@ methods:
     default: false
     default_random: false
     help: the data and config files are separated for each pea in this pod, only effective
-      when BasePod's `replicas` > 1
+      when BasePod's `parallel` > 1
     name: separated_workspace
     option_strings:
     - --separated-workspace
@@ -1639,7 +1640,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 48271
+    default: 39735
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1699,7 +1700,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 48689
+    default: 40647
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
