@@ -7,7 +7,7 @@ methods:
 - name: hello-world
   options:
   - choices: null
-    default: c80297b7f7
+    default: a657556d3a
     default_random: true
     help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
@@ -145,7 +145,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 75ebd25fdf
+    default: cc5b13df8a
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -154,10 +154,10 @@ methods:
     required: false
     type: str
   - choices: null
-    default: BaseExecutor
+    default: _pass
     default_random: false
     help: the config of the executor, it could be > a YAML file path, > a supported
-      executor's class name, > one of "_clear", "_route", "_forward", "_logforward",
+      executor's class name, > one of "_clear", "_route", "_pass", "_logforward",
       "_merge" > the content of YAML config (must starts with "!")> a docker image
     name: uses
     option_strings:
@@ -214,7 +214,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 50403
+    default: 56585
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -223,7 +223,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 38075
+    default: 51641
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -292,7 +292,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 37581
+    default: 53771
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -543,7 +543,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 52953
+    default: 59343
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -700,7 +700,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: e6167f23c9
+    default: 6dcf5b6e3a
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -709,10 +709,10 @@ methods:
     required: false
     type: str
   - choices: null
-    default: BaseExecutor
+    default: _pass
     default_random: false
     help: the config of the executor, it could be > a YAML file path, > a supported
-      executor's class name, > one of "_clear", "_route", "_forward", "_logforward",
+      executor's class name, > one of "_clear", "_route", "_pass", "_logforward",
       "_merge" > the content of YAML config (must starts with "!")> a docker image
     name: uses
     option_strings:
@@ -769,7 +769,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 57125
+    default: 58379
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -778,7 +778,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 36845
+    default: 47171
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -847,7 +847,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 34869
+    default: 47231
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1098,7 +1098,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 39109
+    default: 50057
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1242,7 +1242,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: af084512da
+    default: 7393e21b15
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -1251,10 +1251,10 @@ methods:
     required: false
     type: str
   - choices: null
-    default: BaseExecutor
+    default: _pass
     default_random: false
     help: the config of the executor, it could be > a YAML file path, > a supported
-      executor's class name, > one of "_clear", "_route", "_forward", "_logforward",
+      executor's class name, > one of "_clear", "_route", "_pass", "_logforward",
       "_merge" > the content of YAML config (must starts with "!")> a docker image
     name: uses
     option_strings:
@@ -1311,7 +1311,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 34959
+    default: 42063
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -1320,7 +1320,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 57135
+    default: 43067
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -1389,7 +1389,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 55069
+    default: 53659
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1640,7 +1640,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 36765
+    default: 37057
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1700,7 +1700,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 50235
+    default: 37913
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
