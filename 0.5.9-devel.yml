@@ -7,7 +7,7 @@ methods:
 - name: hello-world
   options:
   - choices: null
-    default: 3a9a285ea6
+    default: 0f7832aaeb
     default_random: true
     help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
@@ -145,7 +145,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 28d55f0a0c
+    default: 0671bce3c3
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -214,7 +214,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 53659
+    default: 48247
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -223,7 +223,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 47855
+    default: 47507
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -292,7 +292,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 52407
+    default: 49529
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -391,16 +391,6 @@ methods:
     name: check_version
     option_strings:
     - --check-version
-    required: false
-    type: bool
-  - choices: null
-    default: false
-    default_random: false
-    help: sending buffer and numpy ndarray together within or separately from the
-      protobuf message, the latter often yields a better network efficiency
-    name: array_in_pb
-    option_strings:
-    - --array-in-pb
     required: false
     type: bool
   - choices: null
@@ -554,7 +544,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 39083
+    default: 48939
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -721,7 +711,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: f18fd2ee18
+    default: 1badb18f84
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -790,7 +780,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 34681
+    default: 46171
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -799,7 +789,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 48981
+    default: 42837
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -868,7 +858,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 43125
+    default: 47909
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -967,16 +957,6 @@ methods:
     name: check_version
     option_strings:
     - --check-version
-    required: false
-    type: bool
-  - choices: null
-    default: false
-    default_random: false
-    help: sending buffer and numpy ndarray together within or separately from the
-      protobuf message, the latter often yields a better network efficiency
-    name: array_in_pb
-    option_strings:
-    - --array-in-pb
     required: false
     type: bool
   - choices: null
@@ -1130,7 +1110,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 57885
+    default: 40541
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1274,7 +1254,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: baf7e3f42e
+    default: 9911babfac
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -1343,7 +1323,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 52679
+    default: 60815
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -1352,7 +1332,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 40305
+    default: 58681
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -1421,7 +1401,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 49563
+    default: 57693
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1520,16 +1500,6 @@ methods:
     name: check_version
     option_strings:
     - --check-version
-    required: false
-    type: bool
-  - choices: null
-    default: false
-    default_random: false
-    help: sending buffer and numpy ndarray together within or separately from the
-      protobuf message, the latter often yields a better network efficiency
-    name: array_in_pb
-    option_strings:
-    - --array-in-pb
     required: false
     type: bool
   - choices: null
@@ -1683,7 +1653,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 55843
+    default: 48189
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1743,7 +1713,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 59133
+    default: 60691
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
