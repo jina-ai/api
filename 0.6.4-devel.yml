@@ -7,7 +7,7 @@ methods:
 - name: hello-world
   options:
   - choices: null
-    default: 4542dece51
+    default: 65f30fa074
     default_random: true
     help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
@@ -145,7 +145,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 94bf51328a
+    default: edefb8a989
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -214,7 +214,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 40339
+    default: 33133
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -223,7 +223,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 52583
+    default: 41945
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -292,7 +292,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 45719
+    default: 59085
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -505,6 +505,15 @@ methods:
     required: false
     type: bool
   - choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.fluentd.yml
+    default_random: false
+    help: the yaml config of the fluentd server to pass to the Fluent Logging Handler
+    name: log_fluentd_config
+    option_strings:
+    - --log-fluentd-config
+    required: false
+    type: str
+  - choices: null
     default: false
     default_random: false
     help: turn on remote logging
@@ -573,7 +582,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 52251
+    default: 37741
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -696,6 +705,16 @@ methods:
     required: false
     type: str
   - choices: null
+    default: false
+    default_random: false
+    help: start fluentd with the default configuration in jina resources. Only active
+      if --logserver activated
+    name: start_fluentd
+    option_strings:
+    - --start-fluentd
+    required: false
+    type: bool
+  - choices: null
     default: NONE
     default_random: false
     help: removing redundant routers from the flow. Note, this may change the gateway
@@ -740,7 +759,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 40b9f2c389
+    default: 537cb46424
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -809,7 +828,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 35299
+    default: 51965
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -818,7 +837,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 49625
+    default: 51883
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -887,7 +906,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 36001
+    default: 57959
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1100,6 +1119,15 @@ methods:
     required: false
     type: bool
   - choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.fluentd.yml
+    default_random: false
+    help: the yaml config of the fluentd server to pass to the Fluent Logging Handler
+    name: log_fluentd_config
+    option_strings:
+    - --log-fluentd-config
+    required: false
+    type: str
+  - choices: null
     default: false
     default_random: false
     help: turn on remote logging
@@ -1168,7 +1196,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 39791
+    default: 49059
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1312,7 +1340,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: af06001bd7
+    default: adfdf792c6
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -1381,7 +1409,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 34363
+    default: 35329
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -1390,7 +1418,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 39771
+    default: 40443
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -1459,7 +1487,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 42881
+    default: 48291
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1672,6 +1700,15 @@ methods:
     required: false
     type: bool
   - choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.fluentd.yml
+    default_random: false
+    help: the yaml config of the fluentd server to pass to the Fluent Logging Handler
+    name: log_fluentd_config
+    option_strings:
+    - --log-fluentd-config
+    required: false
+    type: str
+  - choices: null
     default: false
     default_random: false
     help: turn on remote logging
@@ -1740,7 +1777,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 53491
+    default: 60667
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1800,7 +1837,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 34291
+    default: 48433
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
