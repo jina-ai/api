@@ -7,7 +7,7 @@ methods:
 - name: hello-world
   options:
   - choices: null
-    default: dd9a0c992b
+    default: 3a40109dbe
     default_random: true
     help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
@@ -145,7 +145,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 8633a7a876
+    default: f141829bbd
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -214,7 +214,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 60259
+    default: 58263
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -223,7 +223,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 54745
+    default: 35983
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -292,7 +292,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 40463
+    default: 36013
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -496,51 +496,22 @@ methods:
     required: false
     type: bool
   - choices: null
-    default: false
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     default_random: false
-    help: turn on server-side event logging
-    name: log_sse
+    help: the yaml config of the logger. note the executor inside will inherit this
+      log config
+    name: log_config
     option_strings:
-    - --log-sse
-    required: false
-    type: bool
-  - choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.fluentd.yml
-    default_random: false
-    help: the yaml config of the fluentd server to pass to the Fluent Logging Handler
-    name: log_fluentd_config
-    option_strings:
-    - --log-fluentd-config
+    - --log-config
     required: false
     type: str
   - choices: null
     default: false
     default_random: false
-    help: turn on remote logging
+    help: ==SUPPRESS==
     name: log_remote
     option_strings:
     - --log-remote
-    required: false
-    type: bool
-  - choices: null
-    default: false
-    default_random: false
-    help: turn on the profiling logger
-    name: log_profile
-    option_strings:
-    - --log-profile
-    required: false
-    type: bool
-  - choices: null
-    default: false
-    default_random: false
-    help: turn on to let each logger outputs in its own name (i.e. parent class name
-      as the context), by default it is off so all logs from the same pod will have
-      the same prefix. turn on to help debugging, turn off to have more clear logs
-      and better grouping in dashboard
-    name: log_with_own_name
-    option_strings:
-    - --log-with-own-name
     required: false
     type: bool
   - choices: null
@@ -582,7 +553,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 42087
+    default: 33313
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -759,7 +730,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 6afdbcf7d0
+    default: 7d08fcc76f
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -828,7 +799,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 36703
+    default: 38847
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -837,7 +808,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 52919
+    default: 36147
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -906,7 +877,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 35571
+    default: 49999
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1110,51 +1081,22 @@ methods:
     required: false
     type: bool
   - choices: null
-    default: false
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     default_random: false
-    help: turn on server-side event logging
-    name: log_sse
+    help: the yaml config of the logger. note the executor inside will inherit this
+      log config
+    name: log_config
     option_strings:
-    - --log-sse
-    required: false
-    type: bool
-  - choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.fluentd.yml
-    default_random: false
-    help: the yaml config of the fluentd server to pass to the Fluent Logging Handler
-    name: log_fluentd_config
-    option_strings:
-    - --log-fluentd-config
+    - --log-config
     required: false
     type: str
   - choices: null
     default: false
     default_random: false
-    help: turn on remote logging
+    help: ==SUPPRESS==
     name: log_remote
     option_strings:
     - --log-remote
-    required: false
-    type: bool
-  - choices: null
-    default: false
-    default_random: false
-    help: turn on the profiling logger
-    name: log_profile
-    option_strings:
-    - --log-profile
-    required: false
-    type: bool
-  - choices: null
-    default: false
-    default_random: false
-    help: turn on to let each logger outputs in its own name (i.e. parent class name
-      as the context), by default it is off so all logs from the same pod will have
-      the same prefix. turn on to help debugging, turn off to have more clear logs
-      and better grouping in dashboard
-    name: log_with_own_name
-    option_strings:
-    - --log-with-own-name
     required: false
     type: bool
   - choices: null
@@ -1196,7 +1138,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 41033
+    default: 38801
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1340,7 +1282,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 6db28b8aa1
+    default: 0f5c677c10
     default_random: true
     help: the identity of the sockets, default a random string
     name: identity
@@ -1409,7 +1351,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 56099
+    default: 57399
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -1418,7 +1360,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 60525
+    default: 47977
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -1487,7 +1429,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 40049
+    default: 51617
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1691,51 +1633,22 @@ methods:
     required: false
     type: bool
   - choices: null
-    default: false
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     default_random: false
-    help: turn on server-side event logging
-    name: log_sse
+    help: the yaml config of the logger. note the executor inside will inherit this
+      log config
+    name: log_config
     option_strings:
-    - --log-sse
-    required: false
-    type: bool
-  - choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.fluentd.yml
-    default_random: false
-    help: the yaml config of the fluentd server to pass to the Fluent Logging Handler
-    name: log_fluentd_config
-    option_strings:
-    - --log-fluentd-config
+    - --log-config
     required: false
     type: str
   - choices: null
     default: false
     default_random: false
-    help: turn on remote logging
+    help: ==SUPPRESS==
     name: log_remote
     option_strings:
     - --log-remote
-    required: false
-    type: bool
-  - choices: null
-    default: false
-    default_random: false
-    help: turn on the profiling logger
-    name: log_profile
-    option_strings:
-    - --log-profile
-    required: false
-    type: bool
-  - choices: null
-    default: false
-    default_random: false
-    help: turn on to let each logger outputs in its own name (i.e. parent class name
-      as the context), by default it is off so all logs from the same pod will have
-      the same prefix. turn on to help debugging, turn off to have more clear logs
-      and better grouping in dashboard
-    name: log_with_own_name
-    option_strings:
-    - --log-with-own-name
     required: false
     type: bool
   - choices: null
@@ -1777,7 +1690,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 56963
+    default: 58769
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1837,7 +1750,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 41001
+    default: 41483
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
