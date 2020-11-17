@@ -7,7 +7,7 @@ methods:
 - name: hello-world
   options:
   - choices: null
-    default: 95b0dc04282e11ebb1b8000d3a1b542d
+    default: 6ac51b9828fd11eb9381000d3a8cac80
     default_random: true
     help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
@@ -145,7 +145,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 95b0dc15282e11ebb1b8000d3a1b542d
+    default: 6ac51ba928fd11eb9381000d3a8cac80
     default_random: true
     help: the identity of the sockets, default a random string (Important for load
       balancing messages
@@ -215,7 +215,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 50349
+    default: 60591
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -224,7 +224,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 40667
+    default: 33163
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -293,7 +293,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 37417
+    default: 36321
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -480,7 +480,7 @@ methods:
     required: false
     type: bool
   - choices: null
-    default: 95b0dc16282e11ebb1b8000d3a1b542d
+    default: 6ac51baa28fd11eb9381000d3a8cac80
     default_random: true
     help: ==SUPPRESS==
     name: log_id
@@ -527,7 +527,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 49569
+    default: 58663
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -558,7 +558,7 @@ methods:
   - choices:
     - SSH
     - JINAD
-    default: SSH
+    default: JINAD
     default_random: false
     help: host address of the pea/gateway, by default it is 0.0.0.0.
     name: remote_access
@@ -661,7 +661,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 95b0dc27282e11ebb1b8000d3a1b542d
+    default: 6ac51bbb28fd11eb9381000d3a8cac80
     default_random: true
     help: ==SUPPRESS==
     name: log_id
@@ -725,7 +725,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 95b0dc38282e11ebb1b8000d3a1b542d
+    default: 6ac51bcc28fd11eb9381000d3a8cac80
     default_random: true
     help: the identity of the sockets, default a random string (Important for load
       balancing messages
@@ -795,7 +795,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 56813
+    default: 41849
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -804,7 +804,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 33645
+    default: 36663
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -873,7 +873,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 44811
+    default: 38143
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1060,7 +1060,7 @@ methods:
     required: false
     type: bool
   - choices: null
-    default: 95b0dc39282e11ebb1b8000d3a1b542d
+    default: 6ac51bcd28fd11eb9381000d3a8cac80
     default_random: true
     help: ==SUPPRESS==
     name: log_id
@@ -1107,7 +1107,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 35509
+    default: 53091
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1138,7 +1138,7 @@ methods:
   - choices:
     - SSH
     - JINAD
-    default: SSH
+    default: JINAD
     default_random: false
     help: host address of the pea/gateway, by default it is 0.0.0.0.
     name: remote_access
@@ -1302,7 +1302,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 95b0dc7a282e11ebb1b8000d3a1b542d
+    default: 6ac51c0e28fd11eb9381000d3a8cac80
     default_random: true
     help: the identity of the sockets, default a random string (Important for load
       balancing messages
@@ -1372,7 +1372,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 46823
+    default: 55989
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -1381,7 +1381,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 54839
+    default: 50003
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -1450,7 +1450,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 53043
+    default: 47245
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1637,7 +1637,7 @@ methods:
     required: false
     type: bool
   - choices: null
-    default: 95b0dc7b282e11ebb1b8000d3a1b542d
+    default: 6ac51c0f28fd11eb9381000d3a8cac80
     default_random: true
     help: ==SUPPRESS==
     name: log_id
@@ -1684,7 +1684,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 57873
+    default: 53989
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1715,7 +1715,7 @@ methods:
   - choices:
     - SSH
     - JINAD
-    default: SSH
+    default: JINAD
     default_random: false
     help: host address of the pea/gateway, by default it is 0.0.0.0.
     name: remote_access
@@ -1755,7 +1755,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 60981
+    default: 60381
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1786,7 +1786,7 @@ methods:
   - choices:
     - SSH
     - JINAD
-    default: SSH
+    default: JINAD
     default_random: false
     help: host address of the pea/gateway, by default it is 0.0.0.0.
     name: remote_access
