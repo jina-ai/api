@@ -7,7 +7,7 @@ methods:
 - name: hello-world
   options:
   - choices: null
-    default: aa0d4d60-3bfa-11eb-b29a-000d3a9fddd9
+    default: 659bc690-3c3e-11eb-bbd9-00224844d4e3
     default_random: true
     help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
@@ -145,7 +145,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: aa0d4d71-3bfa-11eb-b29a-000d3a9fddd9
+    default: 659bc6a1-3c3e-11eb-bbd9-00224844d4e3
     default_random: true
     help: the identity of the sockets, default a random string (Important for load
       balancing messages
@@ -215,7 +215,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 44711
+    default: 54285
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -224,7 +224,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 36769
+    default: 60485
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -293,7 +293,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 46347
+    default: 46497
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -481,7 +481,7 @@ methods:
     required: false
     type: bool
   - choices: null
-    default: aa0d4d72-3bfa-11eb-b29a-000d3a9fddd9
+    default: 659bc6a2-3c3e-11eb-bbd9-00224844d4e3
     default_random: true
     help: ==SUPPRESS==
     name: log_id
@@ -528,7 +528,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 32939
+    default: 57115
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -662,7 +662,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: aa0d4d83-3bfa-11eb-b29a-000d3a9fddd9
+    default: 659bc6b3-3c3e-11eb-bbd9-00224844d4e3
     default_random: true
     help: ==SUPPRESS==
     name: log_id
@@ -726,7 +726,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: aa0d4d94-3bfa-11eb-b29a-000d3a9fddd9
+    default: 659bc6c4-3c3e-11eb-bbd9-00224844d4e3
     default_random: true
     help: the identity of the sockets, default a random string (Important for load
       balancing messages
@@ -796,7 +796,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 44525
+    default: 54521
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -805,7 +805,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 33295
+    default: 58905
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -874,7 +874,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 35753
+    default: 34819
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1062,7 +1062,7 @@ methods:
     required: false
     type: bool
   - choices: null
-    default: aa0d4d95-3bfa-11eb-b29a-000d3a9fddd9
+    default: 659bc6c5-3c3e-11eb-bbd9-00224844d4e3
     default_random: true
     help: ==SUPPRESS==
     name: log_id
@@ -1109,7 +1109,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 52505
+    default: 52589
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1304,7 +1304,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: aa0d4dd6-3bfa-11eb-b29a-000d3a9fddd9
+    default: 659bc706-3c3e-11eb-bbd9-00224844d4e3
     default_random: true
     help: the identity of the sockets, default a random string (Important for load
       balancing messages
@@ -1374,7 +1374,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 58371
+    default: 58509
     default_random: true
     help: port for input data, default a random port between [49152, 65535]
     name: port_in
@@ -1383,7 +1383,7 @@ methods:
     required: false
     type: int
   - choices: null
-    default: 42285
+    default: 39089
     default_random: true
     help: port for output data, default a random port between [49152, 65535]
     name: port_out
@@ -1452,7 +1452,7 @@ methods:
     required: false
     type: method
   - choices: null
-    default: 49259
+    default: 54723
     default_random: true
     help: port for controlling the pod, default a random port between [49152, 65535]
     name: port_ctrl
@@ -1640,7 +1640,7 @@ methods:
     required: false
     type: bool
   - choices: null
-    default: aa0d4dd7-3bfa-11eb-b29a-000d3a9fddd9
+    default: 659bc707-3c3e-11eb-bbd9-00224844d4e3
     default_random: true
     help: ==SUPPRESS==
     name: log_id
@@ -1687,7 +1687,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 55547
+    default: 46933
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
@@ -1758,7 +1758,7 @@ methods:
     required: false
     type: str
   - choices: null
-    default: 46523
+    default: 37167
     default_random: true
     help: host port of the gateway, "port-grpc" alias will be removed in future versions
     name: port_expose
