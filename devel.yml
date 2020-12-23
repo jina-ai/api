@@ -1,273 +1,279 @@
-authors: dev-team@jina.ai
+name: Jina
 description: Jina is the cloud-native neural search solution powered by state-of-the-art
   AI and deep learning technology
-docs: https://docs.jina.ai
 license: Apache 2.0
+vendor: Jina AI Limited
+source: https://github.com/jina-ai/jina/tree/master
+url: https://jina.ai
+docs: https://docs.jina.ai
+authors: dev-team@jina.ai
+version: 0.8.13
 methods:
 - name: hello-world
   options:
-  - choices: null
-    default: d90bc98c-447f-11eb-b47a-000d3a994774
-    default_random: true
-    help: the workdir for hello-world demo, all data, indices, shards and outputs
+  - help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
-    name: workdir
+    choices: null
+    default: 19f8dd90-4552-11eb-9178-000d3a9df97a
+    required: false
     option_strings:
     - --workdir
-    required: false
     type: str
-  - choices: null
+    default_random: true
+    name: workdir
+  - help: start a log server for the dashboard
+    choices: null
     default: false
-    default_random: false
-    help: start a log server for the dashboard
-    name: logserver
+    required: false
     option_strings:
     - --logserver
-    required: false
     type: bool
-  - choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logserver.default.yml
     default_random: false
-    help: the yaml config of the log server
-    name: logserver_config
+    name: logserver
+  - help: the yaml config of the log server
+    choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logserver.default.yml
+    required: false
     option_strings:
     - --logserver-config
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: specify the proxy when downloading sample data
-    name: download_proxy
+    name: logserver_config
+  - help: specify the proxy when downloading sample data
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --download-proxy
-    required: false
     type: str
-  - choices: null
-    default: 2
     default_random: false
-    help: number of shards when index and query
-    name: shards
+    name: download_proxy
+  - help: number of shards when index and query
+    choices: null
+    default: 2
+    required: false
     option_strings:
     - --shards
-    required: false
     type: int
-  - choices: null
-    default: 2
     default_random: false
-    help: number of parallel when index and query
-    name: parallel
+    name: shards
+  - help: number of parallel when index and query
+    choices: null
+    default: 2
+    required: false
     option_strings:
     - --parallel
-    required: false
     type: int
-  - choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.index.yml
     default_random: false
-    help: the yaml path of the index flow
-    name: uses_index
+    name: parallel
+  - help: the yaml path of the index flow
+    choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.index.yml
+    required: false
     option_strings:
     - --uses-index
-    required: false
     type: str
-  - choices: null
-    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz
     default_random: false
-    help: the url of index data (should be in idx3-ubyte.gz format)
-    name: index_data_url
+    name: uses_index
+  - help: the url of index data (should be in idx3-ubyte.gz format)
+    choices: null
+    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz
+    required: false
     option_strings:
     - --index-data-url
-    required: false
     type: str
-  - choices: null
-    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz
     default_random: false
-    help: the url of index labels data (should be in idx3-ubyte.gz format)
-    name: index_labels_url
+    name: index_data_url
+  - help: the url of index labels data (should be in idx3-ubyte.gz format)
+    choices: null
+    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz
+    required: false
     option_strings:
     - --index-labels-url
-    required: false
     type: str
-  - choices: null
-    default: 1024
     default_random: false
-    help: the batch size in indexing
-    name: index_batch_size
+    name: index_labels_url
+  - help: the batch size in indexing
+    choices: null
+    default: 1024
+    required: false
     option_strings:
     - --index-batch-size
-    required: false
     type: int
-  - choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.query.yml
     default_random: false
-    help: the yaml path of the query flow
-    name: uses_query
+    name: index_batch_size
+  - help: the yaml path of the query flow
+    choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.query.yml
+    required: false
     option_strings:
     - --uses-query
-    required: false
     type: str
-  - choices: null
-    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz
     default_random: false
-    help: the url of query data (should be in idx3-ubyte.gz format)
-    name: query_data_url
+    name: uses_query
+  - help: the url of query data (should be in idx3-ubyte.gz format)
+    choices: null
+    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz
+    required: false
     option_strings:
     - --query-data-url
-    required: false
     type: str
-  - choices: null
-    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz
     default_random: false
-    help: the url of query labels data (should be in idx3-ubyte.gz format)
-    name: query_labels_url
+    name: query_data_url
+  - help: the url of query labels data (should be in idx3-ubyte.gz format)
+    choices: null
+    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz
+    required: false
     option_strings:
     - --query-labels-url
-    required: false
     type: str
-  - choices: null
-    default: 32
     default_random: false
-    help: the batch size in searching
-    name: query_batch_size
+    name: query_labels_url
+  - help: the batch size in searching
+    choices: null
+    default: 32
+    required: false
     option_strings:
     - --query-batch-size
-    required: false
     type: int
-  - choices: null
-    default: 128
     default_random: false
-    help: number of queries to visualize
-    name: num_query
+    name: query_batch_size
+  - help: number of queries to visualize
+    choices: null
+    default: 128
+    required: false
     option_strings:
     - --num-query
-    required: false
     type: int
-  - choices: null
-    default: 50
     default_random: false
-    help: top-k results to retrieve and visualize
-    name: top_k
+    name: num_query
+  - help: top-k results to retrieve and visualize
+    choices: null
+    default: 50
+    required: false
     option_strings:
     - --top-k
-    required: false
     type: int
+    default_random: false
+    name: top_k
 - name: pod
   options:
-  - choices: null
+  - help: the name of this pea, used to identify the pod and its logs.
+    choices: null
     default: null
-    default_random: false
-    help: the name of this pea, used to identify the pod and its logs.
-    name: name
+    required: false
     option_strings:
     - --name
-    required: false
     type: str
-  - choices: null
-    default: d90bc99d-447f-11eb-b47a-000d3a994774
-    default_random: true
-    help: ==SUPPRESS==
-    name: identity
+    default_random: false
+    name: name
+  - help: ==SUPPRESS==
+    choices: null
+    default: 19f8dda1-4552-11eb-9178-000d3a9df97a
+    required: false
     option_strings:
     - --identity
-    required: false
     type: str
-  - choices: null
-    default: _pass
-    default_random: false
-    help: the config of the executor, it could be > a YAML file path, > a supported
+    default_random: true
+    name: identity
+  - help: the config of the executor, it could be > a YAML file path, > a supported
       executor's class name, > one of "_clear", "_pass", "_logforward" > the content
       of YAML config (must starts with "!")> a docker image
-    name: uses
+    choices: null
+    default: _pass
+    required: false
     option_strings:
     - --uses
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: the customized python modules need to be imported before loading the executor
-    name: py_modules
+    name: uses
+  - help: the customized python modules need to be imported before loading the executor
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --py-modules
-    required: false
     type: str
-  - choices: null
-    default: BaseExecutor
     default_random: false
-    help: 'The executor config that is passed to the docker image if a docker image
+    name: py_modules
+  - help: 'The executor config that is passed to the docker image if a docker image
       is used in uses. It cannot be another docker image '
-    name: uses_internal
+    choices: null
+    default: BaseExecutor
+    required: false
     option_strings:
     - --uses-internal
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: the entrypoint command overrides the ENTRYPOINT in docker image. when not
+    name: uses_internal
+  - help: the entrypoint command overrides the ENTRYPOINT in docker image. when not
       set then the docker image ENTRYPOINT takes effective.
-    name: entrypoint
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --entrypoint
-    required: false
     type: str
-  - choices: null
-    default: false
     default_random: false
-    help: pull the latest image before running
-    name: pull_latest
+    name: entrypoint
+  - help: pull the latest image before running
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --pull-latest
-    required: false
     type: bool
-  - choices: null
-    default: null
     default_random: false
-    help: the path on the host to be mounted inside the container. they will be mounted
+    name: pull_latest
+  - help: the path on the host to be mounted inside the container. they will be mounted
       to the root path, i.e. /user/test/my-workspace will be mounted to /my-workspace
       inside the container. all volumes are mounted with read-write mode.
-    name: volumes
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --volumes
-    required: false
     type: str
-  - choices: null
-    default: 48129
-    default_random: true
-    help: port for input data, default a random port between [49152, 65535]
-    name: port_in
+    default_random: false
+    name: volumes
+  - help: port for input data, default a random port between [49152, 65535]
+    choices: null
+    default: 36299
+    required: false
     option_strings:
     - --port-in
-    required: false
     type: int
-  - choices: null
-    default: 45257
     default_random: true
-    help: port for output data, default a random port between [49152, 65535]
-    name: port_out
+    name: port_in
+  - help: port for output data, default a random port between [49152, 65535]
+    choices: null
+    default: 35185
+    required: false
     option_strings:
     - --port-out
-    required: false
     type: int
-  - choices: null
+    default_random: true
+    name: port_out
+  - help: host address for input, by default it is 0.0.0.0
+    choices: null
     default: 0.0.0.0
-    default_random: false
-    help: host address for input, by default it is 0.0.0.0
-    name: host_in
+    required: false
     option_strings:
     - --host-in
-    required: false
     type: str
-  - choices: null
-    default: 0.0.0.0
     default_random: false
-    help: host address for output, by default it is 0.0.0.0
-    name: host_out
+    name: host_in
+  - help: host address for output, by default it is 0.0.0.0
+    choices: null
+    default: 0.0.0.0
+    required: false
     option_strings:
     - --host-out
-    required: false
     type: str
-  - choices:
+    default_random: false
+    name: host_out
+  - help: socket type for input port
+    choices:
     - PULL_BIND
     - PULL_CONNECT
     - PUSH_BIND
@@ -281,14 +287,14 @@ methods:
     - ROUTER_BIND
     - DEALER_CONNECT
     default: PULL_BIND
-    default_random: false
-    help: socket type for input port
-    name: socket_in
+    required: false
     option_strings:
     - --socket-in
-    required: false
     type: method
-  - choices:
+    default_random: false
+    name: socket_in
+  - help: socket type for output port
+    choices:
     - PULL_BIND
     - PULL_CONNECT
     - PUSH_BIND
@@ -302,552 +308,552 @@ methods:
     - ROUTER_BIND
     - DEALER_CONNECT
     default: PUSH_BIND
-    default_random: false
-    help: socket type for output port
-    name: socket_out
+    required: false
     option_strings:
     - --socket-out
-    required: false
     type: method
-  - choices: null
-    default: 48919
-    default_random: true
-    help: port for controlling the pod, default a random port between [49152, 65535]
-    name: port_ctrl
+    default_random: false
+    name: socket_out
+  - help: port for controlling the pod, default a random port between [49152, 65535]
+    choices: null
+    default: 42171
+    required: false
     option_strings:
     - --port-ctrl
-    required: false
     type: int
-  - choices: null
+    default_random: true
+    name: port_ctrl
+  - help: use ipc protocol for control socket
+    choices: null
     default: false
-    default_random: false
-    help: use ipc protocol for control socket
-    name: ctrl_with_ipc
+    required: false
     option_strings:
     - --ctrl-with-ipc
-    required: false
     type: bool
-  - choices: null
-    default: -1
     default_random: false
-    help: timeout (ms) of all requests, -1 for waiting forever
-    name: timeout
+    name: ctrl_with_ipc
+  - help: timeout (ms) of all requests, -1 for waiting forever
+    choices: null
+    default: -1
+    required: false
     option_strings:
     - --timeout
-    required: false
     type: int
-  - choices: null
-    default: 5000
     default_random: false
-    help: timeout (ms) of the control request, -1 for waiting forever
-    name: timeout_ctrl
+    name: timeout
+  - help: timeout (ms) of the control request, -1 for waiting forever
+    choices: null
+    default: 5000
+    required: false
     option_strings:
     - --timeout-ctrl
-    required: false
     type: int
-  - choices: null
-    default: 10000
     default_random: false
-    help: timeout (ms) of a pea is ready for request, -1 for waiting forever
-    name: timeout_ready
+    name: timeout_ctrl
+  - help: timeout (ms) of a pea is ready for request, -1 for waiting forever
+    choices: null
+    default: 10000
+    required: false
     option_strings:
     - --timeout-ready
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: expose the public IP address to remote when necessary, by default it exposesprivate
+    name: timeout_ready
+  - help: expose the public IP address to remote when necessary, by default it exposesprivate
       IP address, which only allows accessing under the same network/subnet
-    name: expose_public
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --expose-public
-    required: false
     type: bool
-  - choices: null
-    default: 240
     default_random: false
-    help: 'serialize the model in the pod every n seconds if model changes. -1 means
+    name: expose_public
+  - help: 'serialize the model in the pod every n seconds if model changes. -1 means
       --read-only. '
-    name: dump_interval
+    choices: null
+    default: 240
+    required: false
     option_strings:
     - --dump-interval
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: do not allow the pod to modify the model, dump_interval will be ignored
-    name: read_only
+    name: dump_interval
+  - help: do not allow the pod to modify the model, dump_interval will be ignored
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --read-only
-    required: false
     type: bool
-  - choices: null
-    default: false
     default_random: false
-    help: the data and config files are separated for each pea in this pod, only effective
+    name: read_only
+  - help: the data and config files are separated for each pea in this pod, only effective
       when BasePod's `parallel` > 1
-    name: separated_workspace
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --separated-workspace
-    required: false
     type: bool
-  - choices: null
-    default: -1
     default_random: false
-    help: ==SUPPRESS==
-    name: pea_id
+    name: separated_workspace
+  - help: ==SUPPRESS==
+    choices: null
+    default: -1
+    required: false
     option_strings:
     - --pea-id
-    required: false
     type: int
-  - choices: null
-    default: 0
     default_random: false
-    help: ==SUPPRESS==
-    name: num_part
+    name: pea_id
+  - help: ==SUPPRESS==
+    choices: null
+    default: 0
+    required: false
     option_strings:
     - --num-part
-    required: false
     type: int
-  - choices:
+    default_random: false
+    name: num_part
+  - help: ==SUPPRESS==
+    choices:
     - SINGLETON
     - HEAD
     - TAIL
     - PARALLEL
     default: null
-    default_random: false
-    help: ==SUPPRESS==
-    name: role
+    required: false
     option_strings:
     - --role
-    required: false
     type: method
-  - choices:
+    default_random: false
+    name: role
+  - help: skip strategy on error message.
+    choices:
     - NONE
     - EXECUTOR
     - HANDLE
     default: NONE
-    default_random: false
-    help: skip strategy on error message.
-    name: skip_on_error
+    required: false
     option_strings:
     - --skip-on-error
-    required: false
     type: method
-  - choices: null
-    default: -1
     default_random: false
-    help: memory high watermark of this pod in Gigabytes, pod will restart when this
+    name: skip_on_error
+  - help: memory high watermark of this pod in Gigabytes, pod will restart when this
       is reached. -1 means no restriction
-    name: memory_hwm
+    choices: null
+    default: -1
+    required: false
     option_strings:
     - --memory-hwm
-    required: false
     type: int
-  - choices:
+    default_random: false
+    name: memory_hwm
+  - help: the parallel runtime of the pod
+    choices:
     - thread
     - process
     default: process
-    default_random: false
-    help: the parallel runtime of the pod
-    name: runtime
+    required: false
     option_strings:
     - --runtime
-    required: false
     type: str
-  - choices: null
-    default: 60
     default_random: false
-    help: label this pea as inactive when it does not process any request after certain
+    name: runtime
+  - help: label this pea as inactive when it does not process any request after certain
       time (in second)
-    name: max_idle_time
+    choices: null
+    default: 60
+    required: false
     option_strings:
     - --max-idle-time
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: when a process exits, it attempts to terminate all of its daemonic child
+    name: max_idle_time
+  - help: when a process exits, it attempts to terminate all of its daemonic child
       processes. setting it to true basically tell the context manager do not wait
       on this Pea
-    name: daemon
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --daemon
-    required: false
     type: bool
-  - choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     default_random: false
-    help: the yaml config of the logger. note the executor inside will inherit this
+    name: daemon
+  - help: the yaml config of the logger. note the executor inside will inherit this
       log config
-    name: log_config
+    choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    required: false
     option_strings:
     - --log-config
-    required: false
     type: str
-  - choices: null
-    default: false
     default_random: false
-    help: ==SUPPRESS==
-    name: log_remote
+    name: log_config
+  - help: ==SUPPRESS==
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --log-remote
-    required: false
     type: bool
-  - choices: null
-    default: d90bc99e-447f-11eb-b47a-000d3a994774
-    default_random: true
-    help: ==SUPPRESS==
-    name: log_id
+    default_random: false
+    name: log_remote
+  - help: ==SUPPRESS==
+    choices: null
+    default: 19f8dda2-4552-11eb-9178-000d3a9df97a
+    required: false
     option_strings:
     - --log-id
-    required: false
     type: str
-  - choices: null
-    default: null
-    default_random: false
-    help: the SSH server through which the tunnel will be created, can actually be
+    default_random: true
+    name: log_id
+  - help: the SSH server through which the tunnel will be created, can actually be
       a fully specified "user@server:port" ssh url.
-    name: ssh_server
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --ssh-server
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: this specifies a key to be used in ssh login, default None. regular default
+    name: ssh_server
+  - help: this specifies a key to be used in ssh login, default None. regular default
       ssh keys will be used without specifying this argument.
-    name: ssh_keyfile
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --ssh-keyfile
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: ssh password to the ssh server.
-    name: ssh_password
+    name: ssh_keyfile
+  - help: ssh password to the ssh server.
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --ssh-password
-    required: false
     type: str
-  - choices: null
-    default: 0.0.0.0
     default_random: false
-    help: host address of the pea/gateway, by default it is 0.0.0.0.
-    name: host
+    name: ssh_password
+  - help: host address of the pea/gateway, by default it is 0.0.0.0.
+    choices: null
+    default: 0.0.0.0
+    required: false
     option_strings:
     - --host
-    required: false
     type: str
-  - choices: null
-    default: 52323
-    default_random: true
-    help: host port of the gateway, "port-grpc" alias will be removed in future versions
-    name: port_expose
+    default_random: false
+    name: host
+  - help: host port of the gateway, "port-grpc" alias will be removed in future versions
+    choices: null
+    default: 39723
+    required: false
     option_strings:
     - --port-expose
     - --port-grpc
-    required: false
     type: int
-  - choices: null
+    default_random: true
+    name: port_expose
+  - help: maximum send and receive size for grpc server in bytes, -1 means unlimited
+    choices: null
     default: -1
-    default_random: false
-    help: maximum send and receive size for grpc server in bytes, -1 means unlimited
-    name: max_message_size
+    required: false
     option_strings:
     - --max-message-size
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: respect the http_proxy and https_proxy environment variables. otherwise,
+    name: max_message_size
+  - help: respect the http_proxy and https_proxy environment variables. otherwise,
       it will unset these proxy variables before start. gRPC seems to prefer no proxy
-    name: proxy
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --proxy
-    required: false
     type: bool
-  - choices:
+    default_random: false
+    name: proxy
+  - help: host address of the pea/gateway, by default it is 0.0.0.0.
+    choices:
     - SSH
     - JINAD
     default: JINAD
-    default_random: false
-    help: host address of the pea/gateway, by default it is 0.0.0.0.
-    name: remote_access
+    required: false
     option_strings:
     - --remote-access
-    required: false
     type: method
-  - choices: null
-    default: 1
     default_random: false
-    help: number of parallel peas in the pod running at the same time, `port_in` and
+    name: remote_access
+  - help: number of parallel peas in the pod running at the same time, `port_in` and
       `port_out` will be set to random, and routers will be added automatically when
       necessary
-    name: parallel
+    choices: null
+    default: 1
+    required: false
     option_strings:
     - --parallel
     - --shards
-    required: false
     type: int
-  - choices:
+    default_random: false
+    name: parallel
+  - help: 'ANY: only one (whoever is idle) replica polls the message; ALL: all workers
+      poll the message (like a broadcast)'
+    choices:
     - ANY
     - ALL
     - ALL_ASYNC
     default: ANY
-    default_random: false
-    help: 'ANY: only one (whoever is idle) replica polls the message; ALL: all workers
-      poll the message (like a broadcast)'
-    name: polling
+    required: false
     option_strings:
     - --polling
-    required: false
     type: method
-  - choices:
+    default_random: false
+    name: polling
+  - help: the strategy of scheduling workload among peas
+    choices:
     - LOAD_BALANCE
     - ROUND_ROBIN
     default: LOAD_BALANCE
-    default_random: false
-    help: the strategy of scheduling workload among peas
-    name: scheduling
+    required: false
     option_strings:
     - --scheduling
-    required: false
     type: method
-  - choices: null
-    default: null
     default_random: false
-    help: the executor used before sending to all parallels, accepted type follows
+    name: scheduling
+  - help: the executor used before sending to all parallels, accepted type follows
       "--uses"
-    name: uses_before
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --uses-before
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: the executor used after receiving from all parallels, accepted type follows
+    name: uses_before
+  - help: the executor used after receiving from all parallels, accepted type follows
       "--uses"
-    name: uses_after
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --uses-after
-    required: false
     type: str
-  - choices: null
-    default: false
     default_random: false
-    help: shutdown this pod when all peas are idle
-    name: shutdown_idle
+    name: uses_after
+  - help: shutdown this pod when all peas are idle
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --shutdown-idle
-    required: false
     type: bool
+    default_random: false
+    name: shutdown_idle
 - name: flow
   options:
-  - choices: null
+  - help: a yaml file represents a flow
+    choices: null
     default: null
-    default_random: false
-    help: a yaml file represents a flow
-    name: uses
+    required: false
     option_strings:
     - --uses
-    required: false
     type: str
-  - choices: null
-    default: false
     default_random: false
-    help: start a log server for the dashboard
-    name: logserver
+    name: uses
+  - help: start a log server for the dashboard
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --logserver
-    required: false
     type: bool
-  - choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logserver.default.yml
     default_random: false
-    help: the yaml config of the log server
-    name: logserver_config
+    name: logserver
+  - help: the yaml config of the log server
+    choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logserver.default.yml
+    required: false
     option_strings:
     - --logserver-config
-    required: false
     type: str
-  - choices: null
-    default: d90bc9af-447f-11eb-b47a-000d3a994774
-    default_random: true
-    help: ==SUPPRESS==
-    name: log_id
+    default_random: false
+    name: logserver_config
+  - help: ==SUPPRESS==
+    choices: null
+    default: 19f8ddb3-4552-11eb-9178-000d3a9df97a
+    required: false
     option_strings:
     - --log-id
-    required: false
     type: str
-  - choices: null
+    default_random: true
+    name: log_id
+  - help: ==SUPPRESS==
+    choices: null
     default: NONE
-    default_random: false
-    help: ==SUPPRESS==
-    name: optimize_level
+    required: false
     option_strings:
     - --optimize-level
-    required: false
     type: method
-  - choices:
+    default_random: false
+    name: optimize_level
+  - help: type of the output
+    choices:
     - SHELL_PROC
     - SHELL_DOCKER
     - DOCKER_SWARM
     - K8S
     default: SHELL_PROC
-    default_random: false
-    help: type of the output
-    name: output_type
+    required: false
     option_strings:
     - --output-type
-    required: false
     type: method
-  - choices: null
-    default: null
     default_random: false
-    help: output path of the flow
-    name: output_path
+    name: output_type
+  - help: output path of the flow
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --output-path
-    required: false
     type: FileType
-  - choices:
+    default_random: false
+    name: output_path
+  - help: strategy on those inspect pods in the flow. if REMOVE is given then all
+      inspect pods are removed when building the flow
+    choices:
     - HANG
     - REMOVE
     - COLLECT
     default: COLLECT
-    default_random: false
-    help: strategy on those inspect pods in the flow. if REMOVE is given then all
-      inspect pods are removed when building the flow
-    name: inspect
+    required: false
     option_strings:
     - --inspect
-    required: false
     type: method
+    default_random: false
+    name: inspect
 - name: gateway
   options:
-  - choices: null
+  - help: the name of this pea, used to identify the pod and its logs.
+    choices: null
     default: gateway
-    default_random: false
-    help: the name of this pea, used to identify the pod and its logs.
-    name: name
+    required: false
     option_strings:
     - --name
-    required: false
     type: str
-  - choices: null
-    default: d90bc9c0-447f-11eb-b47a-000d3a994774
-    default_random: true
-    help: ==SUPPRESS==
-    name: identity
+    default_random: false
+    name: name
+  - help: ==SUPPRESS==
+    choices: null
+    default: 19f8ddc4-4552-11eb-9178-000d3a9df97a
+    required: false
     option_strings:
     - --identity
-    required: false
     type: str
-  - choices: null
-    default: _pass
-    default_random: false
-    help: the config of the executor, it could be > a YAML file path, > a supported
+    default_random: true
+    name: identity
+  - help: the config of the executor, it could be > a YAML file path, > a supported
       executor's class name, > one of "_clear", "_pass", "_logforward" > the content
       of YAML config (must starts with "!")> a docker image
-    name: uses
+    choices: null
+    default: _pass
+    required: false
     option_strings:
     - --uses
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: the customized python modules need to be imported before loading the executor
-    name: py_modules
+    name: uses
+  - help: the customized python modules need to be imported before loading the executor
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --py-modules
-    required: false
     type: str
-  - choices: null
-    default: BaseExecutor
     default_random: false
-    help: 'The executor config that is passed to the docker image if a docker image
+    name: py_modules
+  - help: 'The executor config that is passed to the docker image if a docker image
       is used in uses. It cannot be another docker image '
-    name: uses_internal
+    choices: null
+    default: BaseExecutor
+    required: false
     option_strings:
     - --uses-internal
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: the entrypoint command overrides the ENTRYPOINT in docker image. when not
+    name: uses_internal
+  - help: the entrypoint command overrides the ENTRYPOINT in docker image. when not
       set then the docker image ENTRYPOINT takes effective.
-    name: entrypoint
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --entrypoint
-    required: false
     type: str
-  - choices: null
-    default: false
     default_random: false
-    help: pull the latest image before running
-    name: pull_latest
+    name: entrypoint
+  - help: pull the latest image before running
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --pull-latest
-    required: false
     type: bool
-  - choices: null
-    default: null
     default_random: false
-    help: the path on the host to be mounted inside the container. they will be mounted
+    name: pull_latest
+  - help: the path on the host to be mounted inside the container. they will be mounted
       to the root path, i.e. /user/test/my-workspace will be mounted to /my-workspace
       inside the container. all volumes are mounted with read-write mode.
-    name: volumes
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --volumes
-    required: false
     type: str
-  - choices: null
-    default: 39631
-    default_random: true
-    help: port for input data, default a random port between [49152, 65535]
-    name: port_in
+    default_random: false
+    name: volumes
+  - help: port for input data, default a random port between [49152, 65535]
+    choices: null
+    default: 46075
+    required: false
     option_strings:
     - --port-in
-    required: false
     type: int
-  - choices: null
-    default: 54339
     default_random: true
-    help: port for output data, default a random port between [49152, 65535]
-    name: port_out
+    name: port_in
+  - help: port for output data, default a random port between [49152, 65535]
+    choices: null
+    default: 38891
+    required: false
     option_strings:
     - --port-out
-    required: false
     type: int
-  - choices: null
+    default_random: true
+    name: port_out
+  - help: host address for input, by default it is 0.0.0.0
+    choices: null
     default: 0.0.0.0
-    default_random: false
-    help: host address for input, by default it is 0.0.0.0
-    name: host_in
+    required: false
     option_strings:
     - --host-in
-    required: false
     type: str
-  - choices: null
-    default: 0.0.0.0
     default_random: false
-    help: host address for output, by default it is 0.0.0.0
-    name: host_out
+    name: host_in
+  - help: host address for output, by default it is 0.0.0.0
+    choices: null
+    default: 0.0.0.0
+    required: false
     option_strings:
     - --host-out
-    required: false
     type: str
-  - choices:
+    default_random: false
+    name: host_out
+  - help: socket type for input port
+    choices:
     - PULL_BIND
     - PULL_CONNECT
     - PUSH_BIND
@@ -861,14 +867,14 @@ methods:
     - ROUTER_BIND
     - DEALER_CONNECT
     default: PULL_CONNECT
-    default_random: false
-    help: socket type for input port
-    name: socket_in
+    required: false
     option_strings:
     - --socket-in
-    required: false
     type: method
-  - choices:
+    default_random: false
+    name: socket_in
+  - help: socket type for output port
+    choices:
     - PULL_BIND
     - PULL_CONNECT
     - PUSH_BIND
@@ -882,327 +888,328 @@ methods:
     - ROUTER_BIND
     - DEALER_CONNECT
     default: PUSH_CONNECT
-    default_random: false
-    help: socket type for output port
-    name: socket_out
+    required: false
     option_strings:
     - --socket-out
-    required: false
     type: method
-  - choices: null
-    default: 57885
-    default_random: true
-    help: port for controlling the pod, default a random port between [49152, 65535]
-    name: port_ctrl
+    default_random: false
+    name: socket_out
+  - help: port for controlling the pod, default a random port between [49152, 65535]
+    choices: null
+    default: 60561
+    required: false
     option_strings:
     - --port-ctrl
-    required: false
     type: int
-  - choices: null
+    default_random: true
+    name: port_ctrl
+  - help: use ipc protocol for control socket
+    choices: null
     default: true
-    default_random: false
-    help: use ipc protocol for control socket
-    name: ctrl_with_ipc
+    required: false
     option_strings:
     - --ctrl-with-ipc
-    required: false
     type: bool
-  - choices: null
-    default: -1
     default_random: false
-    help: timeout (ms) of all requests, -1 for waiting forever
-    name: timeout
+    name: ctrl_with_ipc
+  - help: timeout (ms) of all requests, -1 for waiting forever
+    choices: null
+    default: -1
+    required: false
     option_strings:
     - --timeout
-    required: false
     type: int
-  - choices: null
-    default: 5000
     default_random: false
-    help: timeout (ms) of the control request, -1 for waiting forever
-    name: timeout_ctrl
+    name: timeout
+  - help: timeout (ms) of the control request, -1 for waiting forever
+    choices: null
+    default: 5000
+    required: false
     option_strings:
     - --timeout-ctrl
-    required: false
     type: int
-  - choices: null
-    default: 10000
     default_random: false
-    help: timeout (ms) of a pea is ready for request, -1 for waiting forever
-    name: timeout_ready
+    name: timeout_ctrl
+  - help: timeout (ms) of a pea is ready for request, -1 for waiting forever
+    choices: null
+    default: 10000
+    required: false
     option_strings:
     - --timeout-ready
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: expose the public IP address to remote when necessary, by default it exposesprivate
+    name: timeout_ready
+  - help: expose the public IP address to remote when necessary, by default it exposesprivate
       IP address, which only allows accessing under the same network/subnet
-    name: expose_public
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --expose-public
-    required: false
     type: bool
-  - choices: null
-    default: 240
     default_random: false
-    help: 'serialize the model in the pod every n seconds if model changes. -1 means
+    name: expose_public
+  - help: 'serialize the model in the pod every n seconds if model changes. -1 means
       --read-only. '
-    name: dump_interval
+    choices: null
+    default: 240
+    required: false
     option_strings:
     - --dump-interval
-    required: false
     type: int
-  - choices: null
-    default: true
     default_random: false
-    help: do not allow the pod to modify the model, dump_interval will be ignored
-    name: read_only
+    name: dump_interval
+  - help: do not allow the pod to modify the model, dump_interval will be ignored
+    choices: null
+    default: true
+    required: false
     option_strings:
     - --read-only
-    required: false
     type: bool
-  - choices: null
-    default: false
     default_random: false
-    help: the data and config files are separated for each pea in this pod, only effective
+    name: read_only
+  - help: the data and config files are separated for each pea in this pod, only effective
       when BasePod's `parallel` > 1
-    name: separated_workspace
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --separated-workspace
-    required: false
     type: bool
-  - choices: null
-    default: -1
     default_random: false
-    help: ==SUPPRESS==
-    name: pea_id
+    name: separated_workspace
+  - help: ==SUPPRESS==
+    choices: null
+    default: -1
+    required: false
     option_strings:
     - --pea-id
-    required: false
     type: int
-  - choices: null
-    default: 0
     default_random: false
-    help: ==SUPPRESS==
-    name: num_part
+    name: pea_id
+  - help: ==SUPPRESS==
+    choices: null
+    default: 0
+    required: false
     option_strings:
     - --num-part
-    required: false
     type: int
-  - choices:
+    default_random: false
+    name: num_part
+  - help: ==SUPPRESS==
+    choices:
     - SINGLETON
     - HEAD
     - TAIL
     - PARALLEL
     default: null
-    default_random: false
-    help: ==SUPPRESS==
-    name: role
+    required: false
     option_strings:
     - --role
-    required: false
     type: method
-  - choices:
+    default_random: false
+    name: role
+  - help: skip strategy on error message.
+    choices:
     - NONE
     - EXECUTOR
     - HANDLE
     default: NONE
-    default_random: false
-    help: skip strategy on error message.
-    name: skip_on_error
+    required: false
     option_strings:
     - --skip-on-error
-    required: false
     type: method
-  - choices: null
-    default: -1
     default_random: false
-    help: memory high watermark of this pod in Gigabytes, pod will restart when this
+    name: skip_on_error
+  - help: memory high watermark of this pod in Gigabytes, pod will restart when this
       is reached. -1 means no restriction
-    name: memory_hwm
+    choices: null
+    default: -1
+    required: false
     option_strings:
     - --memory-hwm
-    required: false
     type: int
-  - choices:
+    default_random: false
+    name: memory_hwm
+  - help: the parallel runtime of the pod
+    choices:
     - thread
     - process
     default: process
-    default_random: false
-    help: the parallel runtime of the pod
-    name: runtime
+    required: false
     option_strings:
     - --runtime
-    required: false
     type: str
-  - choices: null
-    default: 60
     default_random: false
-    help: label this pea as inactive when it does not process any request after certain
+    name: runtime
+  - help: label this pea as inactive when it does not process any request after certain
       time (in second)
-    name: max_idle_time
+    choices: null
+    default: 60
+    required: false
     option_strings:
     - --max-idle-time
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: when a process exits, it attempts to terminate all of its daemonic child
+    name: max_idle_time
+  - help: when a process exits, it attempts to terminate all of its daemonic child
       processes. setting it to true basically tell the context manager do not wait
       on this Pea
-    name: daemon
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --daemon
-    required: false
     type: bool
-  - choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     default_random: false
-    help: the yaml config of the logger. note the executor inside will inherit this
+    name: daemon
+  - help: the yaml config of the logger. note the executor inside will inherit this
       log config
-    name: log_config
+    choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    required: false
     option_strings:
     - --log-config
-    required: false
     type: str
-  - choices: null
-    default: false
     default_random: false
-    help: ==SUPPRESS==
-    name: log_remote
+    name: log_config
+  - help: ==SUPPRESS==
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --log-remote
-    required: false
     type: bool
-  - choices: null
-    default: d90bc9c1-447f-11eb-b47a-000d3a994774
-    default_random: true
-    help: ==SUPPRESS==
-    name: log_id
+    default_random: false
+    name: log_remote
+  - help: ==SUPPRESS==
+    choices: null
+    default: 19f8ddc5-4552-11eb-9178-000d3a9df97a
+    required: false
     option_strings:
     - --log-id
-    required: false
     type: str
-  - choices: null
-    default: null
-    default_random: false
-    help: the SSH server through which the tunnel will be created, can actually be
+    default_random: true
+    name: log_id
+  - help: the SSH server through which the tunnel will be created, can actually be
       a fully specified "user@server:port" ssh url.
-    name: ssh_server
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --ssh-server
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: this specifies a key to be used in ssh login, default None. regular default
+    name: ssh_server
+  - help: this specifies a key to be used in ssh login, default None. regular default
       ssh keys will be used without specifying this argument.
-    name: ssh_keyfile
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --ssh-keyfile
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: ssh password to the ssh server.
-    name: ssh_password
+    name: ssh_keyfile
+  - help: ssh password to the ssh server.
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --ssh-password
-    required: false
     type: str
-  - choices: null
-    default: 0.0.0.0
     default_random: false
-    help: host address of the pea/gateway, by default it is 0.0.0.0.
-    name: host
+    name: ssh_password
+  - help: host address of the pea/gateway, by default it is 0.0.0.0.
+    choices: null
+    default: 0.0.0.0
+    required: false
     option_strings:
     - --host
-    required: false
     type: str
-  - choices: null
-    default: 36157
-    default_random: true
-    help: host port of the gateway, "port-grpc" alias will be removed in future versions
-    name: port_expose
+    default_random: false
+    name: host
+  - help: host port of the gateway, "port-grpc" alias will be removed in future versions
+    choices: null
+    default: 47145
+    required: false
     option_strings:
     - --port-expose
     - --port-grpc
-    required: false
     type: int
-  - choices: null
+    default_random: true
+    name: port_expose
+  - help: maximum send and receive size for grpc server in bytes, -1 means unlimited
+    choices: null
     default: -1
-    default_random: false
-    help: maximum send and receive size for grpc server in bytes, -1 means unlimited
-    name: max_message_size
+    required: false
     option_strings:
     - --max-message-size
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: respect the http_proxy and https_proxy environment variables. otherwise,
+    name: max_message_size
+  - help: respect the http_proxy and https_proxy environment variables. otherwise,
       it will unset these proxy variables before start. gRPC seems to prefer no proxy
-    name: proxy
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --proxy
-    required: false
     type: bool
-  - choices:
+    default_random: false
+    name: proxy
+  - help: host address of the pea/gateway, by default it is 0.0.0.0.
+    choices:
     - SSH
     - JINAD
     default: JINAD
-    default_random: false
-    help: host address of the pea/gateway, by default it is 0.0.0.0.
-    name: remote_access
+    required: false
     option_strings:
     - --remote-access
-    required: false
     type: method
-  - choices: null
-    default: 50
     default_random: false
-    help: the number of pre-fetched requests from the client
-    name: prefetch
+    name: remote_access
+  - help: the number of pre-fetched requests from the client
+    choices: null
+    default: 50
+    required: false
     option_strings:
     - --prefetch
-    required: false
     type: int
-  - choices: null
-    default: 1
     default_random: false
-    help: the number of additional requests to fetch on every receive
-    name: prefetch_on_recv
+    name: prefetch
+  - help: the number of additional requests to fetch on every receive
+    choices: null
+    default: 1
+    required: false
     option_strings:
     - --prefetch-on-recv
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: use REST-API as the interface instead of gRPC with port number set to the
+    name: prefetch_on_recv
+  - help: use REST-API as the interface instead of gRPC with port number set to the
       value of "port-expose"
-    name: rest_api
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --rest-api
-    required: false
     type: bool
-  - choices: null
-    default: false
     default_random: false
-    help: comparing the jina and proto version of incoming message with local setup,
+    name: rest_api
+  - help: comparing the jina and proto version of incoming message with local setup,
       mismatch raise an exception
-    name: check_version
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --check-version
-    required: false
     type: bool
-  - choices:
+    default_random: false
+    name: check_version
+  - help: the algorithm used for compressing request data, this can reduce the network
+      overhead but may increase CPU usage
+    choices:
     - NONE
     - LZ4
     - ZLIB
@@ -1210,221 +1217,220 @@ methods:
     - BZ2
     - LZMA
     default: LZ4
-    default_random: false
-    help: the algorithm used for compressing request data, this can reduce the network
-      overhead but may increase CPU usage
-    name: compress
+    required: false
     option_strings:
     - --compress
-    required: false
     type: method
-  - choices: null
-    default: 100
     default_random: false
-    help: the high watermark that triggers the message compression. message bigger
+    name: compress
+  - help: the high watermark that triggers the message compression. message bigger
       than this HWM (in bytes) will be compressed by lz4 algorithm.set this to 0 to
       disable this feature.
-    name: compress_hwm
+    choices: null
+    default: 100
+    required: false
     option_strings:
     - --compress-hwm
-    required: false
     type: int
-  - choices: null
-    default: 0.9
     default_random: false
-    help: the low watermark that enables the sending of a compressed message. compression
+    name: compress_hwm
+  - help: the low watermark that enables the sending of a compressed message. compression
       rate (after_size/before_size) lower than this LWM will be considered as successeful
       compression, and will be sent. Otherwise, it will send the original message
       without compression
-    name: compress_lwm
+    choices: null
+    default: 0.9
+    required: false
     option_strings:
     - --compress-lwm
-    required: false
     type: float
+    default_random: false
+    name: compress_lwm
 - name: ping
   options:
-  - choices: null
+  - help: host address of the target pod/pea, e.g. 0.0.0.0
+    choices: null
     default: null
-    default_random: false
-    help: host address of the target pod/pea, e.g. 0.0.0.0
-    name: host
-    option_strings: []
     required: true
+    option_strings: []
     type: str
-  - choices: null
+    default_random: false
+    name: host
+  - help: the control port of the target pod/pea
+    choices: null
     default: null
-    default_random: false
-    help: the control port of the target pod/pea
-    name: port
-    option_strings: []
     required: true
+    option_strings: []
     type: int
-  - choices: null
-    default: 3000
     default_random: false
-    help: timeout (ms) of one check, -1 for waiting forever
-    name: timeout
+    name: port
+  - help: timeout (ms) of one check, -1 for waiting forever
+    choices: null
+    default: 3000
+    required: false
     option_strings:
     - --timeout
-    required: false
     type: int
-  - choices: null
-    default: 3
     default_random: false
-    help: max number of tried health checks before exit 1
-    name: retries
+    name: timeout
+  - help: max number of tried health checks before exit 1
+    choices: null
+    default: 3
+    required: false
     option_strings:
     - --retries
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: print the response when received
-    name: print_response
+    name: retries
+  - help: print the response when received
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --print-response
-    required: false
     type: bool
+    default_random: false
+    name: print_response
 - name: check
   options:
-  - choices: null
+  - help: the markdown file path for all executors summary
+    choices: null
     default: null
-    default_random: false
-    help: the markdown file path for all executors summary
-    name: summary_exec
+    required: false
     option_strings:
     - --summary-exec
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: the markdown file path for all drivers summary
-    name: summary_driver
+    name: summary_exec
+  - help: the markdown file path for all drivers summary
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --summary-driver
-    required: false
     type: str
+    default_random: false
+    name: summary_driver
 - name: hub
   options: []
 - name: pea
   options:
-  - choices: null
+  - help: the name of this pea, used to identify the pod and its logs.
+    choices: null
     default: null
-    default_random: false
-    help: the name of this pea, used to identify the pod and its logs.
-    name: name
+    required: false
     option_strings:
     - --name
-    required: false
     type: str
-  - choices: null
-    default: d90bca02-447f-11eb-b47a-000d3a994774
-    default_random: true
-    help: ==SUPPRESS==
-    name: identity
+    default_random: false
+    name: name
+  - help: ==SUPPRESS==
+    choices: null
+    default: 19f8de06-4552-11eb-9178-000d3a9df97a
+    required: false
     option_strings:
     - --identity
-    required: false
     type: str
-  - choices: null
-    default: _pass
-    default_random: false
-    help: the config of the executor, it could be > a YAML file path, > a supported
+    default_random: true
+    name: identity
+  - help: the config of the executor, it could be > a YAML file path, > a supported
       executor's class name, > one of "_clear", "_pass", "_logforward" > the content
       of YAML config (must starts with "!")> a docker image
-    name: uses
+    choices: null
+    default: _pass
+    required: false
     option_strings:
     - --uses
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: the customized python modules need to be imported before loading the executor
-    name: py_modules
+    name: uses
+  - help: the customized python modules need to be imported before loading the executor
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --py-modules
-    required: false
     type: str
-  - choices: null
-    default: BaseExecutor
     default_random: false
-    help: 'The executor config that is passed to the docker image if a docker image
+    name: py_modules
+  - help: 'The executor config that is passed to the docker image if a docker image
       is used in uses. It cannot be another docker image '
-    name: uses_internal
+    choices: null
+    default: BaseExecutor
+    required: false
     option_strings:
     - --uses-internal
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: the entrypoint command overrides the ENTRYPOINT in docker image. when not
+    name: uses_internal
+  - help: the entrypoint command overrides the ENTRYPOINT in docker image. when not
       set then the docker image ENTRYPOINT takes effective.
-    name: entrypoint
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --entrypoint
-    required: false
     type: str
-  - choices: null
-    default: false
     default_random: false
-    help: pull the latest image before running
-    name: pull_latest
+    name: entrypoint
+  - help: pull the latest image before running
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --pull-latest
-    required: false
     type: bool
-  - choices: null
-    default: null
     default_random: false
-    help: the path on the host to be mounted inside the container. they will be mounted
+    name: pull_latest
+  - help: the path on the host to be mounted inside the container. they will be mounted
       to the root path, i.e. /user/test/my-workspace will be mounted to /my-workspace
       inside the container. all volumes are mounted with read-write mode.
-    name: volumes
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --volumes
-    required: false
     type: str
-  - choices: null
-    default: 56959
-    default_random: true
-    help: port for input data, default a random port between [49152, 65535]
-    name: port_in
+    default_random: false
+    name: volumes
+  - help: port for input data, default a random port between [49152, 65535]
+    choices: null
+    default: 45233
+    required: false
     option_strings:
     - --port-in
-    required: false
     type: int
-  - choices: null
-    default: 49561
     default_random: true
-    help: port for output data, default a random port between [49152, 65535]
-    name: port_out
+    name: port_in
+  - help: port for output data, default a random port between [49152, 65535]
+    choices: null
+    default: 49117
+    required: false
     option_strings:
     - --port-out
-    required: false
     type: int
-  - choices: null
+    default_random: true
+    name: port_out
+  - help: host address for input, by default it is 0.0.0.0
+    choices: null
     default: 0.0.0.0
-    default_random: false
-    help: host address for input, by default it is 0.0.0.0
-    name: host_in
+    required: false
     option_strings:
     - --host-in
-    required: false
     type: str
-  - choices: null
-    default: 0.0.0.0
     default_random: false
-    help: host address for output, by default it is 0.0.0.0
-    name: host_out
+    name: host_in
+  - help: host address for output, by default it is 0.0.0.0
+    choices: null
+    default: 0.0.0.0
+    required: false
     option_strings:
     - --host-out
-    required: false
     type: str
-  - choices:
+    default_random: false
+    name: host_out
+  - help: socket type for input port
+    choices:
     - PULL_BIND
     - PULL_CONNECT
     - PUSH_BIND
@@ -1438,14 +1444,14 @@ methods:
     - ROUTER_BIND
     - DEALER_CONNECT
     default: PULL_BIND
-    default_random: false
-    help: socket type for input port
-    name: socket_in
+    required: false
     option_strings:
     - --socket-in
-    required: false
     type: method
-  - choices:
+    default_random: false
+    name: socket_in
+  - help: socket type for output port
+    choices:
     - PULL_BIND
     - PULL_CONNECT
     - PUSH_BIND
@@ -1459,462 +1465,456 @@ methods:
     - ROUTER_BIND
     - DEALER_CONNECT
     default: PUSH_BIND
-    default_random: false
-    help: socket type for output port
-    name: socket_out
+    required: false
     option_strings:
     - --socket-out
-    required: false
     type: method
-  - choices: null
-    default: 43495
-    default_random: true
-    help: port for controlling the pod, default a random port between [49152, 65535]
-    name: port_ctrl
+    default_random: false
+    name: socket_out
+  - help: port for controlling the pod, default a random port between [49152, 65535]
+    choices: null
+    default: 52957
+    required: false
     option_strings:
     - --port-ctrl
-    required: false
     type: int
-  - choices: null
+    default_random: true
+    name: port_ctrl
+  - help: use ipc protocol for control socket
+    choices: null
     default: false
-    default_random: false
-    help: use ipc protocol for control socket
-    name: ctrl_with_ipc
+    required: false
     option_strings:
     - --ctrl-with-ipc
-    required: false
     type: bool
-  - choices: null
-    default: -1
     default_random: false
-    help: timeout (ms) of all requests, -1 for waiting forever
-    name: timeout
+    name: ctrl_with_ipc
+  - help: timeout (ms) of all requests, -1 for waiting forever
+    choices: null
+    default: -1
+    required: false
     option_strings:
     - --timeout
-    required: false
     type: int
-  - choices: null
-    default: 5000
     default_random: false
-    help: timeout (ms) of the control request, -1 for waiting forever
-    name: timeout_ctrl
+    name: timeout
+  - help: timeout (ms) of the control request, -1 for waiting forever
+    choices: null
+    default: 5000
+    required: false
     option_strings:
     - --timeout-ctrl
-    required: false
     type: int
-  - choices: null
-    default: 10000
     default_random: false
-    help: timeout (ms) of a pea is ready for request, -1 for waiting forever
-    name: timeout_ready
+    name: timeout_ctrl
+  - help: timeout (ms) of a pea is ready for request, -1 for waiting forever
+    choices: null
+    default: 10000
+    required: false
     option_strings:
     - --timeout-ready
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: expose the public IP address to remote when necessary, by default it exposesprivate
+    name: timeout_ready
+  - help: expose the public IP address to remote when necessary, by default it exposesprivate
       IP address, which only allows accessing under the same network/subnet
-    name: expose_public
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --expose-public
-    required: false
     type: bool
-  - choices: null
-    default: 240
     default_random: false
-    help: 'serialize the model in the pod every n seconds if model changes. -1 means
+    name: expose_public
+  - help: 'serialize the model in the pod every n seconds if model changes. -1 means
       --read-only. '
-    name: dump_interval
+    choices: null
+    default: 240
+    required: false
     option_strings:
     - --dump-interval
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: do not allow the pod to modify the model, dump_interval will be ignored
-    name: read_only
+    name: dump_interval
+  - help: do not allow the pod to modify the model, dump_interval will be ignored
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --read-only
-    required: false
     type: bool
-  - choices: null
-    default: false
     default_random: false
-    help: the data and config files are separated for each pea in this pod, only effective
+    name: read_only
+  - help: the data and config files are separated for each pea in this pod, only effective
       when BasePod's `parallel` > 1
-    name: separated_workspace
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --separated-workspace
-    required: false
     type: bool
-  - choices: null
-    default: -1
     default_random: false
-    help: ==SUPPRESS==
-    name: pea_id
+    name: separated_workspace
+  - help: ==SUPPRESS==
+    choices: null
+    default: -1
+    required: false
     option_strings:
     - --pea-id
-    required: false
     type: int
-  - choices: null
-    default: 0
     default_random: false
-    help: ==SUPPRESS==
-    name: num_part
+    name: pea_id
+  - help: ==SUPPRESS==
+    choices: null
+    default: 0
+    required: false
     option_strings:
     - --num-part
-    required: false
     type: int
-  - choices:
+    default_random: false
+    name: num_part
+  - help: ==SUPPRESS==
+    choices:
     - SINGLETON
     - HEAD
     - TAIL
     - PARALLEL
     default: null
-    default_random: false
-    help: ==SUPPRESS==
-    name: role
+    required: false
     option_strings:
     - --role
-    required: false
     type: method
-  - choices:
+    default_random: false
+    name: role
+  - help: skip strategy on error message.
+    choices:
     - NONE
     - EXECUTOR
     - HANDLE
     default: NONE
-    default_random: false
-    help: skip strategy on error message.
-    name: skip_on_error
+    required: false
     option_strings:
     - --skip-on-error
-    required: false
     type: method
-  - choices: null
-    default: -1
     default_random: false
-    help: memory high watermark of this pod in Gigabytes, pod will restart when this
+    name: skip_on_error
+  - help: memory high watermark of this pod in Gigabytes, pod will restart when this
       is reached. -1 means no restriction
-    name: memory_hwm
+    choices: null
+    default: -1
+    required: false
     option_strings:
     - --memory-hwm
-    required: false
     type: int
-  - choices:
+    default_random: false
+    name: memory_hwm
+  - help: the parallel runtime of the pod
+    choices:
     - thread
     - process
     default: process
-    default_random: false
-    help: the parallel runtime of the pod
-    name: runtime
+    required: false
     option_strings:
     - --runtime
-    required: false
     type: str
-  - choices: null
-    default: 60
     default_random: false
-    help: label this pea as inactive when it does not process any request after certain
+    name: runtime
+  - help: label this pea as inactive when it does not process any request after certain
       time (in second)
-    name: max_idle_time
+    choices: null
+    default: 60
+    required: false
     option_strings:
     - --max-idle-time
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: when a process exits, it attempts to terminate all of its daemonic child
+    name: max_idle_time
+  - help: when a process exits, it attempts to terminate all of its daemonic child
       processes. setting it to true basically tell the context manager do not wait
       on this Pea
-    name: daemon
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --daemon
-    required: false
     type: bool
-  - choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     default_random: false
-    help: the yaml config of the logger. note the executor inside will inherit this
+    name: daemon
+  - help: the yaml config of the logger. note the executor inside will inherit this
       log config
-    name: log_config
+    choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    required: false
     option_strings:
     - --log-config
-    required: false
     type: str
-  - choices: null
-    default: false
     default_random: false
-    help: ==SUPPRESS==
-    name: log_remote
+    name: log_config
+  - help: ==SUPPRESS==
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --log-remote
-    required: false
     type: bool
-  - choices: null
-    default: d90bca03-447f-11eb-b47a-000d3a994774
-    default_random: true
-    help: ==SUPPRESS==
-    name: log_id
+    default_random: false
+    name: log_remote
+  - help: ==SUPPRESS==
+    choices: null
+    default: 19f8de07-4552-11eb-9178-000d3a9df97a
+    required: false
     option_strings:
     - --log-id
-    required: false
     type: str
-  - choices: null
-    default: null
-    default_random: false
-    help: the SSH server through which the tunnel will be created, can actually be
+    default_random: true
+    name: log_id
+  - help: the SSH server through which the tunnel will be created, can actually be
       a fully specified "user@server:port" ssh url.
-    name: ssh_server
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --ssh-server
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: this specifies a key to be used in ssh login, default None. regular default
+    name: ssh_server
+  - help: this specifies a key to be used in ssh login, default None. regular default
       ssh keys will be used without specifying this argument.
-    name: ssh_keyfile
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --ssh-keyfile
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: ssh password to the ssh server.
-    name: ssh_password
+    name: ssh_keyfile
+  - help: ssh password to the ssh server.
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --ssh-password
-    required: false
     type: str
-  - choices: null
-    default: 0.0.0.0
     default_random: false
-    help: host address of the pea/gateway, by default it is 0.0.0.0.
-    name: host
+    name: ssh_password
+  - help: host address of the pea/gateway, by default it is 0.0.0.0.
+    choices: null
+    default: 0.0.0.0
+    required: false
     option_strings:
     - --host
-    required: false
     type: str
-  - choices: null
-    default: 40941
-    default_random: true
-    help: host port of the gateway, "port-grpc" alias will be removed in future versions
-    name: port_expose
+    default_random: false
+    name: host
+  - help: host port of the gateway, "port-grpc" alias will be removed in future versions
+    choices: null
+    default: 56665
+    required: false
     option_strings:
     - --port-expose
     - --port-grpc
-    required: false
     type: int
-  - choices: null
+    default_random: true
+    name: port_expose
+  - help: maximum send and receive size for grpc server in bytes, -1 means unlimited
+    choices: null
     default: -1
-    default_random: false
-    help: maximum send and receive size for grpc server in bytes, -1 means unlimited
-    name: max_message_size
+    required: false
     option_strings:
     - --max-message-size
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: respect the http_proxy and https_proxy environment variables. otherwise,
+    name: max_message_size
+  - help: respect the http_proxy and https_proxy environment variables. otherwise,
       it will unset these proxy variables before start. gRPC seems to prefer no proxy
-    name: proxy
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --proxy
-    required: false
     type: bool
-  - choices:
+    default_random: false
+    name: proxy
+  - help: host address of the pea/gateway, by default it is 0.0.0.0.
+    choices:
     - SSH
     - JINAD
     default: JINAD
-    default_random: false
-    help: host address of the pea/gateway, by default it is 0.0.0.0.
-    name: remote_access
+    required: false
     option_strings:
     - --remote-access
-    required: false
     type: method
+    default_random: false
+    name: remote_access
 - name: log
   options:
-  - choices: null
+  - help: the regular expression for grouping logs
+    choices: null
     default: (.*@\d+)\[
-    default_random: false
-    help: the regular expression for grouping logs
-    name: groupby_regex
+    required: false
     option_strings:
     - --groupby-regex
-    required: false
     type: str
-  - choices: null
-    default: 5
     default_random: false
-    help: refresh time interval in seconds, set to -1 to persist all grouped logs
-    name: refresh_time
+    name: groupby_regex
+  - help: refresh time interval in seconds, set to -1 to persist all grouped logs
+    choices: null
+    default: 5
+    required: false
     option_strings:
     - --refresh-time
-    required: false
     type: int
+    default_random: false
+    name: refresh_time
 - name: client
   options:
-  - choices: null
+  - help: host address of the pea/gateway, by default it is 0.0.0.0.
+    choices: null
     default: 0.0.0.0
-    default_random: false
-    help: host address of the pea/gateway, by default it is 0.0.0.0.
-    name: host
+    required: false
     option_strings:
     - --host
-    required: false
     type: str
-  - choices: null
-    default: 48847
-    default_random: true
-    help: host port of the gateway, "port-grpc" alias will be removed in future versions
-    name: port_expose
+    default_random: false
+    name: host
+  - help: host port of the gateway, "port-grpc" alias will be removed in future versions
+    choices: null
+    default: 47179
+    required: false
     option_strings:
     - --port-expose
     - --port-grpc
-    required: false
     type: int
-  - choices: null
+    default_random: true
+    name: port_expose
+  - help: maximum send and receive size for grpc server in bytes, -1 means unlimited
+    choices: null
     default: -1
-    default_random: false
-    help: maximum send and receive size for grpc server in bytes, -1 means unlimited
-    name: max_message_size
+    required: false
     option_strings:
     - --max-message-size
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: respect the http_proxy and https_proxy environment variables. otherwise,
+    name: max_message_size
+  - help: respect the http_proxy and https_proxy environment variables. otherwise,
       it will unset these proxy variables before start. gRPC seems to prefer no proxy
-    name: proxy
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --proxy
-    required: false
     type: bool
-  - choices:
+    default_random: false
+    name: proxy
+  - help: host address of the pea/gateway, by default it is 0.0.0.0.
+    choices:
     - SSH
     - JINAD
     default: JINAD
-    default_random: false
-    help: host address of the pea/gateway, by default it is 0.0.0.0.
-    name: remote_access
+    required: false
     option_strings:
     - --remote-access
-    required: false
     type: method
-  - choices: null
-    default: 100
     default_random: false
-    help: the number of documents in each request
-    name: batch_size
+    name: remote_access
+  - help: the number of documents in each request
+    choices: null
+    default: 100
+    required: false
     option_strings:
     - --batch-size
-    required: false
     type: int
-  - choices:
+    default_random: false
+    name: batch_size
+  - help: the mode of the client and the server
+    choices:
     - INDEX
     - SEARCH
     - TRAIN
     - CONTROL
     default: null
-    default_random: false
-    help: the mode of the client and the server
-    name: mode
+    required: false
     option_strings:
     - --mode
-    required: false
     type: method
-  - choices: null
-    default: null
     default_random: false
-    help: top_k results returned in the search mode
-    name: top_k
+    name: mode
+  - help: top_k results returned in the search mode
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --top-k
-    required: false
     type: int
-  - choices: null
-    default: null
     default_random: false
-    help: MIME type of the input, useful when input-type is set to BUFFER
-    name: mime_type
+    name: top_k
+  - help: MIME type of the input, useful when input-type is set to BUFFER
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --mime-type
-    required: false
     type: str
-  - choices:
+    default_random: false
+    name: mime_type
+  - help: which field the output function should work with
+    choices:
     - REQUEST
     - BODY
     - DOCS
     - GROUNDTRUTHS
     default: REQUEST
-    default_random: false
-    help: which field the output function should work with
-    name: callback_on
+    required: false
     option_strings:
     - --callback-on
-    required: false
     type: method
-  - choices: null
-    default: 10000
     default_random: false
-    help: timeout (ms) of a pea is ready for request, -1 for waiting forever
-    name: timeout_ready
+    name: callback_on
+  - help: timeout (ms) of a pea is ready for request, -1 for waiting forever
+    choices: null
+    default: 10000
+    required: false
     option_strings:
     - --timeout-ready
-    required: false
     type: int
-  - choices: null
-    default: false
     default_random: false
-    help: skip dry run (connectivity test) before sending every request
-    name: skip_dry_run
+    name: timeout_ready
+  - help: skip dry run (connectivity test) before sending every request
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --skip-dry-run
-    required: false
     type: bool
-  - choices: null
-    default: false
     default_random: false
-    help: if to continue on all requests when callback function throws an error
-    name: continue_on_error
+    name: skip_dry_run
+  - help: if to continue on all requests when callback function throws an error
+    choices: null
+    default: false
+    required: false
     option_strings:
     - --continue-on-error
-    required: false
     type: bool
+    default_random: false
+    name: continue_on_error
 - name: export-api
   options:
-  - choices: null
+  - help: the YAML file path for storing the exported API
+    choices: null
     default: null
-    default_random: false
-    help: the YAML file path for storing the exported API
-    name: yaml_path
+    required: false
     option_strings:
     - --yaml-path
-    required: false
     type: str
-  - choices: null
-    default: null
     default_random: false
-    help: the JSON file path for storing the exported API
-    name: json_path
+    name: yaml_path
+  - help: the JSON file path for storing the exported API
+    choices: null
+    default: null
+    required: false
     option_strings:
     - --json-path
-    required: false
     type: str
-name: Jina
+    default_random: false
+    name: json_path
 revision: null
-source: https://github.com/jina-ai/jina/tree/master
-url: https://jina.ai
-vendor: Jina AI Limited
-version: 0.8.13
