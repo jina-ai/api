@@ -7,14 +7,14 @@ source: https://github.com/jina-ai/jina/tree/master
 url: https://jina.ai
 docs: https://docs.jina.ai
 authors: dev-team@jina.ai
-version: 0.8.14
+version: 0.8.15
 methods:
 - name: hello-world
   options:
   - help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
     choices: null
-    default: c02f71ee-4754-11eb-bb28-000d3a8e24e2
+    default: ecb2aeee-490b-11eb-bf06-000d3a106732
     required: false
     option_strings:
     - --workdir
@@ -169,7 +169,7 @@ methods:
     name: name
   - help: ==SUPPRESS==
     choices: null
-    default: c02f71ff-4754-11eb-bb28-000d3a8e24e2
+    default: ecb2aeff-490b-11eb-bf06-000d3a106732
     required: false
     option_strings:
     - --identity
@@ -238,7 +238,7 @@ methods:
     name: volumes
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 50229
+    default: 49455
     required: false
     option_strings:
     - --port-in
@@ -247,7 +247,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 34091
+    default: 41469
     required: false
     option_strings:
     - --port-out
@@ -316,7 +316,7 @@ methods:
     name: socket_out
   - help: port for controlling the pod, default a random port between [49152, 65535]
     choices: null
-    default: 37793
+    default: 35145
     required: false
     option_strings:
     - --port-ctrl
@@ -504,7 +504,7 @@ methods:
     name: log_remote
   - help: ==SUPPRESS==
     choices: null
-    default: c02f7200-4754-11eb-bb28-000d3a8e24e2
+    default: ecb2af00-490b-11eb-bf06-000d3a106732
     required: false
     option_strings:
     - --log-id
@@ -551,7 +551,7 @@ methods:
     name: host
   - help: host port of the gateway, "port-grpc" alias will be removed in future versions
     choices: null
-    default: 45247
+    default: 51105
     required: false
     option_strings:
     - --port-expose
@@ -685,7 +685,7 @@ methods:
     name: logserver_config
   - help: ==SUPPRESS==
     choices: null
-    default: c02f7211-4754-11eb-bb28-000d3a8e24e2
+    default: ecb2af11-490b-11eb-bf06-000d3a106732
     required: false
     option_strings:
     - --log-id
@@ -749,7 +749,7 @@ methods:
     name: name
   - help: ==SUPPRESS==
     choices: null
-    default: c02f7222-4754-11eb-bb28-000d3a8e24e2
+    default: ecb2af22-490b-11eb-bf06-000d3a106732
     required: false
     option_strings:
     - --identity
@@ -818,7 +818,7 @@ methods:
     name: volumes
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 35715
+    default: 45729
     required: false
     option_strings:
     - --port-in
@@ -827,7 +827,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 33883
+    default: 60905
     required: false
     option_strings:
     - --port-out
@@ -896,7 +896,7 @@ methods:
     name: socket_out
   - help: port for controlling the pod, default a random port between [49152, 65535]
     choices: null
-    default: 37209
+    default: 38265
     required: false
     option_strings:
     - --port-ctrl
@@ -1084,7 +1084,7 @@ methods:
     name: log_remote
   - help: ==SUPPRESS==
     choices: null
-    default: c02f7223-4754-11eb-bb28-000d3a8e24e2
+    default: ecb2af23-490b-11eb-bf06-000d3a106732
     required: false
     option_strings:
     - --log-id
@@ -1131,7 +1131,7 @@ methods:
     name: host
   - help: host port of the gateway, "port-grpc" alias will be removed in future versions
     choices: null
-    default: 38829
+    default: 43391
     required: false
     option_strings:
     - --port-expose
@@ -1326,7 +1326,7 @@ methods:
     name: name
   - help: ==SUPPRESS==
     choices: null
-    default: c02f7264-4754-11eb-bb28-000d3a8e24e2
+    default: ecb2af64-490b-11eb-bf06-000d3a106732
     required: false
     option_strings:
     - --identity
@@ -1395,7 +1395,7 @@ methods:
     name: volumes
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 44153
+    default: 53919
     required: false
     option_strings:
     - --port-in
@@ -1404,7 +1404,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 39165
+    default: 34919
     required: false
     option_strings:
     - --port-out
@@ -1473,7 +1473,7 @@ methods:
     name: socket_out
   - help: port for controlling the pod, default a random port between [49152, 65535]
     choices: null
-    default: 45827
+    default: 56541
     required: false
     option_strings:
     - --port-ctrl
@@ -1661,7 +1661,7 @@ methods:
     name: log_remote
   - help: ==SUPPRESS==
     choices: null
-    default: c02f7265-4754-11eb-bb28-000d3a8e24e2
+    default: ecb2af65-490b-11eb-bf06-000d3a106732
     required: false
     option_strings:
     - --log-id
@@ -1708,7 +1708,7 @@ methods:
     name: host
   - help: host port of the gateway, "port-grpc" alias will be removed in future versions
     choices: null
-    default: 35763
+    default: 37225
     required: false
     option_strings:
     - --port-expose
@@ -1779,7 +1779,7 @@ methods:
     name: host
   - help: host port of the gateway, "port-grpc" alias will be removed in future versions
     choices: null
-    default: 38943
+    default: 50515
     required: false
     option_strings:
     - --port-expose
