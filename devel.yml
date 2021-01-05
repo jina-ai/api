@@ -14,7 +14,7 @@ methods:
   - help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
     choices: null
-    default: 4eac4992-4f88-11eb-a78a-000d3a8de71c
+    default: 37bccec0-4f8b-11eb-a049-000d3a8e2bc1
     required: false
     option_strings:
     - --workdir
@@ -179,7 +179,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 4eac49a3-4f88-11eb-a78a-000d3a8de71c
+    default: 37bcced1-4f8b-11eb-a049-000d3a8e2bc1
     required: false
     option_strings:
     - --identity
@@ -188,7 +188,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 4eac49a4-4f88-11eb-a78a-000d3a8de71c
+    default: 37bcced2-4f8b-11eb-a049-000d3a8e2bc1
     required: false
     option_strings:
     - --log-id
@@ -198,7 +198,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 36057
+    default: 36967
     required: false
     option_strings:
     - --port-ctrl
@@ -274,7 +274,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 40465
+    default: 52875
     required: false
     option_strings:
     - --port-in
@@ -283,7 +283,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 40669
+    default: 38759
     required: false
     option_strings:
     - --port-out
@@ -448,9 +448,12 @@ methods:
     type: bool
     default_random: false
     name: pull_latest
-  - help: the path on the host to be mounted inside the container. they will be mounted
-      to the root path, i.e. /user/test/my-workspace will be mounted to /my-workspace
-      inside the container. all volumes are mounted with read-write mode.
+  - help: the path on the host to be mounted inside the container. if separated by
+      ":" the first part will be considered as the local host path and the second
+      part is the path in the container system. If no split provided, then the basename
+      of that directory will be mounted into container's root path, e.g. --volumes="/user/test/my-workspace"
+      will be mounted into "/my-workspace" inside the container. all volumes are mounted
+      with read-write mode.
     choices: null
     default: null
     required: false
@@ -470,7 +473,7 @@ methods:
     name: host
   - help: host port of the gateway, "port-grpc" alias will be removed in future versions
     choices: null
-    default: 41981
+    default: 44547
     required: false
     option_strings:
     - --port-expose
@@ -693,7 +696,7 @@ methods:
     name: logserver_config
   - help: ==SUPPRESS==
     choices: null
-    default: 4eac49b5-4f88-11eb-a78a-000d3a8de71c
+    default: 37bccee3-4f8b-11eb-a049-000d3a8e2bc1
     required: false
     option_strings:
     - --log-id
@@ -767,7 +770,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 4eac49c6-4f88-11eb-a78a-000d3a8de71c
+    default: 37bccef4-4f8b-11eb-a049-000d3a8e2bc1
     required: false
     option_strings:
     - --identity
@@ -776,7 +779,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 4eac49c7-4f88-11eb-a78a-000d3a8de71c
+    default: 37bccef5-4f8b-11eb-a049-000d3a8e2bc1
     required: false
     option_strings:
     - --log-id
@@ -786,7 +789,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 41927
+    default: 59611
     required: false
     option_strings:
     - --port-ctrl
@@ -862,7 +865,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 41223
+    default: 45859
     required: false
     option_strings:
     - --port-in
@@ -871,7 +874,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 34301
+    default: 34181
     required: false
     option_strings:
     - --port-out
@@ -1065,7 +1068,7 @@ methods:
     name: host
   - help: host port of the gateway, "port-grpc" alias will be removed in future versions
     choices: null
-    default: 58407
+    default: 46215
     required: false
     option_strings:
     - --port-expose
@@ -1254,7 +1257,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 4eac4a08-4f88-11eb-a78a-000d3a8de71c
+    default: 37bccf36-4f8b-11eb-a049-000d3a8e2bc1
     required: false
     option_strings:
     - --identity
@@ -1263,7 +1266,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 4eac4a09-4f88-11eb-a78a-000d3a8de71c
+    default: 37bccf37-4f8b-11eb-a049-000d3a8e2bc1
     required: false
     option_strings:
     - --log-id
@@ -1273,7 +1276,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 53153
+    default: 36803
     required: false
     option_strings:
     - --port-ctrl
@@ -1349,7 +1352,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 41573
+    default: 37143
     required: false
     option_strings:
     - --port-in
@@ -1358,7 +1361,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 42399
+    default: 56745
     required: false
     option_strings:
     - --port-out
@@ -1523,9 +1526,12 @@ methods:
     type: bool
     default_random: false
     name: pull_latest
-  - help: the path on the host to be mounted inside the container. they will be mounted
-      to the root path, i.e. /user/test/my-workspace will be mounted to /my-workspace
-      inside the container. all volumes are mounted with read-write mode.
+  - help: the path on the host to be mounted inside the container. if separated by
+      ":" the first part will be considered as the local host path and the second
+      part is the path in the container system. If no split provided, then the basename
+      of that directory will be mounted into container's root path, e.g. --volumes="/user/test/my-workspace"
+      will be mounted into "/my-workspace" inside the container. all volumes are mounted
+      with read-write mode.
     choices: null
     default: null
     required: false
@@ -1545,7 +1551,7 @@ methods:
     name: host
   - help: host port of the gateway, "port-grpc" alias will be removed in future versions
     choices: null
-    default: 53065
+    default: 33565
     required: false
     option_strings:
     - --port-expose
@@ -1784,7 +1790,7 @@ methods:
     name: host
   - help: host port of the gateway, "port-grpc" alias will be removed in future versions
     choices: null
-    default: 55407
+    default: 38275
     required: false
     option_strings:
     - --port-expose
