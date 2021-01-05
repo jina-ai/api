@@ -7,14 +7,14 @@ source: https://github.com/jina-ai/jina/tree/master
 url: https://jina.ai
 docs: https://docs.jina.ai
 authors: dev-team@jina.ai
-version: 0.9.2
+version: 0.9.3
 methods:
 - name: hello-world
   options:
   - help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
     choices: null
-    default: a8d43be2-4f91-11eb-973f-002248446bfe
+    default: 55f1d988-4f9c-11eb-b9de-000d3ac45be8
     required: false
     option_strings:
     - --workdir
@@ -179,7 +179,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: a8d43bf3-4f91-11eb-973f-002248446bfe
+    default: 55f1d999-4f9c-11eb-b9de-000d3ac45be8
     required: false
     option_strings:
     - --identity
@@ -188,7 +188,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: a8d43bf4-4f91-11eb-973f-002248446bfe
+    default: 55f1d99a-4f9c-11eb-b9de-000d3ac45be8
     required: false
     option_strings:
     - --log-id
@@ -198,7 +198,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 33857
+    default: 44729
     required: false
     option_strings:
     - --port-ctrl
@@ -274,7 +274,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 38131
+    default: 40055
     required: false
     option_strings:
     - --port-in
@@ -283,7 +283,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 54345
+    default: 51683
     required: false
     option_strings:
     - --port-out
@@ -473,7 +473,7 @@ methods:
     name: host
   - help: host port of the gateway, "port-grpc" alias will be removed in future versions
     choices: null
-    default: 60495
+    default: 44661
     required: false
     option_strings:
     - --port-expose
@@ -696,7 +696,7 @@ methods:
     name: logserver_config
   - help: ==SUPPRESS==
     choices: null
-    default: a8d43c05-4f91-11eb-973f-002248446bfe
+    default: 55f1d9ab-4f9c-11eb-b9de-000d3ac45be8
     required: false
     option_strings:
     - --log-id
@@ -770,7 +770,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: a8d43c16-4f91-11eb-973f-002248446bfe
+    default: 55f1d9bc-4f9c-11eb-b9de-000d3ac45be8
     required: false
     option_strings:
     - --identity
@@ -779,7 +779,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: a8d43c17-4f91-11eb-973f-002248446bfe
+    default: 55f1d9bd-4f9c-11eb-b9de-000d3ac45be8
     required: false
     option_strings:
     - --log-id
@@ -789,7 +789,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 34359
+    default: 47213
     required: false
     option_strings:
     - --port-ctrl
@@ -865,7 +865,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 45791
+    default: 55255
     required: false
     option_strings:
     - --port-in
@@ -874,7 +874,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 48301
+    default: 41793
     required: false
     option_strings:
     - --port-out
@@ -1068,7 +1068,7 @@ methods:
     name: host
   - help: host port of the gateway, "port-grpc" alias will be removed in future versions
     choices: null
-    default: 57889
+    default: 47237
     required: false
     option_strings:
     - --port-expose
@@ -1257,7 +1257,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: a8d43c58-4f91-11eb-973f-002248446bfe
+    default: 55f1d9fe-4f9c-11eb-b9de-000d3ac45be8
     required: false
     option_strings:
     - --identity
@@ -1266,7 +1266,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: a8d43c59-4f91-11eb-973f-002248446bfe
+    default: 55f1d9ff-4f9c-11eb-b9de-000d3ac45be8
     required: false
     option_strings:
     - --log-id
@@ -1276,7 +1276,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 45815
+    default: 57327
     required: false
     option_strings:
     - --port-ctrl
@@ -1352,7 +1352,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 54709
+    default: 36753
     required: false
     option_strings:
     - --port-in
@@ -1361,7 +1361,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 57297
+    default: 56871
     required: false
     option_strings:
     - --port-out
@@ -1551,7 +1551,7 @@ methods:
     name: host
   - help: host port of the gateway, "port-grpc" alias will be removed in future versions
     choices: null
-    default: 44401
+    default: 40025
     required: false
     option_strings:
     - --port-expose
@@ -1790,7 +1790,7 @@ methods:
     name: host
   - help: host port of the gateway, "port-grpc" alias will be removed in future versions
     choices: null
-    default: 57195
+    default: 49587
     required: false
     option_strings:
     - --port-expose
