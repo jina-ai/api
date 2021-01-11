@@ -7,14 +7,14 @@ source: https://github.com/jina-ai/jina/tree/master
 url: https://jina.ai
 docs: https://docs.jina.ai
 authors: dev-team@jina.ai
-version: 0.9.4
+version: 0.9.7
 methods:
 - name: hello-world
   options:
   - help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
     choices: null
-    default: 303f1030-53bb-11eb-8ebe-000d3a8d275d
+    default: bba27c3a-5405-11eb-92f7-000d3a9df226
     required: false
     option_strings:
     - --workdir
@@ -179,7 +179,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 303f1041-53bb-11eb-8ebe-000d3a8d275d
+    default: bba27c4b-5405-11eb-92f7-000d3a9df226
     required: false
     option_strings:
     - --identity
@@ -188,17 +188,27 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 303f1042-53bb-11eb-8ebe-000d3a8d275d
+    default: bba27c4c-5405-11eb-92f7-000d3a9df226
     required: false
     option_strings:
     - --log-id
     type: str
     default_random: true
     name: log_id
+  - help: if true then exception stack information to be added to the logging message,
+      useful in debugging
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --show-exc-info
+    type: bool
+    default_random: false
+    name: show_exc_info
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 40059
+    default: 36431
     required: false
     option_strings:
     - --port-ctrl
@@ -274,7 +284,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 47067
+    default: 52535
     required: false
     option_strings:
     - --port-in
@@ -283,7 +293,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 48299
+    default: 44549
     required: false
     option_strings:
     - --port-out
@@ -473,7 +483,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 55657
+    default: 37985
     required: false
     option_strings:
     - --port-expose
@@ -538,16 +548,6 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-  - help: if true then exception stack information to be added to the logging message,
-      useful in debugging
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --show-exc-info
-    type: bool
-    default_random: false
-    name: show_exc_info
   - help: ==SUPPRESS==
     choices: null
     default: -1
@@ -694,7 +694,7 @@ methods:
     name: logserver_config
   - help: ==SUPPRESS==
     choices: null
-    default: 303f1053-53bb-11eb-8ebe-000d3a8d275d
+    default: bba27c5d-5405-11eb-92f7-000d3a9df226
     required: false
     option_strings:
     - --log-id
@@ -768,7 +768,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 303f1064-53bb-11eb-8ebe-000d3a8d275d
+    default: bba27c6e-5405-11eb-92f7-000d3a9df226
     required: false
     option_strings:
     - --identity
@@ -777,17 +777,27 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 303f1065-53bb-11eb-8ebe-000d3a8d275d
+    default: bba27c6f-5405-11eb-92f7-000d3a9df226
     required: false
     option_strings:
     - --log-id
     type: str
     default_random: true
     name: log_id
+  - help: if true then exception stack information to be added to the logging message,
+      useful in debugging
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --show-exc-info
+    type: bool
+    default_random: false
+    name: show_exc_info
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 43373
+    default: 53869
     required: false
     option_strings:
     - --port-ctrl
@@ -863,7 +873,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 57113
+    default: 35859
     required: false
     option_strings:
     - --port-in
@@ -872,7 +882,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 36203
+    default: 48601
     required: false
     option_strings:
     - --port-out
@@ -1066,7 +1076,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 59125
+    default: 36659
     required: false
     option_strings:
     - --port-expose
@@ -1131,16 +1141,6 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-  - help: if true then exception stack information to be added to the logging message,
-      useful in debugging
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --show-exc-info
-    type: bool
-    default_random: false
-    name: show_exc_info
   - help: ==SUPPRESS==
     choices: null
     default: -1
@@ -1253,7 +1253,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 303f10a6-53bb-11eb-8ebe-000d3a8d275d
+    default: bba27cb0-5405-11eb-92f7-000d3a9df226
     required: false
     option_strings:
     - --identity
@@ -1262,17 +1262,27 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 303f10a7-53bb-11eb-8ebe-000d3a8d275d
+    default: bba27cb1-5405-11eb-92f7-000d3a9df226
     required: false
     option_strings:
     - --log-id
     type: str
     default_random: true
     name: log_id
+  - help: if true then exception stack information to be added to the logging message,
+      useful in debugging
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --show-exc-info
+    type: bool
+    default_random: false
+    name: show_exc_info
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 53195
+    default: 44609
     required: false
     option_strings:
     - --port-ctrl
@@ -1348,7 +1358,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 45951
+    default: 51875
     required: false
     option_strings:
     - --port-in
@@ -1357,7 +1367,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 56669
+    default: 60113
     required: false
     option_strings:
     - --port-out
@@ -1547,7 +1557,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 36045
+    default: 60759
     required: false
     option_strings:
     - --port-expose
@@ -1612,16 +1622,6 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-  - help: if true then exception stack information to be added to the logging message,
-      useful in debugging
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --show-exc-info
-    type: bool
-    default_random: false
-    name: show_exc_info
   - help: ==SUPPRESS==
     choices: null
     default: -1
@@ -1784,7 +1784,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 49669
+    default: 50265
     required: false
     option_strings:
     - --port-expose
