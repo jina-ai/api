@@ -14,31 +14,13 @@ methods:
   - help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
     choices: null
-    default: 7dd2ca08-54fb-11eb-b3e7-000d3aa425c1
+    default: 9d1b15aa-550a-11eb-b4c2-000d3a98d7a3
     required: false
     option_strings:
     - --workdir
     type: str
     default_random: true
     name: workdir
-  - help: start a log server for the dashboard
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --logserver
-    type: bool
-    default_random: false
-    name: logserver
-  - help: the yaml config of the log server
-    choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logserver.default.yml
-    required: false
-    option_strings:
-    - --logserver-config
-    type: str
-    default_random: false
-    name: logserver_config
   - help: specify the proxy when downloading sample data
     choices: null
     default: null
@@ -179,7 +161,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 7dd2ca19-54fb-11eb-b3e7-000d3aa425c1
+    default: 9d1b15bb-550a-11eb-b4c2-000d3a98d7a3
     required: false
     option_strings:
     - --identity
@@ -188,7 +170,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 7dd2ca1a-54fb-11eb-b3e7-000d3aa425c1
+    default: 9d1b15bc-550a-11eb-b4c2-000d3a98d7a3
     required: false
     option_strings:
     - --log-id
@@ -208,7 +190,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 59689
+    default: 53815
     required: false
     option_strings:
     - --port-ctrl
@@ -284,7 +266,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 46963
+    default: 54391
     required: false
     option_strings:
     - --port-in
@@ -293,7 +275,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 47775
+    default: 35595
     required: false
     option_strings:
     - --port-out
@@ -483,7 +465,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 35869
+    default: 60817
     required: false
     option_strings:
     - --port-expose
@@ -674,27 +656,9 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: start a log server for the dashboard
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --logserver
-    type: bool
-    default_random: false
-    name: logserver
-  - help: the yaml config of the log server
-    choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logserver.default.yml
-    required: false
-    option_strings:
-    - --logserver-config
-    type: str
-    default_random: false
-    name: logserver_config
   - help: ==SUPPRESS==
     choices: null
-    default: 7dd2ca2b-54fb-11eb-b3e7-000d3aa425c1
+    default: 9d1b15cd-550a-11eb-b4c2-000d3a98d7a3
     required: false
     option_strings:
     - --log-id
@@ -768,7 +732,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 7dd2ca3c-54fb-11eb-b3e7-000d3aa425c1
+    default: 9d1b15de-550a-11eb-b4c2-000d3a98d7a3
     required: false
     option_strings:
     - --identity
@@ -777,7 +741,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 7dd2ca3d-54fb-11eb-b3e7-000d3aa425c1
+    default: 9d1b15df-550a-11eb-b4c2-000d3a98d7a3
     required: false
     option_strings:
     - --log-id
@@ -797,7 +761,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 33017
+    default: 33887
     required: false
     option_strings:
     - --port-ctrl
@@ -873,7 +837,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 38341
+    default: 58825
     required: false
     option_strings:
     - --port-in
@@ -882,7 +846,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 42125
+    default: 37579
     required: false
     option_strings:
     - --port-out
@@ -1076,7 +1040,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 48143
+    default: 60089
     required: false
     option_strings:
     - --port-expose
@@ -1253,7 +1217,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 7dd2ca7e-54fb-11eb-b3e7-000d3aa425c1
+    default: 9d1b1620-550a-11eb-b4c2-000d3a98d7a3
     required: false
     option_strings:
     - --identity
@@ -1262,7 +1226,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 7dd2ca7f-54fb-11eb-b3e7-000d3aa425c1
+    default: 9d1b1621-550a-11eb-b4c2-000d3a98d7a3
     required: false
     option_strings:
     - --log-id
@@ -1282,7 +1246,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 36637
+    default: 50317
     required: false
     option_strings:
     - --port-ctrl
@@ -1358,7 +1322,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 36929
+    default: 58443
     required: false
     option_strings:
     - --port-in
@@ -1367,7 +1331,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 51769
+    default: 47933
     required: false
     option_strings:
     - --port-out
@@ -1557,7 +1521,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 47375
+    default: 46491
     required: false
     option_strings:
     - --port-expose
@@ -1784,7 +1748,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 48595
+    default: 37001
     required: false
     option_strings:
     - --port-expose
