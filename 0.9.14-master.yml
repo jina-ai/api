@@ -14,7 +14,7 @@ methods:
   - help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
     choices: null
-    default: 80649e1e-5635-11eb-94b2-00224844d4e3
+    default: adb74076-5642-11eb-9b42-000d3a1cf82d
     required: false
     option_strings:
     - --workdir
@@ -75,15 +75,16 @@ methods:
     type: str
     default_random: false
     name: index_labels_url
-  - help: the batch size in indexing
+  - help: the request size in indexing (the maximum number of documents that will
+      be included in a Request before sending it)
     choices: null
     default: 1024
     required: false
     option_strings:
-    - --index-batch-size
+    - --index-request-size
     type: int
     default_random: false
-    name: index_batch_size
+    name: index_request_size
   - help: the yaml path of the query flow
     choices: null
     default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.query.yml
@@ -111,15 +112,16 @@ methods:
     type: str
     default_random: false
     name: query_labels_url
-  - help: the batch size in searching
+  - help: the request size in searching (the maximum number of documents that will
+      be included in a Request before sending it)
     choices: null
     default: 32
     required: false
     option_strings:
-    - --query-batch-size
+    - --query-request-size
     type: int
     default_random: false
-    name: query_batch_size
+    name: query_request_size
   - help: number of queries to visualize
     choices: null
     default: 128
@@ -161,7 +163,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 80649e2f-5635-11eb-94b2-00224844d4e3
+    default: adb74087-5642-11eb-9b42-000d3a1cf82d
     required: false
     option_strings:
     - --identity
@@ -170,7 +172,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 80649e30-5635-11eb-94b2-00224844d4e3
+    default: adb74088-5642-11eb-9b42-000d3a1cf82d
     required: false
     option_strings:
     - --log-id
@@ -190,7 +192,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 49521
+    default: 42577
     required: false
     option_strings:
     - --port-ctrl
@@ -266,7 +268,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 57005
+    default: 58463
     required: false
     option_strings:
     - --port-in
@@ -275,7 +277,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 44747
+    default: 35687
     required: false
     option_strings:
     - --port-out
@@ -465,7 +467,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 43495
+    default: 34503
     required: false
     option_strings:
     - --port-expose
@@ -658,7 +660,7 @@ methods:
     name: uses
   - help: ==SUPPRESS==
     choices: null
-    default: 80649e41-5635-11eb-94b2-00224844d4e3
+    default: adb74099-5642-11eb-9b42-000d3a1cf82d
     required: false
     option_strings:
     - --log-id
@@ -732,7 +734,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 80649e52-5635-11eb-94b2-00224844d4e3
+    default: adb740aa-5642-11eb-9b42-000d3a1cf82d
     required: false
     option_strings:
     - --identity
@@ -741,7 +743,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 80649e53-5635-11eb-94b2-00224844d4e3
+    default: adb740ab-5642-11eb-9b42-000d3a1cf82d
     required: false
     option_strings:
     - --log-id
@@ -761,7 +763,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 42565
+    default: 49297
     required: false
     option_strings:
     - --port-ctrl
@@ -837,7 +839,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 56779
+    default: 43729
     required: false
     option_strings:
     - --port-in
@@ -846,7 +848,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 54217
+    default: 59455
     required: false
     option_strings:
     - --port-out
@@ -1040,7 +1042,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 45937
+    default: 58777
     required: false
     option_strings:
     - --port-expose
@@ -1217,7 +1219,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 80649e94-5635-11eb-94b2-00224844d4e3
+    default: adb740ec-5642-11eb-9b42-000d3a1cf82d
     required: false
     option_strings:
     - --identity
@@ -1226,7 +1228,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 80649e95-5635-11eb-94b2-00224844d4e3
+    default: adb740ed-5642-11eb-9b42-000d3a1cf82d
     required: false
     option_strings:
     - --log-id
@@ -1246,7 +1248,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 56425
+    default: 52869
     required: false
     option_strings:
     - --port-ctrl
@@ -1322,7 +1324,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 46569
+    default: 52235
     required: false
     option_strings:
     - --port-in
@@ -1331,7 +1333,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 59189
+    default: 41541
     required: false
     option_strings:
     - --port-out
@@ -1521,7 +1523,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 46359
+    default: 49975
     required: false
     option_strings:
     - --port-expose
@@ -1635,10 +1637,11 @@ methods:
     default: 100
     required: false
     option_strings:
+    - --request-size
     - --batch-size
     type: int
     default_random: false
-    name: batch_size
+    name: request_size
   - help: the mode of the client and the server
     choices:
     - INDEX
@@ -1748,7 +1751,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 50389
+    default: 38987
     required: false
     option_strings:
     - --port-expose
