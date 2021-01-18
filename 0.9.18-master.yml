@@ -14,7 +14,7 @@ methods:
   - help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
     choices: null
-    default: 394c7496-59a7-11eb-baf8-00224844dedd
+    default: cfb8f506-59c2-11eb-a677-000d3a8dc1f1
     required: false
     option_strings:
     - --workdir
@@ -163,7 +163,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 394c74a7-59a7-11eb-baf8-00224844dedd
+    default: cfb8f517-59c2-11eb-a677-000d3a8dc1f1
     required: false
     option_strings:
     - --identity
@@ -172,7 +172,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 394c74a8-59a7-11eb-baf8-00224844dedd
+    default: cfb8f518-59c2-11eb-a677-000d3a8dc1f1
     required: false
     option_strings:
     - --log-id
@@ -192,7 +192,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 40145
+    default: 47075
     required: false
     option_strings:
     - --port-ctrl
@@ -268,7 +268,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 42115
+    default: 46019
     required: false
     option_strings:
     - --port-in
@@ -277,7 +277,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 44241
+    default: 54643
     required: false
     option_strings:
     - --port-out
@@ -467,7 +467,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 47081
+    default: 55369
     required: false
     option_strings:
     - --port-expose
@@ -554,8 +554,8 @@ methods:
     type: method
     default_random: false
     name: pea_role
-  - help: the executor used before sending to all parallels, accepted type follows
-      "--uses"
+  - help: the executor attached after the Peas described by --uses, typically before
+      sending to all parallels, accepted type follows "--uses"
     choices: null
     default: null
     required: false
@@ -564,8 +564,8 @@ methods:
     type: str
     default_random: false
     name: uses_before
-  - help: the executor used after receiving from all parallels, accepted type follows
-      "--uses"
+  - help: the executor attached after the Peas described by --uses, typically used
+      for receiving from all parallels, accepted type follows "--uses"
     choices: null
     default: null
     required: false
@@ -574,6 +574,17 @@ methods:
     type: str
     default_random: false
     name: uses_after
+  - help: a flag to disable `uses-before` or `uses-after` if parallel is equal to
+      1. Usefulto parametrize parallelization and sharding without having `uses_after`
+      or `uses_before` taking extra processes and network hops
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --remove-uses-ba
+    type: bool
+    default_random: false
+    name: remove_uses_ba
   - help: number of parallel peas in the pod running at the same time, `port_in` and
       `port_out` will be set to random, and routers will be added automatically when
       necessary
@@ -660,7 +671,7 @@ methods:
     name: uses
   - help: ==SUPPRESS==
     choices: null
-    default: 394c74b9-59a7-11eb-baf8-00224844dedd
+    default: cfb8f529-59c2-11eb-a677-000d3a8dc1f1
     required: false
     option_strings:
     - --log-id
@@ -734,7 +745,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 394c74ca-59a7-11eb-baf8-00224844dedd
+    default: cfb8f53a-59c2-11eb-a677-000d3a8dc1f1
     required: false
     option_strings:
     - --identity
@@ -743,7 +754,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 394c74cb-59a7-11eb-baf8-00224844dedd
+    default: cfb8f53b-59c2-11eb-a677-000d3a8dc1f1
     required: false
     option_strings:
     - --log-id
@@ -763,7 +774,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 60927
+    default: 45525
     required: false
     option_strings:
     - --port-ctrl
@@ -839,7 +850,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 39669
+    default: 35417
     required: false
     option_strings:
     - --port-in
@@ -848,7 +859,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 57241
+    default: 35923
     required: false
     option_strings:
     - --port-out
@@ -1042,7 +1053,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 41389
+    default: 36053
     required: false
     option_strings:
     - --port-expose
@@ -1219,7 +1230,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: 394c750c-59a7-11eb-baf8-00224844dedd
+    default: cfb8f57c-59c2-11eb-a677-000d3a8dc1f1
     required: false
     option_strings:
     - --identity
@@ -1228,7 +1239,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: 394c750d-59a7-11eb-baf8-00224844dedd
+    default: cfb8f57d-59c2-11eb-a677-000d3a8dc1f1
     required: false
     option_strings:
     - --log-id
@@ -1248,7 +1259,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 33385
+    default: 34489
     required: false
     option_strings:
     - --port-ctrl
@@ -1324,7 +1335,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 55255
+    default: 50823
     required: false
     option_strings:
     - --port-in
@@ -1333,7 +1344,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 43057
+    default: 43565
     required: false
     option_strings:
     - --port-out
@@ -1523,7 +1534,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 44581
+    default: 54209
     required: false
     option_strings:
     - --port-expose
@@ -1751,7 +1762,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 50285
+    default: 57383
     required: false
     option_strings:
     - --port-expose
