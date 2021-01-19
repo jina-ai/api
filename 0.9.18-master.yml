@@ -14,12 +14,13 @@ methods:
   - help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
     choices: null
-    default: 4ead2baa-5a47-11eb-be65-00224844bc1a
+    default: 2aa81ed8-5aa8-11eb-81d6-000d3a9ec2a9
     required: false
     option_strings:
     - --workdir
     type: str
     default_random: true
+    default_factory: random_identity
     name: workdir
   - help: specify the proxy when downloading sample data
     choices: null
@@ -142,7 +143,7 @@ methods:
     name: top_k
 - name: pod
   options:
-  - help: the name of this Pea, used to identify the pea/pod and its logs.
+  - help: the name of this object.
     choices: null
     default: null
     required: false
@@ -161,24 +162,6 @@ methods:
     type: str
     default_random: false
     name: log_config
-  - help: ==SUPPRESS==
-    choices: null
-    default: 4ead2bbb-5a47-11eb-be65-00224844bc1a
-    required: false
-    option_strings:
-    - --identity
-    type: str
-    default_random: true
-    name: identity
-  - help: ==SUPPRESS==
-    choices: null
-    default: 4ead2bbc-5a47-11eb-be65-00224844bc1a
-    required: false
-    option_strings:
-    - --log-id
-    type: str
-    default_random: true
-    name: log_id
   - help: if true then exception stack information to be added to the logging message,
       useful in debugging
     choices: null
@@ -192,12 +175,13 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 42403
+    default: 48299
     required: false
     option_strings:
     - --port-ctrl
     type: int
     default_random: true
+    default_factory: random_port
     name: port_ctrl
   - help: use ipc protocol for control socket
     choices: null
@@ -268,21 +252,23 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 33813
+    default: 57653
     required: false
     option_strings:
     - --port-in
     type: int
     default_random: true
+    default_factory: random_port
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 58959
+    default: 46265
     required: false
     option_strings:
     - --port-out
     type: int
     default_random: true
+    default_factory: random_port
     name: port_out
   - help: host address for input, by default it is 0.0.0.0
     choices: null
@@ -320,7 +306,7 @@ methods:
     required: false
     option_strings:
     - --socket-in
-    type: method
+    type: str
     default_random: false
     name: socket_in
   - help: socket type for output port
@@ -341,7 +327,7 @@ methods:
     required: false
     option_strings:
     - --socket-out
-    type: method
+    type: str
     default_random: false
     name: socket_out
   - help: max number of retries when socket is conflict
@@ -401,18 +387,9 @@ methods:
     required: false
     option_strings:
     - --skip-on-error
-    type: method
+    type: str
     default_random: false
     name: skip_on_error
-  - help: ==SUPPRESS==
-    choices: null
-    default: 0
-    required: false
-    option_strings:
-    - --num-part
-    type: int
-    default_random: false
-    name: num_part
   - help: 'The executor config that is passed to the docker image if a docker image
       is used in uses. It cannot be another docker image '
     choices: null
@@ -467,13 +444,61 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 38953
+    default: 52323
     required: false
     option_strings:
     - --port-expose
     type: int
     default_random: true
+    default_factory: random_port
     name: port_expose
+  - help: the manager of remote Jina
+    choices:
+    - SSH
+    - JINAD
+    default: JINAD
+    required: false
+    option_strings:
+    - --remote-manager
+    type: str
+    default_random: false
+    name: remote_manager
+  - help: do not display the streaming of remote logs on local console
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --silent-remote-logs
+    type: bool
+    default_random: false
+    name: silent_remote_logs
+  - help: the files on the host to be uploaded to the remote workspace. This can be
+      useful when your Pod has more file dependencies beyond a single YAML file, e.g.
+      Python files, data files. Note (1) currently only flatten structure is supported,
+      which means if you upload `[./foo/a.py, ./foo/b.pp, ./bar/c.yml]`, then they
+      will be put under the _same_ workspace on the remote, losing all hierarchies.
+      (2) By default, `--uses` YAML file is always uploaded. (3) Uploaded files are
+      by default isolated across the runs. To ensure files are submitted to the same
+      workspace across different runs, use `--workspace-id`.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --upload-files
+    type: str
+    default_random: false
+    name: upload_files
+  - help: the UUID for identifying the workspace on remote. When not given then remote
+      will assign a random one. Multiple Pea/Pod/Flow will work under the same workspace
+      if they share the same `workspace-id`.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --workspace-id
+    type: str
+    default_random: false
+    name: workspace_id
   - help: the Pea attempts to terminate all of its Runtime child processes/threads
       on existing. setting it to true basically tell the Pea do not wait on the Runtime
       when closing
@@ -494,7 +519,7 @@ methods:
     option_strings:
     - --runtime-backend
     - --runtime
-    type: method
+    type: str
     default_random: false
     name: runtime_backend
   - help: the runtime class to run inside the pea
@@ -532,28 +557,6 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-  - help: ==SUPPRESS==
-    choices: null
-    default: -1
-    required: false
-    option_strings:
-    - --pea-id
-    type: int
-    default_random: false
-    name: pea_id
-  - help: ==SUPPRESS==
-    choices:
-    - SINGLETON
-    - HEAD
-    - TAIL
-    - PARALLEL
-    default: SINGLETON
-    required: false
-    option_strings:
-    - --pea-role
-    type: method
-    default_random: false
-    name: pea_role
   - help: the executor attached after the Peas described by --uses, typically before
       sending to all parallels, accepted type follows "--uses"
     choices: null
@@ -607,7 +610,7 @@ methods:
     required: false
     option_strings:
     - --polling
-    type: method
+    type: str
     default_random: false
     name: polling
   - help: the strategy of scheduling workload among peas
@@ -618,48 +621,40 @@ methods:
     required: false
     option_strings:
     - --scheduling
-    type: method
+    type: str
     default_random: false
     name: scheduling
-  - help: the way of managing remote runtime
-    choices:
-    - SSH
-    - JINAD
-    default: JINAD
-    required: false
-    option_strings:
-    - --remote-access
-    type: method
-    default_random: false
-    name: remote_access
-  - help: the way of managing remote runtime
-    choices:
-    - PEA
-    - POD
-    default: POD
-    required: false
-    option_strings:
-    - --remote-type
-    type: method
-    default_random: false
-    name: remote_type
-  - help: ==SUPPRESS==
-    choices:
-    - POD
-    - JOIN
-    - INSPECT
-    - GATEWAY
-    - INSPECT_AUX_PASS
-    - JOIN_INSPECT
+- name: flow
+  options:
+  - help: the name of this object.
+    choices: null
     default: null
     required: false
     option_strings:
-    - --pod-role
-    type: method
+    - --name
+    type: str
     default_random: false
-    name: pod_role
-- name: flow
-  options:
+    name: name
+  - help: the yaml config of the logger. note the executor inside will inherit this
+      log config
+    choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    required: false
+    option_strings:
+    - --log-config
+    type: str
+    default_random: false
+    name: log_config
+  - help: if true then exception stack information to be added to the logging message,
+      useful in debugging
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --show-exc-info
+    type: bool
+    default_random: false
+    name: show_exc_info
   - help: a yaml file represents a flow
     choices: null
     default: null
@@ -669,46 +664,6 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: ==SUPPRESS==
-    choices: null
-    default: 4ead2bcd-5a47-11eb-be65-00224844bc1a
-    required: false
-    option_strings:
-    - --log-id
-    type: str
-    default_random: true
-    name: log_id
-  - help: ==SUPPRESS==
-    choices: null
-    default: NONE
-    required: false
-    option_strings:
-    - --optimize-level
-    type: method
-    default_random: false
-    name: optimize_level
-  - help: type of the output
-    choices:
-    - SHELL_PROC
-    - SHELL_DOCKER
-    - DOCKER_SWARM
-    - K8S
-    default: SHELL_PROC
-    required: false
-    option_strings:
-    - --output-type
-    type: method
-    default_random: false
-    name: output_type
-  - help: output path of the flow
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --output-path
-    type: FileType
-    default_random: false
-    name: output_path
   - help: strategy on those inspect pods in the flow. if REMOVE is given then all
       inspect pods are removed when building the flow
     choices:
@@ -719,12 +674,12 @@ methods:
     required: false
     option_strings:
     - --inspect
-    type: method
+    type: str
     default_random: false
     name: inspect
 - name: gateway
   options:
-  - help: the name of this Pea, used to identify the pea/pod and its logs.
+  - help: the name of this object.
     choices: null
     default: gateway
     required: false
@@ -743,24 +698,6 @@ methods:
     type: str
     default_random: false
     name: log_config
-  - help: ==SUPPRESS==
-    choices: null
-    default: 4ead2bde-5a47-11eb-be65-00224844bc1a
-    required: false
-    option_strings:
-    - --identity
-    type: str
-    default_random: true
-    name: identity
-  - help: ==SUPPRESS==
-    choices: null
-    default: 4ead2bdf-5a47-11eb-be65-00224844bc1a
-    required: false
-    option_strings:
-    - --log-id
-    type: str
-    default_random: true
-    name: log_id
   - help: if true then exception stack information to be added to the logging message,
       useful in debugging
     choices: null
@@ -774,12 +711,13 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 58841
+    default: 36455
     required: false
     option_strings:
     - --port-ctrl
     type: int
     default_random: true
+    default_factory: random_port
     name: port_ctrl
   - help: use ipc protocol for control socket
     choices: null
@@ -850,21 +788,23 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 40555
+    default: 34191
     required: false
     option_strings:
     - --port-in
     type: int
     default_random: true
+    default_factory: random_port
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 57493
+    default: 60555
     required: false
     option_strings:
     - --port-out
     type: int
     default_random: true
+    default_factory: random_port
     name: port_out
   - help: host address for input, by default it is 0.0.0.0
     choices: null
@@ -902,7 +842,7 @@ methods:
     required: false
     option_strings:
     - --socket-in
-    type: method
+    type: str
     default_random: false
     name: socket_in
   - help: socket type for output port
@@ -923,7 +863,7 @@ methods:
     required: false
     option_strings:
     - --socket-out
-    type: method
+    type: str
     default_random: false
     name: socket_out
   - help: max number of retries when socket is conflict
@@ -983,18 +923,9 @@ methods:
     required: false
     option_strings:
     - --skip-on-error
-    type: method
+    type: str
     default_random: false
     name: skip_on_error
-  - help: ==SUPPRESS==
-    choices: null
-    default: 0
-    required: false
-    option_strings:
-    - --num-part
-    type: int
-    default_random: false
-    name: num_part
   - help: maximum send and receive size for gRPC server in bytes, -1 means unlimited
     choices: null
     default: -1
@@ -1053,12 +984,13 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 45823
+    default: 46685
     required: false
     option_strings:
     - --port-expose
     type: int
     default_random: true
+    default_factory: random_port
     name: port_expose
   - help: the Pea attempts to terminate all of its Runtime child processes/threads
       on existing. setting it to true basically tell the Pea do not wait on the Runtime
@@ -1080,7 +1012,7 @@ methods:
     option_strings:
     - --runtime-backend
     - --runtime
-    type: method
+    type: str
     default_random: false
     name: runtime_backend
   - help: the runtime class to run inside the pea
@@ -1118,28 +1050,6 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-  - help: ==SUPPRESS==
-    choices: null
-    default: -1
-    required: false
-    option_strings:
-    - --pea-id
-    type: int
-    default_random: false
-    name: pea_id
-  - help: ==SUPPRESS==
-    choices:
-    - SINGLETON
-    - HEAD
-    - TAIL
-    - PARALLEL
-    default: SINGLETON
-    required: false
-    option_strings:
-    - --pea-role
-    type: method
-    default_random: false
-    name: pea_role
 - name: ping
   options:
   - help: host address of the target pod/pea, e.g. 0.0.0.0
@@ -1209,7 +1119,7 @@ methods:
   options: []
 - name: pea
   options:
-  - help: the name of this Pea, used to identify the pea/pod and its logs.
+  - help: the name of this object.
     choices: null
     default: null
     required: false
@@ -1228,24 +1138,6 @@ methods:
     type: str
     default_random: false
     name: log_config
-  - help: ==SUPPRESS==
-    choices: null
-    default: 4ead2c20-5a47-11eb-be65-00224844bc1a
-    required: false
-    option_strings:
-    - --identity
-    type: str
-    default_random: true
-    name: identity
-  - help: ==SUPPRESS==
-    choices: null
-    default: 4ead2c21-5a47-11eb-be65-00224844bc1a
-    required: false
-    option_strings:
-    - --log-id
-    type: str
-    default_random: true
-    name: log_id
   - help: if true then exception stack information to be added to the logging message,
       useful in debugging
     choices: null
@@ -1259,12 +1151,13 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 51951
+    default: 50555
     required: false
     option_strings:
     - --port-ctrl
     type: int
     default_random: true
+    default_factory: random_port
     name: port_ctrl
   - help: use ipc protocol for control socket
     choices: null
@@ -1335,21 +1228,23 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 49987
+    default: 59725
     required: false
     option_strings:
     - --port-in
     type: int
     default_random: true
+    default_factory: random_port
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 40499
+    default: 33875
     required: false
     option_strings:
     - --port-out
     type: int
     default_random: true
+    default_factory: random_port
     name: port_out
   - help: host address for input, by default it is 0.0.0.0
     choices: null
@@ -1387,7 +1282,7 @@ methods:
     required: false
     option_strings:
     - --socket-in
-    type: method
+    type: str
     default_random: false
     name: socket_in
   - help: socket type for output port
@@ -1408,7 +1303,7 @@ methods:
     required: false
     option_strings:
     - --socket-out
-    type: method
+    type: str
     default_random: false
     name: socket_out
   - help: max number of retries when socket is conflict
@@ -1468,18 +1363,9 @@ methods:
     required: false
     option_strings:
     - --skip-on-error
-    type: method
+    type: str
     default_random: false
     name: skip_on_error
-  - help: ==SUPPRESS==
-    choices: null
-    default: 0
-    required: false
-    option_strings:
-    - --num-part
-    type: int
-    default_random: false
-    name: num_part
   - help: 'The executor config that is passed to the docker image if a docker image
       is used in uses. It cannot be another docker image '
     choices: null
@@ -1534,13 +1420,61 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 47917
+    default: 42247
     required: false
     option_strings:
     - --port-expose
     type: int
     default_random: true
+    default_factory: random_port
     name: port_expose
+  - help: the manager of remote Jina
+    choices:
+    - SSH
+    - JINAD
+    default: JINAD
+    required: false
+    option_strings:
+    - --remote-manager
+    type: str
+    default_random: false
+    name: remote_manager
+  - help: do not display the streaming of remote logs on local console
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --silent-remote-logs
+    type: bool
+    default_random: false
+    name: silent_remote_logs
+  - help: the files on the host to be uploaded to the remote workspace. This can be
+      useful when your Pod has more file dependencies beyond a single YAML file, e.g.
+      Python files, data files. Note (1) currently only flatten structure is supported,
+      which means if you upload `[./foo/a.py, ./foo/b.pp, ./bar/c.yml]`, then they
+      will be put under the _same_ workspace on the remote, losing all hierarchies.
+      (2) By default, `--uses` YAML file is always uploaded. (3) Uploaded files are
+      by default isolated across the runs. To ensure files are submitted to the same
+      workspace across different runs, use `--workspace-id`.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --upload-files
+    type: str
+    default_random: false
+    name: upload_files
+  - help: the UUID for identifying the workspace on remote. When not given then remote
+      will assign a random one. Multiple Pea/Pod/Flow will work under the same workspace
+      if they share the same `workspace-id`.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --workspace-id
+    type: str
+    default_random: false
+    name: workspace_id
   - help: the Pea attempts to terminate all of its Runtime child processes/threads
       on existing. setting it to true basically tell the Pea do not wait on the Runtime
       when closing
@@ -1561,7 +1495,7 @@ methods:
     option_strings:
     - --runtime-backend
     - --runtime
-    type: method
+    type: str
     default_random: false
     name: runtime_backend
   - help: the runtime class to run inside the pea
@@ -1599,28 +1533,6 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-  - help: ==SUPPRESS==
-    choices: null
-    default: -1
-    required: false
-    option_strings:
-    - --pea-id
-    type: int
-    default_random: false
-    name: pea_id
-  - help: ==SUPPRESS==
-    choices:
-    - SINGLETON
-    - HEAD
-    - TAIL
-    - PARALLEL
-    default: SINGLETON
-    required: false
-    option_strings:
-    - --pea-role
-    type: method
-    default_random: false
-    name: pea_role
 - name: log
   options:
   - help: the regular expression for grouping logs
@@ -1665,7 +1577,7 @@ methods:
     required: false
     option_strings:
     - --mode
-    type: method
+    type: str
     default_random: false
     name: mode
   - help: top_k results returned in the search mode
@@ -1762,12 +1674,13 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 38745
+    default: 41979
     required: false
     option_strings:
     - --port-expose
     type: int
     default_random: true
+    default_factory: random_port
     name: port_expose
 - name: export-api
   options:
