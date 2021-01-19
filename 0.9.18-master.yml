@@ -14,7 +14,7 @@ methods:
   - help: the workdir for hello-world demo, all data, indices, shards and outputs
       will be saved there
     choices: null
-    default: cfb8f506-59c2-11eb-a677-000d3a8dc1f1
+    default: 4ead2baa-5a47-11eb-be65-00224844bc1a
     required: false
     option_strings:
     - --workdir
@@ -163,7 +163,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: cfb8f517-59c2-11eb-a677-000d3a8dc1f1
+    default: 4ead2bbb-5a47-11eb-be65-00224844bc1a
     required: false
     option_strings:
     - --identity
@@ -172,7 +172,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: cfb8f518-59c2-11eb-a677-000d3a8dc1f1
+    default: 4ead2bbc-5a47-11eb-be65-00224844bc1a
     required: false
     option_strings:
     - --log-id
@@ -192,7 +192,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 47075
+    default: 42403
     required: false
     option_strings:
     - --port-ctrl
@@ -268,7 +268,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 46019
+    default: 33813
     required: false
     option_strings:
     - --port-in
@@ -277,7 +277,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 54643
+    default: 58959
     required: false
     option_strings:
     - --port-out
@@ -467,7 +467,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 55369
+    default: 38953
     required: false
     option_strings:
     - --port-expose
@@ -671,7 +671,7 @@ methods:
     name: uses
   - help: ==SUPPRESS==
     choices: null
-    default: cfb8f529-59c2-11eb-a677-000d3a8dc1f1
+    default: 4ead2bcd-5a47-11eb-be65-00224844bc1a
     required: false
     option_strings:
     - --log-id
@@ -745,7 +745,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: cfb8f53a-59c2-11eb-a677-000d3a8dc1f1
+    default: 4ead2bde-5a47-11eb-be65-00224844bc1a
     required: false
     option_strings:
     - --identity
@@ -754,7 +754,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: cfb8f53b-59c2-11eb-a677-000d3a8dc1f1
+    default: 4ead2bdf-5a47-11eb-be65-00224844bc1a
     required: false
     option_strings:
     - --log-id
@@ -774,7 +774,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 45525
+    default: 58841
     required: false
     option_strings:
     - --port-ctrl
@@ -850,7 +850,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 35417
+    default: 40555
     required: false
     option_strings:
     - --port-in
@@ -859,7 +859,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 35923
+    default: 57493
     required: false
     option_strings:
     - --port-out
@@ -1053,7 +1053,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 36053
+    default: 45823
     required: false
     option_strings:
     - --port-expose
@@ -1230,7 +1230,7 @@ methods:
     name: log_config
   - help: ==SUPPRESS==
     choices: null
-    default: cfb8f57c-59c2-11eb-a677-000d3a8dc1f1
+    default: 4ead2c20-5a47-11eb-be65-00224844bc1a
     required: false
     option_strings:
     - --identity
@@ -1239,7 +1239,7 @@ methods:
     name: identity
   - help: ==SUPPRESS==
     choices: null
-    default: cfb8f57d-59c2-11eb-a677-000d3a8dc1f1
+    default: 4ead2c21-5a47-11eb-be65-00224844bc1a
     required: false
     option_strings:
     - --log-id
@@ -1259,7 +1259,7 @@ methods:
   - help: port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 34489
+    default: 51951
     required: false
     option_strings:
     - --port-ctrl
@@ -1335,7 +1335,7 @@ methods:
     name: py_modules
   - help: port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 50823
+    default: 49987
     required: false
     option_strings:
     - --port-in
@@ -1344,7 +1344,7 @@ methods:
     name: port_in
   - help: port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 43565
+    default: 40499
     required: false
     option_strings:
     - --port-out
@@ -1534,7 +1534,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 54209
+    default: 47917
     required: false
     option_strings:
     - --port-expose
@@ -1762,7 +1762,7 @@ methods:
     name: host
   - help: host port exposed to the public
     choices: null
-    default: 57383
+    default: 38745
     required: false
     option_strings:
     - --port-expose
