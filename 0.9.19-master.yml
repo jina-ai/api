@@ -11,10 +11,10 @@ version: 0.9.19
 methods:
 - name: hello-world
   options:
-  - help: the workdir for hello-world demo, all data, indices, shards and outputs
-      will be saved there
+  - help: The workdir for hello-world demoall data, indices, shards and outputs will
+      be saved there
     choices: null
-    default: f0c4d4ff-7901-4633-a602-804580ee5d1e
+    default: b40bf2d3-2723-4330-93b8-0a3ae79f17fc
     required: false
     option_strings:
     - --workdir
@@ -22,7 +22,7 @@ methods:
     default_random: true
     default_factory: random_identity
     name: workdir
-  - help: specify the proxy when downloading sample data
+  - help: The proxy when downloading sample data
     choices: null
     default: null
     required: false
@@ -31,7 +31,7 @@ methods:
     type: str
     default_random: false
     name: download_proxy
-  - help: number of shards when index and query
+  - help: The number of shards when index and query
     choices: null
     default: 2
     required: false
@@ -40,7 +40,7 @@ methods:
     type: int
     default_random: false
     name: shards
-  - help: number of parallel when index and query
+  - help: The number of parallel when index and query
     choices: null
     default: 2
     required: false
@@ -49,7 +49,7 @@ methods:
     type: int
     default_random: false
     name: parallel
-  - help: the yaml path of the index flow
+  - help: The yaml path of the index flow
     choices: null
     default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.index.yml
     required: false
@@ -58,7 +58,7 @@ methods:
     type: str
     default_random: false
     name: uses_index
-  - help: the url of index data (should be in idx3-ubyte.gz format)
+  - help: The url of index data (should be in idx3-ubyte.gz format)
     choices: null
     default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz
     required: false
@@ -67,7 +67,7 @@ methods:
     type: str
     default_random: false
     name: index_data_url
-  - help: the url of index labels data (should be in idx3-ubyte.gz format)
+  - help: The url of index labels data (should be in idx3-ubyte.gz format)
     choices: null
     default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz
     required: false
@@ -76,7 +76,7 @@ methods:
     type: str
     default_random: false
     name: index_labels_url
-  - help: the request size in indexing (the maximum number of documents that will
+  - help: The request size in indexing (the maximum number of documents that will
       be included in a Request before sending it)
     choices: null
     default: 1024
@@ -86,7 +86,7 @@ methods:
     type: int
     default_random: false
     name: index_request_size
-  - help: the yaml path of the query flow
+  - help: The yaml path of the query flow
     choices: null
     default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.query.yml
     required: false
@@ -95,7 +95,7 @@ methods:
     type: str
     default_random: false
     name: uses_query
-  - help: the url of query data (should be in idx3-ubyte.gz format)
+  - help: The url of query data (should be in idx3-ubyte.gz format)
     choices: null
     default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz
     required: false
@@ -104,7 +104,7 @@ methods:
     type: str
     default_random: false
     name: query_data_url
-  - help: the url of query labels data (should be in idx3-ubyte.gz format)
+  - help: The url of query labels data (should be in idx3-ubyte.gz format)
     choices: null
     default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz
     required: false
@@ -113,7 +113,7 @@ methods:
     type: str
     default_random: false
     name: query_labels_url
-  - help: the request size in searching (the maximum number of documents that will
+  - help: The request size in searching (the maximum number of documents that will
       be included in a Request before sending it)
     choices: null
     default: 32
@@ -123,7 +123,7 @@ methods:
     type: int
     default_random: false
     name: query_request_size
-  - help: number of queries to visualize
+  - help: The number of queries to visualize
     choices: null
     default: 128
     required: false
@@ -132,7 +132,7 @@ methods:
     type: int
     default_random: false
     name: num_query
-  - help: top-k results to retrieve and visualize
+  - help: Top-k results to retrieve and visualize
     choices: null
     default: 50
     required: false
@@ -143,7 +143,10 @@ methods:
     name: top_k
 - name: pod
   options:
-  - help: the name of this object.
+  - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
+      - how you refer to this object in Python/YAML/CLI\n- log message\n- ...\n\n\
+      When not given, then the default naming strategy will apply.\n             \
+      \       "
     choices: null
     default: null
     required: false
@@ -152,8 +155,7 @@ methods:
     type: str
     default_random: false
     name: name
-  - help: the yaml config of the logger. note the executor inside will inherit this
-      log config
+  - help: The YAML config of the logger used in this object.
     choices: null
     default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
@@ -162,7 +164,7 @@ methods:
     type: str
     default_random: false
     name: log_config
-  - help: if true then exception stack information to be added to the logging message,
+  - help: If set, then exception stack information to be added to the logging message,
       useful in debugging
     choices: null
     default: false
@@ -172,10 +174,10 @@ methods:
     type: bool
     default_random: false
     name: show_exc_info
-  - help: port for controlling the runtime, default a random port between [49152,
+  - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 43667
+    default: 52359
     required: false
     option_strings:
     - --port-ctrl
@@ -183,7 +185,7 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_ctrl
-  - help: use ipc protocol for control socket
+  - help: If set, use ipc protocol for control socket
     choices: null
     default: false
     required: false
@@ -192,7 +194,7 @@ methods:
     type: bool
     default_random: false
     name: ctrl_with_ipc
-  - help: timeout (ms) of the control request, -1 for waiting forever
+  - help: The timeout in milliseconds of the control request, -1 for waiting forever
     choices: null
     default: 5000
     required: false
@@ -201,7 +203,7 @@ methods:
     type: int
     default_random: false
     name: timeout_ctrl
-  - help: the SSH server through which the tunnel will be created, can actually be
+  - help: The SSH server through which the tunnel will be created, can actually be
       a fully specified "user@server:port" ssh url.
     choices: null
     default: null
@@ -211,7 +213,7 @@ methods:
     type: str
     default_random: false
     name: ssh_server
-  - help: this specifies a key to be used in ssh login, default None. regular default
+  - help: This specifies a key to be used in ssh login, default None. regular default
       ssh keys will be used without specifying this argument.
     choices: null
     default: null
@@ -221,7 +223,7 @@ methods:
     type: str
     default_random: false
     name: ssh_keyfile
-  - help: ssh password to the ssh server.
+  - help: The ssh password to the ssh server.
     choices: null
     default: null
     required: false
@@ -230,9 +232,15 @@ methods:
     type: str
     default_random: false
     name: ssh_password
-  - help: the config of the executor, it could be > a YAML file path, > an executor's
-      class name, > a docker image (must start with docker://)> one of "_pass", "_logforward"
-      > the raw content of YAML config (must starts with "!")
+  - help: "\nThe config of the executor, it could be one of the followings: \n- an\
+      \ Executor-level YAML file path (*.yml/yaml) \n- a name of a class inherited\
+      \ from \"jina.Executor\"\n- a docker image (must start with \"docker://\")\n\
+      - builtin executors, e.g. \"_pass\", \"_logforward\", \"_merge\" \n- the string\
+      \ literal of a YAML config (must start with \"!\")\n- the string literal of\
+      \ a JSON config\n- the string literal of a YAML driver config (must start with\
+      \ \"- !!\")\n\nWhen use it under Python, one can use the following values additionally:\n\
+      - a Python dict that represents the config\n- a text file stream has `.read()`\
+      \ interface\n"
     choices: null
     default: _pass
     required: false
@@ -241,7 +249,12 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: the customized python modules need to be imported before loading the executor
+  - help: "\nThe customized python modules need to be imported before loading the\
+      \ executor\n\nNote, when importing multiple files and there is a dependency\
+      \ between them, then one has to write the dependencies in \nreverse order. That\
+      \ is, if `__init__.py` depends on `A.py`, which again depends on `B.py`, then\
+      \ you need to write: \n\n--py-modules __init__.py --py-modules B.py --py-modules\
+      \ A.py\n\n"
     choices: null
     default: null
     required: false
@@ -250,9 +263,9 @@ methods:
     type: str
     default_random: false
     name: py_modules
-  - help: port for input data, default a random port between [49152, 65535]
+  - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 58731
+    default: 45551
     required: false
     option_strings:
     - --port-in
@@ -260,9 +273,9 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_in
-  - help: port for output data, default a random port between [49152, 65535]
+  - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 35879
+    default: 42807
     required: false
     option_strings:
     - --port-out
@@ -270,7 +283,7 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_out
-  - help: host address for input, by default it is 0.0.0.0
+  - help: The host address for input, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
     required: false
@@ -279,7 +292,7 @@ methods:
     type: str
     default_random: false
     name: host_in
-  - help: host address for output, by default it is 0.0.0.0
+  - help: The host address for output, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
     required: false
@@ -288,7 +301,7 @@ methods:
     type: str
     default_random: false
     name: host_out
-  - help: socket type for input port
+  - help: The socket type for input port
     choices:
     - PULL_BIND
     - PULL_CONNECT
@@ -309,7 +322,7 @@ methods:
     type: str
     default_random: false
     name: socket_in
-  - help: socket type for output port
+  - help: The socket type for output port
     choices:
     - PULL_BIND
     - PULL_CONNECT
@@ -330,15 +343,6 @@ methods:
     type: str
     default_random: false
     name: socket_out
-  - help: max number of retries when socket is conflict
-    choices: null
-    default: 3
-    required: false
-    option_strings:
-    - --max-socket-retries
-    type: int
-    default_random: false
-    name: max_socket_retries
   - help: 'serialize the model in the pod every n seconds if model changes. -1 means
       --read-only. '
     choices: null
@@ -349,7 +353,8 @@ methods:
     type: int
     default_random: false
     name: dump_interval
-  - help: do not allow the pod to modify the model, dump_interval will be ignored
+  - help: If set, do not allow the pod to modify the model, dump_interval will be
+      ignored
     choices: null
     default: false
     required: false
@@ -368,8 +373,8 @@ methods:
     type: bool
     default_random: false
     name: separated_workspace
-  - help: memory high watermark of this pod in Gigabytes, pod will restart when this
-      is reached. -1 means no restriction
+  - help: The memory high watermark of this pod in Gigabytes, pod will restart when
+      this is reached. -1 means no restriction
     choices: null
     default: -1
     required: false
@@ -378,7 +383,7 @@ methods:
     type: int
     default_random: false
     name: memory_hwm
-  - help: skip strategy on error message.
+  - help: The skip strategy on error message.
     choices:
     - NONE
     - EXECUTOR
@@ -390,8 +395,9 @@ methods:
     type: str
     default_random: false
     name: skip_on_error
-  - help: 'The executor config that is passed to the docker image if a docker image
-      is used in uses. It cannot be another docker image '
+  - help: "\nThe config runs inside the Docker container. \n\nSyntax and function\
+      \ are the same as `--uses`. This is designed when `--uses=\"docker://...\"`\
+      \ this config is passed to \nthe Docker container.\n"
     choices: null
     default: BaseExecutor
     required: false
@@ -400,8 +406,8 @@ methods:
     type: str
     default_random: false
     name: uses_internal
-  - help: the entrypoint command overrides the ENTRYPOINT in docker image. when not
-      set then the docker image ENTRYPOINT takes effective.
+  - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
+      set then the Docker image ENTRYPOINT takes effective.
     choices: null
     default: null
     required: false
@@ -410,7 +416,7 @@ methods:
     type: str
     default_random: false
     name: entrypoint
-  - help: pull the latest image before running
+  - help: Pull the latest image before running
     choices: null
     default: false
     required: false
@@ -419,12 +425,13 @@ methods:
     type: bool
     default_random: false
     name: pull_latest
-  - help: the path on the host to be mounted inside the container. if separated by
-      ":" the first part will be considered as the local host path and the second
-      part is the path in the container system. If no split provided, then the basename
-      of that directory will be mounted into container's root path, e.g. --volumes="/user/test/my-workspace"
-      will be mounted into "/my-workspace" inside the container. all volumes are mounted
-      with read-write mode.
+  - help: "\nThe path on the host to be mounted inside the container. \n\nNote, \n\
+      - If separated by `:`, then the first part will be considered as the local host\
+      \ path and the second part is the path in the container system. \n- If no split\
+      \ provided, then the basename of that directory will be mounted into container's\
+      \ root path, e.g. `--volumes=\"/user/test/my-workspace\"` will be mounted into\
+      \ \"/my-workspace\" inside the container. \n- All volumes are mounted with read-write\
+      \ mode.\n"
     choices: null
     default: null
     required: false
@@ -433,7 +440,7 @@ methods:
     type: str
     default_random: false
     name: volumes
-  - help: host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0.
     choices: null
     default: 0.0.0.0
     required: false
@@ -442,9 +449,9 @@ methods:
     type: str
     default_random: false
     name: host
-  - help: host port exposed to the public
+  - help: The port of the host exposed to the public
     choices: null
-    default: 37009
+    default: 43059
     required: false
     option_strings:
     - --port-expose
@@ -452,18 +459,7 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_expose
-  - help: the manager of remote Jina
-    choices:
-    - SSH
-    - JINAD
-    default: JINAD
-    required: false
-    option_strings:
-    - --remote-manager
-    type: str
-    default_random: false
-    name: remote_manager
-  - help: do not display the streaming of remote logs on local console
+  - help: Do not display the streaming of remote logs on local console
     choices: null
     default: false
     required: false
@@ -472,14 +468,15 @@ methods:
     type: bool
     default_random: false
     name: silent_remote_logs
-  - help: the files on the host to be uploaded to the remote workspace. This can be
-      useful when your Pod has more file dependencies beyond a single YAML file, e.g.
-      Python files, data files. Note (1) currently only flatten structure is supported,
-      which means if you upload `[./foo/a.py, ./foo/b.pp, ./bar/c.yml]`, then they
-      will be put under the _same_ workspace on the remote, losing all hierarchies.
-      (2) By default, `--uses` YAML file is always uploaded. (3) Uploaded files are
-      by default isolated across the runs. To ensure files are submitted to the same
-      workspace across different runs, use `--workspace-id`.
+  - help: "\nThe files on the host to be uploaded to the remote\nworkspace. This can\
+      \ be useful when your Pod has more\nfile dependencies beyond a single YAML file,\
+      \ e.g.\nPython files, data files. \n\nNote, \n- currently only flatten structure\
+      \ is supported, which means if you upload `[./foo/a.py, ./foo/b.pp, ./bar/c.yml]`,\
+      \ then they will be put under the _same_ workspace on the remote, losing all\
+      \ hierarchies. \n- by default, `--uses` YAML file is always uploaded. \n- uploaded\
+      \ files are by default isolated across the runs. To ensure files are submitted\
+      \ to the same workspace across different runs, use `--workspace-id` to specify\
+      \ the workspace.\n"
     choices: null
     default: null
     required: false
@@ -488,7 +485,7 @@ methods:
     type: str
     default_random: false
     name: upload_files
-  - help: the UUID for identifying the workspace on remote. When not given then remote
+  - help: The UUID for identifying the workspace on remote. When not given then remote
       will assign a random one. Multiple Pea/Pod/Flow will work under the same workspace
       if they share the same `workspace-id`.
     choices: null
@@ -499,7 +496,7 @@ methods:
     type: str
     default_random: false
     name: workspace_id
-  - help: the Pea attempts to terminate all of its Runtime child processes/threads
+  - help: The Pea attempts to terminate all of its Runtime child processes/threads
       on existing. setting it to true basically tell the Pea do not wait on the Runtime
       when closing
     choices: null
@@ -510,7 +507,7 @@ methods:
     type: bool
     default_random: false
     name: daemon
-  - help: the parallel backend of the runtime inside the pea
+  - help: The parallel backend of the runtime inside the Pea
     choices:
     - THREAD
     - PROCESS
@@ -522,7 +519,7 @@ methods:
     type: str
     default_random: false
     name: runtime_backend
-  - help: the runtime class to run inside the pea
+  - help: The runtime class to run inside the Pea
     choices:
     - GRPCRuntime
     - RESTRuntime
@@ -537,8 +534,8 @@ methods:
     type: str
     default_random: false
     name: runtime_cls
-  - help: timeout (ms) of a pea waits for the runtime to be ready, -1 for waiting
-      forever
+  - help: The timeout in milliseconds of a Pea waits for the runtime to be ready,
+      -1 for waiting forever
     choices: null
     default: 10000
     required: false
@@ -547,8 +544,8 @@ methods:
     type: int
     default_random: false
     name: timeout_ready
-  - help: expose the public IP address to remote when necessary, by default it exposesprivate
-      IP address, which only allows accessing under the same network/subnet
+  - help: If set, expose the public IP address to remote when necessary, by default
+      it exposesprivate IP address, which only allows accessing under the same network/subnet
     choices: null
     default: false
     required: false
@@ -557,7 +554,7 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-  - help: the executor attached after the Peas described by --uses, typically before
+  - help: The executor attached after the Peas described by --uses, typically before
       sending to all parallels, accepted type follows "--uses"
     choices: null
     default: null
@@ -567,7 +564,7 @@ methods:
     type: str
     default_random: false
     name: uses_before
-  - help: the executor attached after the Peas described by --uses, typically used
+  - help: The executor attached after the Peas described by --uses, typically used
       for receiving from all parallels, accepted type follows "--uses"
     choices: null
     default: null
@@ -577,8 +574,8 @@ methods:
     type: str
     default_random: false
     name: uses_after
-  - help: a flag to disable `uses-before` or `uses-after` if parallel is equal to
-      1. Usefulto parametrize parallelization and sharding without having `uses_after`
+  - help: If set, disable `uses-before` or `uses-after` if parallel is equal to 1.
+      Usefulto parametrize parallelization and sharding without having `uses_after`
       or `uses_before` taking extra processes and network hops
     choices: null
     default: false
@@ -588,9 +585,9 @@ methods:
     type: bool
     default_random: false
     name: remove_uses_ba
-  - help: number of parallel peas in the pod running at the same time, `port_in` and
-      `port_out` will be set to random, and routers will be added automatically when
-      necessary
+  - help: The number of parallel peas in the pod running at the same time, `port_in`
+      and `port_out` will be set to random, and routers will be added automatically
+      when necessary
     choices: null
     default: 1
     required: false
@@ -600,8 +597,9 @@ methods:
     type: int
     default_random: false
     name: parallel
-  - help: 'ANY: only one (whoever is idle) replica polls the message; ALL: all workers
-      poll the message (like a broadcast)'
+  - help: "\nThe polling strategy of the Pod (when `parallel>1`) \n- ANY: only one\
+      \ (whoever is idle) Pea polls the message\n- ALL: all Peas poll the message\
+      \ (like a broadcast)\n"
     choices:
     - ANY
     - ALL
@@ -613,7 +611,7 @@ methods:
     type: str
     default_random: false
     name: polling
-  - help: the strategy of scheduling workload among peas
+  - help: The strategy of scheduling workload among Peas
     choices:
     - LOAD_BALANCE
     - ROUND_ROBIN
@@ -626,7 +624,10 @@ methods:
     name: scheduling
 - name: flow
   options:
-  - help: the name of this object.
+  - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
+      - how you refer to this object in Python/YAML/CLI\n- log message\n- ...\n\n\
+      When not given, then the default naming strategy will apply.\n             \
+      \       "
     choices: null
     default: null
     required: false
@@ -635,8 +636,7 @@ methods:
     type: str
     default_random: false
     name: name
-  - help: the yaml config of the logger. note the executor inside will inherit this
-      log config
+  - help: The YAML config of the logger used in this object.
     choices: null
     default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
@@ -645,7 +645,7 @@ methods:
     type: str
     default_random: false
     name: log_config
-  - help: if true then exception stack information to be added to the logging message,
+  - help: If set, then exception stack information to be added to the logging message,
       useful in debugging
     choices: null
     default: false
@@ -655,7 +655,7 @@ methods:
     type: bool
     default_random: false
     name: show_exc_info
-  - help: a yaml file represents a flow
+  - help: The YAML file represents a flow
     choices: null
     default: null
     required: false
@@ -664,8 +664,14 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: strategy on those inspect pods in the flow. if REMOVE is given then all
-      inspect pods are removed when building the flow
+  - help: '
+
+      The strategy on those inspect pods in the flow.
+
+
+      If `REMOVE` is given then all inspect pods are removed when building the flow.
+
+      '
     choices:
     - HANG
     - REMOVE
@@ -679,7 +685,10 @@ methods:
     name: inspect
 - name: gateway
   options:
-  - help: the name of this object.
+  - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
+      - how you refer to this object in Python/YAML/CLI\n- log message\n- ...\n\n\
+      When not given, then the default naming strategy will apply.\n             \
+      \       "
     choices: null
     default: gateway
     required: false
@@ -688,8 +697,7 @@ methods:
     type: str
     default_random: false
     name: name
-  - help: the yaml config of the logger. note the executor inside will inherit this
-      log config
+  - help: The YAML config of the logger used in this object.
     choices: null
     default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
@@ -698,7 +706,7 @@ methods:
     type: str
     default_random: false
     name: log_config
-  - help: if true then exception stack information to be added to the logging message,
+  - help: If set, then exception stack information to be added to the logging message,
       useful in debugging
     choices: null
     default: false
@@ -708,10 +716,10 @@ methods:
     type: bool
     default_random: false
     name: show_exc_info
-  - help: port for controlling the runtime, default a random port between [49152,
+  - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 54801
+    default: 37231
     required: false
     option_strings:
     - --port-ctrl
@@ -719,7 +727,7 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_ctrl
-  - help: use ipc protocol for control socket
+  - help: If set, use ipc protocol for control socket
     choices: null
     default: true
     required: false
@@ -728,7 +736,7 @@ methods:
     type: bool
     default_random: false
     name: ctrl_with_ipc
-  - help: timeout (ms) of the control request, -1 for waiting forever
+  - help: The timeout in milliseconds of the control request, -1 for waiting forever
     choices: null
     default: 5000
     required: false
@@ -737,7 +745,7 @@ methods:
     type: int
     default_random: false
     name: timeout_ctrl
-  - help: the SSH server through which the tunnel will be created, can actually be
+  - help: The SSH server through which the tunnel will be created, can actually be
       a fully specified "user@server:port" ssh url.
     choices: null
     default: null
@@ -747,7 +755,7 @@ methods:
     type: str
     default_random: false
     name: ssh_server
-  - help: this specifies a key to be used in ssh login, default None. regular default
+  - help: This specifies a key to be used in ssh login, default None. regular default
       ssh keys will be used without specifying this argument.
     choices: null
     default: null
@@ -757,7 +765,7 @@ methods:
     type: str
     default_random: false
     name: ssh_keyfile
-  - help: ssh password to the ssh server.
+  - help: The ssh password to the ssh server.
     choices: null
     default: null
     required: false
@@ -766,9 +774,15 @@ methods:
     type: str
     default_random: false
     name: ssh_password
-  - help: the config of the executor, it could be > a YAML file path, > an executor's
-      class name, > a docker image (must start with docker://)> one of "_pass", "_logforward"
-      > the raw content of YAML config (must starts with "!")
+  - help: "\nThe config of the executor, it could be one of the followings: \n- an\
+      \ Executor-level YAML file path (*.yml/yaml) \n- a name of a class inherited\
+      \ from \"jina.Executor\"\n- a docker image (must start with \"docker://\")\n\
+      - builtin executors, e.g. \"_pass\", \"_logforward\", \"_merge\" \n- the string\
+      \ literal of a YAML config (must start with \"!\")\n- the string literal of\
+      \ a JSON config\n- the string literal of a YAML driver config (must start with\
+      \ \"- !!\")\n\nWhen use it under Python, one can use the following values additionally:\n\
+      - a Python dict that represents the config\n- a text file stream has `.read()`\
+      \ interface\n"
     choices: null
     default: _pass
     required: false
@@ -777,7 +791,12 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: the customized python modules need to be imported before loading the executor
+  - help: "\nThe customized python modules need to be imported before loading the\
+      \ executor\n\nNote, when importing multiple files and there is a dependency\
+      \ between them, then one has to write the dependencies in \nreverse order. That\
+      \ is, if `__init__.py` depends on `A.py`, which again depends on `B.py`, then\
+      \ you need to write: \n\n--py-modules __init__.py --py-modules B.py --py-modules\
+      \ A.py\n\n"
     choices: null
     default: null
     required: false
@@ -786,9 +805,9 @@ methods:
     type: str
     default_random: false
     name: py_modules
-  - help: port for input data, default a random port between [49152, 65535]
+  - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 36167
+    default: 49913
     required: false
     option_strings:
     - --port-in
@@ -796,9 +815,9 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_in
-  - help: port for output data, default a random port between [49152, 65535]
+  - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 49871
+    default: 52169
     required: false
     option_strings:
     - --port-out
@@ -806,7 +825,7 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_out
-  - help: host address for input, by default it is 0.0.0.0
+  - help: The host address for input, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
     required: false
@@ -815,7 +834,7 @@ methods:
     type: str
     default_random: false
     name: host_in
-  - help: host address for output, by default it is 0.0.0.0
+  - help: The host address for output, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
     required: false
@@ -824,7 +843,7 @@ methods:
     type: str
     default_random: false
     name: host_out
-  - help: socket type for input port
+  - help: The socket type for input port
     choices:
     - PULL_BIND
     - PULL_CONNECT
@@ -845,7 +864,7 @@ methods:
     type: str
     default_random: false
     name: socket_in
-  - help: socket type for output port
+  - help: The socket type for output port
     choices:
     - PULL_BIND
     - PULL_CONNECT
@@ -866,15 +885,6 @@ methods:
     type: str
     default_random: false
     name: socket_out
-  - help: max number of retries when socket is conflict
-    choices: null
-    default: 3
-    required: false
-    option_strings:
-    - --max-socket-retries
-    type: int
-    default_random: false
-    name: max_socket_retries
   - help: 'serialize the model in the pod every n seconds if model changes. -1 means
       --read-only. '
     choices: null
@@ -885,7 +895,8 @@ methods:
     type: int
     default_random: false
     name: dump_interval
-  - help: do not allow the pod to modify the model, dump_interval will be ignored
+  - help: If set, do not allow the pod to modify the model, dump_interval will be
+      ignored
     choices: null
     default: true
     required: false
@@ -904,8 +915,8 @@ methods:
     type: bool
     default_random: false
     name: separated_workspace
-  - help: memory high watermark of this pod in Gigabytes, pod will restart when this
-      is reached. -1 means no restriction
+  - help: The memory high watermark of this pod in Gigabytes, pod will restart when
+      this is reached. -1 means no restriction
     choices: null
     default: -1
     required: false
@@ -914,7 +925,7 @@ methods:
     type: int
     default_random: false
     name: memory_hwm
-  - help: skip strategy on error message.
+  - help: The skip strategy on error message.
     choices:
     - NONE
     - EXECUTOR
@@ -926,7 +937,7 @@ methods:
     type: str
     default_random: false
     name: skip_on_error
-  - help: maximum send and receive size for gRPC server in bytes, -1 means unlimited
+  - help: The maximum send and receive size for gRPC server in bytes, -1 means unlimited
     choices: null
     default: -1
     required: false
@@ -935,7 +946,7 @@ methods:
     type: int
     default_random: false
     name: max_message_size
-  - help: respect the http_proxy and https_proxy environment variables. otherwise,
+  - help: If set, respect the http_proxy and https_proxy environment variables. otherwise,
       it will unset these proxy variables before start. gRPC seems to prefer no proxy
     choices: null
     default: false
@@ -945,7 +956,7 @@ methods:
     type: bool
     default_random: false
     name: proxy
-  - help: the number of pre-fetched requests from the client
+  - help: The number of pre-fetched requests from the client
     choices: null
     default: 50
     required: false
@@ -954,7 +965,7 @@ methods:
     type: int
     default_random: false
     name: prefetch
-  - help: the number of additional requests to fetch on every receive
+  - help: The number of additional requests to fetch on every receive
     choices: null
     default: 1
     required: false
@@ -963,7 +974,7 @@ methods:
     type: int
     default_random: false
     name: prefetch_on_recv
-  - help: use RESTful interface instead of gRPC as the main interface
+  - help: If set, use RESTful interface instead of gRPC as the main interface
     choices: null
     default: false
     required: false
@@ -973,7 +984,7 @@ methods:
     type: bool
     default_random: false
     name: restful
-  - help: host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0.
     choices: null
     default: 0.0.0.0
     required: false
@@ -982,9 +993,9 @@ methods:
     type: str
     default_random: false
     name: host
-  - help: host port exposed to the public
+  - help: The port of the host exposed to the public
     choices: null
-    default: 56729
+    default: 34301
     required: false
     option_strings:
     - --port-expose
@@ -992,7 +1003,7 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_expose
-  - help: the Pea attempts to terminate all of its Runtime child processes/threads
+  - help: The Pea attempts to terminate all of its Runtime child processes/threads
       on existing. setting it to true basically tell the Pea do not wait on the Runtime
       when closing
     choices: null
@@ -1003,7 +1014,7 @@ methods:
     type: bool
     default_random: false
     name: daemon
-  - help: the parallel backend of the runtime inside the pea
+  - help: The parallel backend of the runtime inside the Pea
     choices:
     - THREAD
     - PROCESS
@@ -1015,7 +1026,7 @@ methods:
     type: str
     default_random: false
     name: runtime_backend
-  - help: the runtime class to run inside the pea
+  - help: The runtime class to run inside the Pea
     choices:
     - GRPCRuntime
     - RESTRuntime
@@ -1030,8 +1041,8 @@ methods:
     type: str
     default_random: false
     name: runtime_cls
-  - help: timeout (ms) of a pea waits for the runtime to be ready, -1 for waiting
-      forever
+  - help: The timeout in milliseconds of a Pea waits for the runtime to be ready,
+      -1 for waiting forever
     choices: null
     default: 10000
     required: false
@@ -1040,8 +1051,8 @@ methods:
     type: int
     default_random: false
     name: timeout_ready
-  - help: expose the public IP address to remote when necessary, by default it exposesprivate
-      IP address, which only allows accessing under the same network/subnet
+  - help: If set, expose the public IP address to remote when necessary, by default
+      it exposesprivate IP address, which only allows accessing under the same network/subnet
     choices: null
     default: false
     required: false
@@ -1052,7 +1063,7 @@ methods:
     name: expose_public
 - name: ping
   options:
-  - help: host address of the target pod/pea, e.g. 0.0.0.0
+  - help: The host address of the target Pea, e.g. 0.0.0.0
     choices: null
     default: null
     required: true
@@ -1060,7 +1071,7 @@ methods:
     type: str
     default_random: false
     name: host
-  - help: the control port of the target pod/pea
+  - help: The control port of the target pod/pea
     choices: null
     default: null
     required: true
@@ -1068,7 +1079,13 @@ methods:
     type: int
     default_random: false
     name: port
-  - help: timeout (ms) of one check, -1 for waiting forever
+  - help: '
+
+      Timeout in millisecond of one check
+
+      -1 for waiting forever
+
+      '
     choices: null
     default: 3000
     required: false
@@ -1077,7 +1094,7 @@ methods:
     type: int
     default_random: false
     name: timeout
-  - help: max number of tried health checks before exit 1
+  - help: The max number of tried health checks before exit with exit code 1
     choices: null
     default: 3
     required: false
@@ -1086,7 +1103,7 @@ methods:
     type: int
     default_random: false
     name: retries
-  - help: print the response when received
+  - help: If set, print the response when received
     choices: null
     default: false
     required: false
@@ -1097,7 +1114,7 @@ methods:
     name: print_response
 - name: check
   options:
-  - help: the markdown file path for all executors summary
+  - help: The markdown file path for all executors summary
     choices: null
     default: null
     required: false
@@ -1106,7 +1123,7 @@ methods:
     type: str
     default_random: false
     name: summary_exec
-  - help: the markdown file path for all drivers summary
+  - help: The markdown file path for all drivers summary
     choices: null
     default: null
     required: false
@@ -1119,7 +1136,10 @@ methods:
   options: []
 - name: pea
   options:
-  - help: the name of this object.
+  - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
+      - how you refer to this object in Python/YAML/CLI\n- log message\n- ...\n\n\
+      When not given, then the default naming strategy will apply.\n             \
+      \       "
     choices: null
     default: null
     required: false
@@ -1128,8 +1148,7 @@ methods:
     type: str
     default_random: false
     name: name
-  - help: the yaml config of the logger. note the executor inside will inherit this
-      log config
+  - help: The YAML config of the logger used in this object.
     choices: null
     default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
@@ -1138,7 +1157,7 @@ methods:
     type: str
     default_random: false
     name: log_config
-  - help: if true then exception stack information to be added to the logging message,
+  - help: If set, then exception stack information to be added to the logging message,
       useful in debugging
     choices: null
     default: false
@@ -1148,10 +1167,10 @@ methods:
     type: bool
     default_random: false
     name: show_exc_info
-  - help: port for controlling the runtime, default a random port between [49152,
+  - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 53021
+    default: 34921
     required: false
     option_strings:
     - --port-ctrl
@@ -1159,7 +1178,7 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_ctrl
-  - help: use ipc protocol for control socket
+  - help: If set, use ipc protocol for control socket
     choices: null
     default: false
     required: false
@@ -1168,7 +1187,7 @@ methods:
     type: bool
     default_random: false
     name: ctrl_with_ipc
-  - help: timeout (ms) of the control request, -1 for waiting forever
+  - help: The timeout in milliseconds of the control request, -1 for waiting forever
     choices: null
     default: 5000
     required: false
@@ -1177,7 +1196,7 @@ methods:
     type: int
     default_random: false
     name: timeout_ctrl
-  - help: the SSH server through which the tunnel will be created, can actually be
+  - help: The SSH server through which the tunnel will be created, can actually be
       a fully specified "user@server:port" ssh url.
     choices: null
     default: null
@@ -1187,7 +1206,7 @@ methods:
     type: str
     default_random: false
     name: ssh_server
-  - help: this specifies a key to be used in ssh login, default None. regular default
+  - help: This specifies a key to be used in ssh login, default None. regular default
       ssh keys will be used without specifying this argument.
     choices: null
     default: null
@@ -1197,7 +1216,7 @@ methods:
     type: str
     default_random: false
     name: ssh_keyfile
-  - help: ssh password to the ssh server.
+  - help: The ssh password to the ssh server.
     choices: null
     default: null
     required: false
@@ -1206,9 +1225,15 @@ methods:
     type: str
     default_random: false
     name: ssh_password
-  - help: the config of the executor, it could be > a YAML file path, > an executor's
-      class name, > a docker image (must start with docker://)> one of "_pass", "_logforward"
-      > the raw content of YAML config (must starts with "!")
+  - help: "\nThe config of the executor, it could be one of the followings: \n- an\
+      \ Executor-level YAML file path (*.yml/yaml) \n- a name of a class inherited\
+      \ from \"jina.Executor\"\n- a docker image (must start with \"docker://\")\n\
+      - builtin executors, e.g. \"_pass\", \"_logforward\", \"_merge\" \n- the string\
+      \ literal of a YAML config (must start with \"!\")\n- the string literal of\
+      \ a JSON config\n- the string literal of a YAML driver config (must start with\
+      \ \"- !!\")\n\nWhen use it under Python, one can use the following values additionally:\n\
+      - a Python dict that represents the config\n- a text file stream has `.read()`\
+      \ interface\n"
     choices: null
     default: _pass
     required: false
@@ -1217,7 +1242,12 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: the customized python modules need to be imported before loading the executor
+  - help: "\nThe customized python modules need to be imported before loading the\
+      \ executor\n\nNote, when importing multiple files and there is a dependency\
+      \ between them, then one has to write the dependencies in \nreverse order. That\
+      \ is, if `__init__.py` depends on `A.py`, which again depends on `B.py`, then\
+      \ you need to write: \n\n--py-modules __init__.py --py-modules B.py --py-modules\
+      \ A.py\n\n"
     choices: null
     default: null
     required: false
@@ -1226,9 +1256,9 @@ methods:
     type: str
     default_random: false
     name: py_modules
-  - help: port for input data, default a random port between [49152, 65535]
+  - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 46925
+    default: 35057
     required: false
     option_strings:
     - --port-in
@@ -1236,9 +1266,9 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_in
-  - help: port for output data, default a random port between [49152, 65535]
+  - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 33183
+    default: 59819
     required: false
     option_strings:
     - --port-out
@@ -1246,7 +1276,7 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_out
-  - help: host address for input, by default it is 0.0.0.0
+  - help: The host address for input, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
     required: false
@@ -1255,7 +1285,7 @@ methods:
     type: str
     default_random: false
     name: host_in
-  - help: host address for output, by default it is 0.0.0.0
+  - help: The host address for output, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
     required: false
@@ -1264,7 +1294,7 @@ methods:
     type: str
     default_random: false
     name: host_out
-  - help: socket type for input port
+  - help: The socket type for input port
     choices:
     - PULL_BIND
     - PULL_CONNECT
@@ -1285,7 +1315,7 @@ methods:
     type: str
     default_random: false
     name: socket_in
-  - help: socket type for output port
+  - help: The socket type for output port
     choices:
     - PULL_BIND
     - PULL_CONNECT
@@ -1306,15 +1336,6 @@ methods:
     type: str
     default_random: false
     name: socket_out
-  - help: max number of retries when socket is conflict
-    choices: null
-    default: 3
-    required: false
-    option_strings:
-    - --max-socket-retries
-    type: int
-    default_random: false
-    name: max_socket_retries
   - help: 'serialize the model in the pod every n seconds if model changes. -1 means
       --read-only. '
     choices: null
@@ -1325,7 +1346,8 @@ methods:
     type: int
     default_random: false
     name: dump_interval
-  - help: do not allow the pod to modify the model, dump_interval will be ignored
+  - help: If set, do not allow the pod to modify the model, dump_interval will be
+      ignored
     choices: null
     default: false
     required: false
@@ -1344,8 +1366,8 @@ methods:
     type: bool
     default_random: false
     name: separated_workspace
-  - help: memory high watermark of this pod in Gigabytes, pod will restart when this
-      is reached. -1 means no restriction
+  - help: The memory high watermark of this pod in Gigabytes, pod will restart when
+      this is reached. -1 means no restriction
     choices: null
     default: -1
     required: false
@@ -1354,7 +1376,7 @@ methods:
     type: int
     default_random: false
     name: memory_hwm
-  - help: skip strategy on error message.
+  - help: The skip strategy on error message.
     choices:
     - NONE
     - EXECUTOR
@@ -1366,8 +1388,9 @@ methods:
     type: str
     default_random: false
     name: skip_on_error
-  - help: 'The executor config that is passed to the docker image if a docker image
-      is used in uses. It cannot be another docker image '
+  - help: "\nThe config runs inside the Docker container. \n\nSyntax and function\
+      \ are the same as `--uses`. This is designed when `--uses=\"docker://...\"`\
+      \ this config is passed to \nthe Docker container.\n"
     choices: null
     default: BaseExecutor
     required: false
@@ -1376,8 +1399,8 @@ methods:
     type: str
     default_random: false
     name: uses_internal
-  - help: the entrypoint command overrides the ENTRYPOINT in docker image. when not
-      set then the docker image ENTRYPOINT takes effective.
+  - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
+      set then the Docker image ENTRYPOINT takes effective.
     choices: null
     default: null
     required: false
@@ -1386,7 +1409,7 @@ methods:
     type: str
     default_random: false
     name: entrypoint
-  - help: pull the latest image before running
+  - help: Pull the latest image before running
     choices: null
     default: false
     required: false
@@ -1395,12 +1418,13 @@ methods:
     type: bool
     default_random: false
     name: pull_latest
-  - help: the path on the host to be mounted inside the container. if separated by
-      ":" the first part will be considered as the local host path and the second
-      part is the path in the container system. If no split provided, then the basename
-      of that directory will be mounted into container's root path, e.g. --volumes="/user/test/my-workspace"
-      will be mounted into "/my-workspace" inside the container. all volumes are mounted
-      with read-write mode.
+  - help: "\nThe path on the host to be mounted inside the container. \n\nNote, \n\
+      - If separated by `:`, then the first part will be considered as the local host\
+      \ path and the second part is the path in the container system. \n- If no split\
+      \ provided, then the basename of that directory will be mounted into container's\
+      \ root path, e.g. `--volumes=\"/user/test/my-workspace\"` will be mounted into\
+      \ \"/my-workspace\" inside the container. \n- All volumes are mounted with read-write\
+      \ mode.\n"
     choices: null
     default: null
     required: false
@@ -1409,7 +1433,7 @@ methods:
     type: str
     default_random: false
     name: volumes
-  - help: host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0.
     choices: null
     default: 0.0.0.0
     required: false
@@ -1418,9 +1442,9 @@ methods:
     type: str
     default_random: false
     name: host
-  - help: host port exposed to the public
+  - help: The port of the host exposed to the public
     choices: null
-    default: 44545
+    default: 44841
     required: false
     option_strings:
     - --port-expose
@@ -1428,18 +1452,7 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_expose
-  - help: the manager of remote Jina
-    choices:
-    - SSH
-    - JINAD
-    default: JINAD
-    required: false
-    option_strings:
-    - --remote-manager
-    type: str
-    default_random: false
-    name: remote_manager
-  - help: do not display the streaming of remote logs on local console
+  - help: Do not display the streaming of remote logs on local console
     choices: null
     default: false
     required: false
@@ -1448,14 +1461,15 @@ methods:
     type: bool
     default_random: false
     name: silent_remote_logs
-  - help: the files on the host to be uploaded to the remote workspace. This can be
-      useful when your Pod has more file dependencies beyond a single YAML file, e.g.
-      Python files, data files. Note (1) currently only flatten structure is supported,
-      which means if you upload `[./foo/a.py, ./foo/b.pp, ./bar/c.yml]`, then they
-      will be put under the _same_ workspace on the remote, losing all hierarchies.
-      (2) By default, `--uses` YAML file is always uploaded. (3) Uploaded files are
-      by default isolated across the runs. To ensure files are submitted to the same
-      workspace across different runs, use `--workspace-id`.
+  - help: "\nThe files on the host to be uploaded to the remote\nworkspace. This can\
+      \ be useful when your Pod has more\nfile dependencies beyond a single YAML file,\
+      \ e.g.\nPython files, data files. \n\nNote, \n- currently only flatten structure\
+      \ is supported, which means if you upload `[./foo/a.py, ./foo/b.pp, ./bar/c.yml]`,\
+      \ then they will be put under the _same_ workspace on the remote, losing all\
+      \ hierarchies. \n- by default, `--uses` YAML file is always uploaded. \n- uploaded\
+      \ files are by default isolated across the runs. To ensure files are submitted\
+      \ to the same workspace across different runs, use `--workspace-id` to specify\
+      \ the workspace.\n"
     choices: null
     default: null
     required: false
@@ -1464,7 +1478,7 @@ methods:
     type: str
     default_random: false
     name: upload_files
-  - help: the UUID for identifying the workspace on remote. When not given then remote
+  - help: The UUID for identifying the workspace on remote. When not given then remote
       will assign a random one. Multiple Pea/Pod/Flow will work under the same workspace
       if they share the same `workspace-id`.
     choices: null
@@ -1475,7 +1489,7 @@ methods:
     type: str
     default_random: false
     name: workspace_id
-  - help: the Pea attempts to terminate all of its Runtime child processes/threads
+  - help: The Pea attempts to terminate all of its Runtime child processes/threads
       on existing. setting it to true basically tell the Pea do not wait on the Runtime
       when closing
     choices: null
@@ -1486,7 +1500,7 @@ methods:
     type: bool
     default_random: false
     name: daemon
-  - help: the parallel backend of the runtime inside the pea
+  - help: The parallel backend of the runtime inside the Pea
     choices:
     - THREAD
     - PROCESS
@@ -1498,7 +1512,7 @@ methods:
     type: str
     default_random: false
     name: runtime_backend
-  - help: the runtime class to run inside the pea
+  - help: The runtime class to run inside the Pea
     choices:
     - GRPCRuntime
     - RESTRuntime
@@ -1513,8 +1527,8 @@ methods:
     type: str
     default_random: false
     name: runtime_cls
-  - help: timeout (ms) of a pea waits for the runtime to be ready, -1 for waiting
-      forever
+  - help: The timeout in milliseconds of a Pea waits for the runtime to be ready,
+      -1 for waiting forever
     choices: null
     default: 10000
     required: false
@@ -1523,8 +1537,8 @@ methods:
     type: int
     default_random: false
     name: timeout_ready
-  - help: expose the public IP address to remote when necessary, by default it exposesprivate
-      IP address, which only allows accessing under the same network/subnet
+  - help: If set, expose the public IP address to remote when necessary, by default
+      it exposesprivate IP address, which only allows accessing under the same network/subnet
     choices: null
     default: false
     required: false
@@ -1535,7 +1549,7 @@ methods:
     name: expose_public
 - name: log
   options:
-  - help: the regular expression for grouping logs
+  - help: The regular expression for grouping logs
     choices: null
     default: (.*@\d+)\[
     required: false
@@ -1544,7 +1558,7 @@ methods:
     type: str
     default_random: false
     name: groupby_regex
-  - help: refresh time interval in seconds, set to -1 to persist all grouped logs
+  - help: The refresh time interval in seconds, set to -1 to persist all grouped logs
     choices: null
     default: 5
     required: false
@@ -1555,17 +1569,21 @@ methods:
     name: refresh_time
 - name: client
   options:
-  - help: the number of documents in each request
+  - help: The number of Documents in each Request.
     choices: null
     default: 100
     required: false
     option_strings:
     - --request-size
-    - --batch-size
     type: int
     default_random: false
     name: request_size
-  - help: the mode of the client and the server
+  - help: "\nThe Request mode. This applies to all Requests sent from this client.\n\
+      \n* INDEX: store new Documents into the system\n* SEARCH: query Documents from\
+      \ an indexed system\n* UPDATE: update existing Documents in an indexed system\n\
+      * DELETE: delete existing Documents from an indexed system\n* CONTROL: (advance)\
+      \ control Pea/Pod such as shutdown, status\n* TRAIN: (experimental) train the\
+      \ system\n                    "
     choices:
     - INDEX
     - SEARCH
@@ -1580,7 +1598,7 @@ methods:
     type: str
     default_random: false
     name: mode
-  - help: top_k results returned in the search mode
+  - help: The number of results will be returned. Sorted by their scores descendingly.
     choices: null
     default: null
     required: false
@@ -1589,7 +1607,7 @@ methods:
     type: int
     default_random: false
     name: top_k
-  - help: MIME type of the input, useful when input-type is set to BUFFER
+  - help: MIME type of the input Documents.
     choices: null
     default: null
     required: false
@@ -1598,7 +1616,8 @@ methods:
     type: str
     default_random: false
     name: mime_type
-  - help: if to continue on all requests when callback function throws an error
+  - help: If set, a Request that causes error will be logged only without blocking
+      the further requests.
     choices: null
     default: false
     required: false
@@ -1607,7 +1626,9 @@ methods:
     type: bool
     default_random: false
     name: continue_on_error
-  - help: if to return all results as a list
+  - help: "\nThis feature is only used for AsyncClient.\n\nIf set, the results of\
+      \ all Requests will be returned as a list. This is useful when one wants \n\
+      process Responses in bulk instead of using callback. \n                    "
     choices: null
     default: false
     required: false
@@ -1616,7 +1637,7 @@ methods:
     type: bool
     default_random: false
     name: return_results
-  - help: maximum send and receive size for gRPC server in bytes, -1 means unlimited
+  - help: The maximum send and receive size for gRPC server in bytes, -1 means unlimited
     choices: null
     default: -1
     required: false
@@ -1625,7 +1646,7 @@ methods:
     type: int
     default_random: false
     name: max_message_size
-  - help: respect the http_proxy and https_proxy environment variables. otherwise,
+  - help: If set, respect the http_proxy and https_proxy environment variables. otherwise,
       it will unset these proxy variables before start. gRPC seems to prefer no proxy
     choices: null
     default: false
@@ -1635,7 +1656,7 @@ methods:
     type: bool
     default_random: false
     name: proxy
-  - help: the number of pre-fetched requests from the client
+  - help: The number of pre-fetched requests from the client
     choices: null
     default: 50
     required: false
@@ -1644,7 +1665,7 @@ methods:
     type: int
     default_random: false
     name: prefetch
-  - help: the number of additional requests to fetch on every receive
+  - help: The number of additional requests to fetch on every receive
     choices: null
     default: 1
     required: false
@@ -1653,7 +1674,7 @@ methods:
     type: int
     default_random: false
     name: prefetch_on_recv
-  - help: use RESTful interface instead of gRPC as the main interface
+  - help: If set, use RESTful interface instead of gRPC as the main interface
     choices: null
     default: false
     required: false
@@ -1663,7 +1684,7 @@ methods:
     type: bool
     default_random: false
     name: restful
-  - help: host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0.
     choices: null
     default: 0.0.0.0
     required: false
@@ -1672,9 +1693,9 @@ methods:
     type: str
     default_random: false
     name: host
-  - help: host port exposed to the public
+  - help: The port of the host exposed to the public
     choices: null
-    default: 39287
+    default: 35901
     required: false
     option_strings:
     - --port-expose
@@ -1684,7 +1705,7 @@ methods:
     name: port_expose
 - name: export-api
   options:
-  - help: the YAML file path for storing the exported API
+  - help: The YAML file path for storing the exported API
     choices: null
     default: null
     required: false
@@ -1693,7 +1714,7 @@ methods:
     type: str
     default_random: false
     name: yaml_path
-  - help: the JSON file path for storing the exported API
+  - help: The JSON file path for storing the exported API
     choices: null
     default: null
     required: false
