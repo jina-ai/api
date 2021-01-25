@@ -14,7 +14,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: f9bd61b4-3ac5-4612-8c6b-74a35884775e
+    default: de50df39-3ead-4a27-8652-9a42d337b298
     required: false
     option_strings:
     - --workdir
@@ -177,7 +177,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 38603
+    default: 57971
     required: false
     option_strings:
     - --port-ctrl
@@ -265,7 +265,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 41129
+    default: 50533
     required: false
     option_strings:
     - --port-in
@@ -275,7 +275,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 59975
+    default: 42033
     required: false
     option_strings:
     - --port-out
@@ -450,7 +450,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 45193
+    default: 53703
     required: false
     option_strings:
     - --port-expose
@@ -467,15 +467,30 @@ methods:
     type: bool
     default_random: false
     name: silent_remote_logs
-  - help: "\nThe files on the host to be uploaded to the remote\nworkspace. This can\
-      \ be useful when your Pod has more\nfile dependencies beyond a single YAML file,\
-      \ e.g.\nPython files, data files. \n\nNote, \n- currently only flatten structure\
-      \ is supported, which means if you upload `[./foo/a.py, ./foo/b.pp, ./bar/c.yml]`,\
-      \ then they will be put under the _same_ workspace on the remote, losing all\
-      \ hierarchies. \n- by default, `--uses` YAML file is always uploaded. \n- uploaded\
-      \ files are by default isolated across the runs. To ensure files are submitted\
-      \ to the same workspace across different runs, use `--workspace-id` to specify\
-      \ the workspace.\n"
+  - help: '
+
+      The files on the host to be uploaded to the remote
+
+      workspace. This can be useful when your Pod has more
+
+      file dependencies beyond a single YAML file, e.g.
+
+      Python files, data files.
+
+
+      Note,
+
+      - currently only flatten structure is supported, which means if you upload `[./foo/a.py,
+      ./foo/b.pp, ./bar/c.yml]`, then they will be put under the _same_ workspace
+      on the remote, losing all hierarchies.
+
+      - by default, `--uses` YAML file is always uploaded.
+
+      - uploaded files are by default isolated across the runs. To ensure files are
+      submitted to the same workspace across different runs, use `--workspace-id`
+      to specify the workspace.
+
+      '
     choices: null
     default: null
     required: false
@@ -484,16 +499,17 @@ methods:
     type: str
     default_random: false
     name: upload_files
-  - help: The UUID for identifying the workspace on remote. When not given then remote
-      will assign a random one. Multiple Pea/Pod/Flow will work under the same workspace
-      if they share the same `workspace-id`.
+  - help: the UUID for identifying the workspace. When not given a random id will
+      be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
+      share the same `workspace-id`.
     choices: null
-    default: null
+    default: c0db7147-3c1f-4886-b4be-ffd9c05b9948
     required: false
     option_strings:
     - --workspace-id
     type: str
-    default_random: false
+    default_random: true
+    default_factory: random_identity
     name: workspace_id
   - help: The Pea attempts to terminate all of its Runtime child processes/threads
       on existing. setting it to true basically tell the Pea do not wait on the Runtime
@@ -707,7 +723,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 47205
+    default: 48821
     required: false
     option_strings:
     - --port-ctrl
@@ -795,7 +811,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 47631
+    default: 42841
     required: false
     option_strings:
     - --port-in
@@ -805,7 +821,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 60181
+    default: 47025
     required: false
     option_strings:
     - --port-out
@@ -1019,7 +1035,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 33275
+    default: 48703
     required: false
     option_strings:
     - --port-expose
@@ -1194,7 +1210,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 32861
+    default: 50341
     required: false
     option_strings:
     - --port-ctrl
@@ -1282,7 +1298,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 42611
+    default: 48415
     required: false
     option_strings:
     - --port-in
@@ -1292,7 +1308,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 42977
+    default: 47657
     required: false
     option_strings:
     - --port-out
@@ -1467,7 +1483,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 43427
+    default: 47253
     required: false
     option_strings:
     - --port-expose
@@ -1484,15 +1500,30 @@ methods:
     type: bool
     default_random: false
     name: silent_remote_logs
-  - help: "\nThe files on the host to be uploaded to the remote\nworkspace. This can\
-      \ be useful when your Pod has more\nfile dependencies beyond a single YAML file,\
-      \ e.g.\nPython files, data files. \n\nNote, \n- currently only flatten structure\
-      \ is supported, which means if you upload `[./foo/a.py, ./foo/b.pp, ./bar/c.yml]`,\
-      \ then they will be put under the _same_ workspace on the remote, losing all\
-      \ hierarchies. \n- by default, `--uses` YAML file is always uploaded. \n- uploaded\
-      \ files are by default isolated across the runs. To ensure files are submitted\
-      \ to the same workspace across different runs, use `--workspace-id` to specify\
-      \ the workspace.\n"
+  - help: '
+
+      The files on the host to be uploaded to the remote
+
+      workspace. This can be useful when your Pod has more
+
+      file dependencies beyond a single YAML file, e.g.
+
+      Python files, data files.
+
+
+      Note,
+
+      - currently only flatten structure is supported, which means if you upload `[./foo/a.py,
+      ./foo/b.pp, ./bar/c.yml]`, then they will be put under the _same_ workspace
+      on the remote, losing all hierarchies.
+
+      - by default, `--uses` YAML file is always uploaded.
+
+      - uploaded files are by default isolated across the runs. To ensure files are
+      submitted to the same workspace across different runs, use `--workspace-id`
+      to specify the workspace.
+
+      '
     choices: null
     default: null
     required: false
@@ -1501,16 +1532,17 @@ methods:
     type: str
     default_random: false
     name: upload_files
-  - help: The UUID for identifying the workspace on remote. When not given then remote
-      will assign a random one. Multiple Pea/Pod/Flow will work under the same workspace
-      if they share the same `workspace-id`.
+  - help: the UUID for identifying the workspace. When not given a random id will
+      be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
+      share the same `workspace-id`.
     choices: null
-    default: null
+    default: 19618eab-de3c-4ba6-bf3c-eabfce5addf8
     required: false
     option_strings:
     - --workspace-id
     type: str
-    default_random: false
+    default_random: true
+    default_factory: random_identity
     name: workspace_id
   - help: The Pea attempts to terminate all of its Runtime child processes/threads
       on existing. setting it to true basically tell the Pea do not wait on the Runtime
@@ -1755,7 +1787,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 35999
+    default: 54273
     required: false
     option_strings:
     - --port-expose
