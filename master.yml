@@ -14,7 +14,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: b7d60321-1e7f-4e8c-bf29-33606c6f0245
+    default: 4cd92cb8-7855-4041-830f-70aed1630d1e
     required: false
     option_strings:
     - --workdir
@@ -177,7 +177,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 41797
+    default: 44223
     required: false
     option_strings:
     - --port-ctrl
@@ -204,7 +204,7 @@ methods:
     default_random: false
     name: timeout_ctrl
   - help: The SSH server through which the tunnel will be created, can actually be
-      a fully specified "user@server:port" ssh url.
+      a fully specified `user@server:port` ssh url.
     choices: null
     default: null
     required: false
@@ -234,13 +234,12 @@ methods:
     name: ssh_password
   - help: "\nThe config of the executor, it could be one of the followings: \n- an\
       \ Executor-level YAML file path (*.yml/yaml) \n- a name of a class inherited\
-      \ from \"jina.Executor\"\n- a docker image (must start with \"docker://\")\n\
-      - builtin executors, e.g. \"_pass\", \"_logforward\", \"_merge\" \n- the string\
-      \ literal of a YAML config (must start with \"!\")\n- the string literal of\
-      \ a JSON config\n- the string literal of a YAML driver config (must start with\
-      \ \"- !!\")\n\nWhen use it under Python, one can use the following values additionally:\n\
-      - a Python dict that represents the config\n- a text file stream has `.read()`\
-      \ interface\n"
+      \ from `jina.Executor`\n- a docker image (must start with `docker://`)\n- builtin\
+      \ executors, e.g. `_pass`, `_logforward`, `_merge` \n- the string literal of\
+      \ a YAML config (must start with `!`)\n- the string literal of a JSON config\n\
+      - the string literal of a YAML driver config (must start with `- !!`)\n\nWhen\
+      \ use it under Python, one can use the following values additionally:\n- a Python\
+      \ dict that represents the config\n- a text file stream has `.read()` interface\n"
     choices: null
     default: _pass
     required: false
@@ -265,7 +264,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 38267
+    default: 49543
     required: false
     option_strings:
     - --port-in
@@ -275,7 +274,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 46389
+    default: 51415
     required: false
     option_strings:
     - --port-out
@@ -429,7 +428,7 @@ methods:
       \ path and the second part is the path in the container system. \n- If no split\
       \ provided, then the basename of that directory will be mounted into container's\
       \ root path, e.g. `--volumes=\"/user/test/my-workspace\"` will be mounted into\
-      \ \"/my-workspace\" inside the container. \n- All volumes are mounted with read-write\
+      \ `/my-workspace` inside the container. \n- All volumes are mounted with read-write\
       \ mode.\n"
     choices: null
     default: null
@@ -450,7 +449,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 54699
+    default: 45973
     required: false
     option_strings:
     - --port-expose
@@ -503,7 +502,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 0cc283c7-4111-46be-a6f5-016953e3c073
+    default: 418e4e32-6466-4be2-8f58-eb4f7ff0c4d4
     required: false
     option_strings:
     - --workspace-id
@@ -570,7 +569,7 @@ methods:
     default_random: false
     name: expose_public
   - help: The executor attached after the Peas described by --uses, typically before
-      sending to all parallels, accepted type follows "--uses"
+      sending to all parallels, accepted type follows `--uses`
     choices: null
     default: null
     required: false
@@ -580,7 +579,7 @@ methods:
     default_random: false
     name: uses_before
   - help: The executor attached after the Peas described by --uses, typically used
-      for receiving from all parallels, accepted type follows "--uses"
+      for receiving from all parallels, accepted type follows `--uses`
     choices: null
     default: null
     required: false
@@ -723,7 +722,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 55285
+    default: 49329
     required: false
     option_strings:
     - --port-ctrl
@@ -750,7 +749,7 @@ methods:
     default_random: false
     name: timeout_ctrl
   - help: The SSH server through which the tunnel will be created, can actually be
-      a fully specified "user@server:port" ssh url.
+      a fully specified `user@server:port` ssh url.
     choices: null
     default: null
     required: false
@@ -780,13 +779,12 @@ methods:
     name: ssh_password
   - help: "\nThe config of the executor, it could be one of the followings: \n- an\
       \ Executor-level YAML file path (*.yml/yaml) \n- a name of a class inherited\
-      \ from \"jina.Executor\"\n- a docker image (must start with \"docker://\")\n\
-      - builtin executors, e.g. \"_pass\", \"_logforward\", \"_merge\" \n- the string\
-      \ literal of a YAML config (must start with \"!\")\n- the string literal of\
-      \ a JSON config\n- the string literal of a YAML driver config (must start with\
-      \ \"- !!\")\n\nWhen use it under Python, one can use the following values additionally:\n\
-      - a Python dict that represents the config\n- a text file stream has `.read()`\
-      \ interface\n"
+      \ from `jina.Executor`\n- a docker image (must start with `docker://`)\n- builtin\
+      \ executors, e.g. `_pass`, `_logforward`, `_merge` \n- the string literal of\
+      \ a YAML config (must start with `!`)\n- the string literal of a JSON config\n\
+      - the string literal of a YAML driver config (must start with `- !!`)\n\nWhen\
+      \ use it under Python, one can use the following values additionally:\n- a Python\
+      \ dict that represents the config\n- a text file stream has `.read()` interface\n"
     choices: null
     default: _pass
     required: false
@@ -811,7 +809,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 50157
+    default: 57827
     required: false
     option_strings:
     - --port-in
@@ -821,7 +819,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 55823
+    default: 42607
     required: false
     option_strings:
     - --port-out
@@ -1035,7 +1033,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 44507
+    default: 56005
     required: false
     option_strings:
     - --port-expose
@@ -1210,7 +1208,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 46767
+    default: 60409
     required: false
     option_strings:
     - --port-ctrl
@@ -1237,7 +1235,7 @@ methods:
     default_random: false
     name: timeout_ctrl
   - help: The SSH server through which the tunnel will be created, can actually be
-      a fully specified "user@server:port" ssh url.
+      a fully specified `user@server:port` ssh url.
     choices: null
     default: null
     required: false
@@ -1267,13 +1265,12 @@ methods:
     name: ssh_password
   - help: "\nThe config of the executor, it could be one of the followings: \n- an\
       \ Executor-level YAML file path (*.yml/yaml) \n- a name of a class inherited\
-      \ from \"jina.Executor\"\n- a docker image (must start with \"docker://\")\n\
-      - builtin executors, e.g. \"_pass\", \"_logforward\", \"_merge\" \n- the string\
-      \ literal of a YAML config (must start with \"!\")\n- the string literal of\
-      \ a JSON config\n- the string literal of a YAML driver config (must start with\
-      \ \"- !!\")\n\nWhen use it under Python, one can use the following values additionally:\n\
-      - a Python dict that represents the config\n- a text file stream has `.read()`\
-      \ interface\n"
+      \ from `jina.Executor`\n- a docker image (must start with `docker://`)\n- builtin\
+      \ executors, e.g. `_pass`, `_logforward`, `_merge` \n- the string literal of\
+      \ a YAML config (must start with `!`)\n- the string literal of a JSON config\n\
+      - the string literal of a YAML driver config (must start with `- !!`)\n\nWhen\
+      \ use it under Python, one can use the following values additionally:\n- a Python\
+      \ dict that represents the config\n- a text file stream has `.read()` interface\n"
     choices: null
     default: _pass
     required: false
@@ -1298,7 +1295,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 49115
+    default: 54971
     required: false
     option_strings:
     - --port-in
@@ -1308,7 +1305,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 53313
+    default: 55211
     required: false
     option_strings:
     - --port-out
@@ -1462,7 +1459,7 @@ methods:
       \ path and the second part is the path in the container system. \n- If no split\
       \ provided, then the basename of that directory will be mounted into container's\
       \ root path, e.g. `--volumes=\"/user/test/my-workspace\"` will be mounted into\
-      \ \"/my-workspace\" inside the container. \n- All volumes are mounted with read-write\
+      \ `/my-workspace` inside the container. \n- All volumes are mounted with read-write\
       \ mode.\n"
     choices: null
     default: null
@@ -1483,7 +1480,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 37573
+    default: 50349
     required: false
     option_strings:
     - --port-expose
@@ -1536,7 +1533,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 0703cf49-8626-4f39-972b-55595f14db0b
+    default: 94c7141b-a649-4851-9915-ab743f60f447
     required: false
     option_strings:
     - --workspace-id
@@ -1787,7 +1784,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55311
+    default: 48781
     required: false
     option_strings:
     - --port-expose
