@@ -14,7 +14,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: ebc6cda3-325c-417e-b6ef-167250eac9b1
+    default: bc1a412a-6119-4c70-bc0d-1669f1d7dfef
     required: false
     option_strings:
     - --workdir
@@ -177,7 +177,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 36127
+    default: 50003
     required: false
     option_strings:
     - --port-ctrl
@@ -259,12 +259,12 @@ methods:
     required: false
     option_strings:
     - --py-modules
-    type: str
+    type: typing.List[str]
     default_random: false
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 34759
+    default: 37023
     required: false
     option_strings:
     - --port-in
@@ -274,7 +274,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 51929
+    default: 33043
     required: false
     option_strings:
     - --port-out
@@ -435,7 +435,7 @@ methods:
     required: false
     option_strings:
     - --volumes
-    type: str
+    type: typing.List[str]
     default_random: false
     name: volumes
   - help: The host address of the runtime, by default it is 0.0.0.0.
@@ -449,7 +449,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 43509
+    default: 53819
     required: false
     option_strings:
     - --port-expose
@@ -495,14 +495,14 @@ methods:
     required: false
     option_strings:
     - --upload-files
-    type: str
+    type: typing.List[str]
     default_random: false
     name: upload_files
   - help: the UUID for identifying the workspace. When not given a random id will
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 2e313999-14a2-4225-a8f6-11c4c47e5fb8
+    default: 48ea7ae2-8951-4e91-8b79-544623eec0f4
     required: false
     option_strings:
     - --workspace-id
@@ -722,7 +722,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 50463
+    default: 47427
     required: false
     option_strings:
     - --port-ctrl
@@ -804,12 +804,12 @@ methods:
     required: false
     option_strings:
     - --py-modules
-    type: str
+    type: typing.List[str]
     default_random: false
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 52025
+    default: 35073
     required: false
     option_strings:
     - --port-in
@@ -819,7 +819,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 37421
+    default: 48485
     required: false
     option_strings:
     - --port-out
@@ -1033,7 +1033,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 44121
+    default: 55097
     required: false
     option_strings:
     - --port-expose
@@ -1208,7 +1208,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 42339
+    default: 41737
     required: false
     option_strings:
     - --port-ctrl
@@ -1290,12 +1290,12 @@ methods:
     required: false
     option_strings:
     - --py-modules
-    type: str
+    type: typing.List[str]
     default_random: false
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 34737
+    default: 34355
     required: false
     option_strings:
     - --port-in
@@ -1305,7 +1305,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 40695
+    default: 45487
     required: false
     option_strings:
     - --port-out
@@ -1466,7 +1466,7 @@ methods:
     required: false
     option_strings:
     - --volumes
-    type: str
+    type: typing.List[str]
     default_random: false
     name: volumes
   - help: The host address of the runtime, by default it is 0.0.0.0.
@@ -1480,7 +1480,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 44951
+    default: 39667
     required: false
     option_strings:
     - --port-expose
@@ -1526,14 +1526,14 @@ methods:
     required: false
     option_strings:
     - --upload-files
-    type: str
+    type: typing.List[str]
     default_random: false
     name: upload_files
   - help: the UUID for identifying the workspace. When not given a random id will
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: bc6188b3-7715-4152-b299-52ed17a0a739
+    default: 69e36694-19c6-455a-87d8-9c1335d24520
     required: false
     option_strings:
     - --workspace-id
@@ -1784,7 +1784,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 36783
+    default: 47179
     required: false
     option_strings:
     - --port-expose
@@ -1800,7 +1800,7 @@ methods:
     required: false
     option_strings:
     - --yaml-path
-    type: str
+    type: typing.List[str]
     default_random: false
     name: yaml_path
   - help: The JSON file path for storing the exported API
@@ -1809,7 +1809,7 @@ methods:
     required: false
     option_strings:
     - --json-path
-    type: str
+    type: typing.List[str]
     default_random: false
     name: json_path
 revision: null
