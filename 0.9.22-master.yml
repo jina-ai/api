@@ -14,7 +14,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: b282e8ee-24ee-43fc-b65b-b950d7cbc82d
+    default: 2dfa756d-b4d2-42e3-aeee-2124e3c5d49d
     required: false
     option_strings:
     - --workdir
@@ -177,7 +177,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 36457
+    default: 56149
     required: false
     option_strings:
     - --port-ctrl
@@ -264,7 +264,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 48005
+    default: 55643
     required: false
     option_strings:
     - --port-in
@@ -274,7 +274,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 55893
+    default: 57921
     required: false
     option_strings:
     - --port-out
@@ -449,7 +449,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 46213
+    default: 53185
     required: false
     option_strings:
     - --port-expose
@@ -502,7 +502,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: be4211c3-6fbe-4be1-a337-8caafce07b31
+    default: 77764198-ef0e-403e-90c3-62fddfaba581
     required: false
     option_strings:
     - --workspace-id
@@ -686,6 +686,57 @@ methods:
     type: str
     default_random: false
     name: inspect
+- name: optimizer
+  options:
+  - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
+      - how you refer to this object in Python/YAML/CLI\n- log message\n- ...\n\n\
+      When not given, then the default naming strategy will apply.\n             \
+      \       "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --name
+    type: str
+    default_random: false
+    name: name
+  - help: The YAML config of the logger used in this object.
+    choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    required: false
+    option_strings:
+    - --log-config
+    type: str
+    default_random: false
+    name: log_config
+  - help: If set, then exception stack information to be added to the logging message,
+      useful in debugging
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --show-exc-info
+    type: bool
+    default_random: false
+    name: show_exc_info
+  - help: The path to a YAML file which defines a FlowOptimizer.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses
+    type: str
+    default_random: false
+    name: uses
+  - help: The path to a YAML file to store the output.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --output-dir
+    type: str
+    default_random: false
+    name: output_dir
 - name: gateway
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -722,7 +773,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 42447
+    default: 41587
     required: false
     option_strings:
     - --port-ctrl
@@ -809,7 +860,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 38137
+    default: 52671
     required: false
     option_strings:
     - --port-in
@@ -819,7 +870,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 34471
+    default: 60205
     required: false
     option_strings:
     - --port-out
@@ -1033,7 +1084,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 41939
+    default: 53489
     required: false
     option_strings:
     - --port-expose
@@ -1208,7 +1259,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 44129
+    default: 43103
     required: false
     option_strings:
     - --port-ctrl
@@ -1295,7 +1346,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 46967
+    default: 34675
     required: false
     option_strings:
     - --port-in
@@ -1305,7 +1356,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 46493
+    default: 57125
     required: false
     option_strings:
     - --port-out
@@ -1480,7 +1531,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 40629
+    default: 41199
     required: false
     option_strings:
     - --port-expose
@@ -1533,7 +1584,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 3911b88d-871a-425f-a72f-d6fbad8be345
+    default: 54159420-25f1-46cb-83de-45540ac44072
     required: false
     option_strings:
     - --workspace-id
@@ -1784,7 +1835,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 49967
+    default: 40607
     required: false
     option_strings:
     - --port-expose
