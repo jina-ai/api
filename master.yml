@@ -14,7 +14,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: 8880dfe5-7cff-41d9-b28d-ba4f99029a8e
+    default: 8915f3a7-cf47-4b1e-a933-db640185403b
     required: false
     option_strings:
     - --workdir
@@ -177,7 +177,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 48407
+    default: 37409
     required: false
     option_strings:
     - --port-ctrl
@@ -264,7 +264,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 36209
+    default: 48253
     required: false
     option_strings:
     - --port-in
@@ -274,7 +274,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 56575
+    default: 60355
     required: false
     option_strings:
     - --port-out
@@ -449,7 +449,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 58611
+    default: 46535
     required: false
     option_strings:
     - --port-expose
@@ -502,7 +502,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: b5c4936d-a91e-4155-8d23-335201a9f089
+    default: cf896fc6-dc6b-4bef-93c6-98d07e34aa1c
     required: false
     option_strings:
     - --workspace-id
@@ -775,7 +775,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 53345
+    default: 49881
     required: false
     option_strings:
     - --port-ctrl
@@ -862,7 +862,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 52665
+    default: 45977
     required: false
     option_strings:
     - --port-in
@@ -872,7 +872,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 41707
+    default: 57911
     required: false
     option_strings:
     - --port-out
@@ -1086,7 +1086,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 33283
+    default: 41199
     required: false
     option_strings:
     - --port-expose
@@ -1263,7 +1263,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 59445
+    default: 57299
     required: false
     option_strings:
     - --port-ctrl
@@ -1350,7 +1350,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 50425
+    default: 56073
     required: false
     option_strings:
     - --port-in
@@ -1360,7 +1360,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 59493
+    default: 40365
     required: false
     option_strings:
     - --port-out
@@ -1535,7 +1535,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 35345
+    default: 36309
     required: false
     option_strings:
     - --port-expose
@@ -1588,7 +1588,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: daf91323-c249-4c65-b627-ac4ec4ea3fea
+    default: 207d6c08-dfcc-47f9-bf29-be808f7dded8
     required: false
     option_strings:
     - --workspace-id
@@ -1841,7 +1841,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 49971
+    default: 33395
     required: false
     option_strings:
     - --port-expose
