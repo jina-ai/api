@@ -14,7 +14,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: 4b7cbea0-93dc-4370-8185-f726fe0cf0e6
+    default: 033a6582-5735-47d3-b154-b41f8c4919c0
     required: false
     option_strings:
     - --workdir
@@ -177,7 +177,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 57695
+    default: 45781
     required: false
     option_strings:
     - --port-ctrl
@@ -264,7 +264,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 48629
+    default: 45071
     required: false
     option_strings:
     - --port-in
@@ -274,7 +274,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 36173
+    default: 44265
     required: false
     option_strings:
     - --port-out
@@ -449,7 +449,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55863
+    default: 55157
     required: false
     option_strings:
     - --port-expose
@@ -502,7 +502,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: ba5b34d5-a6e2-48a4-b922-0ed41680a938
+    default: 97737e84-65c4-485d-b2b3-f539eff2545f
     required: false
     option_strings:
     - --workspace-id
@@ -775,7 +775,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 45439
+    default: 52001
     required: false
     option_strings:
     - --port-ctrl
@@ -862,7 +862,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 43855
+    default: 39783
     required: false
     option_strings:
     - --port-in
@@ -872,7 +872,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 45855
+    default: 59569
     required: false
     option_strings:
     - --port-out
@@ -1086,7 +1086,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 57565
+    default: 54197
     required: false
     option_strings:
     - --port-expose
@@ -1263,7 +1263,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 51923
+    default: 49329
     required: false
     option_strings:
     - --port-ctrl
@@ -1350,7 +1350,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 37997
+    default: 42983
     required: false
     option_strings:
     - --port-in
@@ -1360,7 +1360,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 34417
+    default: 60015
     required: false
     option_strings:
     - --port-out
@@ -1535,7 +1535,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55387
+    default: 45763
     required: false
     option_strings:
     - --port-expose
@@ -1588,7 +1588,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: ec438a65-8389-4500-8f62-b98995ef055f
+    default: f635b395-8ea1-4a9b-80bf-07bca05d7087
     required: false
     option_strings:
     - --workspace-id
@@ -1841,7 +1841,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 34085
+    default: 39305
     required: false
     option_strings:
     - --port-expose
@@ -1869,4 +1869,71 @@ methods:
     type: typing.List[str]
     default_random: false
     name: json_path
+- name: hello-world-chatbot
+  options:
+  - help: The workdir for hello-world demoall data, indices, shards and outputs will
+      be saved there
+    choices: null
+    default: 3bb1777f-83b7-4dfe-bb15-91802c48f5d1
+    required: false
+    option_strings:
+    - --workdir
+    type: str
+    default_random: true
+    default_factory: random_identity
+    name: workdir
+  - help: The proxy when downloading sample data
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --download-proxy
+    type: str
+    default_random: false
+    name: download_proxy
+  - help: The yaml path of the index flow
+    choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.index.yml
+    required: false
+    option_strings:
+    - --uses
+    type: str
+    default_random: false
+    name: uses
+  - help: The url of index csv data
+    choices: null
+    default: https://api.jina.ai/demo/chatbot/dataset.csv
+    required: false
+    option_strings:
+    - --index-data-url
+    type: str
+    default_random: false
+    name: index_data_url
+  - help: The url of chatbot demo page
+    choices: null
+    default: https://api.jina.ai/demo/chatbot/
+    required: false
+    option_strings:
+    - --demo-url
+    type: str
+    default_random: false
+    name: demo_url
+  - help: The port of the host exposed to the public
+    choices: null
+    default: 8080
+    required: false
+    option_strings:
+    - --port-expose
+    type: int
+    default_random: false
+    name: port_expose
+  - help: The number of parallel when index and query
+    choices: null
+    default: 2
+    required: false
+    option_strings:
+    - --parallel
+    type: int
+    default_random: false
+    name: parallel
 revision: null
