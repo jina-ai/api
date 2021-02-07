@@ -436,12 +436,18 @@ Bounce
 }
 
 .question {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 90%;
+    width: auto;
+    padding-right: 1em;
+    display: table;
+    margin-bottom: 1em;
     background: white;
     color: black;
     border-radius: 5px;
     padding-left: 1em;
-    margin-bottom: 10px;
-    max-width: 50%;
     opacity: 50%;
 }
 

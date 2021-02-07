@@ -5,7 +5,7 @@ var $messages = $('.messages-content'),
 $(window).load(function () {
     $messages.mCustomScrollbar();
     setTimeout(function () {
-        fakeMessage();
+        fakeMessage("Hi there, please ask me COVID-19 related questions.");
     }, 100);
 });
 
@@ -50,7 +50,7 @@ $(window).on('keydown', function (e) {
 })
 
 
-function fakeMessage() {
+function fakeMessage(msg) {
     if ($('.message-input').val() != '') {
         return false;
     }
@@ -59,11 +59,10 @@ function fakeMessage() {
 
     setTimeout(function () {
         $('.message.loading').remove();
-        $('<div class="message new"><figure class="avatar"><img src="https://api.jina.ai/logo/logo-product/jina-core/logo-only/colored/Product%20logo_Core_Colorful%402x.png" /></figure>' + "Hi there, please ask me COVID-19 related questions." + '</div>').appendTo($('.mCSB_container')).addClass('new');
+        $('<div class="message new"><figure class="avatar"><img src="https://api.jina.ai/logo/logo-product/jina-core/logo-only/colored/Product%20logo_Core_Colorful%402x.png" /></figure>' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
         setDate();
         updateScrollbar();
     }, 200);
-
 }
 
 
@@ -77,7 +76,7 @@ function jinaMessage(question) {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:54874/api/search",
+        url: $('#jina-server-addr').val() + "/api/search",
         data: JSON.stringify({"data": [question], "top_k": 3}),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -92,5 +91,9 @@ function jinaMessage(question) {
             '</div>').appendTo($('.mCSB_container')).addClass('new');
         setDate();
         updateScrollbar();
+    }).fail(function () {
+        setTimeout(function () {
+            fakeMessage("Connection failed, did you run <pre>jina hello-world-chatbot</pre> on local? Is your address <pre>" + $('#jina-server-addr').val() + "</pre> ?");
+        }, 100);
     });
 }
