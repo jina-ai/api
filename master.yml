@@ -14,7 +14,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: 423a3412-8f41-4dd3-b237-b6e47d1b90ce
+    default: 141c0c0f-d92f-4d5b-abdd-13e4c153cce8
     required: false
     option_strings:
     - --workdir
@@ -177,7 +177,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 41315
+    default: 51373
     required: false
     option_strings:
     - --port-ctrl
@@ -264,7 +264,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 49701
+    default: 42737
     required: false
     option_strings:
     - --port-in
@@ -274,7 +274,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 60013
+    default: 56777
     required: false
     option_strings:
     - --port-out
@@ -449,7 +449,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 39731
+    default: 51095
     required: false
     option_strings:
     - --port-expose
@@ -502,7 +502,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: f3844969-b762-4ed3-8ce9-62ca460fc1fc
+    default: 426376fb-6214-430f-8679-aef33ba7bccc
     required: false
     option_strings:
     - --workspace-id
@@ -551,7 +551,7 @@ methods:
   - help: The timeout in milliseconds of a Pea waits for the runtime to be ready,
       -1 for waiting forever
     choices: null
-    default: 10000
+    default: 60000
     required: false
     option_strings:
     - --timeout-ready
@@ -775,7 +775,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 59131
+    default: 43967
     required: false
     option_strings:
     - --port-ctrl
@@ -862,7 +862,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 55171
+    default: 33795
     required: false
     option_strings:
     - --port-in
@@ -872,7 +872,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 60419
+    default: 51059
     required: false
     option_strings:
     - --port-out
@@ -1086,7 +1086,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 48117
+    default: 39085
     required: false
     option_strings:
     - --port-expose
@@ -1135,7 +1135,7 @@ methods:
   - help: The timeout in milliseconds of a Pea waits for the runtime to be ready,
       -1 for waiting forever
     choices: null
-    default: 10000
+    default: 60000
     required: false
     option_strings:
     - --timeout-ready
@@ -1263,7 +1263,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 38851
+    default: 48697
     required: false
     option_strings:
     - --port-ctrl
@@ -1350,7 +1350,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 42203
+    default: 36203
     required: false
     option_strings:
     - --port-in
@@ -1360,7 +1360,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 42251
+    default: 45305
     required: false
     option_strings:
     - --port-out
@@ -1535,7 +1535,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 35467
+    default: 56125
     required: false
     option_strings:
     - --port-expose
@@ -1588,7 +1588,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: cc40d188-a326-4b83-bc0a-427171bc6c4e
+    default: f1478f24-8b4d-4694-83c3-8a900d885a0d
     required: false
     option_strings:
     - --workspace-id
@@ -1637,7 +1637,7 @@ methods:
   - help: The timeout in milliseconds of a Pea waits for the runtime to be ready,
       -1 for waiting forever
     choices: null
-    default: 10000
+    default: 60000
     required: false
     option_strings:
     - --timeout-ready
@@ -1841,7 +1841,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 37317
+    default: 44371
     required: false
     option_strings:
     - --port-expose
