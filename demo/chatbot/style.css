@@ -122,6 +122,7 @@ Messages
 }
 
 .messages .message {
+    max-width: 80%;
     clear: both;
     float: left;
     padding: 6px 10px 7px;
@@ -439,11 +440,10 @@ Bounce
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    max-width: 90%;
-    width: auto;
+    max-width: 80%;
     padding-right: 1em;
-    display: table;
-    margin-bottom: 1em;
+    margin-top: .5em;
+    margin-bottom: .5em;
     background: white;
     color: black;
     border-radius: 5px;

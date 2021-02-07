@@ -5,7 +5,7 @@ var $messages = $('.messages-content'),
 $(window).load(function () {
     $messages.mCustomScrollbar();
     setTimeout(function () {
-        fakeMessage("Hi there, please ask me COVID-19 related questions.");
+        fakeMessage("Hi there, please ask me COVID-19 related questions. For example, <div class=\"question\">What is Covid-19?</div>");
     }, 100);
 });
 
