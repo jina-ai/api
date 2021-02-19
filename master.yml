@@ -9,138 +9,8 @@ docs: https://docs.jina.ai
 authors: dev-team@jina.ai
 version: 1.0.2
 methods:
-- name: hello-world
-  options:
-  - help: The workdir for hello-world demoall data, indices, shards and outputs will
-      be saved there
-    choices: null
-    default: 0b6140af-36d3-40b0-8fc7-0ea42c03bbb4
-    required: false
-    option_strings:
-    - --workdir
-    type: str
-    default_random: true
-    default_factory: random_identity
-    name: workdir
-  - help: The proxy when downloading sample data
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --download-proxy
-    type: str
-    default_random: false
-    name: download_proxy
-  - help: The number of shards when index and query
-    choices: null
-    default: 2
-    required: false
-    option_strings:
-    - --shards
-    type: int
-    default_random: false
-    name: shards
-  - help: The number of parallel when index and query
-    choices: null
-    default: 2
-    required: false
-    option_strings:
-    - --parallel
-    type: int
-    default_random: false
-    name: parallel
-  - help: The yaml path of the index flow
-    choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.index.yml
-    required: false
-    option_strings:
-    - --uses-index
-    type: str
-    default_random: false
-    name: uses_index
-  - help: The url of index data (should be in idx3-ubyte.gz format)
-    choices: null
-    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz
-    required: false
-    option_strings:
-    - --index-data-url
-    type: str
-    default_random: false
-    name: index_data_url
-  - help: The url of index labels data (should be in idx3-ubyte.gz format)
-    choices: null
-    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz
-    required: false
-    option_strings:
-    - --index-labels-url
-    type: str
-    default_random: false
-    name: index_labels_url
-  - help: The request size in indexing (the maximum number of documents that will
-      be included in a Request before sending it)
-    choices: null
-    default: 1024
-    required: false
-    option_strings:
-    - --index-request-size
-    type: int
-    default_random: false
-    name: index_request_size
-  - help: The yaml path of the query flow
-    choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.query.yml
-    required: false
-    option_strings:
-    - --uses-query
-    type: str
-    default_random: false
-    name: uses_query
-  - help: The url of query data (should be in idx3-ubyte.gz format)
-    choices: null
-    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz
-    required: false
-    option_strings:
-    - --query-data-url
-    type: str
-    default_random: false
-    name: query_data_url
-  - help: The url of query labels data (should be in idx3-ubyte.gz format)
-    choices: null
-    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz
-    required: false
-    option_strings:
-    - --query-labels-url
-    type: str
-    default_random: false
-    name: query_labels_url
-  - help: The request size in searching (the maximum number of documents that will
-      be included in a Request before sending it)
-    choices: null
-    default: 32
-    required: false
-    option_strings:
-    - --query-request-size
-    type: int
-    default_random: false
-    name: query_request_size
-  - help: The number of queries to visualize
-    choices: null
-    default: 128
-    required: false
-    option_strings:
-    - --num-query
-    type: int
-    default_random: false
-    name: num_query
-  - help: Top-k results to retrieve and visualize
-    choices: null
-    default: 50
-    required: false
-    option_strings:
-    - --top-k
-    type: int
-    default_random: false
-    name: top_k
+- name: hello
+  options: []
 - name: pod
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -177,7 +47,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 35535
+    default: 58635
     required: false
     option_strings:
     - --port-ctrl
@@ -264,7 +134,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 55291
+    default: 54869
     required: false
     option_strings:
     - --port-in
@@ -274,7 +144,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 41401
+    default: 54055
     required: false
     option_strings:
     - --port-out
@@ -449,7 +319,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 44065
+    default: 50223
     required: false
     option_strings:
     - --port-expose
@@ -502,7 +372,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: f7ebabf6-1745-43c6-93ca-a934e4b9da29
+    default: 455efec0-aba9-4df4-8553-1f7851d360f4
     required: false
     option_strings:
     - --workspace-id
@@ -775,7 +645,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 60063
+    default: 53007
     required: false
     option_strings:
     - --port-ctrl
@@ -862,7 +732,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 33087
+    default: 44455
     required: false
     option_strings:
     - --port-in
@@ -872,7 +742,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 36723
+    default: 41335
     required: false
     option_strings:
     - --port-out
@@ -1086,7 +956,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 58667
+    default: 52835
     required: false
     option_strings:
     - --port-expose
@@ -1263,7 +1133,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 55965
+    default: 41647
     required: false
     option_strings:
     - --port-ctrl
@@ -1350,7 +1220,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 37335
+    default: 48685
     required: false
     option_strings:
     - --port-in
@@ -1360,7 +1230,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 52613
+    default: 58183
     required: false
     option_strings:
     - --port-out
@@ -1535,7 +1405,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 40597
+    default: 54507
     required: false
     option_strings:
     - --port-expose
@@ -1588,7 +1458,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 130dd5a0-b07e-4148-8334-dcddead3fe4c
+    default: 4b042477-aaa9-419f-9416-59a4edb931b8
     required: false
     option_strings:
     - --workspace-id
@@ -1841,7 +1711,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 46683
+    default: 45537
     required: false
     option_strings:
     - --port-expose
@@ -1869,12 +1739,12 @@ methods:
     type: typing.List[str]
     default_random: false
     name: json_path
-- name: hello-world-chatbot
+- name: hello-world
   options:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: 10f5199c-1640-4d0c-a279-a176a501fa20
+    default: 495c2042-9ecb-4ae4-b504-78b415f8ec17
     required: false
     option_strings:
     - --workdir
@@ -1891,42 +1761,15 @@ methods:
     type: str
     default_random: false
     name: download_proxy
-  - help: The yaml path of the index flow
+  - help: The number of shards when index and query
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.index.yml
+    default: 2
     required: false
     option_strings:
-    - --uses
-    type: str
-    default_random: false
-    name: uses
-  - help: The url of index csv data
-    choices: null
-    default: https://api.jina.ai/demo/chatbot/dataset.csv
-    required: false
-    option_strings:
-    - --index-data-url
-    type: str
-    default_random: false
-    name: index_data_url
-  - help: The url of chatbot demo page
-    choices: null
-    default: https://api.jina.ai/demo/chatbot/
-    required: false
-    option_strings:
-    - --demo-url
-    type: str
-    default_random: false
-    name: demo_url
-  - help: The port of the host exposed to the public
-    choices: null
-    default: 8080
-    required: false
-    option_strings:
-    - --port-expose
+    - --shards
     type: int
     default_random: false
-    name: port_expose
+    name: shards
   - help: The number of parallel when index and query
     choices: null
     default: 2
@@ -1936,4 +1779,96 @@ methods:
     type: int
     default_random: false
     name: parallel
+  - help: The yaml path of the index flow
+    choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.index.yml
+    required: false
+    option_strings:
+    - --uses-index
+    type: str
+    default_random: false
+    name: uses_index
+  - help: The url of index data (should be in idx3-ubyte.gz format)
+    choices: null
+    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz
+    required: false
+    option_strings:
+    - --index-data-url
+    type: str
+    default_random: false
+    name: index_data_url
+  - help: The url of index labels data (should be in idx3-ubyte.gz format)
+    choices: null
+    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz
+    required: false
+    option_strings:
+    - --index-labels-url
+    type: str
+    default_random: false
+    name: index_labels_url
+  - help: The request size in indexing (the maximum number of documents that will
+      be included in a Request before sending it)
+    choices: null
+    default: 1024
+    required: false
+    option_strings:
+    - --index-request-size
+    type: int
+    default_random: false
+    name: index_request_size
+  - help: The yaml path of the query flow
+    choices: null
+    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/helloworld.flow.query.yml
+    required: false
+    option_strings:
+    - --uses-query
+    type: str
+    default_random: false
+    name: uses_query
+  - help: The url of query data (should be in idx3-ubyte.gz format)
+    choices: null
+    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz
+    required: false
+    option_strings:
+    - --query-data-url
+    type: str
+    default_random: false
+    name: query_data_url
+  - help: The url of query labels data (should be in idx3-ubyte.gz format)
+    choices: null
+    default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz
+    required: false
+    option_strings:
+    - --query-labels-url
+    type: str
+    default_random: false
+    name: query_labels_url
+  - help: The request size in searching (the maximum number of documents that will
+      be included in a Request before sending it)
+    choices: null
+    default: 32
+    required: false
+    option_strings:
+    - --query-request-size
+    type: int
+    default_random: false
+    name: query_request_size
+  - help: The number of queries to visualize
+    choices: null
+    default: 128
+    required: false
+    option_strings:
+    - --num-query
+    type: int
+    default_random: false
+    name: num_query
+  - help: Top-k results to retrieve and visualize
+    choices: null
+    default: 50
+    required: false
+    option_strings:
+    - --top-k
+    type: int
+    default_random: false
+    name: top_k
 revision: null
