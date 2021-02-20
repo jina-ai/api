@@ -47,7 +47,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 54751
+    default: 60109
     required: false
     option_strings:
     - --port-ctrl
@@ -134,7 +134,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 48771
+    default: 38643
     required: false
     option_strings:
     - --port-in
@@ -144,7 +144,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 59053
+    default: 59235
     required: false
     option_strings:
     - --port-out
@@ -319,7 +319,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 45559
+    default: 35397
     required: false
     option_strings:
     - --port-expose
@@ -372,7 +372,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 9ba39cef-5ea5-4710-b553-ce3de50aabba
+    default: 8655fca7-99c0-4dad-a118-d598f3f49968
     required: false
     option_strings:
     - --workspace-id
@@ -645,7 +645,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 47017
+    default: 47535
     required: false
     option_strings:
     - --port-ctrl
@@ -732,7 +732,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 53005
+    default: 58539
     required: false
     option_strings:
     - --port-in
@@ -742,7 +742,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 52257
+    default: 56645
     required: false
     option_strings:
     - --port-out
@@ -956,7 +956,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 58509
+    default: 54851
     required: false
     option_strings:
     - --port-expose
@@ -1133,7 +1133,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 35065
+    default: 60575
     required: false
     option_strings:
     - --port-ctrl
@@ -1220,7 +1220,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 54307
+    default: 52093
     required: false
     option_strings:
     - --port-in
@@ -1230,7 +1230,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 43699
+    default: 51549
     required: false
     option_strings:
     - --port-out
@@ -1405,7 +1405,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 36347
+    default: 57973
     required: false
     option_strings:
     - --port-expose
@@ -1458,7 +1458,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 10728701-76b6-40bc-af9b-64ccaaf11ddb
+    default: aff9c12e-57db-4dda-8651-5474d846c073
     required: false
     option_strings:
     - --workspace-id
@@ -1711,7 +1711,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 44855
+    default: 34549
     required: false
     option_strings:
     - --port-expose
@@ -1744,7 +1744,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: 9a3d9ec7-37d8-46ae-890e-29065c7958f6
+    default: 28031243-69b2-4925-8fce-3a56f269ee5e
     required: false
     option_strings:
     - --workdir
