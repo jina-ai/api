@@ -47,7 +47,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 57031
+    default: 57667
     required: false
     option_strings:
     - --port-ctrl
@@ -134,7 +134,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 42291
+    default: 54823
     required: false
     option_strings:
     - --port-in
@@ -144,7 +144,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 60205
+    default: 33797
     required: false
     option_strings:
     - --port-out
@@ -319,7 +319,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 41077
+    default: 39731
     required: false
     option_strings:
     - --port-expose
@@ -372,7 +372,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 8e0eb533-8be0-4264-9256-de10c4e7f03f
+    default: 4ee24b13-3217-4a7b-96c2-e2ec97e515b5
     required: false
     option_strings:
     - --workspace-id
@@ -645,7 +645,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 39521
+    default: 41093
     required: false
     option_strings:
     - --port-ctrl
@@ -732,7 +732,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 57591
+    default: 58597
     required: false
     option_strings:
     - --port-in
@@ -742,7 +742,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 37921
+    default: 43513
     required: false
     option_strings:
     - --port-out
@@ -956,7 +956,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 53535
+    default: 55767
     required: false
     option_strings:
     - --port-expose
@@ -1133,7 +1133,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 44519
+    default: 36599
     required: false
     option_strings:
     - --port-ctrl
@@ -1220,7 +1220,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 43633
+    default: 57729
     required: false
     option_strings:
     - --port-in
@@ -1230,7 +1230,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 60227
+    default: 44009
     required: false
     option_strings:
     - --port-out
@@ -1405,7 +1405,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 35375
+    default: 50711
     required: false
     option_strings:
     - --port-expose
@@ -1458,7 +1458,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 443d880e-a501-480b-8fe0-3955a243e0ae
+    default: e637af98-d49c-4ec9-b721-72fd09bca853
     required: false
     option_strings:
     - --workspace-id
@@ -1526,26 +1526,6 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-- name: log
-  options:
-  - help: The regular expression for grouping logs
-    choices: null
-    default: (.*@\d+)\[
-    required: false
-    option_strings:
-    - --groupby-regex
-    type: str
-    default_random: false
-    name: groupby_regex
-  - help: The refresh time interval in seconds, set to -1 to persist all grouped logs
-    choices: null
-    default: 5
-    required: false
-    option_strings:
-    - --refresh-time
-    type: int
-    default_random: false
-    name: refresh_time
 - name: client
   options:
   - help: The number of Documents in each Request.
@@ -1711,7 +1691,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 39693
+    default: 38711
     required: false
     option_strings:
     - --port-expose
@@ -1744,7 +1724,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: 4811b1f3-381e-4d7e-a7f2-48cc17e114dd
+    default: 717e3e2c-0e07-4600-90ec-d217e692134e
     required: false
     option_strings:
     - --workdir
