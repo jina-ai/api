@@ -14,9 +14,9 @@ methods:
 - name: pod
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
-      - how you refer to this object in Python/YAML/CLI\n- log message\n- ...\n\n\
-      When not given, then the default naming strategy will apply.\n             \
-      \       "
+      - how you refer to this object in Python/YAML/CLI\n- visualization\n- log message\
+      \ header\n- automatics docs UI\n- ...\n\nWhen not given, then the default naming\
+      \ strategy will apply. \n                    "
     choices: null
     default: null
     required: false
@@ -25,6 +25,15 @@ methods:
     type: str
     default_random: false
     name: name
+  - help: The description of this object. It will be used in automatics docs UI.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --description
+    type: str
+    default_random: false
+    name: description
   - help: The YAML config of the logger used in this object.
     choices: null
     default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
@@ -43,20 +52,19 @@ methods:
     type: bool
     default_random: false
     name: quiet
-  - help: If set, then exception stack information to be added to the logging message,
-      useful in debugging
+  - help: If set, then exception stack information will not be added to the log
     choices: null
     default: false
     required: false
     option_strings:
-    - --hide-exc-info
+    - --quiet-error
     type: bool
     default_random: false
-    name: hide_exc_info
+    name: quiet_error
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 57903
+    default: 42063
     required: false
     option_strings:
     - --port-ctrl
@@ -143,7 +151,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 56983
+    default: 52853
     required: false
     option_strings:
     - --port-in
@@ -153,7 +161,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 33725
+    default: 43571
     required: false
     option_strings:
     - --port-out
@@ -328,7 +336,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 52245
+    default: 40613
     required: false
     option_strings:
     - --port-expose
@@ -381,7 +389,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 1d28f31c-63d3-43b1-9d3b-27d61e586994
+    default: a125da0d-9579-4cdd-b181-af32d8436f22
     required: false
     option_strings:
     - --workspace-id
@@ -509,9 +517,9 @@ methods:
 - name: flow
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
-      - how you refer to this object in Python/YAML/CLI\n- log message\n- ...\n\n\
-      When not given, then the default naming strategy will apply.\n             \
-      \       "
+      - how you refer to this object in Python/YAML/CLI\n- visualization\n- log message\
+      \ header\n- automatics docs UI\n- ...\n\nWhen not given, then the default naming\
+      \ strategy will apply. \n                    "
     choices: null
     default: null
     required: false
@@ -520,6 +528,15 @@ methods:
     type: str
     default_random: false
     name: name
+  - help: The description of this object. It will be used in automatics docs UI.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --description
+    type: str
+    default_random: false
+    name: description
   - help: The YAML config of the logger used in this object.
     choices: null
     default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
@@ -538,16 +555,15 @@ methods:
     type: bool
     default_random: false
     name: quiet
-  - help: If set, then exception stack information to be added to the logging message,
-      useful in debugging
+  - help: If set, then exception stack information will not be added to the log
     choices: null
     default: false
     required: false
     option_strings:
-    - --hide-exc-info
+    - --quiet-error
     type: bool
     default_random: false
-    name: hide_exc_info
+    name: quiet_error
   - help: The YAML file represents a flow
     choices: null
     default: null
@@ -579,9 +595,9 @@ methods:
 - name: optimizer
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
-      - how you refer to this object in Python/YAML/CLI\n- log message\n- ...\n\n\
-      When not given, then the default naming strategy will apply.\n             \
-      \       "
+      - how you refer to this object in Python/YAML/CLI\n- visualization\n- log message\
+      \ header\n- automatics docs UI\n- ...\n\nWhen not given, then the default naming\
+      \ strategy will apply. \n                    "
     choices: null
     default: null
     required: false
@@ -590,6 +606,15 @@ methods:
     type: str
     default_random: false
     name: name
+  - help: The description of this object. It will be used in automatics docs UI.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --description
+    type: str
+    default_random: false
+    name: description
   - help: The YAML config of the logger used in this object.
     choices: null
     default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
@@ -608,16 +633,15 @@ methods:
     type: bool
     default_random: false
     name: quiet
-  - help: If set, then exception stack information to be added to the logging message,
-      useful in debugging
+  - help: If set, then exception stack information will not be added to the log
     choices: null
     default: false
     required: false
     option_strings:
-    - --hide-exc-info
+    - --quiet-error
     type: bool
     default_random: false
-    name: hide_exc_info
+    name: quiet_error
   - help: The path to a YAML file which defines a FlowOptimizer.
     choices: null
     default: null
@@ -639,9 +663,9 @@ methods:
 - name: gateway
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
-      - how you refer to this object in Python/YAML/CLI\n- log message\n- ...\n\n\
-      When not given, then the default naming strategy will apply.\n             \
-      \       "
+      - how you refer to this object in Python/YAML/CLI\n- visualization\n- log message\
+      \ header\n- automatics docs UI\n- ...\n\nWhen not given, then the default naming\
+      \ strategy will apply. \n                    "
     choices: null
     default: gateway
     required: false
@@ -650,6 +674,15 @@ methods:
     type: str
     default_random: false
     name: name
+  - help: The description of this object. It will be used in automatics docs UI.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --description
+    type: str
+    default_random: false
+    name: description
   - help: The YAML config of the logger used in this object.
     choices: null
     default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
@@ -668,20 +701,19 @@ methods:
     type: bool
     default_random: false
     name: quiet
-  - help: If set, then exception stack information to be added to the logging message,
-      useful in debugging
+  - help: If set, then exception stack information will not be added to the log
     choices: null
     default: false
     required: false
     option_strings:
-    - --hide-exc-info
+    - --quiet-error
     type: bool
     default_random: false
-    name: hide_exc_info
+    name: quiet_error
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 36057
+    default: 55803
     required: false
     option_strings:
     - --port-ctrl
@@ -768,7 +800,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 47901
+    default: 36065
     required: false
     option_strings:
     - --port-in
@@ -778,7 +810,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 60941
+    default: 35391
     required: false
     option_strings:
     - --port-out
@@ -992,7 +1024,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 46513
+    default: 42911
     required: false
     option_strings:
     - --port-expose
@@ -1136,9 +1168,9 @@ methods:
 - name: pea
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
-      - how you refer to this object in Python/YAML/CLI\n- log message\n- ...\n\n\
-      When not given, then the default naming strategy will apply.\n             \
-      \       "
+      - how you refer to this object in Python/YAML/CLI\n- visualization\n- log message\
+      \ header\n- automatics docs UI\n- ...\n\nWhen not given, then the default naming\
+      \ strategy will apply. \n                    "
     choices: null
     default: null
     required: false
@@ -1147,6 +1179,15 @@ methods:
     type: str
     default_random: false
     name: name
+  - help: The description of this object. It will be used in automatics docs UI.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --description
+    type: str
+    default_random: false
+    name: description
   - help: The YAML config of the logger used in this object.
     choices: null
     default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
@@ -1165,20 +1206,19 @@ methods:
     type: bool
     default_random: false
     name: quiet
-  - help: If set, then exception stack information to be added to the logging message,
-      useful in debugging
+  - help: If set, then exception stack information will not be added to the log
     choices: null
     default: false
     required: false
     option_strings:
-    - --hide-exc-info
+    - --quiet-error
     type: bool
     default_random: false
-    name: hide_exc_info
+    name: quiet_error
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 54909
+    default: 39375
     required: false
     option_strings:
     - --port-ctrl
@@ -1265,7 +1305,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 46563
+    default: 36877
     required: false
     option_strings:
     - --port-in
@@ -1275,7 +1315,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 53273
+    default: 34933
     required: false
     option_strings:
     - --port-out
@@ -1450,7 +1490,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 51959
+    default: 57927
     required: false
     option_strings:
     - --port-expose
@@ -1503,7 +1543,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: a36a9f83-5e37-418a-aee1-5725a98526e3
+    default: e94f273e-1c0a-4edc-9f4c-d26014141a5a
     required: false
     option_strings:
     - --workspace-id
@@ -1736,7 +1776,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 43233
+    default: 50541
     required: false
     option_strings:
     - --port-expose
@@ -1769,7 +1809,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: 17477ed0-16a1-4caa-aa1b-671618ab0664
+    default: fc0ee08b-ae0e-4cc5-9caf-0b37059cbb6f
     required: false
     option_strings:
     - --workdir
