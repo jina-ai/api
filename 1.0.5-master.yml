@@ -34,6 +34,15 @@ methods:
     type: str
     default_random: false
     name: log_config
+  - help: If set, then no log will be emitted from this object.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --quiet
+    type: bool
+    default_random: false
+    name: quiet
   - help: If set, then exception stack information to be added to the logging message,
       useful in debugging
     choices: null
@@ -47,7 +56,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 47597
+    default: 58061
     required: false
     option_strings:
     - --port-ctrl
@@ -134,7 +143,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 52477
+    default: 45531
     required: false
     option_strings:
     - --port-in
@@ -144,7 +153,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 53053
+    default: 43143
     required: false
     option_strings:
     - --port-out
@@ -319,7 +328,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 33027
+    default: 34893
     required: false
     option_strings:
     - --port-expose
@@ -372,7 +381,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 496eff67-b5b0-4a28-a365-dd62e2f2000c
+    default: d7d665f6-f972-4fb9-a777-7798a3bdeece
     required: false
     option_strings:
     - --workspace-id
@@ -520,6 +529,15 @@ methods:
     type: str
     default_random: false
     name: log_config
+  - help: If set, then no log will be emitted from this object.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --quiet
+    type: bool
+    default_random: false
+    name: quiet
   - help: If set, then exception stack information to be added to the logging message,
       useful in debugging
     choices: null
@@ -581,6 +599,15 @@ methods:
     type: str
     default_random: false
     name: log_config
+  - help: If set, then no log will be emitted from this object.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --quiet
+    type: bool
+    default_random: false
+    name: quiet
   - help: If set, then exception stack information to be added to the logging message,
       useful in debugging
     choices: null
@@ -632,6 +659,15 @@ methods:
     type: str
     default_random: false
     name: log_config
+  - help: If set, then no log will be emitted from this object.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --quiet
+    type: bool
+    default_random: false
+    name: quiet
   - help: If set, then exception stack information to be added to the logging message,
       useful in debugging
     choices: null
@@ -645,7 +681,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 50297
+    default: 56077
     required: false
     option_strings:
     - --port-ctrl
@@ -732,7 +768,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 49075
+    default: 57705
     required: false
     option_strings:
     - --port-in
@@ -742,7 +778,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 37591
+    default: 38469
     required: false
     option_strings:
     - --port-out
@@ -956,7 +992,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 58919
+    default: 58173
     required: false
     option_strings:
     - --port-expose
@@ -1120,6 +1156,15 @@ methods:
     type: str
     default_random: false
     name: log_config
+  - help: If set, then no log will be emitted from this object.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --quiet
+    type: bool
+    default_random: false
+    name: quiet
   - help: If set, then exception stack information to be added to the logging message,
       useful in debugging
     choices: null
@@ -1133,7 +1178,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 40067
+    default: 59337
     required: false
     option_strings:
     - --port-ctrl
@@ -1220,7 +1265,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 34267
+    default: 35145
     required: false
     option_strings:
     - --port-in
@@ -1230,7 +1275,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 56787
+    default: 48571
     required: false
     option_strings:
     - --port-out
@@ -1405,7 +1450,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 35843
+    default: 47737
     required: false
     option_strings:
     - --port-expose
@@ -1458,7 +1503,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: e68bbada-bc60-4b2f-a076-e6f6b3f4eecf
+    default: 3c020e7d-b978-4b51-96a0-f2d34bee2c1e
     required: false
     option_strings:
     - --workspace-id
@@ -1691,7 +1736,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 43567
+    default: 36333
     required: false
     option_strings:
     - --port-expose
@@ -1724,7 +1769,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: 1494ee56-697e-43c6-a4d6-59e9bc39a965
+    default: 1dc03fed-ef86-4db9-84eb-496e593c3eff
     required: false
     option_strings:
     - --workdir
