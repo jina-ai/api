@@ -36,7 +36,7 @@ methods:
     name: description
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -64,7 +64,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 55893
+    default: 57175
     required: false
     option_strings:
     - --port-ctrl
@@ -151,7 +151,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 50999
+    default: 45405
     required: false
     option_strings:
     - --port-in
@@ -161,7 +161,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 54407
+    default: 59709
     required: false
     option_strings:
     - --port-out
@@ -336,7 +336,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 44223
+    default: 58891
     required: false
     option_strings:
     - --port-expose
@@ -389,7 +389,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: d7b34745-e0c1-4182-b6b0-d745a43e6ab4
+    default: e2fc73ac-f864-4cbc-8b27-8571aa4dd0c3
     required: false
     option_strings:
     - --workspace-id
@@ -539,7 +539,7 @@ methods:
     name: description
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -617,7 +617,7 @@ methods:
     name: description
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -685,7 +685,7 @@ methods:
     name: description
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -713,7 +713,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 59865
+    default: 48393
     required: false
     option_strings:
     - --port-ctrl
@@ -800,7 +800,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 36059
+    default: 36581
     required: false
     option_strings:
     - --port-in
@@ -810,7 +810,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 59743
+    default: 52613
     required: false
     option_strings:
     - --port-out
@@ -1024,7 +1024,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 60741
+    default: 32943
     required: false
     option_strings:
     - --port-expose
@@ -1190,7 +1190,7 @@ methods:
     name: description
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -1218,7 +1218,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 35693
+    default: 55227
     required: false
     option_strings:
     - --port-ctrl
@@ -1305,7 +1305,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 49823
+    default: 49791
     required: false
     option_strings:
     - --port-in
@@ -1315,7 +1315,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 58647
+    default: 41353
     required: false
     option_strings:
     - --port-out
@@ -1490,7 +1490,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 33093
+    default: 57859
     required: false
     option_strings:
     - --port-expose
@@ -1543,7 +1543,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 65cf0f4e-a445-43d6-aa57-bf4d7a54e2e1
+    default: c3024ccd-9d71-42f0-bf1c-0752f8f6783f
     required: false
     option_strings:
     - --workspace-id
@@ -1776,7 +1776,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 59723
+    default: 52473
     required: false
     option_strings:
     - --port-expose
@@ -1809,7 +1809,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: fd4e8ac4-eb73-4848-9034-25e98bfe1d25
+    default: b955dec6-ed33-46aa-9ea2-c1afae00d06e
     required: false
     option_strings:
     - --workdir
@@ -1846,7 +1846,7 @@ methods:
     name: parallel
   - help: The yaml path of the index flow
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/fashion/helloworld.flow.index.yml
+    default: /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/jina/resources/fashion/helloworld.flow.index.yml
     required: false
     option_strings:
     - --uses-index
@@ -1883,7 +1883,7 @@ methods:
     name: index_request_size
   - help: The yaml path of the query flow
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jina/resources/fashion/helloworld.flow.query.yml
+    default: /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/jina/resources/fashion/helloworld.flow.query.yml
     required: false
     option_strings:
     - --uses-query
