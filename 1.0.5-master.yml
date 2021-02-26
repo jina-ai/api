@@ -64,7 +64,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 57901
+    default: 56613
     required: false
     option_strings:
     - --port-ctrl
@@ -151,7 +151,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 49799
+    default: 45417
     required: false
     option_strings:
     - --port-in
@@ -161,7 +161,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 50881
+    default: 50355
     required: false
     option_strings:
     - --port-out
@@ -301,6 +301,17 @@ methods:
     type: str
     default_random: false
     name: entrypoint
+  - help: "\nDictionary of kwargs arguments that will be passed to Docker SDK when\
+      \ starting the docker '\ncontainer. \n\nMore details can be found in the Docker\
+      \ SDK docs:  https://docker-py.readthedocs.io/en/stable/\n\n"
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --docker-kwargs
+    type: dict
+    default_random: false
+    name: docker_kwargs
   - help: Pull the latest image before running
     choices: null
     default: false
@@ -336,7 +347,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55097
+    default: 40585
     required: false
     option_strings:
     - --port-expose
@@ -389,7 +400,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 16ff7a25-ece2-4e6f-9453-4fd74fe47bad
+    default: b4e49860-e05a-4c3a-a7c7-9836c360a9d7
     required: false
     option_strings:
     - --workspace-id
@@ -445,6 +456,15 @@ methods:
     type: int
     default_random: false
     name: timeout_ready
+  - help: The map of environment variables that are available inside runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --env
+    type: dict
+    default_random: false
+    name: env
   - help: If set, expose the public IP address to remote when necessary, by default
       it exposesprivate IP address, which only allows accessing under the same network/subnet.
       Important to set this to true when the Pea will receive input connections from
@@ -713,7 +733,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 49545
+    default: 39961
     required: false
     option_strings:
     - --port-ctrl
@@ -800,7 +820,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 57991
+    default: 54933
     required: false
     option_strings:
     - --port-in
@@ -810,7 +830,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 45215
+    default: 48071
     required: false
     option_strings:
     - --port-out
@@ -1024,7 +1044,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 34173
+    default: 48549
     required: false
     option_strings:
     - --port-expose
@@ -1080,6 +1100,15 @@ methods:
     type: int
     default_random: false
     name: timeout_ready
+  - help: The map of environment variables that are available inside runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --env
+    type: dict
+    default_random: false
+    name: env
   - help: If set, expose the public IP address to remote when necessary, by default
       it exposesprivate IP address, which only allows accessing under the same network/subnet.
       Important to set this to true when the Pea will receive input connections from
@@ -1218,7 +1247,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 40055
+    default: 51881
     required: false
     option_strings:
     - --port-ctrl
@@ -1305,7 +1334,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 50579
+    default: 57847
     required: false
     option_strings:
     - --port-in
@@ -1315,7 +1344,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 40777
+    default: 59843
     required: false
     option_strings:
     - --port-out
@@ -1455,6 +1484,17 @@ methods:
     type: str
     default_random: false
     name: entrypoint
+  - help: "\nDictionary of kwargs arguments that will be passed to Docker SDK when\
+      \ starting the docker '\ncontainer. \n\nMore details can be found in the Docker\
+      \ SDK docs:  https://docker-py.readthedocs.io/en/stable/\n\n"
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --docker-kwargs
+    type: dict
+    default_random: false
+    name: docker_kwargs
   - help: Pull the latest image before running
     choices: null
     default: false
@@ -1490,7 +1530,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 34629
+    default: 41117
     required: false
     option_strings:
     - --port-expose
@@ -1543,7 +1583,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: a8c41160-3c4b-4ef0-a486-b38fac957282
+    default: 70456656-3628-4244-9482-a580fc78e16d
     required: false
     option_strings:
     - --workspace-id
@@ -1599,6 +1639,15 @@ methods:
     type: int
     default_random: false
     name: timeout_ready
+  - help: The map of environment variables that are available inside runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --env
+    type: dict
+    default_random: false
+    name: env
   - help: If set, expose the public IP address to remote when necessary, by default
       it exposesprivate IP address, which only allows accessing under the same network/subnet.
       Important to set this to true when the Pea will receive input connections from
@@ -1776,7 +1825,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 52081
+    default: 35017
     required: false
     option_strings:
     - --port-expose
@@ -1809,7 +1858,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: d137ad7b-034c-4699-ae22-0d526058a2dd
+    default: 3caa8f8e-d022-4f3a-a2a2-ac4a561f5c25
     required: false
     option_strings:
     - --workdir
