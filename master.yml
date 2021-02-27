@@ -64,7 +64,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 36999
+    default: 50049
     required: false
     option_strings:
     - --port-ctrl
@@ -120,7 +120,7 @@ methods:
     default_random: false
     name: ssh_password
   - help: "\nThe config of the executor, it could be one of the followings: \n- an\
-      \ Executor-level YAML file path (*.yml/yaml) \n- a name of a class inherited\
+      \ Executor-level YAML file path (.yml, .yaml, .jaml) \n- a name of a class inherited\
       \ from `jina.Executor`\n- a docker image (must start with `docker://`)\n- builtin\
       \ executors, e.g. `_pass`, `_logforward`, `_merge` \n- the string literal of\
       \ a YAML config (must start with `!`)\n- the string literal of a JSON config\n\
@@ -151,7 +151,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 42681
+    default: 47675
     required: false
     option_strings:
     - --port-in
@@ -161,7 +161,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 48961
+    default: 49299
     required: false
     option_strings:
     - --port-out
@@ -347,7 +347,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55927
+    default: 47393
     required: false
     option_strings:
     - --port-expose
@@ -400,7 +400,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: d38c2d7e-cbcb-4a6e-9645-0a32b31dd70a
+    default: c4d25935-a9c2-4443-81a0-382320f0db39
     required: false
     option_strings:
     - --workspace-id
@@ -733,7 +733,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 49091
+    default: 55051
     required: false
     option_strings:
     - --port-ctrl
@@ -789,7 +789,7 @@ methods:
     default_random: false
     name: ssh_password
   - help: "\nThe config of the executor, it could be one of the followings: \n- an\
-      \ Executor-level YAML file path (*.yml/yaml) \n- a name of a class inherited\
+      \ Executor-level YAML file path (.yml, .yaml, .jaml) \n- a name of a class inherited\
       \ from `jina.Executor`\n- a docker image (must start with `docker://`)\n- builtin\
       \ executors, e.g. `_pass`, `_logforward`, `_merge` \n- the string literal of\
       \ a YAML config (must start with `!`)\n- the string literal of a JSON config\n\
@@ -820,7 +820,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 37377
+    default: 46925
     required: false
     option_strings:
     - --port-in
@@ -830,7 +830,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 56301
+    default: 48183
     required: false
     option_strings:
     - --port-out
@@ -1044,7 +1044,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 60327
+    default: 34961
     required: false
     option_strings:
     - --port-expose
@@ -1247,7 +1247,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 51035
+    default: 49175
     required: false
     option_strings:
     - --port-ctrl
@@ -1303,7 +1303,7 @@ methods:
     default_random: false
     name: ssh_password
   - help: "\nThe config of the executor, it could be one of the followings: \n- an\
-      \ Executor-level YAML file path (*.yml/yaml) \n- a name of a class inherited\
+      \ Executor-level YAML file path (.yml, .yaml, .jaml) \n- a name of a class inherited\
       \ from `jina.Executor`\n- a docker image (must start with `docker://`)\n- builtin\
       \ executors, e.g. `_pass`, `_logforward`, `_merge` \n- the string literal of\
       \ a YAML config (must start with `!`)\n- the string literal of a JSON config\n\
@@ -1334,7 +1334,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 43471
+    default: 39789
     required: false
     option_strings:
     - --port-in
@@ -1344,7 +1344,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 59819
+    default: 33913
     required: false
     option_strings:
     - --port-out
@@ -1530,7 +1530,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 52289
+    default: 52065
     required: false
     option_strings:
     - --port-expose
@@ -1583,7 +1583,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: d60df1a3-a7ee-4ccf-933e-e416e6251a57
+    default: 7c69ac0b-10d0-45ee-9dee-c773afd88e4a
     required: false
     option_strings:
     - --workspace-id
@@ -1825,7 +1825,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 40653
+    default: 44751
     required: false
     option_strings:
     - --port-expose
@@ -1867,7 +1867,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: 4e845c3c-2226-4821-8eaf-d3fb4af48055
+    default: c4f5cc62-4893-4491-88a3-3a99b3af95eb
     required: false
     option_strings:
     - --workdir
