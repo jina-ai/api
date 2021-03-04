@@ -64,7 +64,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 53449
+    default: 53189
     required: false
     option_strings:
     - --port-ctrl
@@ -119,14 +119,32 @@ methods:
     type: str
     default_random: false
     name: ssh_password
-  - help: "\nThe config of the executor, it could be one of the followings: \n- an\
-      \ Executor-level YAML file path (.yml, .yaml, .jaml) \n- a name of a class inherited\
-      \ from `jina.Executor`\n- a docker image (must start with `docker://`)\n- builtin\
-      \ executors, e.g. `_pass`, `_logforward`, `_merge` \n- the string literal of\
-      \ a YAML config (must start with `!`)\n- the string literal of a JSON config\n\
-      - the string literal of a YAML driver config (must start with `- !!`)\n\nWhen\
-      \ use it under Python, one can use the following values additionally:\n- a Python\
-      \ dict that represents the config\n- a text file stream has `.read()` interface\n"
+  - help: '
+
+      The config of the executor, it could be one of the followings:
+
+      - an Executor-level YAML file path (.yml, .yaml, .jaml)
+
+      - a name of a class inherited from `jina.Executor`
+
+      - a docker image (must start with `docker://`)
+
+      - builtin executors, e.g. `_pass`, `_logforward`, `_merge`
+
+      - the string literal of a YAML config (must start with `!`)
+
+      - the string literal of a JSON config
+
+      - the string literal of a YAML driver config (must start with `- !!`)
+
+
+      When use it under Python, one can use the following values additionally:
+
+      - a Python dict that represents the config
+
+      - a text file stream has `.read()` interface
+
+      '
     choices: null
     default: _pass
     required: false
@@ -135,12 +153,22 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: "\nThe customized python modules need to be imported before loading the\
-      \ executor\n\nNote, when importing multiple files and there is a dependency\
-      \ between them, then one has to write the dependencies in \nreverse order. That\
-      \ is, if `__init__.py` depends on `A.py`, which again depends on `B.py`, then\
-      \ you need to write: \n\n--py-modules __init__.py --py-modules B.py --py-modules\
-      \ A.py\n\n"
+  - help: '
+
+      The customized python modules need to be imported before loading the executor
+
+
+      Note, when importing multiple files and there is a dependency between them,
+      then one has to write the dependencies in
+
+      reverse order. That is, if `__init__.py` depends on `A.py`, which again depends
+      on `B.py`, then you need to write:
+
+
+      --py-modules __init__.py --py-modules B.py --py-modules A.py
+
+
+      '
     choices: null
     default: null
     required: false
@@ -151,7 +179,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 60353
+    default: 34985
     required: false
     option_strings:
     - --port-in
@@ -161,7 +189,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 60557
+    default: 46815
     required: false
     option_strings:
     - --port-out
@@ -259,15 +287,30 @@ methods:
     type: int
     default_random: false
     name: memory_hwm
-  - help: "\nThe skip strategy on exceptions.\n\n- IGNORE: Ignore it, keep running\
-      \ all Drivers & Executors logics in the sequel flow\n- SKIP_EXECUTOR: Skip all\
-      \ Executors in the sequel, but drivers are still called\n- SKIP_HANDLE: Skip\
-      \ all Drivers & Executors in the sequel, only `pre_hook` and `post_hook` are\
-      \ called\n- THROW_EARLY: Immediately throw the exception, the sequel flow will\
-      \ not be running at all \n                    \nNote, `IGNORE`, `SKIP_EXECUTOR`\
-      \ and `SKIP_HANDLE` do not guarantee the success execution in the sequel flow.\
-      \ If something \nis wrong in the upstream, it is hard to carry this exception\
-      \ and moving forward without any side-effect.\n"
+  - help: '
+
+      The skip strategy on exceptions.
+
+
+      - IGNORE: Ignore it, keep running all Drivers & Executors logics in the sequel
+      flow
+
+      - SKIP_EXECUTOR: Skip all Executors in the sequel, but drivers are still called
+
+      - SKIP_HANDLE: Skip all Drivers & Executors in the sequel, only `pre_hook` and
+      `post_hook` are called
+
+      - THROW_EARLY: Immediately throw the exception, the sequel flow will not be
+      running at all
+
+
+      Note, `IGNORE`, `SKIP_EXECUTOR` and `SKIP_HANDLE` do not guarantee the success
+      execution in the sequel flow. If something
+
+      is wrong in the upstream, it is hard to carry this exception and moving forward
+      without any side-effect.
+
+      '
     choices:
     - IGNORE
     - SKIP_EXECUTOR
@@ -347,7 +390,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 57887
+    default: 52839
     required: false
     option_strings:
     - --port-expose
@@ -400,7 +443,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: f51ae92e-07f3-4607-91c5-62585959c91e
+    default: 7faaa8e9-7d21-446b-869d-d4b4462517d3
     required: false
     option_strings:
     - --workspace-id
@@ -733,7 +776,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 58077
+    default: 52137
     required: false
     option_strings:
     - --port-ctrl
@@ -788,14 +831,32 @@ methods:
     type: str
     default_random: false
     name: ssh_password
-  - help: "\nThe config of the executor, it could be one of the followings: \n- an\
-      \ Executor-level YAML file path (.yml, .yaml, .jaml) \n- a name of a class inherited\
-      \ from `jina.Executor`\n- a docker image (must start with `docker://`)\n- builtin\
-      \ executors, e.g. `_pass`, `_logforward`, `_merge` \n- the string literal of\
-      \ a YAML config (must start with `!`)\n- the string literal of a JSON config\n\
-      - the string literal of a YAML driver config (must start with `- !!`)\n\nWhen\
-      \ use it under Python, one can use the following values additionally:\n- a Python\
-      \ dict that represents the config\n- a text file stream has `.read()` interface\n"
+  - help: '
+
+      The config of the executor, it could be one of the followings:
+
+      - an Executor-level YAML file path (.yml, .yaml, .jaml)
+
+      - a name of a class inherited from `jina.Executor`
+
+      - a docker image (must start with `docker://`)
+
+      - builtin executors, e.g. `_pass`, `_logforward`, `_merge`
+
+      - the string literal of a YAML config (must start with `!`)
+
+      - the string literal of a JSON config
+
+      - the string literal of a YAML driver config (must start with `- !!`)
+
+
+      When use it under Python, one can use the following values additionally:
+
+      - a Python dict that represents the config
+
+      - a text file stream has `.read()` interface
+
+      '
     choices: null
     default: _pass
     required: false
@@ -804,12 +865,22 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: "\nThe customized python modules need to be imported before loading the\
-      \ executor\n\nNote, when importing multiple files and there is a dependency\
-      \ between them, then one has to write the dependencies in \nreverse order. That\
-      \ is, if `__init__.py` depends on `A.py`, which again depends on `B.py`, then\
-      \ you need to write: \n\n--py-modules __init__.py --py-modules B.py --py-modules\
-      \ A.py\n\n"
+  - help: '
+
+      The customized python modules need to be imported before loading the executor
+
+
+      Note, when importing multiple files and there is a dependency between them,
+      then one has to write the dependencies in
+
+      reverse order. That is, if `__init__.py` depends on `A.py`, which again depends
+      on `B.py`, then you need to write:
+
+
+      --py-modules __init__.py --py-modules B.py --py-modules A.py
+
+
+      '
     choices: null
     default: null
     required: false
@@ -820,7 +891,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 43419
+    default: 40481
     required: false
     option_strings:
     - --port-in
@@ -830,7 +901,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 33597
+    default: 43163
     required: false
     option_strings:
     - --port-out
@@ -928,15 +999,30 @@ methods:
     type: int
     default_random: false
     name: memory_hwm
-  - help: "\nThe skip strategy on exceptions.\n\n- IGNORE: Ignore it, keep running\
-      \ all Drivers & Executors logics in the sequel flow\n- SKIP_EXECUTOR: Skip all\
-      \ Executors in the sequel, but drivers are still called\n- SKIP_HANDLE: Skip\
-      \ all Drivers & Executors in the sequel, only `pre_hook` and `post_hook` are\
-      \ called\n- THROW_EARLY: Immediately throw the exception, the sequel flow will\
-      \ not be running at all \n                    \nNote, `IGNORE`, `SKIP_EXECUTOR`\
-      \ and `SKIP_HANDLE` do not guarantee the success execution in the sequel flow.\
-      \ If something \nis wrong in the upstream, it is hard to carry this exception\
-      \ and moving forward without any side-effect.\n"
+  - help: '
+
+      The skip strategy on exceptions.
+
+
+      - IGNORE: Ignore it, keep running all Drivers & Executors logics in the sequel
+      flow
+
+      - SKIP_EXECUTOR: Skip all Executors in the sequel, but drivers are still called
+
+      - SKIP_HANDLE: Skip all Drivers & Executors in the sequel, only `pre_hook` and
+      `post_hook` are called
+
+      - THROW_EARLY: Immediately throw the exception, the sequel flow will not be
+      running at all
+
+
+      Note, `IGNORE`, `SKIP_EXECUTOR` and `SKIP_HANDLE` do not guarantee the success
+      execution in the sequel flow. If something
+
+      is wrong in the upstream, it is hard to carry this exception and moving forward
+      without any side-effect.
+
+      '
     choices:
     - IGNORE
     - SKIP_EXECUTOR
@@ -996,9 +1082,13 @@ methods:
     type: bool
     default_random: false
     name: restful
-  - help: "\nThe compress algorithm used over the entire Flow. \n\nNote that this\
-      \ is not necessarily effective, it depends on the settings of `--compress-lwm`\
-      \ and `compress-hwm`"
+  - help: '
+
+      The compress algorithm used over the entire Flow.
+
+
+      Note that this is not necessarily effective, it depends on the settings of `--compress-lwm`
+      and `compress-hwm`'
     choices:
     - NONE
     - LZ4
@@ -1044,7 +1134,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 59997
+    default: 51879
     required: false
     option_strings:
     - --port-expose
@@ -1247,7 +1337,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 49877
+    default: 36251
     required: false
     option_strings:
     - --port-ctrl
@@ -1302,14 +1392,32 @@ methods:
     type: str
     default_random: false
     name: ssh_password
-  - help: "\nThe config of the executor, it could be one of the followings: \n- an\
-      \ Executor-level YAML file path (.yml, .yaml, .jaml) \n- a name of a class inherited\
-      \ from `jina.Executor`\n- a docker image (must start with `docker://`)\n- builtin\
-      \ executors, e.g. `_pass`, `_logforward`, `_merge` \n- the string literal of\
-      \ a YAML config (must start with `!`)\n- the string literal of a JSON config\n\
-      - the string literal of a YAML driver config (must start with `- !!`)\n\nWhen\
-      \ use it under Python, one can use the following values additionally:\n- a Python\
-      \ dict that represents the config\n- a text file stream has `.read()` interface\n"
+  - help: '
+
+      The config of the executor, it could be one of the followings:
+
+      - an Executor-level YAML file path (.yml, .yaml, .jaml)
+
+      - a name of a class inherited from `jina.Executor`
+
+      - a docker image (must start with `docker://`)
+
+      - builtin executors, e.g. `_pass`, `_logforward`, `_merge`
+
+      - the string literal of a YAML config (must start with `!`)
+
+      - the string literal of a JSON config
+
+      - the string literal of a YAML driver config (must start with `- !!`)
+
+
+      When use it under Python, one can use the following values additionally:
+
+      - a Python dict that represents the config
+
+      - a text file stream has `.read()` interface
+
+      '
     choices: null
     default: _pass
     required: false
@@ -1318,12 +1426,22 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: "\nThe customized python modules need to be imported before loading the\
-      \ executor\n\nNote, when importing multiple files and there is a dependency\
-      \ between them, then one has to write the dependencies in \nreverse order. That\
-      \ is, if `__init__.py` depends on `A.py`, which again depends on `B.py`, then\
-      \ you need to write: \n\n--py-modules __init__.py --py-modules B.py --py-modules\
-      \ A.py\n\n"
+  - help: '
+
+      The customized python modules need to be imported before loading the executor
+
+
+      Note, when importing multiple files and there is a dependency between them,
+      then one has to write the dependencies in
+
+      reverse order. That is, if `__init__.py` depends on `A.py`, which again depends
+      on `B.py`, then you need to write:
+
+
+      --py-modules __init__.py --py-modules B.py --py-modules A.py
+
+
+      '
     choices: null
     default: null
     required: false
@@ -1334,7 +1452,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 50299
+    default: 43709
     required: false
     option_strings:
     - --port-in
@@ -1344,7 +1462,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 48427
+    default: 58337
     required: false
     option_strings:
     - --port-out
@@ -1442,15 +1560,30 @@ methods:
     type: int
     default_random: false
     name: memory_hwm
-  - help: "\nThe skip strategy on exceptions.\n\n- IGNORE: Ignore it, keep running\
-      \ all Drivers & Executors logics in the sequel flow\n- SKIP_EXECUTOR: Skip all\
-      \ Executors in the sequel, but drivers are still called\n- SKIP_HANDLE: Skip\
-      \ all Drivers & Executors in the sequel, only `pre_hook` and `post_hook` are\
-      \ called\n- THROW_EARLY: Immediately throw the exception, the sequel flow will\
-      \ not be running at all \n                    \nNote, `IGNORE`, `SKIP_EXECUTOR`\
-      \ and `SKIP_HANDLE` do not guarantee the success execution in the sequel flow.\
-      \ If something \nis wrong in the upstream, it is hard to carry this exception\
-      \ and moving forward without any side-effect.\n"
+  - help: '
+
+      The skip strategy on exceptions.
+
+
+      - IGNORE: Ignore it, keep running all Drivers & Executors logics in the sequel
+      flow
+
+      - SKIP_EXECUTOR: Skip all Executors in the sequel, but drivers are still called
+
+      - SKIP_HANDLE: Skip all Drivers & Executors in the sequel, only `pre_hook` and
+      `post_hook` are called
+
+      - THROW_EARLY: Immediately throw the exception, the sequel flow will not be
+      running at all
+
+
+      Note, `IGNORE`, `SKIP_EXECUTOR` and `SKIP_HANDLE` do not guarantee the success
+      execution in the sequel flow. If something
+
+      is wrong in the upstream, it is hard to carry this exception and moving forward
+      without any side-effect.
+
+      '
     choices:
     - IGNORE
     - SKIP_EXECUTOR
@@ -1530,7 +1663,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 56729
+    default: 45977
     required: false
     option_strings:
     - --port-expose
@@ -1583,7 +1716,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: b6fd4fd5-e9d5-4485-bcff-def517ac6d27
+    default: df8381da-4c40-4353-aa09-1c41c3025453
     required: false
     option_strings:
     - --workspace-id
@@ -1777,9 +1910,13 @@ methods:
     type: bool
     default_random: false
     name: restful
-  - help: "\nThe compress algorithm used over the entire Flow. \n\nNote that this\
-      \ is not necessarily effective, it depends on the settings of `--compress-lwm`\
-      \ and `compress-hwm`"
+  - help: '
+
+      The compress algorithm used over the entire Flow.
+
+
+      Note that this is not necessarily effective, it depends on the settings of `--compress-lwm`
+      and `compress-hwm`'
     choices:
     - NONE
     - LZ4
@@ -1825,7 +1962,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 49671
+    default: 42591
     required: false
     option_strings:
     - --port-expose
@@ -1867,7 +2004,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: 17c7a7f8-7cc3-464b-ab0b-c71a1892beb4
+    default: 65acab12-55d4-49f4-8193-52483317cf78
     required: false
     option_strings:
     - --workdir
