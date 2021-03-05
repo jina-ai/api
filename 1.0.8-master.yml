@@ -64,7 +64,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 42839
+    default: 50489
     required: false
     option_strings:
     - --port-ctrl
@@ -179,7 +179,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 36667
+    default: 60857
     required: false
     option_strings:
     - --port-in
@@ -189,7 +189,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 51145
+    default: 47883
     required: false
     option_strings:
     - --port-out
@@ -390,7 +390,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55535
+    default: 41997
     required: false
     option_strings:
     - --port-expose
@@ -443,7 +443,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: c81a7711-150a-4638-98b0-18ab91907a52
+    default: 9765281f-5fdd-4052-adc8-e8736e748a40
     required: false
     option_strings:
     - --workspace-id
@@ -776,7 +776,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 52781
+    default: 47321
     required: false
     option_strings:
     - --port-ctrl
@@ -891,7 +891,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 38447
+    default: 32821
     required: false
     option_strings:
     - --port-in
@@ -901,7 +901,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 42627
+    default: 38357
     required: false
     option_strings:
     - --port-out
@@ -1134,7 +1134,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 45229
+    default: 41589
     required: false
     option_strings:
     - --port-expose
@@ -1337,7 +1337,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 38289
+    default: 55829
     required: false
     option_strings:
     - --port-ctrl
@@ -1452,7 +1452,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 60247
+    default: 52681
     required: false
     option_strings:
     - --port-in
@@ -1462,12 +1462,13 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 44145
+    default: 60591
     required: false
     option_strings:
     - --port-out
     type: int
-    default_random: false
+    default_random: true
+    default_factory: random_port
     name: port_out
   - help: The host address for input, by default it is 0.0.0.0
     choices: null
@@ -1662,7 +1663,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 44679
+    default: 59359
     required: false
     option_strings:
     - --port-expose
@@ -1715,7 +1716,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 286dddcc-516b-419d-aa6d-ff725b8645f1
+    default: 7dbe6e53-afaa-4f9f-b50e-a932e2f66bd8
     required: false
     option_strings:
     - --workspace-id
@@ -1961,7 +1962,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 59261
+    default: 45315
     required: false
     option_strings:
     - --port-expose
@@ -2003,7 +2004,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: 5bc338ec-779a-49a4-9c27-8612d72cde67
+    default: e5cf7b37-081c-4a14-8b48-d84f36fc717f
     required: false
     option_strings:
     - --workdir
