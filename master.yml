@@ -64,7 +64,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 60689
+    default: 34135
     required: false
     option_strings:
     - --port-ctrl
@@ -179,7 +179,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 39325
+    default: 54913
     required: false
     option_strings:
     - --port-in
@@ -189,7 +189,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 37149
+    default: 46637
     required: false
     option_strings:
     - --port-out
@@ -390,7 +390,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 36185
+    default: 49225
     required: false
     option_strings:
     - --port-expose
@@ -443,7 +443,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 407d20b3-2883-4548-9d0f-5d59cfffef26
+    default: 5903bf69-7d20-406b-b43f-e4a7331b1384
     required: false
     option_strings:
     - --workspace-id
@@ -552,9 +552,15 @@ methods:
     type: int
     default_random: false
     name: parallel
-  - help: "\nThe polling strategy of the Pod (when `parallel>1`) \n- ANY: only one\
-      \ (whoever is idle) Pea polls the message\n- ALL: all Peas poll the message\
-      \ (like a broadcast)\n"
+  - help: '
+
+      The polling strategy of the Pod (when `parallel>1`)
+
+      - ANY: only one (whoever is idle) Pea polls the message
+
+      - ALL: all Peas poll the message (like a broadcast)
+
+      '
     choices:
     - ANY
     - ALL
@@ -577,16 +583,15 @@ methods:
     type: str
     default_random: false
     name: scheduling
-  - help: "The hosts of the peas when parallel greater than 1,\n        pea have a\
-      \ new host address if the pea_id present in the map.\n        otherwise pea\
-      \ host will be identical to the host of pod.\n        Represented as a key value\
-      \ pair in argument.\n        key is the pea_id, and value is the host address."
+  - help: "The hosts of the peas when parallel greater than 1.\n        Peas will\
+      \ be evenly distributed among the hosts. By default,\n        peas are running\
+      \ in the same host as the pod."
     choices: null
     default: null
     required: false
     option_strings:
     - --peas-hosts
-    type: dict
+    type: typing.List[str]
     default_random: false
     name: peas_hosts
 - name: flow
@@ -788,7 +793,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 45569
+    default: 39543
     required: false
     option_strings:
     - --port-ctrl
@@ -903,7 +908,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 39845
+    default: 36049
     required: false
     option_strings:
     - --port-in
@@ -913,7 +918,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 39631
+    default: 56515
     required: false
     option_strings:
     - --port-out
@@ -1146,7 +1151,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 40193
+    default: 35709
     required: false
     option_strings:
     - --port-expose
@@ -1349,7 +1354,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 55355
+    default: 41361
     required: false
     option_strings:
     - --port-ctrl
@@ -1464,7 +1469,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 48573
+    default: 35895
     required: false
     option_strings:
     - --port-in
@@ -1474,7 +1479,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 59047
+    default: 59473
     required: false
     option_strings:
     - --port-out
@@ -1675,7 +1680,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 60337
+    default: 55377
     required: false
     option_strings:
     - --port-expose
@@ -1728,7 +1733,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 378211d1-e91b-457b-ba39-9a8ca15e68cc
+    default: 8b366f01-de71-4dc9-af40-d5732e293d4f
     required: false
     option_strings:
     - --workspace-id
@@ -1974,7 +1979,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 49157
+    default: 47109
     required: false
     option_strings:
     - --port-expose
@@ -2016,7 +2021,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: f4ed2b17-3fd1-46b3-843a-c40eae263a9b
+    default: 48cefa09-067f-4717-9b58-6bc3ef6685aa
     required: false
     option_strings:
     - --workdir
