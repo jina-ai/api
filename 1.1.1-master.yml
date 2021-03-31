@@ -64,7 +64,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 53029
+    default: 59383
     required: false
     option_strings:
     - --port-ctrl
@@ -179,7 +179,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 48357
+    default: 54909
     required: false
     option_strings:
     - --port-in
@@ -189,7 +189,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 58245
+    default: 47037
     required: false
     option_strings:
     - --port-out
@@ -257,8 +257,18 @@ methods:
     type: str
     default_random: false
     name: socket_out
-  - help: 'Serialize the model in the pod every n seconds if model changes. -1 means
-      --read-only. '
+  - help: 'Reload the Executor in the Pod on every n seconds. -1 or 0 means do not
+      reload. '
+    choices: null
+    default: -1
+    required: false
+    option_strings:
+    - --load-interval
+    type: int
+    default_random: false
+    name: load_interval
+  - help: 'Serialize the Executor in the Pod every n seconds if model changes. -1
+      means --read-only. '
     choices: null
     default: 240
     required: false
@@ -390,7 +400,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 51147
+    default: 53947
     required: false
     option_strings:
     - --port-expose
@@ -443,7 +453,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: ddf3f251-a00d-4d60-a244-5a3391e9296b
+    default: 0fdff054-0482-4a6b-b194-a294ed2fbff8
     required: false
     option_strings:
     - --workspace-id
@@ -793,7 +803,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 50425
+    default: 60063
     required: false
     option_strings:
     - --port-ctrl
@@ -908,7 +918,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 47733
+    default: 56183
     required: false
     option_strings:
     - --port-in
@@ -918,7 +928,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 44535
+    default: 53827
     required: false
     option_strings:
     - --port-out
@@ -986,8 +996,18 @@ methods:
     type: str
     default_random: false
     name: socket_out
-  - help: 'Serialize the model in the pod every n seconds if model changes. -1 means
-      --read-only. '
+  - help: 'Reload the Executor in the Pod on every n seconds. -1 or 0 means do not
+      reload. '
+    choices: null
+    default: -1
+    required: false
+    option_strings:
+    - --load-interval
+    type: int
+    default_random: false
+    name: load_interval
+  - help: 'Serialize the Executor in the Pod every n seconds if model changes. -1
+      means --read-only. '
     choices: null
     default: 240
     required: false
@@ -1151,7 +1171,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 53599
+    default: 35019
     required: false
     option_strings:
     - --port-expose
@@ -1354,7 +1374,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 35217
+    default: 54731
     required: false
     option_strings:
     - --port-ctrl
@@ -1469,7 +1489,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 59671
+    default: 53371
     required: false
     option_strings:
     - --port-in
@@ -1479,7 +1499,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 51269
+    default: 35425
     required: false
     option_strings:
     - --port-out
@@ -1547,8 +1567,18 @@ methods:
     type: str
     default_random: false
     name: socket_out
-  - help: 'Serialize the model in the pod every n seconds if model changes. -1 means
-      --read-only. '
+  - help: 'Reload the Executor in the Pod on every n seconds. -1 or 0 means do not
+      reload. '
+    choices: null
+    default: -1
+    required: false
+    option_strings:
+    - --load-interval
+    type: int
+    default_random: false
+    name: load_interval
+  - help: 'Serialize the Executor in the Pod every n seconds if model changes. -1
+      means --read-only. '
     choices: null
     default: 240
     required: false
@@ -1680,7 +1710,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55873
+    default: 45093
     required: false
     option_strings:
     - --port-expose
@@ -1733,7 +1763,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 0b360a2a-e7a3-4d14-84fa-646e45bb5b1a
+    default: 294c0154-505a-4cea-8124-ed7a0c062e38
     required: false
     option_strings:
     - --workspace-id
@@ -1979,7 +2009,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 58661
+    default: 32865
     required: false
     option_strings:
     - --port-expose
@@ -2021,7 +2051,7 @@ methods:
   - help: The workdir for hello-world demoall data, indices, shards and outputs will
       be saved there
     choices: null
-    default: bb747144-0ace-4d24-978c-a1308cffefcc
+    default: f5aff789-4cd3-479a-bf53-6f751bc884f6
     required: false
     option_strings:
     - --workdir
