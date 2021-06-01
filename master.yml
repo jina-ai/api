@@ -74,7 +74,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 42661
+    default: 44059
     required: false
     option_strings:
     - --port-ctrl
@@ -172,7 +172,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 32793
+    default: 57699
     required: false
     option_strings:
     - --port-in
@@ -182,7 +182,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 32775
+    default: 50159
     required: false
     option_strings:
     - --port-out
@@ -359,7 +359,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 50315
+    default: 45603
     required: false
     option_strings:
     - --port-expose
@@ -422,7 +422,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: da41ccba-42e1-4ec0-9a2c-7d8bf8ffc783
+    default: 3892a123-2af7-4850-8d84-125c5af4e590
     required: false
     option_strings:
     - --workspace-id
@@ -566,6 +566,17 @@ methods:
     type: str
     default_random: false
     name: scheduling
+  - help: The Pod will be considered an external Pod that has been started independently
+      from the Flow. This Pod will not be context managed by the Flow, and is considered
+      with `--freeze-network-settings`
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --external
+    type: bool
+    default_random: false
+    name: external
   - help: "The hosts of the peas when parallel greater than 1.\n        Peas will\
       \ be evenly distributed among the hosts. By default,\n        peas are running\
       \ on host provided by the argument ``host``"
@@ -577,16 +588,6 @@ methods:
     type: typing.List[str]
     default_random: false
     name: peas_hosts
-  - help: The Pod will be considered a external Pod that has been started independently
-      from the Pod. The Pod will not be context managed by the Flow
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --external
-    type: bool
-    default_random: false
-    name: external
 - name: pod
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -650,7 +651,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 54925
+    default: 38951
     required: false
     option_strings:
     - --port-ctrl
@@ -748,7 +749,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 32869
+    default: 36749
     required: false
     option_strings:
     - --port-in
@@ -758,7 +759,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 36537
+    default: 35755
     required: false
     option_strings:
     - --port-out
@@ -935,7 +936,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 36235
+    default: 34265
     required: false
     option_strings:
     - --port-expose
@@ -998,7 +999,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 89e40c3f-1fd7-4d93-8d03-725705b266d9
+    default: 316d7b7a-c47a-41bb-a468-04f99deb85ee
     required: false
     option_strings:
     - --workspace-id
@@ -1142,6 +1143,17 @@ methods:
     type: str
     default_random: false
     name: scheduling
+  - help: The Pod will be considered an external Pod that has been started independently
+      from the Flow. This Pod will not be context managed by the Flow, and is considered
+      with `--freeze-network-settings`
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --external
+    type: bool
+    default_random: false
+    name: external
   - help: "The hosts of the peas when parallel greater than 1.\n        Peas will\
       \ be evenly distributed among the hosts. By default,\n        peas are running\
       \ on host provided by the argument ``host``"
@@ -1153,16 +1165,6 @@ methods:
     type: typing.List[str]
     default_random: false
     name: peas_hosts
-  - help: The Pod will be considered a external Pod that has been started independently
-      from the Pod. The Pod will not be context managed by the Flow
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --external
-    type: bool
-    default_random: false
-    name: external
 - name: flow
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -1365,7 +1367,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 52217
+    default: 33713
     required: false
     option_strings:
     - --port-ctrl
@@ -1463,7 +1465,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 44949
+    default: 51607
     required: false
     option_strings:
     - --port-in
@@ -1473,7 +1475,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 58677
+    default: 60677
     required: false
     option_strings:
     - --port-out
@@ -1701,7 +1703,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 59151
+    default: 47887
     required: false
     option_strings:
     - --port-expose
@@ -1855,7 +1857,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 37785
+    default: 56751
     required: false
     option_strings:
     - --port-ctrl
@@ -1953,7 +1955,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 53347
+    default: 41357
     required: false
     option_strings:
     - --port-in
@@ -1963,7 +1965,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 58699
+    default: 50429
     required: false
     option_strings:
     - --port-out
@@ -2140,7 +2142,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 57841
+    default: 34191
     required: false
     option_strings:
     - --port-expose
@@ -2203,7 +2205,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 573819ef-44de-4168-bca1-b180e2e44bba
+    default: b8b5e61c-5dac-44f3-bff3-306a7dff69c6
     required: false
     option_strings:
     - --workspace-id
@@ -2326,7 +2328,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 51707
+    default: 43077
     required: false
     option_strings:
     - --port-expose
