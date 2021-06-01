@@ -74,7 +74,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 58797
+    default: 42661
     required: false
     option_strings:
     - --port-ctrl
@@ -172,7 +172,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 48927
+    default: 32793
     required: false
     option_strings:
     - --port-in
@@ -182,7 +182,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 38531
+    default: 32775
     required: false
     option_strings:
     - --port-out
@@ -359,7 +359,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 56053
+    default: 50315
     required: false
     option_strings:
     - --port-expose
@@ -422,7 +422,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 9c164383-d7cc-49d2-8033-ca569a6906c2
+    default: da41ccba-42e1-4ec0-9a2c-7d8bf8ffc783
     required: false
     option_strings:
     - --workspace-id
@@ -577,6 +577,16 @@ methods:
     type: typing.List[str]
     default_random: false
     name: peas_hosts
+  - help: The Pod will be considered a external Pod that has been started independently
+      from the Pod. The Pod will not be context managed by the Flow
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --external
+    type: bool
+    default_random: false
+    name: external
 - name: pod
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -640,7 +650,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 38301
+    default: 54925
     required: false
     option_strings:
     - --port-ctrl
@@ -738,7 +748,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 49405
+    default: 32869
     required: false
     option_strings:
     - --port-in
@@ -748,7 +758,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 45903
+    default: 36537
     required: false
     option_strings:
     - --port-out
@@ -925,7 +935,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 45565
+    default: 36235
     required: false
     option_strings:
     - --port-expose
@@ -988,7 +998,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: ba6756f9-9944-4dbc-b477-75dfc0ff9ab2
+    default: 89e40c3f-1fd7-4d93-8d03-725705b266d9
     required: false
     option_strings:
     - --workspace-id
@@ -1143,6 +1153,16 @@ methods:
     type: typing.List[str]
     default_random: false
     name: peas_hosts
+  - help: The Pod will be considered a external Pod that has been started independently
+      from the Pod. The Pod will not be context managed by the Flow
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --external
+    type: bool
+    default_random: false
+    name: external
 - name: flow
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -1345,7 +1365,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 34787
+    default: 52217
     required: false
     option_strings:
     - --port-ctrl
@@ -1443,7 +1463,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 39007
+    default: 44949
     required: false
     option_strings:
     - --port-in
@@ -1453,7 +1473,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 44111
+    default: 58677
     required: false
     option_strings:
     - --port-out
@@ -1681,7 +1701,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 49737
+    default: 59151
     required: false
     option_strings:
     - --port-expose
@@ -1835,7 +1855,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 42693
+    default: 37785
     required: false
     option_strings:
     - --port-ctrl
@@ -1933,7 +1953,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 46033
+    default: 53347
     required: false
     option_strings:
     - --port-in
@@ -1943,7 +1963,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 39895
+    default: 58699
     required: false
     option_strings:
     - --port-out
@@ -2120,7 +2140,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 46387
+    default: 57841
     required: false
     option_strings:
     - --port-expose
@@ -2183,7 +2203,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 333d33a4-eb1f-41ac-ba07-2f87e46fd2ae
+    default: 573819ef-44de-4168-bca1-b180e2e44bba
     required: false
     option_strings:
     - --workspace-id
@@ -2306,7 +2326,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 51163
+    default: 51707
     required: false
     option_strings:
     - --port-expose
