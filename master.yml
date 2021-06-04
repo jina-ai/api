@@ -74,7 +74,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 44701
+    default: 50441
     required: false
     option_strings:
     - --port-ctrl
@@ -172,7 +172,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 53867
+    default: 60565
     required: false
     option_strings:
     - --port-in
@@ -182,7 +182,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 58661
+    default: 33541
     required: false
     option_strings:
     - --port-out
@@ -359,7 +359,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55441
+    default: 44217
     required: false
     option_strings:
     - --port-expose
@@ -422,7 +422,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: cdfd573c-67db-4cf2-bb6c-4a93734cea82
+    default: 9e9e600b-3547-4d35-a6d1-27f37bbb8578
     required: false
     option_strings:
     - --workspace-id
@@ -651,7 +651,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 59309
+    default: 34345
     required: false
     option_strings:
     - --port-ctrl
@@ -749,7 +749,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 54711
+    default: 49569
     required: false
     option_strings:
     - --port-in
@@ -759,7 +759,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 52597
+    default: 59433
     required: false
     option_strings:
     - --port-out
@@ -936,7 +936,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 51699
+    default: 59857
     required: false
     option_strings:
     - --port-expose
@@ -999,7 +999,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 35b1e56f-1e6c-44e5-8d33-022d238e448e
+    default: 67c6bd74-0359-4861-8304-7694f0bcc0b9
     required: false
     option_strings:
     - --workspace-id
@@ -1367,7 +1367,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 52095
+    default: 33995
     required: false
     option_strings:
     - --port-ctrl
@@ -1465,7 +1465,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 47109
+    default: 34661
     required: false
     option_strings:
     - --port-in
@@ -1475,7 +1475,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 59621
+    default: 47073
     required: false
     option_strings:
     - --port-out
@@ -1703,7 +1703,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 50581
+    default: 44925
     required: false
     option_strings:
     - --port-expose
@@ -1857,7 +1857,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 47243
+    default: 57075
     required: false
     option_strings:
     - --port-ctrl
@@ -1955,7 +1955,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 60663
+    default: 38199
     required: false
     option_strings:
     - --port-in
@@ -1965,7 +1965,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 51601
+    default: 55917
     required: false
     option_strings:
     - --port-out
@@ -2142,7 +2142,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 37429
+    default: 55189
     required: false
     option_strings:
     - --port-expose
@@ -2205,7 +2205,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 49624fe1-a31e-4922-92d6-7bf70b1a6b7e
+    default: 62db9953-6f02-42d7-a085-95a694bb1e0b
     required: false
     option_strings:
     - --workspace-id
@@ -2328,7 +2328,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 49599
+    default: 56059
     required: false
     option_strings:
     - --port-expose
