@@ -74,7 +74,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 53957
+    default: 59269
     required: false
     option_strings:
     - --port-ctrl
@@ -131,13 +131,12 @@ methods:
     name: ssh_password
   - help: "\n            The config of the executor, it could be one of the followings:\n\
       \            * an Executor-level YAML file path (.yml, .yaml, .jaml)\n     \
-      \       * a name of a class inherited from `jina.Executor`\n            * a\
-      \ docker image (must start with `docker://`)\n            * the string literal\
-      \ of a YAML config (must start with `!`)\n            * the string literal of\
-      \ a JSON config\n            \n            When use it under Python, one can\
-      \ use the following values additionally:\n            - a Python dict that represents\
-      \ the config\n            - a text file stream has `.read()` interface\n   \
-      \         "
+      \       * a docker image (must start with `docker://`)\n            * the string\
+      \ literal of a YAML config (must start with `!` or `jtype: `)\n            *\
+      \ the string literal of a JSON config\n            \n            When use it\
+      \ under Python, one can use the following values additionally:\n           \
+      \ - a Python dict that represents the config\n            - a text file stream\
+      \ has `.read()` interface\n            "
     choices: null
     default: BaseExecutor
     required: false
@@ -172,7 +171,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 51793
+    default: 58185
     required: false
     option_strings:
     - --port-in
@@ -182,7 +181,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 59635
+    default: 38177
     required: false
     option_strings:
     - --port-out
@@ -359,7 +358,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 44111
+    default: 58999
     required: false
     option_strings:
     - --port-expose
@@ -422,7 +421,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: e8dc1b91-8ce0-441a-bd5b-29fd504df4d2
+    default: f7a38403-4347-4025-bc2d-da0d9ff31190
     required: false
     option_strings:
     - --workspace-id
@@ -651,7 +650,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 57917
+    default: 34771
     required: false
     option_strings:
     - --port-ctrl
@@ -708,13 +707,12 @@ methods:
     name: ssh_password
   - help: "\n            The config of the executor, it could be one of the followings:\n\
       \            * an Executor-level YAML file path (.yml, .yaml, .jaml)\n     \
-      \       * a name of a class inherited from `jina.Executor`\n            * a\
-      \ docker image (must start with `docker://`)\n            * the string literal\
-      \ of a YAML config (must start with `!`)\n            * the string literal of\
-      \ a JSON config\n            \n            When use it under Python, one can\
-      \ use the following values additionally:\n            - a Python dict that represents\
-      \ the config\n            - a text file stream has `.read()` interface\n   \
-      \         "
+      \       * a docker image (must start with `docker://`)\n            * the string\
+      \ literal of a YAML config (must start with `!` or `jtype: `)\n            *\
+      \ the string literal of a JSON config\n            \n            When use it\
+      \ under Python, one can use the following values additionally:\n           \
+      \ - a Python dict that represents the config\n            - a text file stream\
+      \ has `.read()` interface\n            "
     choices: null
     default: BaseExecutor
     required: false
@@ -749,7 +747,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 45307
+    default: 36015
     required: false
     option_strings:
     - --port-in
@@ -759,7 +757,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 39273
+    default: 53089
     required: false
     option_strings:
     - --port-out
@@ -936,7 +934,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 49859
+    default: 57723
     required: false
     option_strings:
     - --port-expose
@@ -999,7 +997,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 587cbd48-3fe8-4960-8220-68a40f0d7c55
+    default: 76be7e3b-ba95-4952-a3a5-69ce20297de6
     required: false
     option_strings:
     - --workspace-id
@@ -1367,7 +1365,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 49719
+    default: 52327
     required: false
     option_strings:
     - --port-ctrl
@@ -1424,13 +1422,12 @@ methods:
     name: ssh_password
   - help: "\n            The config of the executor, it could be one of the followings:\n\
       \            * an Executor-level YAML file path (.yml, .yaml, .jaml)\n     \
-      \       * a name of a class inherited from `jina.Executor`\n            * a\
-      \ docker image (must start with `docker://`)\n            * the string literal\
-      \ of a YAML config (must start with `!`)\n            * the string literal of\
-      \ a JSON config\n            \n            When use it under Python, one can\
-      \ use the following values additionally:\n            - a Python dict that represents\
-      \ the config\n            - a text file stream has `.read()` interface\n   \
-      \         "
+      \       * a docker image (must start with `docker://`)\n            * the string\
+      \ literal of a YAML config (must start with `!` or `jtype: `)\n            *\
+      \ the string literal of a JSON config\n            \n            When use it\
+      \ under Python, one can use the following values additionally:\n           \
+      \ - a Python dict that represents the config\n            - a text file stream\
+      \ has `.read()` interface\n            "
     choices: null
     default: BaseExecutor
     required: false
@@ -1465,7 +1462,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 37175
+    default: 45403
     required: false
     option_strings:
     - --port-in
@@ -1475,7 +1472,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 44867
+    default: 44331
     required: false
     option_strings:
     - --port-out
@@ -1703,7 +1700,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 38459
+    default: 42117
     required: false
     option_strings:
     - --port-expose
@@ -1857,7 +1854,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 33997
+    default: 48693
     required: false
     option_strings:
     - --port-ctrl
@@ -1914,13 +1911,12 @@ methods:
     name: ssh_password
   - help: "\n            The config of the executor, it could be one of the followings:\n\
       \            * an Executor-level YAML file path (.yml, .yaml, .jaml)\n     \
-      \       * a name of a class inherited from `jina.Executor`\n            * a\
-      \ docker image (must start with `docker://`)\n            * the string literal\
-      \ of a YAML config (must start with `!`)\n            * the string literal of\
-      \ a JSON config\n            \n            When use it under Python, one can\
-      \ use the following values additionally:\n            - a Python dict that represents\
-      \ the config\n            - a text file stream has `.read()` interface\n   \
-      \         "
+      \       * a docker image (must start with `docker://`)\n            * the string\
+      \ literal of a YAML config (must start with `!` or `jtype: `)\n            *\
+      \ the string literal of a JSON config\n            \n            When use it\
+      \ under Python, one can use the following values additionally:\n           \
+      \ - a Python dict that represents the config\n            - a text file stream\
+      \ has `.read()` interface\n            "
     choices: null
     default: BaseExecutor
     required: false
@@ -1955,7 +1951,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 39851
+    default: 60275
     required: false
     option_strings:
     - --port-in
@@ -1965,7 +1961,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 49061
+    default: 34165
     required: false
     option_strings:
     - --port-out
@@ -2142,7 +2138,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 56617
+    default: 55889
     required: false
     option_strings:
     - --port-expose
@@ -2205,7 +2201,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 6960f84d-8379-4e1c-8726-dbce2cabc044
+    default: e9134a14-5ac5-4f65-a3e0-20642e22865e
     required: false
     option_strings:
     - --workspace-id
@@ -2328,7 +2324,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 46927
+    default: 49257
     required: false
     option_strings:
     - --port-expose
