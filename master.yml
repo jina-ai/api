@@ -15,8 +15,8 @@ methods:
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
       - how you refer to this object in Python/YAML/CLI\n- visualization\n- log message\
-      \ header\n- automatics docs UI\n- ...\n\nWhen not given, then the default naming\
-      \ strategy will apply. \n                    "
+      \ header\n- ...\n\nWhen not given, then the default naming strategy will apply.\
+      \ \n                    "
     choices: null
     default: null
     required: false
@@ -25,15 +25,6 @@ methods:
     type: str
     default_random: false
     name: name
-  - help: The description of this object. It will be used in automatics docs UI.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --description
-    type: str
-    default_random: false
-    name: description
   - help: The working directory for any IO operations in this object. If not set,
       then derive from its parent `workspace`.
     choices: null
@@ -74,7 +65,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 39919
+    default: 34531
     required: false
     option_strings:
     - --port-ctrl
@@ -129,14 +120,13 @@ methods:
     type: str
     default_random: false
     name: ssh_password
-  - help: "\n            The config of the executor, it could be one of the followings:\n\
-      \            * an Executor-level YAML file path (.yml, .yaml, .jaml)\n     \
-      \       * a docker image (must start with `docker://`)\n            * the string\
-      \ literal of a YAML config (must start with `!` or `jtype: `)\n            *\
-      \ the string literal of a JSON config\n            \n            When use it\
-      \ under Python, one can use the following values additionally:\n           \
-      \ - a Python dict that represents the config\n            - a text file stream\
-      \ has `.read()` interface\n            "
+  - help: "\n        The config of the executor, it could be one of the followings:\n\
+      \        * an Executor-level YAML file path (.yml, .yaml, .jaml)\n        *\
+      \ a docker image (must start with `docker://`)\n        * the string literal\
+      \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
+      \ literal of a JSON config\n        \n        When use it under Python, one\
+      \ can use the following values additionally:\n        - a Python dict that represents\
+      \ the config\n        - a text file stream has `.read()` interface\n        "
     choices: null
     default: BaseExecutor
     required: false
@@ -171,7 +161,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 58303
+    default: 37735
     required: false
     option_strings:
     - --port-in
@@ -181,7 +171,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 34557
+    default: 60767
     required: false
     option_strings:
     - --port-out
@@ -358,7 +348,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 56723
+    default: 56317
     required: false
     option_strings:
     - --port-expose
@@ -421,7 +411,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 05f8a823-1aa2-4c94-8178-3b6454662018
+    default: bd8b06b8-38fa-40d1-882c-0ca8119dbcf8
     required: false
     option_strings:
     - --workspace-id
@@ -591,8 +581,8 @@ methods:
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
       - how you refer to this object in Python/YAML/CLI\n- visualization\n- log message\
-      \ header\n- automatics docs UI\n- ...\n\nWhen not given, then the default naming\
-      \ strategy will apply. \n                    "
+      \ header\n- ...\n\nWhen not given, then the default naming strategy will apply.\
+      \ \n                    "
     choices: null
     default: null
     required: false
@@ -601,15 +591,6 @@ methods:
     type: str
     default_random: false
     name: name
-  - help: The description of this object. It will be used in automatics docs UI.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --description
-    type: str
-    default_random: false
-    name: description
   - help: The working directory for any IO operations in this object. If not set,
       then derive from its parent `workspace`.
     choices: null
@@ -650,7 +631,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 59959
+    default: 35135
     required: false
     option_strings:
     - --port-ctrl
@@ -705,14 +686,13 @@ methods:
     type: str
     default_random: false
     name: ssh_password
-  - help: "\n            The config of the executor, it could be one of the followings:\n\
-      \            * an Executor-level YAML file path (.yml, .yaml, .jaml)\n     \
-      \       * a docker image (must start with `docker://`)\n            * the string\
-      \ literal of a YAML config (must start with `!` or `jtype: `)\n            *\
-      \ the string literal of a JSON config\n            \n            When use it\
-      \ under Python, one can use the following values additionally:\n           \
-      \ - a Python dict that represents the config\n            - a text file stream\
-      \ has `.read()` interface\n            "
+  - help: "\n        The config of the executor, it could be one of the followings:\n\
+      \        * an Executor-level YAML file path (.yml, .yaml, .jaml)\n        *\
+      \ a docker image (must start with `docker://`)\n        * the string literal\
+      \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
+      \ literal of a JSON config\n        \n        When use it under Python, one\
+      \ can use the following values additionally:\n        - a Python dict that represents\
+      \ the config\n        - a text file stream has `.read()` interface\n        "
     choices: null
     default: BaseExecutor
     required: false
@@ -747,7 +727,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 43133
+    default: 36937
     required: false
     option_strings:
     - --port-in
@@ -757,7 +737,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 60645
+    default: 56935
     required: false
     option_strings:
     - --port-out
@@ -934,7 +914,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55759
+    default: 59399
     required: false
     option_strings:
     - --port-expose
@@ -997,7 +977,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: ecfe1766-0857-4368-9f70-3912883f440f
+    default: 8bdb23b7-084f-4dc2-b714-3a4d84f9ff53
     required: false
     option_strings:
     - --workspace-id
@@ -1167,8 +1147,8 @@ methods:
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
       - how you refer to this object in Python/YAML/CLI\n- visualization\n- log message\
-      \ header\n- automatics docs UI\n- ...\n\nWhen not given, then the default naming\
-      \ strategy will apply. \n                    "
+      \ header\n- ...\n\nWhen not given, then the default naming strategy will apply.\
+      \ \n                    "
     choices: null
     default: null
     required: false
@@ -1177,15 +1157,6 @@ methods:
     type: str
     default_random: false
     name: name
-  - help: The description of this object. It will be used in automatics docs UI.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --description
-    type: str
-    default_random: false
-    name: description
   - help: The working directory for any IO operations in this object. If not set,
       then derive from its parent `workspace`.
     choices: null
@@ -1223,94 +1194,6 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
-  - help: The host address of the runtime, by default it is 0.0.0.0.
-    choices: null
-    default: 0.0.0.0
-    required: false
-    option_strings:
-    - --host
-    type: str
-    default_random: false
-    name: host
-  - help: The port of the host exposed to the public
-    choices: null
-    default: 45989
-    required: false
-    option_strings:
-    - --port-expose
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port_expose
-  - help: If set, respect the http_proxy and https_proxy environment variables. otherwise,
-      it will unset these proxy variables before start. gRPC seems to prefer no proxy
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --proxy
-    type: bool
-    default_random: false
-    name: proxy
-  - help: If set, use RESTful interface instead of gRPC as the main interface. This
-      expects the corresponding Flow to be set with --restful as well.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --restful
-    type: bool
-    default_random: false
-    name: restful
-  - help: 'If set, then the input and output of this Client work in an asynchronous
-      manner. '
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --asyncio
-    type: bool
-    default_random: false
-    name: asyncio
-  - help: The number of Documents in each Request.
-    choices: null
-    default: 100
-    required: false
-    option_strings:
-    - --request-size
-    type: int
-    default_random: false
-    name: request_size
-  - help: If set, a Request that causes error will be logged only without blocking
-      the further requests.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --continue-on-error
-    type: bool
-    default_random: false
-    name: continue_on_error
-  - help: If set, client will show a progress bar on receiving every request.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --show-progress
-    type: bool
-    default_random: false
-    name: show_progress
-  - help: "\nThis feature is only used for AsyncClient.\n\nIf set, the results of\
-      \ all Requests will be returned as a list. This is useful when one wants \n\
-      process Responses in bulk instead of using callback. \n                    "
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --return-results
-    type: bool
-    default_random: false
-    name: return_results
   - help: The YAML file represents a flow
     choices: null
     default: null
@@ -1397,8 +1280,8 @@ methods:
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
       - how you refer to this object in Python/YAML/CLI\n- visualization\n- log message\
-      \ header\n- automatics docs UI\n- ...\n\nWhen not given, then the default naming\
-      \ strategy will apply. \n                    "
+      \ header\n- ...\n\nWhen not given, then the default naming strategy will apply.\
+      \ \n                    "
     choices: null
     default: gateway
     required: false
@@ -1407,15 +1290,6 @@ methods:
     type: str
     default_random: false
     name: name
-  - help: The description of this object. It will be used in automatics docs UI.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --description
-    type: str
-    default_random: false
-    name: description
   - help: The working directory for any IO operations in this object. If not set,
       then derive from its parent `workspace`.
     choices: null
@@ -1456,7 +1330,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 52063
+    default: 50995
     required: false
     option_strings:
     - --port-ctrl
@@ -1511,14 +1385,13 @@ methods:
     type: str
     default_random: false
     name: ssh_password
-  - help: "\n            The config of the executor, it could be one of the followings:\n\
-      \            * an Executor-level YAML file path (.yml, .yaml, .jaml)\n     \
-      \       * a docker image (must start with `docker://`)\n            * the string\
-      \ literal of a YAML config (must start with `!` or `jtype: `)\n            *\
-      \ the string literal of a JSON config\n            \n            When use it\
-      \ under Python, one can use the following values additionally:\n           \
-      \ - a Python dict that represents the config\n            - a text file stream\
-      \ has `.read()` interface\n            "
+  - help: "\n        The config of the executor, it could be one of the followings:\n\
+      \        * an Executor-level YAML file path (.yml, .yaml, .jaml)\n        *\
+      \ a docker image (must start with `docker://`)\n        * the string literal\
+      \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
+      \ literal of a JSON config\n        \n        When use it under Python, one\
+      \ can use the following values additionally:\n        - a Python dict that represents\
+      \ the config\n        - a text file stream has `.read()` interface\n        "
     choices: null
     default: BaseExecutor
     required: false
@@ -1553,7 +1426,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 37497
+    default: 36063
     required: false
     option_strings:
     - --port-in
@@ -1563,7 +1436,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 36551
+    default: 38109
     required: false
     option_strings:
     - --port-out
@@ -1673,15 +1546,6 @@ methods:
     type: str
     default_random: false
     name: on_error_strategy
-  - help: The maximum send and receive size for gRPC server in bytes, -1 means unlimited
-    choices: null
-    default: -1
-    required: false
-    option_strings:
-    - --max-message-size
-    type: int
-    default_random: false
-    name: max_message_size
   - help: The number of pre-fetched requests from the client
     choices: null
     default: 50
@@ -1700,48 +1564,67 @@ methods:
     type: int
     default_random: false
     name: prefetch_on_recv
-  - help: '
-
-      The compress algorithm used over the entire Flow.
-
-
-      Note that this is not necessarily effective, it depends on the settings of `--compress-lwm`
-      and `compress-hwm`'
-    choices:
-    - NONE
-    - LZ4
-    - ZLIB
-    - GZIP
-    - BZ2
-    - LZMA
-    default: LZ4
+  - help: The title of this HTTP server. It will be used in automatics docs such as
+      Swagger UI.
+    choices: null
+    default: null
     required: false
     option_strings:
-    - --compress
+    - --title
     type: str
     default_random: false
-    name: compress
-  - help: The original message size must be larger than this number to trigger the
-      compress algorithm, -1 means disable compression.
+    name: title
+  - help: The description of this HTTP server. It will be used in automatics docs
+      such as Swagger UI.
     choices: null
-    default: 1024
+    default: null
     required: false
     option_strings:
-    - --compress-min-bytes
-    type: int
+    - --description
+    type: str
     default_random: false
-    name: compress_min_bytes
-  - help: The compression ratio (uncompressed_size/compressed_size) must be higher
-      than this number to trigger the compress algorithm.
+    name: description
+  - help: "\n        If set, a CORS middleware is added to FastAPI frontend to allow\
+      \ cross-origin access. \n        "
     choices: null
-    default: 1.1
+    default: false
     required: false
     option_strings:
-    - --compress-min-ratio
-    type: float
+    - --cors
+    type: bool
     default_random: false
-    name: compress_min_ratio
-  - help: "\n        If True, singular primitive fields,\n        repeated fields,\
+    name: cors
+  - help: 'If set, /status /post endpoints are removed from HTTP interface. '
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --no-debug-endpoints
+    type: bool
+    default_random: false
+    name: no_debug_endpoints
+  - help: "\n        If set, /index, /search, /update, /delete endpoints are removed\
+      \ from HTTP interface.\n        \n        Any executor that has `@requests(on=...)`\
+      \ bind with those values will receive data requests. \n        "
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --no-crud-endpoints
+    type: bool
+    default_random: false
+    name: no_crud_endpoints
+  - help: "\n        A JSON string that represents a map from executor endpoints (`@requests(on=...)`)\
+      \ to HTTP endpoints.\n        "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --expose-endpoints
+    type: str
+    default_random: false
+    name: expose_endpoints
+  - help: "\n        If set, singular primitive fields,\n        repeated fields,\
       \ and map fields will always be serialized.  If\n        False, only serialize\
       \ non-empty fields.  Singular message fields\n        and oneof fields are not\
       \ affected by this option.\n        "
@@ -1780,6 +1663,55 @@ methods:
     type: int
     default_random: false
     name: float_precision
+  - help: "\n    The compress algorithm used over the entire Flow.\n\n    Note that\
+      \ this is not necessarily effective, \n    it depends on the settings of `--compress-min-bytes`\
+      \ and `compress-min-ratio`"
+    choices:
+    - NONE
+    - LZ4
+    - ZLIB
+    - GZIP
+    - BZ2
+    - LZMA
+    default: LZ4
+    required: false
+    option_strings:
+    - --compress
+    type: str
+    default_random: false
+    name: compress
+  - help: The original message size must be larger than this number to trigger the
+      compress algorithm, -1 means disable compression.
+    choices: null
+    default: 1024
+    required: false
+    option_strings:
+    - --compress-min-bytes
+    type: int
+    default_random: false
+    name: compress_min_bytes
+  - help: The compression ratio (uncompressed_size/compressed_size) must be higher
+      than this number to trigger the compress algorithm.
+    choices: null
+    default: 1.1
+    required: false
+    option_strings:
+    - --compress-min-ratio
+    type: float
+    default_random: false
+    name: compress_min_ratio
+  - help: Communication protocol between server and client.
+    choices:
+    - GRPC
+    - HTTP
+    - WEBSOCKET
+    default: GRPC
+    required: false
+    option_strings:
+    - --protocol
+    type: str
+    default_random: false
+    name: protocol
   - help: The host address of the runtime, by default it is 0.0.0.0.
     choices: null
     default: 0.0.0.0
@@ -1791,7 +1723,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 33489
+    default: 35183
     required: false
     option_strings:
     - --port-expose
@@ -1872,23 +1804,14 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-  - help: If set, use RESTful interface instead of gRPC as the main interface
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --restful
-    type: bool
-    default_random: false
-    name: restful
 - name: hub
   options: []
 - name: pea
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
       - how you refer to this object in Python/YAML/CLI\n- visualization\n- log message\
-      \ header\n- automatics docs UI\n- ...\n\nWhen not given, then the default naming\
-      \ strategy will apply. \n                    "
+      \ header\n- ...\n\nWhen not given, then the default naming strategy will apply.\
+      \ \n                    "
     choices: null
     default: null
     required: false
@@ -1897,15 +1820,6 @@ methods:
     type: str
     default_random: false
     name: name
-  - help: The description of this object. It will be used in automatics docs UI.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --description
-    type: str
-    default_random: false
-    name: description
   - help: The working directory for any IO operations in this object. If not set,
       then derive from its parent `workspace`.
     choices: null
@@ -1946,7 +1860,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 54979
+    default: 43915
     required: false
     option_strings:
     - --port-ctrl
@@ -2001,14 +1915,13 @@ methods:
     type: str
     default_random: false
     name: ssh_password
-  - help: "\n            The config of the executor, it could be one of the followings:\n\
-      \            * an Executor-level YAML file path (.yml, .yaml, .jaml)\n     \
-      \       * a docker image (must start with `docker://`)\n            * the string\
-      \ literal of a YAML config (must start with `!` or `jtype: `)\n            *\
-      \ the string literal of a JSON config\n            \n            When use it\
-      \ under Python, one can use the following values additionally:\n           \
-      \ - a Python dict that represents the config\n            - a text file stream\
-      \ has `.read()` interface\n            "
+  - help: "\n        The config of the executor, it could be one of the followings:\n\
+      \        * an Executor-level YAML file path (.yml, .yaml, .jaml)\n        *\
+      \ a docker image (must start with `docker://`)\n        * the string literal\
+      \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
+      \ literal of a JSON config\n        \n        When use it under Python, one\
+      \ can use the following values additionally:\n        - a Python dict that represents\
+      \ the config\n        - a text file stream has `.read()` interface\n        "
     choices: null
     default: BaseExecutor
     required: false
@@ -2043,7 +1956,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 41223
+    default: 35389
     required: false
     option_strings:
     - --port-in
@@ -2053,7 +1966,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 36945
+    default: 54927
     required: false
     option_strings:
     - --port-out
@@ -2230,7 +2143,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 46425
+    default: 50341
     required: false
     option_strings:
     - --port-expose
@@ -2293,7 +2206,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 87a4a7d8-9501-44f2-a0dc-cbadd1bf0c20
+    default: 219a982b-1da2-4d8f-ae20-0d425286829e
     required: false
     option_strings:
     - --workspace-id
@@ -2377,7 +2290,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 51703
+    default: 41643
     required: false
     option_strings:
     - --port-expose
@@ -2395,16 +2308,6 @@ methods:
     type: bool
     default_random: false
     name: proxy
-  - help: If set, use RESTful interface instead of gRPC as the main interface. This
-      expects the corresponding Flow to be set with --restful as well.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --restful
-    type: bool
-    default_random: false
-    name: restful
   - help: 'If set, then the input and output of this Client work in an asynchronous
       manner. '
     choices: null
@@ -2443,9 +2346,8 @@ methods:
     type: bool
     default_random: false
     name: show_progress
-  - help: "\nThis feature is only used for AsyncClient.\n\nIf set, the results of\
-      \ all Requests will be returned as a list. This is useful when one wants \n\
-      process Responses in bulk instead of using callback. \n                    "
+  - help: If set, the results of all Requests will be returned as a list. This is
+      useful when one wants process Responses in bulk instead of using callback.
     choices: null
     default: false
     required: false
@@ -2454,6 +2356,18 @@ methods:
     type: bool
     default_random: false
     name: return_results
+  - help: Communication protocol between server and client.
+    choices:
+    - GRPC
+    - HTTP
+    - WEBSOCKET
+    default: GRPC
+    required: false
+    option_strings:
+    - --protocol
+    type: str
+    default_random: false
+    name: protocol
 - name: export-api
   options:
   - help: The YAML file path for storing the exported API
