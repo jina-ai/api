@@ -65,7 +65,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 57597
+    default: 33677
     required: false
     option_strings:
     - --port-ctrl
@@ -161,7 +161,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 43743
+    default: 57217
     required: false
     option_strings:
     - --port-in
@@ -171,7 +171,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 45241
+    default: 38659
     required: false
     option_strings:
     - --port-out
@@ -239,24 +239,6 @@ methods:
     type: str
     default_random: false
     name: socket_out
-  - help: Tells if ZEDRuntime should respect routing graph for outgoing traffic.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --dynamic-out-routing
-    type: bool
-    default_random: false
-    name: dynamic_out_routing
-  - help: Tells if ZEDRuntime should handle incoming traffic as dynamic routing.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --dynamic-in-routing
-    type: bool
-    default_random: false
-    name: dynamic_in_routing
   - help: The memory high watermark of this pod in Gigabytes, pod will restart when
       this is reached. -1 means no restriction
     choices: null
@@ -366,7 +348,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 39405
+    default: 59613
     required: false
     option_strings:
     - --port-expose
@@ -429,7 +411,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: c92118c5-3cc9-4943-b634-9a7d6a24c36c
+    default: a9b8ca1a-e4df-42bb-9aa9-604975c981c3
     required: false
     option_strings:
     - --workspace-id
@@ -562,16 +544,6 @@ methods:
     type: str
     default_random: false
     name: polling
-  - help: The Pod will setup the socket types of the HeadPea and TailPea depending
-      on this argument.
-    choices: null
-    default: true
-    required: false
-    option_strings:
-    - --dynamic-routing
-    type: bool
-    default_random: false
-    name: dynamic_routing
   - help: The strategy of scheduling workload among Peas
     choices:
     - LOAD_BALANCE
@@ -658,7 +630,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 35253
+    default: 57249
     required: false
     option_strings:
     - --port-ctrl
@@ -754,7 +726,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 56543
+    default: 50709
     required: false
     option_strings:
     - --port-in
@@ -764,7 +736,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 43361
+    default: 46291
     required: false
     option_strings:
     - --port-out
@@ -832,24 +804,6 @@ methods:
     type: str
     default_random: false
     name: socket_out
-  - help: Tells if ZEDRuntime should respect routing graph for outgoing traffic.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --dynamic-out-routing
-    type: bool
-    default_random: false
-    name: dynamic_out_routing
-  - help: Tells if ZEDRuntime should handle incoming traffic as dynamic routing.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --dynamic-in-routing
-    type: bool
-    default_random: false
-    name: dynamic_in_routing
   - help: The memory high watermark of this pod in Gigabytes, pod will restart when
       this is reached. -1 means no restriction
     choices: null
@@ -959,7 +913,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 48467
+    default: 54097
     required: false
     option_strings:
     - --port-expose
@@ -1022,7 +976,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: 8eb42abe-16f6-4ec5-a1a1-65c35e37c598
+    default: 5626d63e-caa0-41b5-94ce-bd23dfa789d8
     required: false
     option_strings:
     - --workspace-id
@@ -1155,16 +1109,6 @@ methods:
     type: str
     default_random: false
     name: polling
-  - help: The Pod will setup the socket types of the HeadPea and TailPea depending
-      on this argument.
-    choices: null
-    default: true
-    required: false
-    option_strings:
-    - --dynamic-routing
-    type: bool
-    default_random: false
-    name: dynamic_routing
   - help: The strategy of scheduling workload among Peas
     choices:
     - LOAD_BALANCE
@@ -1384,7 +1328,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 34039
+    default: 51365
     required: false
     option_strings:
     - --port-ctrl
@@ -1480,7 +1424,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 45633
+    default: 55351
     required: false
     option_strings:
     - --port-in
@@ -1490,7 +1434,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 59799
+    default: 45487
     required: false
     option_strings:
     - --port-out
@@ -1558,24 +1502,6 @@ methods:
     type: str
     default_random: false
     name: socket_out
-  - help: Tells if ZEDRuntime should respect routing graph for outgoing traffic.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --dynamic-out-routing
-    type: bool
-    default_random: false
-    name: dynamic_out_routing
-  - help: Tells if ZEDRuntime should handle incoming traffic as dynamic routing.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --dynamic-in-routing
-    type: bool
-    default_random: false
-    name: dynamic_in_routing
   - help: The memory high watermark of this pod in Gigabytes, pod will restart when
       this is reached. -1 means no restriction
     choices: null
@@ -1795,7 +1721,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 50169
+    default: 52761
     required: false
     option_strings:
     - --port-expose
@@ -1876,24 +1802,6 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-  - help: Routing graph for the gateway
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --routing-graph
-    type: None
-    default_random: false
-    name: routing_graph
-  - help: Tells if the gateway should incoming and outgoing traffic as dynamic routing.
-    choices: null
-    default: true
-    required: false
-    option_strings:
-    - --dynamic-routing
-    type: bool
-    default_random: false
-    name: dynamic_routing
 - name: hub
   options: []
 - name: pea
@@ -1950,7 +1858,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 33373
+    default: 58547
     required: false
     option_strings:
     - --port-ctrl
@@ -2046,7 +1954,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 57833
+    default: 39593
     required: false
     option_strings:
     - --port-in
@@ -2056,7 +1964,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 47519
+    default: 57073
     required: false
     option_strings:
     - --port-out
@@ -2124,24 +2032,6 @@ methods:
     type: str
     default_random: false
     name: socket_out
-  - help: Tells if ZEDRuntime should respect routing graph for outgoing traffic.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --dynamic-out-routing
-    type: bool
-    default_random: false
-    name: dynamic_out_routing
-  - help: Tells if ZEDRuntime should handle incoming traffic as dynamic routing.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --dynamic-in-routing
-    type: bool
-    default_random: false
-    name: dynamic_in_routing
   - help: The memory high watermark of this pod in Gigabytes, pod will restart when
       this is reached. -1 means no restriction
     choices: null
@@ -2251,7 +2141,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 43017
+    default: 56539
     required: false
     option_strings:
     - --port-expose
@@ -2314,7 +2204,7 @@ methods:
       be assigned.Multiple Pea/Pod/Flow will work under the same workspace if they
       share the same `workspace-id`.
     choices: null
-    default: b6a9874f-5c91-475b-9e66-ced276d94e14
+    default: c875bdf9-4f68-4676-92ae-395c0c07d5e3
     required: false
     option_strings:
     - --workspace-id
@@ -2398,7 +2288,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 60987
+    default: 44607
     required: false
     option_strings:
     - --port-expose
