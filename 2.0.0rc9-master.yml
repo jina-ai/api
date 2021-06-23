@@ -65,7 +65,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 59171
+    default: 55273
     required: false
     option_strings:
     - --port-ctrl
@@ -135,6 +135,26 @@ methods:
     type: str
     default_random: false
     name: uses
+  - help: "\n    Dictionary of keyword arguments that will override the default `with\
+      \ configuration` provided to the executor in `uses`\n    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --override-with
+    type: dict
+    default_random: false
+    name: override_with
+  - help: "\n    Dictionary of keyword arguments that will override the default `metas\
+      \ configuration` provided to the executor in `uses`\n    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --override-metas
+    type: dict
+    default_random: false
+    name: override_metas
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -161,7 +181,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 47841
+    default: 42369
     required: false
     option_strings:
     - --port-in
@@ -171,7 +191,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 57017
+    default: 54877
     required: false
     option_strings:
     - --port-out
@@ -348,7 +368,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 37261
+    default: 55669
     required: false
     option_strings:
     - --port-expose
@@ -618,7 +638,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 44999
+    default: 46523
     required: false
     option_strings:
     - --port-ctrl
@@ -688,6 +708,26 @@ methods:
     type: str
     default_random: false
     name: uses
+  - help: "\n    Dictionary of keyword arguments that will override the default `with\
+      \ configuration` provided to the executor in `uses`\n    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --override-with
+    type: dict
+    default_random: false
+    name: override_with
+  - help: "\n    Dictionary of keyword arguments that will override the default `metas\
+      \ configuration` provided to the executor in `uses`\n    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --override-metas
+    type: dict
+    default_random: false
+    name: override_metas
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -714,7 +754,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 58643
+    default: 52145
     required: false
     option_strings:
     - --port-in
@@ -724,7 +764,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 56273
+    default: 40361
     required: false
     option_strings:
     - --port-out
@@ -901,7 +941,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 53029
+    default: 47529
     required: false
     option_strings:
     - --port-expose
@@ -1304,7 +1344,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 46275
+    default: 37443
     required: false
     option_strings:
     - --port-ctrl
@@ -1374,6 +1414,26 @@ methods:
     type: str
     default_random: false
     name: uses
+  - help: "\n    Dictionary of keyword arguments that will override the default `with\
+      \ configuration` provided to the executor in `uses`\n    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --override-with
+    type: dict
+    default_random: false
+    name: override_with
+  - help: "\n    Dictionary of keyword arguments that will override the default `metas\
+      \ configuration` provided to the executor in `uses`\n    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --override-metas
+    type: dict
+    default_random: false
+    name: override_metas
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -1400,7 +1460,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 40023
+    default: 42443
     required: false
     option_strings:
     - --port-in
@@ -1410,7 +1470,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 35379
+    default: 39467
     required: false
     option_strings:
     - --port-out
@@ -1697,7 +1757,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 42897
+    default: 42073
     required: false
     option_strings:
     - --port-expose
@@ -1834,7 +1894,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 34027
+    default: 57785
     required: false
     option_strings:
     - --port-ctrl
@@ -1904,6 +1964,26 @@ methods:
     type: str
     default_random: false
     name: uses
+  - help: "\n    Dictionary of keyword arguments that will override the default `with\
+      \ configuration` provided to the executor in `uses`\n    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --override-with
+    type: dict
+    default_random: false
+    name: override_with
+  - help: "\n    Dictionary of keyword arguments that will override the default `metas\
+      \ configuration` provided to the executor in `uses`\n    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --override-metas
+    type: dict
+    default_random: false
+    name: override_metas
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -1930,7 +2010,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 45755
+    default: 48333
     required: false
     option_strings:
     - --port-in
@@ -1940,7 +2020,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 37959
+    default: 39143
     required: false
     option_strings:
     - --port-out
@@ -2117,7 +2197,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55927
+    default: 59151
     required: false
     option_strings:
     - --port-expose
@@ -2252,7 +2332,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 34147
+    default: 35575
     required: false
     option_strings:
     - --port-expose
