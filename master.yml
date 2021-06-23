@@ -65,7 +65,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 55273
+    default: 40565
     required: false
     option_strings:
     - --port-ctrl
@@ -181,7 +181,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 42369
+    default: 43037
     required: false
     option_strings:
     - --port-in
@@ -191,7 +191,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 54877
+    default: 57969
     required: false
     option_strings:
     - --port-out
@@ -368,7 +368,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55669
+    default: 46545
     required: false
     option_strings:
     - --port-expose
@@ -638,7 +638,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 46523
+    default: 39107
     required: false
     option_strings:
     - --port-ctrl
@@ -754,7 +754,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 52145
+    default: 42331
     required: false
     option_strings:
     - --port-in
@@ -764,7 +764,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 40361
+    default: 58253
     required: false
     option_strings:
     - --port-out
@@ -941,7 +941,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 47529
+    default: 43865
     required: false
     option_strings:
     - --port-expose
@@ -1344,7 +1344,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 37443
+    default: 54485
     required: false
     option_strings:
     - --port-ctrl
@@ -1460,7 +1460,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 42443
+    default: 38931
     required: false
     option_strings:
     - --port-in
@@ -1470,7 +1470,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 39467
+    default: 59161
     required: false
     option_strings:
     - --port-out
@@ -1658,45 +1658,6 @@ methods:
     type: str
     default_random: false
     name: expose_endpoints
-  - help: "\n        If set, singular primitive fields,\n        repeated fields,\
-      \ and map fields will always be serialized.  If\n        False, only serialize\
-      \ non-empty fields.  Singular message fields\n        and oneof fields are not\
-      \ affected by this option.\n        "
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --including-default-value-fields
-    type: bool
-    default_random: false
-    name: including_default_value_fields
-  - help: If True, then the output will be sorted by field names.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --sort-keys
-    type: bool
-    default_random: false
-    name: sort_keys
-  - help: If true, print integers instead of enum names.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --use-integers-for-enums
-    type: bool
-    default_random: false
-    name: use_integers_for_enums
-  - help: If set, use this to specify float field valid digits.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --float-precision
-    type: int
-    default_random: false
-    name: float_precision
   - help: "\n    The compress algorithm used over the entire Flow.\n\n    Note that\
       \ this is not necessarily effective, \n    it depends on the settings of `--compress-min-bytes`\
       \ and `compress-min-ratio`"
@@ -1757,7 +1718,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 42073
+    default: 57153
     required: false
     option_strings:
     - --port-expose
@@ -1894,7 +1855,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 57785
+    default: 43823
     required: false
     option_strings:
     - --port-ctrl
@@ -2010,7 +1971,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 48333
+    default: 39677
     required: false
     option_strings:
     - --port-in
@@ -2020,7 +1981,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 39143
+    default: 54769
     required: false
     option_strings:
     - --port-out
@@ -2197,7 +2158,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 59151
+    default: 55693
     required: false
     option_strings:
     - --port-expose
@@ -2332,7 +2293,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 35575
+    default: 60995
     required: false
     option_strings:
     - --port-expose
