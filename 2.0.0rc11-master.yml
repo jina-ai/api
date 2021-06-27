@@ -65,7 +65,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 56285
+    default: 44143
     required: false
     option_strings:
     - --port-ctrl
@@ -181,7 +181,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 45741
+    default: 51771
     required: false
     option_strings:
     - --port-in
@@ -191,7 +191,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 39549
+    default: 33449
     required: false
     option_strings:
     - --port-out
@@ -301,17 +301,6 @@ methods:
     type: str
     default_random: false
     name: on_error_strategy
-  - help: "\nThe config runs inside the Docker container. \n\nSyntax and function\
-      \ are the same as `--uses`. This is designed when `--uses=\"docker://...\"`\
-      \ this config is passed to \nthe Docker container.\n"
-    choices: null
-    default: BaseExecutor
-    required: false
-    option_strings:
-    - --uses-internal
-    type: str
-    default_random: false
-    name: uses_internal
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -368,7 +357,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 39811
+    default: 37305
     required: false
     option_strings:
     - --port-expose
@@ -638,7 +627,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 34197
+    default: 42957
     required: false
     option_strings:
     - --port-ctrl
@@ -754,7 +743,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 42989
+    default: 59783
     required: false
     option_strings:
     - --port-in
@@ -764,7 +753,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 56927
+    default: 45731
     required: false
     option_strings:
     - --port-out
@@ -874,17 +863,6 @@ methods:
     type: str
     default_random: false
     name: on_error_strategy
-  - help: "\nThe config runs inside the Docker container. \n\nSyntax and function\
-      \ are the same as `--uses`. This is designed when `--uses=\"docker://...\"`\
-      \ this config is passed to \nthe Docker container.\n"
-    choices: null
-    default: BaseExecutor
-    required: false
-    option_strings:
-    - --uses-internal
-    type: str
-    default_random: false
-    name: uses_internal
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -941,7 +919,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 60265
+    default: 34765
     required: false
     option_strings:
     - --port-expose
@@ -1344,7 +1322,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 45209
+    default: 36925
     required: false
     option_strings:
     - --port-ctrl
@@ -1460,7 +1438,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 33973
+    default: 40943
     required: false
     option_strings:
     - --port-in
@@ -1470,7 +1448,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 51771
+    default: 47457
     required: false
     option_strings:
     - --port-out
@@ -1718,7 +1696,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 51599
+    default: 38315
     required: false
     option_strings:
     - --port-expose
@@ -1855,7 +1833,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 45115
+    default: 47655
     required: false
     option_strings:
     - --port-ctrl
@@ -1971,7 +1949,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 39641
+    default: 60655
     required: false
     option_strings:
     - --port-in
@@ -1981,7 +1959,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 40985
+    default: 58635
     required: false
     option_strings:
     - --port-out
@@ -2091,17 +2069,6 @@ methods:
     type: str
     default_random: false
     name: on_error_strategy
-  - help: "\nThe config runs inside the Docker container. \n\nSyntax and function\
-      \ are the same as `--uses`. This is designed when `--uses=\"docker://...\"`\
-      \ this config is passed to \nthe Docker container.\n"
-    choices: null
-    default: BaseExecutor
-    required: false
-    option_strings:
-    - --uses-internal
-    type: str
-    default_random: false
-    name: uses_internal
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -2158,7 +2125,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 60143
+    default: 59547
     required: false
     option_strings:
     - --port-expose
@@ -2293,7 +2260,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 36999
+    default: 42367
     required: false
     option_strings:
     - --port-expose
