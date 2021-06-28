@@ -17,7 +17,7 @@ jobs:
           git config --local user.name "Jina Dev Bot"
       - name: Overwrite hubble.json
         run: |
-          echo "{\"url\": \"${{ github.event.inputs.release_token }}\"}" >> hub/hubble.json
+          echo "{\"url\": \"${{ github.event.inputs.elb_url }}\"}" > hub/hubble.json
           git add hub/hubble.json
           git commit -m "chore: update Hubble ELB url"
       - uses: ad-m/github-push-action@v0.6.0
