@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       elb_url:
-        description: 'The new AWS ELB URL for hubble'
+        description: 'Input the new AWS ELB URL for hubble'
         required: true
 
 jobs:
