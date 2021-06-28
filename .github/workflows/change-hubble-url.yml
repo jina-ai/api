@@ -1,0 +1,26 @@
+name: Update Hubble ELB URL
+
+on:
+  workflow_dispatch:
+    inputs:
+      elb_url:
+        description: 'The new AWS ELB URL for hubble'
+        required: true
+
+jobs:
+  update-hubble-url:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          git config --local user.email "dev-bot@jina.ai"
+          git config --local user.name "Jina Dev Bot"
+      - name: Overwrite hubble.json
+        run: |
+          echo "{\"url\": \"${{ github.event.inputs.release_token }} \"}" >> hub/hubble.json
+          git add hub/hubble.json
+          git commit -m "chore: update Hubble ELB url"
+      - uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.JINA_DEV_BOT }}
+          branch: master
