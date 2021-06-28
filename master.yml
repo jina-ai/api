@@ -65,7 +65,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 43951
+    default: 51037
     required: false
     option_strings:
     - --port-ctrl
@@ -181,7 +181,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 33389
+    default: 44559
     required: false
     option_strings:
     - --port-in
@@ -191,7 +191,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 47335
+    default: 51525
     required: false
     option_strings:
     - --port-out
@@ -357,7 +357,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 40075
+    default: 34371
     required: false
     option_strings:
     - --port-expose
@@ -627,7 +627,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 58209
+    default: 53819
     required: false
     option_strings:
     - --port-ctrl
@@ -743,7 +743,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 40143
+    default: 40787
     required: false
     option_strings:
     - --port-in
@@ -753,7 +753,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 48583
+    default: 44251
     required: false
     option_strings:
     - --port-out
@@ -919,7 +919,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 56155
+    default: 60515
     required: false
     option_strings:
     - --port-expose
@@ -1322,7 +1322,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 49961
+    default: 41329
     required: false
     option_strings:
     - --port-ctrl
@@ -1438,7 +1438,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 33541
+    default: 50947
     required: false
     option_strings:
     - --port-in
@@ -1448,7 +1448,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 34335
+    default: 40743
     required: false
     option_strings:
     - --port-out
@@ -1696,7 +1696,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 42165
+    default: 52465
     required: false
     option_strings:
     - --port-expose
@@ -1833,7 +1833,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 59371
+    default: 53163
     required: false
     option_strings:
     - --port-ctrl
@@ -1949,7 +1949,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 43839
+    default: 49775
     required: false
     option_strings:
     - --port-in
@@ -1959,7 +1959,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 55923
+    default: 49067
     required: false
     option_strings:
     - --port-out
@@ -2125,7 +2125,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 43827
+    default: 48413
     required: false
     option_strings:
     - --port-expose
@@ -2260,7 +2260,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 51487
+    default: 33391
     required: false
     option_strings:
     - --port-expose
