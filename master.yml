@@ -62,10 +62,20 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: The identity of a ZMQRuntime. It is used for unique socket identification
+      towards other ZMQRuntimes.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --zmq-identity
+    type: str
+    default_random: false
+    name: zmq_identity
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 51867
+    default: 42803
     required: false
     option_strings:
     - --port-ctrl
@@ -181,7 +191,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 56431
+    default: 49949
     required: false
     option_strings:
     - --port-in
@@ -191,7 +201,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 51357
+    default: 35715
     required: false
     option_strings:
     - --port-out
@@ -199,6 +209,15 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_out
+  - help: The host address for input, by default it is 0.0.0.0
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --hosts-in-connect
+    type: typing.List[str]
+    default_random: false
+    name: hosts_in_connect
   - help: The host address for input, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
@@ -231,6 +250,7 @@ methods:
     - PAIR_CONNECT
     - ROUTER_BIND
     - DEALER_CONNECT
+    - ROUTER_CONNECT
     default: PULL_BIND
     required: false
     option_strings:
@@ -252,6 +272,7 @@ methods:
     - PAIR_CONNECT
     - ROUTER_BIND
     - DEALER_CONNECT
+    - ROUTER_CONNECT
     default: PUSH_BIND
     required: false
     option_strings:
@@ -357,7 +378,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 33013
+    default: 57697
     required: false
     option_strings:
     - --port-expose
@@ -624,10 +645,20 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: The identity of a ZMQRuntime. It is used for unique socket identification
+      towards other ZMQRuntimes.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --zmq-identity
+    type: str
+    default_random: false
+    name: zmq_identity
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 46413
+    default: 49215
     required: false
     option_strings:
     - --port-ctrl
@@ -743,7 +774,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 37133
+    default: 51295
     required: false
     option_strings:
     - --port-in
@@ -753,7 +784,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 34121
+    default: 33235
     required: false
     option_strings:
     - --port-out
@@ -761,6 +792,15 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_out
+  - help: The host address for input, by default it is 0.0.0.0
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --hosts-in-connect
+    type: typing.List[str]
+    default_random: false
+    name: hosts_in_connect
   - help: The host address for input, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
@@ -793,6 +833,7 @@ methods:
     - PAIR_CONNECT
     - ROUTER_BIND
     - DEALER_CONNECT
+    - ROUTER_CONNECT
     default: PULL_BIND
     required: false
     option_strings:
@@ -814,6 +855,7 @@ methods:
     - PAIR_CONNECT
     - ROUTER_BIND
     - DEALER_CONNECT
+    - ROUTER_CONNECT
     default: PUSH_BIND
     required: false
     option_strings:
@@ -919,7 +961,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 57885
+    default: 41925
     required: false
     option_strings:
     - --port-expose
@@ -1328,10 +1370,20 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: The identity of a ZMQRuntime. It is used for unique socket identification
+      towards other ZMQRuntimes.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --zmq-identity
+    type: str
+    default_random: false
+    name: zmq_identity
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 52873
+    default: 49023
     required: false
     option_strings:
     - --port-ctrl
@@ -1447,7 +1499,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 53321
+    default: 49899
     required: false
     option_strings:
     - --port-in
@@ -1457,7 +1509,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 51177
+    default: 59505
     required: false
     option_strings:
     - --port-out
@@ -1465,6 +1517,15 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_out
+  - help: The host address for input, by default it is 0.0.0.0
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --hosts-in-connect
+    type: typing.List[str]
+    default_random: false
+    name: hosts_in_connect
   - help: The host address for input, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
@@ -1497,6 +1558,7 @@ methods:
     - PAIR_CONNECT
     - ROUTER_BIND
     - DEALER_CONNECT
+    - ROUTER_CONNECT
     default: PULL_CONNECT
     required: false
     option_strings:
@@ -1518,6 +1580,7 @@ methods:
     - PAIR_CONNECT
     - ROUTER_BIND
     - DEALER_CONNECT
+    - ROUTER_CONNECT
     default: PUSH_CONNECT
     required: false
     option_strings:
@@ -1705,7 +1768,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 37815
+    default: 51453
     required: false
     option_strings:
     - --port-expose
@@ -1839,10 +1902,20 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: The identity of a ZMQRuntime. It is used for unique socket identification
+      towards other ZMQRuntimes.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --zmq-identity
+    type: str
+    default_random: false
+    name: zmq_identity
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 38655
+    default: 41183
     required: false
     option_strings:
     - --port-ctrl
@@ -1958,7 +2031,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 44861
+    default: 54915
     required: false
     option_strings:
     - --port-in
@@ -1968,7 +2041,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 53005
+    default: 33183
     required: false
     option_strings:
     - --port-out
@@ -1976,6 +2049,15 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_out
+  - help: The host address for input, by default it is 0.0.0.0
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --hosts-in-connect
+    type: typing.List[str]
+    default_random: false
+    name: hosts_in_connect
   - help: The host address for input, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
@@ -2008,6 +2090,7 @@ methods:
     - PAIR_CONNECT
     - ROUTER_BIND
     - DEALER_CONNECT
+    - ROUTER_CONNECT
     default: PULL_BIND
     required: false
     option_strings:
@@ -2029,6 +2112,7 @@ methods:
     - PAIR_CONNECT
     - ROUTER_BIND
     - DEALER_CONNECT
+    - ROUTER_CONNECT
     default: PUSH_BIND
     required: false
     option_strings:
@@ -2134,7 +2218,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 44283
+    default: 38435
     required: false
     option_strings:
     - --port-expose
@@ -2269,7 +2353,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 39697
+    default: 36097
     required: false
     option_strings:
     - --port-expose
