@@ -65,7 +65,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 45137
+    default: 46551
     required: false
     option_strings:
     - --port-ctrl
@@ -181,7 +181,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 57437
+    default: 49865
     required: false
     option_strings:
     - --port-in
@@ -191,7 +191,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 39069
+    default: 56987
     required: false
     option_strings:
     - --port-out
@@ -357,7 +357,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 42303
+    default: 49811
     required: false
     option_strings:
     - --port-expose
@@ -627,7 +627,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 52135
+    default: 55807
     required: false
     option_strings:
     - --port-ctrl
@@ -743,7 +743,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 57157
+    default: 47645
     required: false
     option_strings:
     - --port-in
@@ -753,7 +753,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 46963
+    default: 52147
     required: false
     option_strings:
     - --port-out
@@ -919,7 +919,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 43323
+    default: 33909
     required: false
     option_strings:
     - --port-expose
@@ -1217,6 +1217,15 @@ methods:
     type: str
     default_random: false
     name: inspect
+  - help: If set, disable telemetry during the Flow creation.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --no-telemetry
+    type: bool
+    default_random: false
+    name: no_telemetry
 - name: ping
   options:
   - help: The host address of the target Pea, e.g. 0.0.0.0
@@ -1322,7 +1331,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 55317
+    default: 43707
     required: false
     option_strings:
     - --port-ctrl
@@ -1438,7 +1447,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 45413
+    default: 34609
     required: false
     option_strings:
     - --port-in
@@ -1448,7 +1457,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 35071
+    default: 47593
     required: false
     option_strings:
     - --port-out
@@ -1696,7 +1705,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 56769
+    default: 45949
     required: false
     option_strings:
     - --port-expose
@@ -1833,7 +1842,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 56239
+    default: 40043
     required: false
     option_strings:
     - --port-ctrl
@@ -1949,7 +1958,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 48429
+    default: 49843
     required: false
     option_strings:
     - --port-in
@@ -1959,7 +1968,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 41025
+    default: 58307
     required: false
     option_strings:
     - --port-out
@@ -2125,7 +2134,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 54089
+    default: 41441
     required: false
     option_strings:
     - --port-expose
@@ -2260,7 +2269,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 44697
+    default: 48175
     required: false
     option_strings:
     - --port-expose
