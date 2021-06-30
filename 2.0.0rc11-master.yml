@@ -75,7 +75,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 41777
+    default: 54353
     required: false
     option_strings:
     - --port-ctrl
@@ -191,7 +191,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 37683
+    default: 47219
     required: false
     option_strings:
     - --port-in
@@ -201,7 +201,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 55295
+    default: 51525
     required: false
     option_strings:
     - --port-out
@@ -378,7 +378,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 49583
+    default: 54293
     required: false
     option_strings:
     - --port-expose
@@ -658,7 +658,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 51389
+    default: 47447
     required: false
     option_strings:
     - --port-ctrl
@@ -774,7 +774,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 48551
+    default: 33611
     required: false
     option_strings:
     - --port-in
@@ -784,7 +784,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 60383
+    default: 45389
     required: false
     option_strings:
     - --port-out
@@ -961,7 +961,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 40225
+    default: 38055
     required: false
     option_strings:
     - --port-expose
@@ -1374,7 +1374,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 47321
+    default: 53065
     required: false
     option_strings:
     - --port-ctrl
@@ -1490,7 +1490,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 36403
+    default: 47197
     required: false
     option_strings:
     - --port-in
@@ -1500,7 +1500,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 50005
+    default: 33945
     required: false
     option_strings:
     - --port-out
@@ -1660,7 +1660,7 @@ methods:
     default_random: false
     name: description
   - help: "\n        If set, a CORS middleware is added to FastAPI frontend to allow\
-      \ cross-origin access. \n        "
+      \ cross-origin access.\n        "
     choices: null
     default: false
     required: false
@@ -1669,6 +1669,15 @@ methods:
     type: bool
     default_random: false
     name: cors
+  - help: 'If set, the default swagger ui is used for `/docs` endpoint. '
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --default-swagger-ui
+    type: bool
+    default_random: false
+    name: default_swagger_ui
   - help: 'If set, /status /post endpoints are removed from HTTP interface. '
     choices: null
     default: false
@@ -1679,8 +1688,8 @@ methods:
     default_random: false
     name: no_debug_endpoints
   - help: "\n        If set, /index, /search, /update, /delete endpoints are removed\
-      \ from HTTP interface.\n        \n        Any executor that has `@requests(on=...)`\
-      \ bind with those values will receive data requests. \n        "
+      \ from HTTP interface.\n\n        Any executor that has `@requests(on=...)`\
+      \ bind with those values will receive data requests.\n        "
     choices: null
     default: false
     required: false
@@ -1700,7 +1709,7 @@ methods:
     default_random: false
     name: expose_endpoints
   - help: "\n    The compress algorithm used over the entire Flow.\n\n    Note that\
-      \ this is not necessarily effective, \n    it depends on the settings of `--compress-min-bytes`\
+      \ this is not necessarily effective,\n    it depends on the settings of `--compress-min-bytes`\
       \ and `compress-min-ratio`"
     choices:
     - NONE
@@ -1759,7 +1768,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 47149
+    default: 48975
     required: false
     option_strings:
     - --port-expose
@@ -1906,7 +1915,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 57895
+    default: 36237
     required: false
     option_strings:
     - --port-ctrl
@@ -2022,7 +2031,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 41689
+    default: 58597
     required: false
     option_strings:
     - --port-in
@@ -2032,7 +2041,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 45701
+    default: 35789
     required: false
     option_strings:
     - --port-out
@@ -2209,7 +2218,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 40451
+    default: 45943
     required: false
     option_strings:
     - --port-expose
@@ -2344,7 +2353,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 47611
+    default: 52241
     required: false
     option_strings:
     - --port-expose
