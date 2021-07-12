@@ -75,7 +75,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 47783
+    default: 42109
     required: false
     option_strings:
     - --port-ctrl
@@ -191,7 +191,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 57321
+    default: 35199
     required: false
     option_strings:
     - --port-in
@@ -201,7 +201,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 46995
+    default: 39603
     required: false
     option_strings:
     - --port-out
@@ -367,6 +367,21 @@ methods:
     type: typing.List[str]
     default_random: false
     name: volumes
+  - help: "\n    Specify gpu to the inside the container. \n\n    Note, \n    - To\
+      \ access all gpus, use `--gpus all`.\n    - To access multiple gpu access, use\
+      \ `--gpus 2`, start a gpu container on 2 gpus.\n    - To access specified gpus\
+      \ based on device id, use `--gpus device=[YOUR-GPU-DEVICE-ID]`\n    - To access\
+      \ specified gpus based on multiple device id, use `--gpus device=[YOUR-GPU-DEVICE-ID1],device=[YOUR-GPU-DEVICE-ID2]`\n\
+      \    - To specify more parameters, use `--gpus device=[YOUR-GPU-DEVICE-ID],runtime=nvidia,capabilities=display\n\
+      \    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --gpus
+    type: str
+    default_random: false
+    name: gpus
   - help: The host address of the runtime, by default it is 0.0.0.0.
     choices: null
     default: 0.0.0.0
@@ -378,7 +393,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 42267
+    default: 42775
     required: false
     option_strings:
     - --port-expose
@@ -658,7 +673,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 35441
+    default: 51033
     required: false
     option_strings:
     - --port-ctrl
@@ -774,7 +789,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 40493
+    default: 41541
     required: false
     option_strings:
     - --port-in
@@ -784,7 +799,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 39421
+    default: 59097
     required: false
     option_strings:
     - --port-out
@@ -950,6 +965,21 @@ methods:
     type: typing.List[str]
     default_random: false
     name: volumes
+  - help: "\n    Specify gpu to the inside the container. \n\n    Note, \n    - To\
+      \ access all gpus, use `--gpus all`.\n    - To access multiple gpu access, use\
+      \ `--gpus 2`, start a gpu container on 2 gpus.\n    - To access specified gpus\
+      \ based on device id, use `--gpus device=[YOUR-GPU-DEVICE-ID]`\n    - To access\
+      \ specified gpus based on multiple device id, use `--gpus device=[YOUR-GPU-DEVICE-ID1],device=[YOUR-GPU-DEVICE-ID2]`\n\
+      \    - To specify more parameters, use `--gpus device=[YOUR-GPU-DEVICE-ID],runtime=nvidia,capabilities=display\n\
+      \    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --gpus
+    type: str
+    default_random: false
+    name: gpus
   - help: The host address of the runtime, by default it is 0.0.0.0.
     choices: null
     default: 0.0.0.0
@@ -961,7 +991,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 45413
+    default: 59441
     required: false
     option_strings:
     - --port-expose
@@ -1374,7 +1404,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 39547
+    default: 49137
     required: false
     option_strings:
     - --port-ctrl
@@ -1490,7 +1520,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 39031
+    default: 41475
     required: false
     option_strings:
     - --port-in
@@ -1500,7 +1530,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 47323
+    default: 45247
     required: false
     option_strings:
     - --port-out
@@ -1768,7 +1798,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 35593
+    default: 48431
     required: false
     option_strings:
     - --port-expose
@@ -1915,7 +1945,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 45247
+    default: 40989
     required: false
     option_strings:
     - --port-ctrl
@@ -2031,7 +2061,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 52643
+    default: 33867
     required: false
     option_strings:
     - --port-in
@@ -2041,7 +2071,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 55129
+    default: 51067
     required: false
     option_strings:
     - --port-out
@@ -2207,6 +2237,21 @@ methods:
     type: typing.List[str]
     default_random: false
     name: volumes
+  - help: "\n    Specify gpu to the inside the container. \n\n    Note, \n    - To\
+      \ access all gpus, use `--gpus all`.\n    - To access multiple gpu access, use\
+      \ `--gpus 2`, start a gpu container on 2 gpus.\n    - To access specified gpus\
+      \ based on device id, use `--gpus device=[YOUR-GPU-DEVICE-ID]`\n    - To access\
+      \ specified gpus based on multiple device id, use `--gpus device=[YOUR-GPU-DEVICE-ID1],device=[YOUR-GPU-DEVICE-ID2]`\n\
+      \    - To specify more parameters, use `--gpus device=[YOUR-GPU-DEVICE-ID],runtime=nvidia,capabilities=display\n\
+      \    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --gpus
+    type: str
+    default_random: false
+    name: gpus
   - help: The host address of the runtime, by default it is 0.0.0.0.
     choices: null
     default: 0.0.0.0
@@ -2218,7 +2263,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55477
+    default: 47107
     required: false
     option_strings:
     - --port-expose
@@ -2353,7 +2398,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 52079
+    default: 50881
     required: false
     option_strings:
     - --port-expose
