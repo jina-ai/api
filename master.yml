@@ -37,7 +37,7 @@ methods:
     name: workspace
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -75,7 +75,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 59615
+    default: 54763
     required: false
     option_strings:
     - --port-ctrl
@@ -191,7 +191,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 34929
+    default: 57447
     required: false
     option_strings:
     - --port-in
@@ -201,7 +201,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 49253
+    default: 33531
     required: false
     option_strings:
     - --port-out
@@ -393,7 +393,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 36259
+    default: 46301
     required: false
     option_strings:
     - --port-expose
@@ -635,7 +635,7 @@ methods:
     name: workspace
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -673,7 +673,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 32819
+    default: 55003
     required: false
     option_strings:
     - --port-ctrl
@@ -789,7 +789,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 38355
+    default: 56921
     required: false
     option_strings:
     - --port-in
@@ -799,7 +799,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 59859
+    default: 35247
     required: false
     option_strings:
     - --port-out
@@ -991,7 +991,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 36545
+    default: 48657
     required: false
     option_strings:
     - --port-expose
@@ -1233,7 +1233,7 @@ methods:
     name: workspace
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -1366,7 +1366,7 @@ methods:
     name: workspace
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -1404,7 +1404,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 41111
+    default: 36449
     required: false
     option_strings:
     - --port-ctrl
@@ -1520,7 +1520,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 37359
+    default: 40533
     required: false
     option_strings:
     - --port-in
@@ -1530,7 +1530,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 33563
+    default: 58261
     required: false
     option_strings:
     - --port-out
@@ -1798,7 +1798,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 54931
+    default: 47009
     required: false
     option_strings:
     - --port-expose
@@ -1907,7 +1907,7 @@ methods:
     name: workspace
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -1945,7 +1945,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 43169
+    default: 52573
     required: false
     option_strings:
     - --port-ctrl
@@ -2061,7 +2061,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 32967
+    default: 58085
     required: false
     option_strings:
     - --port-in
@@ -2071,7 +2071,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 50579
+    default: 53263
     required: false
     option_strings:
     - --port-out
@@ -2263,7 +2263,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 37319
+    default: 60673
     required: false
     option_strings:
     - --port-expose
@@ -2398,7 +2398,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 44749
+    default: 34707
     required: false
     option_strings:
     - --port-expose
