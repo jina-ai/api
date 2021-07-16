@@ -75,7 +75,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 52125
+    default: 40407
     required: false
     option_strings:
     - --port-ctrl
@@ -131,7 +131,8 @@ methods:
     default_random: false
     name: ssh_password
   - help: "\n        The config of the executor, it could be one of the followings:\n\
-      \        * an Executor-level YAML file path (.yml, .yaml, .jaml)\n        *\
+      \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
+      \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
       \ a docker image (must start with `docker://`)\n        * the string literal\
       \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
       \ literal of a JSON config\n\n        When use it under Python, one can use\
@@ -145,26 +146,28 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: "\n    Dictionary of keyword arguments that will override the default `with\
-      \ configuration` provided to the executor in `uses`\n    "
+  - help: "\n    Dictionary of keyword arguments that will override the `with` configuration\
+      \ in `uses`\n    "
     choices: null
     default: null
     required: false
     option_strings:
+    - --uses-with
     - --override-with
     type: dict
     default_random: false
-    name: override_with
-  - help: "\n    Dictionary of keyword arguments that will override the default `metas\
-      \ configuration` provided to the executor in `uses`\n    "
+    name: uses_with
+  - help: "\n    Dictionary of keyword arguments that will override the `metas` configuration\
+      \ in `uses`\n    "
     choices: null
     default: null
     required: false
     option_strings:
+    - --uses-metas
     - --override-metas
     type: dict
     default_random: false
-    name: override_metas
+    name: uses_metas
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -191,7 +194,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 50929
+    default: 59213
     required: false
     option_strings:
     - --port-in
@@ -201,7 +204,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 57283
+    default: 34047
     required: false
     option_strings:
     - --port-out
@@ -393,7 +396,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 60857
+    default: 57587
     required: false
     option_strings:
     - --port-expose
@@ -673,7 +676,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 47555
+    default: 58181
     required: false
     option_strings:
     - --port-ctrl
@@ -729,7 +732,8 @@ methods:
     default_random: false
     name: ssh_password
   - help: "\n        The config of the executor, it could be one of the followings:\n\
-      \        * an Executor-level YAML file path (.yml, .yaml, .jaml)\n        *\
+      \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
+      \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
       \ a docker image (must start with `docker://`)\n        * the string literal\
       \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
       \ literal of a JSON config\n\n        When use it under Python, one can use\
@@ -743,26 +747,28 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: "\n    Dictionary of keyword arguments that will override the default `with\
-      \ configuration` provided to the executor in `uses`\n    "
+  - help: "\n    Dictionary of keyword arguments that will override the `with` configuration\
+      \ in `uses`\n    "
     choices: null
     default: null
     required: false
     option_strings:
+    - --uses-with
     - --override-with
     type: dict
     default_random: false
-    name: override_with
-  - help: "\n    Dictionary of keyword arguments that will override the default `metas\
-      \ configuration` provided to the executor in `uses`\n    "
+    name: uses_with
+  - help: "\n    Dictionary of keyword arguments that will override the `metas` configuration\
+      \ in `uses`\n    "
     choices: null
     default: null
     required: false
     option_strings:
+    - --uses-metas
     - --override-metas
     type: dict
     default_random: false
-    name: override_metas
+    name: uses_metas
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -789,7 +795,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 57319
+    default: 48685
     required: false
     option_strings:
     - --port-in
@@ -799,7 +805,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 46827
+    default: 44795
     required: false
     option_strings:
     - --port-out
@@ -991,7 +997,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 54571
+    default: 37883
     required: false
     option_strings:
     - --port-expose
@@ -1404,7 +1410,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 36377
+    default: 58095
     required: false
     option_strings:
     - --port-ctrl
@@ -1460,7 +1466,8 @@ methods:
     default_random: false
     name: ssh_password
   - help: "\n        The config of the executor, it could be one of the followings:\n\
-      \        * an Executor-level YAML file path (.yml, .yaml, .jaml)\n        *\
+      \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
+      \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
       \ a docker image (must start with `docker://`)\n        * the string literal\
       \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
       \ literal of a JSON config\n\n        When use it under Python, one can use\
@@ -1474,26 +1481,28 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: "\n    Dictionary of keyword arguments that will override the default `with\
-      \ configuration` provided to the executor in `uses`\n    "
+  - help: "\n    Dictionary of keyword arguments that will override the `with` configuration\
+      \ in `uses`\n    "
     choices: null
     default: null
     required: false
     option_strings:
+    - --uses-with
     - --override-with
     type: dict
     default_random: false
-    name: override_with
-  - help: "\n    Dictionary of keyword arguments that will override the default `metas\
-      \ configuration` provided to the executor in `uses`\n    "
+    name: uses_with
+  - help: "\n    Dictionary of keyword arguments that will override the `metas` configuration\
+      \ in `uses`\n    "
     choices: null
     default: null
     required: false
     option_strings:
+    - --uses-metas
     - --override-metas
     type: dict
     default_random: false
-    name: override_metas
+    name: uses_metas
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -1520,7 +1529,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 41217
+    default: 36915
     required: false
     option_strings:
     - --port-in
@@ -1530,7 +1539,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 53463
+    default: 47085
     required: false
     option_strings:
     - --port-out
@@ -1798,7 +1807,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 50763
+    default: 46631
     required: false
     option_strings:
     - --port-expose
@@ -1945,7 +1954,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 34993
+    default: 34707
     required: false
     option_strings:
     - --port-ctrl
@@ -2001,7 +2010,8 @@ methods:
     default_random: false
     name: ssh_password
   - help: "\n        The config of the executor, it could be one of the followings:\n\
-      \        * an Executor-level YAML file path (.yml, .yaml, .jaml)\n        *\
+      \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
+      \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
       \ a docker image (must start with `docker://`)\n        * the string literal\
       \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
       \ literal of a JSON config\n\n        When use it under Python, one can use\
@@ -2015,26 +2025,28 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: "\n    Dictionary of keyword arguments that will override the default `with\
-      \ configuration` provided to the executor in `uses`\n    "
+  - help: "\n    Dictionary of keyword arguments that will override the `with` configuration\
+      \ in `uses`\n    "
     choices: null
     default: null
     required: false
     option_strings:
+    - --uses-with
     - --override-with
     type: dict
     default_random: false
-    name: override_with
-  - help: "\n    Dictionary of keyword arguments that will override the default `metas\
-      \ configuration` provided to the executor in `uses`\n    "
+    name: uses_with
+  - help: "\n    Dictionary of keyword arguments that will override the `metas` configuration\
+      \ in `uses`\n    "
     choices: null
     default: null
     required: false
     option_strings:
+    - --uses-metas
     - --override-metas
     type: dict
     default_random: false
-    name: override_metas
+    name: uses_metas
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -2061,7 +2073,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 43695
+    default: 33941
     required: false
     option_strings:
     - --port-in
@@ -2071,7 +2083,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 36307
+    default: 35485
     required: false
     option_strings:
     - --port-out
@@ -2263,7 +2275,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 57011
+    default: 53207
     required: false
     option_strings:
     - --port-expose
@@ -2398,7 +2410,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 59855
+    default: 34827
     required: false
     option_strings:
     - --port-expose
