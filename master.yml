@@ -11,6 +11,206 @@ version: 2.0.10
 methods:
 - name: hello
   options: []
+  help: Start hello world demos.
+  methods:
+  - name: fashion
+    options:
+    - help: The workdir for hello-world demoall data, indices, shards and outputs
+        will be saved there
+      choices: null
+      default: 48b0bef5-fd5a-4d23-b8f0-c93bdd2ce170
+      required: false
+      option_strings:
+      - --workdir
+      type: str
+      default_random: false
+      name: workdir
+    - help: The proxy when downloading sample data
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --download-proxy
+      type: str
+      default_random: false
+      name: download_proxy
+    - help: The url of index data (should be in idx3-ubyte.gz format)
+      choices: null
+      default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz
+      required: false
+      option_strings:
+      - --index-data-url
+      type: str
+      default_random: false
+      name: index_data_url
+    - help: The url of index labels data (should be in idx3-ubyte.gz format)
+      choices: null
+      default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz
+      required: false
+      option_strings:
+      - --index-labels-url
+      type: str
+      default_random: false
+      name: index_labels_url
+    - help: The url of query data (should be in idx3-ubyte.gz format)
+      choices: null
+      default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz
+      required: false
+      option_strings:
+      - --query-data-url
+      type: str
+      default_random: false
+      name: query_data_url
+    - help: The url of query labels data (should be in idx3-ubyte.gz format)
+      choices: null
+      default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz
+      required: false
+      option_strings:
+      - --query-labels-url
+      type: str
+      default_random: false
+      name: query_labels_url
+    - help: The request size in indexing (the maximum number of documents that will
+        be included in a Request before sending it)
+      choices: null
+      default: 1024
+      required: false
+      option_strings:
+      - --request-size
+      type: int
+      default_random: false
+      name: request_size
+    - help: The number of queries to visualize
+      choices: null
+      default: 128
+      required: false
+      option_strings:
+      - --num-query
+      type: int
+      default_random: false
+      name: num_query
+    - help: Top-k results to retrieve and visualize
+      choices: null
+      default: 50
+      required: false
+      option_strings:
+      - --top-k
+      type: int
+      default_random: false
+      name: top_k
+    help: Run a fashion search demo
+  - name: chatbot
+    options:
+    - help: The workdir for hello-world demoall data, indices, shards and outputs
+        will be saved there
+      choices: null
+      default: 8ae67cf0-e12c-453a-ab50-8861cda8f446
+      required: false
+      option_strings:
+      - --workdir
+      type: str
+      default_random: false
+      name: workdir
+    - help: The proxy when downloading sample data
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --download-proxy
+      type: str
+      default_random: false
+      name: download_proxy
+    - help: The url of index csv data
+      choices: null
+      default: https://static.jina.ai/chatbot/dataset.csv
+      required: false
+      option_strings:
+      - --index-data-url
+      type: str
+      default_random: false
+      name: index_data_url
+    - help: The port of the host exposed to the public
+      choices: null
+      default: 8080
+      required: false
+      option_strings:
+      - --port-expose
+      type: int
+      default_random: false
+      name: port_expose
+    - help: The number of parallel when index and query
+      choices: null
+      default: 2
+      required: false
+      option_strings:
+      - --parallel
+      type: int
+      default_random: false
+      name: parallel
+    help: Run a chatbot QA demo
+  - name: multimodal
+    options:
+    - help: The workdir for hello-world demoall data, indices, shards and outputs
+        will be saved there
+      choices: null
+      default: ba3ab83b-b474-4b7b-a52f-8ec2286a3381
+      required: false
+      option_strings:
+      - --workdir
+      type: str
+      default_random: false
+      name: workdir
+    - help: The proxy when downloading sample data
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --download-proxy
+      type: str
+      default_random: false
+      name: download_proxy
+    - help: The url of index csv data
+      choices: null
+      default: https://static.jina.ai/multimodal/people-img.zip
+      required: false
+      option_strings:
+      - --index-data-url
+      type: str
+      default_random: false
+      name: index_data_url
+    - help: The port of the host exposed to the public
+      choices: null
+      default: 8080
+      required: false
+      option_strings:
+      - --port-expose
+      type: int
+      default_random: false
+      name: port_expose
+    help: Run a multimodal search demo
+  - name: fork
+    options:
+    - help: The hello world project to fork
+      choices:
+      - fashion
+      - chatbot
+      - multimodal
+      default: null
+      required: true
+      option_strings: []
+      type: str
+      default_random: false
+      name: project
+    - help: The dest directory of the forked project. Note, it can not be an existing
+        path.
+      choices: null
+      default: null
+      required: true
+      option_strings: []
+      type: str
+      default_random: false
+      name: destination
+    help: Fork a hello world project to a local directory.
 - name: executor
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -75,7 +275,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 56445
+    default: 51497
     required: false
     option_strings:
     - --port-ctrl
@@ -194,7 +394,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 52785
+    default: 47073
     required: false
     option_strings:
     - --port-in
@@ -204,7 +404,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 57797
+    default: 47261
     required: false
     option_strings:
     - --port-out
@@ -396,7 +596,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 35253
+    default: 56847
     required: false
     option_strings:
     - --port-expose
@@ -612,6 +812,7 @@ methods:
     type: typing.List[str]
     default_random: false
     name: peas_hosts
+  help: Start an Executor. Executor is how Jina processes Document.
 - name: pod
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -676,7 +877,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 55729
+    default: 53929
     required: false
     option_strings:
     - --port-ctrl
@@ -795,7 +996,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 44175
+    default: 52517
     required: false
     option_strings:
     - --port-in
@@ -805,7 +1006,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 54209
+    default: 46107
     required: false
     option_strings:
     - --port-out
@@ -997,7 +1198,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 57749
+    default: 48661
     required: false
     option_strings:
     - --port-expose
@@ -1213,6 +1414,7 @@ methods:
     type: typing.List[str]
     default_random: false
     name: peas_hosts
+  help: Start an Executor. Executor is how Jina processes Document.
 - name: flow
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -1295,6 +1497,7 @@ methods:
     type: str
     default_random: false
     name: inspect
+  help: Start a Flow. Flow is how Jina streamlines and distributes Executors.
 - name: ping
   options:
   - help: The host address of the target Pea, e.g. 0.0.0.0
@@ -1346,6 +1549,7 @@ methods:
     type: bool
     default_random: false
     name: print_response
+  help: Ping a Pod and check its network connectivity.
 - name: gateway
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -1410,7 +1614,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 36331
+    default: 59637
     required: false
     option_strings:
     - --port-ctrl
@@ -1529,7 +1733,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 39553
+    default: 35151
     required: false
     option_strings:
     - --port-in
@@ -1539,7 +1743,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 53023
+    default: 51395
     required: false
     option_strings:
     - --port-out
@@ -1807,7 +2011,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 49693
+    default: 39727
     required: false
     option_strings:
     - --port-expose
@@ -1888,8 +2092,117 @@ methods:
     type: bool
     default_random: false
     name: expose_public
+  help: Start a Gateway that receives client Requests via gRPC/REST interface
 - name: hub
   options: []
+  help: Push/Pull an Executor to/from Jina Hub
+  methods:
+  - name: push
+    options:
+    - help: If set, Hub executor usage will not be printed.
+      choices: null
+      default: false
+      required: false
+      option_strings:
+      - --no-usage
+      type: bool
+      default_random: false
+      name: no_usage
+    - help: '
+
+        The content source to be shipped into a Jina Hub executor. It can one of the
+        followings:
+
+        - a directory containing Dockerfile, manifest.yml, README.md, zero or more
+        yaml config, zero or more Python file.
+
+        '
+      choices: null
+      default: null
+      required: true
+      option_strings: []
+      type: dir_path
+      default_random: false
+      name: path
+    - help: To overwrite the executor identified as UUID8
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --force
+      type: str
+      default_random: false
+      name: force
+    - help: The secret key of the identified Jina Hub executor
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --secret
+      type: str
+      default_random: false
+      name: secret
+    - help: If set, the pushed executor is visible to public
+      choices: null
+      default: ==SUPPRESS==
+      required: false
+      option_strings:
+      - --public
+      type: bool
+      default_random: false
+      name: public
+    - help: If set, the pushed executor is invisible to public
+      choices: null
+      default: ==SUPPRESS==
+      required: false
+      option_strings:
+      - --private
+      type: bool
+      default_random: false
+      name: private
+    help: Push an executor package to the Jina hub
+  - name: pull
+    options:
+    - help: If set, Hub executor usage will not be printed.
+      choices: null
+      default: false
+      required: false
+      option_strings:
+      - --no-usage
+      type: bool
+      default_random: false
+      name: no_usage
+    - help: The URI of the executor to pull (e.g., jinahub[+docker]://UUID8)
+      choices: null
+      default: null
+      required: true
+      option_strings: []
+      type: hub_uri
+      default_random: false
+      name: uri
+    - help: If set, install `requirements.txt` in the Hub Executor bundle to the local
+        system
+      choices: null
+      default: false
+      required: false
+      option_strings:
+      - --install-requirements
+      type: bool
+      default_random: false
+      name: install_requirements
+    help: Download an executor package/image from the Jina hub
+- name: help
+  options:
+  - help: Lookup the usage & mention of the argument name in Jina API. The name can
+      be fuzzy
+    choices: null
+    default: null
+    required: true
+    option_strings: []
+    type: str
+    default_random: false
+    name: query
+  help: Show help text of a CLI argument
 - name: pea
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -1954,7 +2267,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 49573
+    default: 44309
     required: false
     option_strings:
     - --port-ctrl
@@ -2073,7 +2386,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 42065
+    default: 57479
     required: false
     option_strings:
     - --port-in
@@ -2083,7 +2396,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 58063
+    default: 49763
     required: false
     option_strings:
     - --port-out
@@ -2275,7 +2588,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 37801
+    default: 40825
     required: false
     option_strings:
     - --port-expose
@@ -2397,6 +2710,8 @@ methods:
     type: bool
     default_random: false
     name: expose_public
+  help: Start a Pea. You should rarely use this directly unless you are doing low-level
+    orchestration
 - name: client
   options:
   - help: The host address of the runtime, by default it is 0.0.0.0.
@@ -2410,7 +2725,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55635
+    default: 40643
     required: false
     option_strings:
     - --port-expose
@@ -2450,6 +2765,7 @@ methods:
     type: str
     default_random: false
     name: protocol
+  help: Start a Python client that connects to a remote Jina gateway
 - name: export-api
   options:
   - help: The YAML file path for storing the exported API
@@ -2479,4 +2795,5 @@ methods:
     type: typing.List[str]
     default_random: false
     name: schema_path
+  help: Export Jina API to JSON/YAML file for 3rd party applications
 revision: null
