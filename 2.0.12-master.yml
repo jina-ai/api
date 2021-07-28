@@ -1,6 +1,5 @@
 name: Jina
-description: Jina is the cloud-native neural search solution powered by state-of-the-art
-  AI and deep learning technology
+description: Cloud-native neural search framework for any kind of data
 license: Apache 2.0
 vendor: Jina AI Limited
 source: https://github.com/jina-ai/jina/tree/master
@@ -18,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: b709e9e6-c86a-4496-b955-4e6fe2dde30b
+      default: 1079d536-78a4-47e6-842a-f37185f1087d
       required: false
       option_strings:
       - --workdir
@@ -104,7 +103,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 7aaa46ff-6e85-41ce-887c-c97b5ee91096
+      default: b503fbb4-36f2-4906-a053-92a961c4b52b
       required: false
       option_strings:
       - --workdir
@@ -153,7 +152,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 7877c5c9-bf0c-4d2e-8751-3b400da1c22c
+      default: a120f816-f46c-46f2-970c-5601e51768e1
       required: false
       option_strings:
       - --workdir
@@ -275,7 +274,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 43473
+    default: 52489
     required: false
     option_strings:
     - --port-ctrl
@@ -394,7 +393,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 37127
+    default: 58227
     required: false
     option_strings:
     - --port-in
@@ -404,7 +403,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 49993
+    default: 56589
     required: false
     option_strings:
     - --port-out
@@ -596,7 +595,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 52531
+    default: 43619
     required: false
     option_strings:
     - --port-expose
@@ -877,7 +876,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 60613
+    default: 56213
     required: false
     option_strings:
     - --port-ctrl
@@ -996,7 +995,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 34127
+    default: 47217
     required: false
     option_strings:
     - --port-in
@@ -1006,7 +1005,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 33431
+    default: 34547
     required: false
     option_strings:
     - --port-out
@@ -1198,7 +1197,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 48163
+    default: 41367
     required: false
     option_strings:
     - --port-expose
@@ -1614,7 +1613,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 54175
+    default: 51969
     required: false
     option_strings:
     - --port-ctrl
@@ -1733,7 +1732,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 56461
+    default: 56967
     required: false
     option_strings:
     - --port-in
@@ -1743,7 +1742,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 42951
+    default: 55319
     required: false
     option_strings:
     - --port-out
@@ -2011,7 +2010,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 41589
+    default: 41597
     required: false
     option_strings:
     - --port-expose
@@ -2097,6 +2096,10 @@ methods:
   options: []
   help: Push/Pull an Executor to/from Jina Hub
   methods:
+  - name: new
+    options: []
+    help: Create a new executor using the template
+    methods: []
   - name: push
     options:
     - help: If set, Hub executor usage will not be printed.
@@ -2160,7 +2163,7 @@ methods:
       type: bool
       default_random: false
       name: private
-    help: Push an executor package to the Jina hub
+    help: Push an executor package to Jina hub
   - name: pull
     options:
     - help: If set, Hub executor usage will not be printed.
@@ -2190,7 +2193,7 @@ methods:
       type: bool
       default_random: false
       name: install_requirements
-    help: Download an executor package/image from the Jina hub
+    help: Download an executor image/package from Jina hub
 - name: help
   options:
   - help: Lookup the usage & mention of the argument name in Jina API. The name can
@@ -2267,7 +2270,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 57003
+    default: 55611
     required: false
     option_strings:
     - --port-ctrl
@@ -2386,7 +2389,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 44679
+    default: 52837
     required: false
     option_strings:
     - --port-in
@@ -2396,7 +2399,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 58487
+    default: 54721
     required: false
     option_strings:
     - --port-out
@@ -2588,7 +2591,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 50175
+    default: 53565
     required: false
     option_strings:
     - --port-expose
@@ -2725,7 +2728,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55413
+    default: 50723
     required: false
     option_strings:
     - --port-expose
