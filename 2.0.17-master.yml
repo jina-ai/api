@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 68c44719-1688-40da-86dc-72cc83bdf561
+      default: f44cb17c-1fa7-4534-af3a-8194f89d5c7a
       required: false
       option_strings:
       - --workdir
@@ -103,7 +103,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 92e599ee-dbef-4b3d-9ac5-523918abe9da
+      default: a402272d-5319-4bfe-a9cd-d063fc4ab78d
       required: false
       option_strings:
       - --workdir
@@ -152,7 +152,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 150bb94e-6bda-46ab-b0b0-fd48966b1d62
+      default: e3664df6-05c9-4b43-b2cf-aca3115cca64
       required: false
       option_strings:
       - --workdir
@@ -274,7 +274,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 59909
+    default: 41371
     required: false
     option_strings:
     - --port-ctrl
@@ -393,7 +393,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 54273
+    default: 44463
     required: false
     option_strings:
     - --port-in
@@ -403,7 +403,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 46293
+    default: 43059
     required: false
     option_strings:
     - --port-out
@@ -595,7 +595,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55333
+    default: 57373
     required: false
     option_strings:
     - --port-expose
@@ -811,6 +811,16 @@ methods:
     type: typing.List[str]
     default_random: false
     name: peas_hosts
+  - help: The head Pea of this Pod will connect to the TailPea of the predecessor
+      Pod.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --connect-to-predecessor
+    type: bool
+    default_random: false
+    name: connect_to_predecessor
   help: Start an Executor. Executor is how Jina processes Document.
 - name: pod
   options:
@@ -876,7 +886,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 48189
+    default: 57583
     required: false
     option_strings:
     - --port-ctrl
@@ -995,7 +1005,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 41643
+    default: 47555
     required: false
     option_strings:
     - --port-in
@@ -1005,7 +1015,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 49561
+    default: 60909
     required: false
     option_strings:
     - --port-out
@@ -1197,7 +1207,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 44533
+    default: 45543
     required: false
     option_strings:
     - --port-expose
@@ -1413,6 +1423,16 @@ methods:
     type: typing.List[str]
     default_random: false
     name: peas_hosts
+  - help: The head Pea of this Pod will connect to the TailPea of the predecessor
+      Pod.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --connect-to-predecessor
+    type: bool
+    default_random: false
+    name: connect_to_predecessor
   help: Start an Executor. Executor is how Jina processes Document.
 - name: flow
   options:
@@ -1613,7 +1633,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 56459
+    default: 35767
     required: false
     option_strings:
     - --port-ctrl
@@ -1732,7 +1752,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 52457
+    default: 40873
     required: false
     option_strings:
     - --port-in
@@ -1742,7 +1762,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 50353
+    default: 52953
     required: false
     option_strings:
     - --port-out
@@ -2010,7 +2030,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 40207
+    default: 53997
     required: false
     option_strings:
     - --port-expose
@@ -2091,6 +2111,16 @@ methods:
     type: bool
     default_random: false
     name: expose_public
+  - help: The head Pea of this Pod will connect to the TailPea of the predecessor
+      Pod.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --connect-to-predecessor
+    type: bool
+    default_random: false
+    name: connect_to_predecessor
   help: Start a Gateway that receives client Requests via gRPC/REST interface
 - name: hub
   options: []
@@ -2270,7 +2300,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 32881
+    default: 43137
     required: false
     option_strings:
     - --port-ctrl
@@ -2389,7 +2419,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 37015
+    default: 44067
     required: false
     option_strings:
     - --port-in
@@ -2399,7 +2429,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 41803
+    default: 33991
     required: false
     option_strings:
     - --port-out
@@ -2591,7 +2621,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 45593
+    default: 55093
     required: false
     option_strings:
     - --port-expose
@@ -2728,7 +2758,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 38807
+    default: 57929
     required: false
     option_strings:
     - --port-expose
