@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: f44cb17c-1fa7-4534-af3a-8194f89d5c7a
+      default: 33f5f646-b773-4f73-9518-8bac6c17696f
       required: false
       option_strings:
       - --workdir
@@ -103,7 +103,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: a402272d-5319-4bfe-a9cd-d063fc4ab78d
+      default: 470ea230-493a-4798-b65a-29c2ef3207d8
       required: false
       option_strings:
       - --workdir
@@ -152,7 +152,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: e3664df6-05c9-4b43-b2cf-aca3115cca64
+      default: c7c82e63-8d2b-4f50-8d93-83f20cced10b
       required: false
       option_strings:
       - --workdir
@@ -274,7 +274,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 41371
+    default: 45881
     required: false
     option_strings:
     - --port-ctrl
@@ -352,7 +352,6 @@ methods:
     required: false
     option_strings:
     - --uses-with
-    - --override-with
     type: dict
     default_random: false
     name: uses_with
@@ -363,10 +362,19 @@ methods:
     required: false
     option_strings:
     - --uses-metas
-    - --override-metas
     type: dict
     default_random: false
     name: uses_metas
+  - help: "\n        Dictionary of keyword arguments that will override the `requests`\
+      \ configuration in `uses`\n        "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-requests
+    type: dict
+    default_random: false
+    name: uses_requests
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -393,7 +401,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 44463
+    default: 34761
     required: false
     option_strings:
     - --port-in
@@ -403,7 +411,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 43059
+    default: 59959
     required: false
     option_strings:
     - --port-out
@@ -595,7 +603,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 57373
+    default: 46047
     required: false
     option_strings:
     - --port-expose
@@ -886,7 +894,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 57583
+    default: 57013
     required: false
     option_strings:
     - --port-ctrl
@@ -964,7 +972,6 @@ methods:
     required: false
     option_strings:
     - --uses-with
-    - --override-with
     type: dict
     default_random: false
     name: uses_with
@@ -975,10 +982,19 @@ methods:
     required: false
     option_strings:
     - --uses-metas
-    - --override-metas
     type: dict
     default_random: false
     name: uses_metas
+  - help: "\n        Dictionary of keyword arguments that will override the `requests`\
+      \ configuration in `uses`\n        "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-requests
+    type: dict
+    default_random: false
+    name: uses_requests
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -1005,7 +1021,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 47555
+    default: 35589
     required: false
     option_strings:
     - --port-in
@@ -1015,7 +1031,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 60909
+    default: 49983
     required: false
     option_strings:
     - --port-out
@@ -1207,7 +1223,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 45543
+    default: 57713
     required: false
     option_strings:
     - --port-expose
@@ -1633,7 +1649,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 35767
+    default: 53063
     required: false
     option_strings:
     - --port-ctrl
@@ -1711,7 +1727,6 @@ methods:
     required: false
     option_strings:
     - --uses-with
-    - --override-with
     type: dict
     default_random: false
     name: uses_with
@@ -1722,10 +1737,19 @@ methods:
     required: false
     option_strings:
     - --uses-metas
-    - --override-metas
     type: dict
     default_random: false
     name: uses_metas
+  - help: "\n        Dictionary of keyword arguments that will override the `requests`\
+      \ configuration in `uses`\n        "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-requests
+    type: dict
+    default_random: false
+    name: uses_requests
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -1752,7 +1776,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 40873
+    default: 38589
     required: false
     option_strings:
     - --port-in
@@ -1762,7 +1786,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 52953
+    default: 52659
     required: false
     option_strings:
     - --port-out
@@ -2030,7 +2054,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 53997
+    default: 55619
     required: false
     option_strings:
     - --port-expose
@@ -2300,7 +2324,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 43137
+    default: 49339
     required: false
     option_strings:
     - --port-ctrl
@@ -2378,7 +2402,6 @@ methods:
     required: false
     option_strings:
     - --uses-with
-    - --override-with
     type: dict
     default_random: false
     name: uses_with
@@ -2389,10 +2412,19 @@ methods:
     required: false
     option_strings:
     - --uses-metas
-    - --override-metas
     type: dict
     default_random: false
     name: uses_metas
+  - help: "\n        Dictionary of keyword arguments that will override the `requests`\
+      \ configuration in `uses`\n        "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-requests
+    type: dict
+    default_random: false
+    name: uses_requests
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -2419,7 +2451,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 44067
+    default: 60857
     required: false
     option_strings:
     - --port-in
@@ -2429,7 +2461,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 33991
+    default: 57747
     required: false
     option_strings:
     - --port-out
@@ -2621,7 +2653,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55093
+    default: 39473
     required: false
     option_strings:
     - --port-expose
@@ -2758,7 +2790,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 57929
+    default: 52113
     required: false
     option_strings:
     - --port-expose
