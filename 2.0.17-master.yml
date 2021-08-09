@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: c4fb0a47-4a78-4013-8d46-49dae3dfade6
+      default: 622e25d0-56b1-4da1-99c8-4777dd8482d6
       required: false
       option_strings:
       - --workdir
@@ -103,7 +103,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 9cb648ee-4ee4-4799-8215-79656832f26c
+      default: a418171a-37ba-4ca3-b712-341a9afcedae
       required: false
       option_strings:
       - --workdir
@@ -152,7 +152,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 7a824aaf-941c-4051-a4f9-9a80d39751e1
+      default: 10a982b3-f63e-477f-9476-7e814e97d1dc
       required: false
       option_strings:
       - --workdir
@@ -274,7 +274,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 51201
+    default: 36823
     required: false
     option_strings:
     - --port-ctrl
@@ -401,7 +401,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 44239
+    default: 41297
     required: false
     option_strings:
     - --port-in
@@ -411,7 +411,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 34745
+    default: 55187
     required: false
     option_strings:
     - --port-out
@@ -603,7 +603,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 58167
+    default: 53603
     required: false
     option_strings:
     - --port-expose
@@ -894,7 +894,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 51333
+    default: 48697
     required: false
     option_strings:
     - --port-ctrl
@@ -1021,7 +1021,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 44631
+    default: 53453
     required: false
     option_strings:
     - --port-in
@@ -1031,7 +1031,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 45957
+    default: 58437
     required: false
     option_strings:
     - --port-out
@@ -1223,7 +1223,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 56361
+    default: 56259
     required: false
     option_strings:
     - --port-expose
@@ -1649,7 +1649,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 34281
+    default: 48137
     required: false
     option_strings:
     - --port-ctrl
@@ -1776,7 +1776,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 44157
+    default: 42699
     required: false
     option_strings:
     - --port-in
@@ -1786,7 +1786,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 47661
+    default: 44477
     required: false
     option_strings:
     - --port-out
@@ -2054,7 +2054,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 51597
+    default: 53845
     required: false
     option_strings:
     - --port-expose
@@ -2181,6 +2181,16 @@ methods:
       type: dir_path
       default_random: false
       name: path
+    - help: Name of the Dockerfile (Default is `path/Dockerfile`)
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - -f
+      - --docker-file
+      type: None
+      default_random: false
+      name: docker_file
     - help: To overwrite the executor identified as UUID8
       choices: null
       default: null
@@ -2324,7 +2334,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 47867
+    default: 34843
     required: false
     option_strings:
     - --port-ctrl
@@ -2451,7 +2461,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 58427
+    default: 47029
     required: false
     option_strings:
     - --port-in
@@ -2461,7 +2471,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 57321
+    default: 35385
     required: false
     option_strings:
     - --port-out
@@ -2653,7 +2663,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 34345
+    default: 58965
     required: false
     option_strings:
     - --port-expose
@@ -2790,7 +2800,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 54699
+    default: 34333
     required: false
     option_strings:
     - --port-expose
