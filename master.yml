@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 7abc5d68-602e-4c64-8b90-75eb5eb48661
+      default: bf79d573-eede-47ca-aa67-bd32530e4667
       required: false
       option_strings:
       - --workdir
@@ -103,7 +103,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: fc73f85f-d478-4305-8c7c-6aeb8ffe33d8
+      default: 67246884-ecce-45e8-affc-eb07fb1e3658
       required: false
       option_strings:
       - --workdir
@@ -152,7 +152,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 85c9a84f-7ff5-4d3e-b42f-0c5b6e76a149
+      default: da716997-d478-4ea0-8faf-eb06b33fafab
       required: false
       option_strings:
       - --workdir
@@ -274,7 +274,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 48807
+    default: 36081
     required: false
     option_strings:
     - --port-ctrl
@@ -380,15 +380,16 @@ methods:
       The customized python modules need to be imported before loading the executor
 
 
-      Note, when importing multiple files and there is a dependency between them,
-      then one has to write the dependencies in
+      Note that the recommended way is to only import a single module - a simple python
+      file, if your
 
-      reverse order. That is, if `__init__.py` depends on `A.py`, which again depends
-      on `B.py`, then you need to write:
+      executor can be defined in a single file, or an ``__init__.py`` file if you
+      have multiple files,
 
+      which should be structured as a python package. For more details, please see
+      the
 
-      --py-modules __init__.py --py-modules B.py --py-modules A.py
-
+      `Executor cookbook <https://github.com/jina-ai/jina/blob/master/.github/2.0/cookbooks/Executor.md#structure-of-the-repository>`__
 
       '
     choices: null
@@ -401,7 +402,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 60843
+    default: 57293
     required: false
     option_strings:
     - --port-in
@@ -411,7 +412,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 58281
+    default: 34709
     required: false
     option_strings:
     - --port-out
@@ -613,7 +614,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 43845
+    default: 50763
     required: false
     option_strings:
     - --port-expose
@@ -935,7 +936,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 58159
+    default: 50003
     required: false
     option_strings:
     - --port-ctrl
@@ -1041,15 +1042,16 @@ methods:
       The customized python modules need to be imported before loading the executor
 
 
-      Note, when importing multiple files and there is a dependency between them,
-      then one has to write the dependencies in
+      Note that the recommended way is to only import a single module - a simple python
+      file, if your
 
-      reverse order. That is, if `__init__.py` depends on `A.py`, which again depends
-      on `B.py`, then you need to write:
+      executor can be defined in a single file, or an ``__init__.py`` file if you
+      have multiple files,
 
+      which should be structured as a python package. For more details, please see
+      the
 
-      --py-modules __init__.py --py-modules B.py --py-modules A.py
-
+      `Executor cookbook <https://github.com/jina-ai/jina/blob/master/.github/2.0/cookbooks/Executor.md#structure-of-the-repository>`__
 
       '
     choices: null
@@ -1062,7 +1064,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 46019
+    default: 59499
     required: false
     option_strings:
     - --port-in
@@ -1072,7 +1074,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 49623
+    default: 38333
     required: false
     option_strings:
     - --port-out
@@ -1350,7 +1352,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 40659
+    default: 38137
     required: false
     option_strings:
     - --port-expose
@@ -1630,7 +1632,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 56673
+    default: 55701
     required: false
     option_strings:
     - --port-ctrl
@@ -1736,15 +1738,16 @@ methods:
       The customized python modules need to be imported before loading the executor
 
 
-      Note, when importing multiple files and there is a dependency between them,
-      then one has to write the dependencies in
+      Note that the recommended way is to only import a single module - a simple python
+      file, if your
 
-      reverse order. That is, if `__init__.py` depends on `A.py`, which again depends
-      on `B.py`, then you need to write:
+      executor can be defined in a single file, or an ``__init__.py`` file if you
+      have multiple files,
 
+      which should be structured as a python package. For more details, please see
+      the
 
-      --py-modules __init__.py --py-modules B.py --py-modules A.py
-
+      `Executor cookbook <https://github.com/jina-ai/jina/blob/master/.github/2.0/cookbooks/Executor.md#structure-of-the-repository>`__
 
       '
     choices: null
@@ -1757,7 +1760,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 41491
+    default: 37517
     required: false
     option_strings:
     - --port-in
@@ -1767,7 +1770,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 56477
+    default: 57871
     required: false
     option_strings:
     - --port-out
@@ -1969,7 +1972,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 46799
+    default: 46029
     required: false
     option_strings:
     - --port-expose
@@ -2157,7 +2160,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 56033
+    default: 45643
     required: false
     option_strings:
     - --port-ctrl
@@ -2263,15 +2266,16 @@ methods:
       The customized python modules need to be imported before loading the executor
 
 
-      Note, when importing multiple files and there is a dependency between them,
-      then one has to write the dependencies in
+      Note that the recommended way is to only import a single module - a simple python
+      file, if your
 
-      reverse order. That is, if `__init__.py` depends on `A.py`, which again depends
-      on `B.py`, then you need to write:
+      executor can be defined in a single file, or an ``__init__.py`` file if you
+      have multiple files,
 
+      which should be structured as a python package. For more details, please see
+      the
 
-      --py-modules __init__.py --py-modules B.py --py-modules A.py
-
+      `Executor cookbook <https://github.com/jina-ai/jina/blob/master/.github/2.0/cookbooks/Executor.md#structure-of-the-repository>`__
 
       '
     choices: null
@@ -2284,7 +2288,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 55763
+    default: 53561
     required: false
     option_strings:
     - --port-in
@@ -2294,7 +2298,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 54881
+    default: 33969
     required: false
     option_strings:
     - --port-out
@@ -2496,7 +2500,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55247
+    default: 53235
     required: false
     option_strings:
     - --port-expose
@@ -2737,7 +2741,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 55693
+    default: 33661
     required: false
     option_strings:
     - --port-expose
