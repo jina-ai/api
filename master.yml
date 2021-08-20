@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: bf79d573-eede-47ca-aa67-bd32530e4667
+      default: ad9de521-89d1-40e2-9ced-8ce86d8ae8b0
       required: false
       option_strings:
       - --workdir
@@ -103,7 +103,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 67246884-ecce-45e8-affc-eb07fb1e3658
+      default: d9e02e0b-e7d4-4ccf-80e3-51771e430386
       required: false
       option_strings:
       - --workdir
@@ -152,7 +152,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: da716997-d478-4ea0-8faf-eb06b33fafab
+      default: e0f05137-6c4c-4ce6-b25b-399b326c90b4
       required: false
       option_strings:
       - --workdir
@@ -274,7 +274,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 36081
+    default: 60611
     required: false
     option_strings:
     - --port-ctrl
@@ -402,7 +402,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 57293
+    default: 32955
     required: false
     option_strings:
     - --port-in
@@ -412,7 +412,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 34709
+    default: 53741
     required: false
     option_strings:
     - --port-out
@@ -614,7 +614,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 50763
+    default: 49907
     required: false
     option_strings:
     - --port-expose
@@ -819,6 +819,17 @@ methods:
     type: str
     default_random: false
     name: inspect
+  - help: Defines if the routing table should be pre computed by the Flow. In this
+      case it is statically defined for each Pod and not send on every data request.
+      Can not be used in combination with external pods
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --static-routing-table
+    type: bool
+    default_random: false
+    name: static_routing_table
   help: Start a Flow. Flow is how Jina streamlines and distributes Executors.
 - name: ping
   options:
@@ -936,7 +947,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 50003
+    default: 39053
     required: false
     option_strings:
     - --port-ctrl
@@ -1064,7 +1075,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 59499
+    default: 60399
     required: false
     option_strings:
     - --port-in
@@ -1074,7 +1085,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 38333
+    default: 51809
     required: false
     option_strings:
     - --port-out
@@ -1352,7 +1363,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 38137
+    default: 39215
     required: false
     option_strings:
     - --port-expose
@@ -1632,7 +1643,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 55701
+    default: 46337
     required: false
     option_strings:
     - --port-ctrl
@@ -1760,7 +1771,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 37517
+    default: 32895
     required: false
     option_strings:
     - --port-in
@@ -1770,7 +1781,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 57871
+    default: 47233
     required: false
     option_strings:
     - --port-out
@@ -1972,7 +1983,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 46029
+    default: 39407
     required: false
     option_strings:
     - --port-expose
@@ -2160,7 +2171,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 45643
+    default: 47673
     required: false
     option_strings:
     - --port-ctrl
@@ -2288,7 +2299,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 53561
+    default: 34851
     required: false
     option_strings:
     - --port-in
@@ -2298,7 +2309,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 33969
+    default: 46485
     required: false
     option_strings:
     - --port-out
@@ -2500,7 +2511,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 53235
+    default: 59237
     required: false
     option_strings:
     - --port-expose
@@ -2741,7 +2752,7 @@ methods:
     name: host
   - help: The port of the host exposed to the public
     choices: null
-    default: 33661
+    default: 35557
     required: false
     option_strings:
     - --port-expose
