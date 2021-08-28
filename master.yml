@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 1a014f06-6dc4-4a9c-9a64-8dfde4dee019
+      default: 33f0867f-cfaf-4d76-8ce2-9d942e512ce2
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: a1eced8e-a695-430d-af2e-d71140ed2687
+      default: 994ff8c1-6862-4ffc-8295-d077cec372e2
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 0874fb66-3653-4f83-b90c-1c5192d14d8d
+      default: 04c0e0e8-c67a-4ce6-9dae-a089785b906c
       required: false
       option_strings:
       - --workdir
@@ -264,7 +264,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 56887
+    default: 47823
     required: false
     option_strings:
     - --port-ctrl
@@ -392,7 +392,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 33325
+    default: 52839
     required: false
     option_strings:
     - --port-in
@@ -402,7 +402,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 33139
+    default: 33799
     required: false
     option_strings:
     - --port-out
@@ -602,26 +602,15 @@ methods:
     type: str
     default_random: false
     name: host
-  - help: The port of the host exposed to the public
+  - help: The port of the remote machine for usage with JinaD.
     choices: null
-    default: 52951
+    default: 8000
     required: false
     option_strings:
-    - --port-expose
+    - --port-jinad
     type: int
-    default_random: true
-    default_factory: random_port
-    name: port_expose
-  - help: If set, respect the http_proxy and https_proxy environment variables. otherwise,
-      it will unset these proxy variables before start. gRPC seems to prefer no proxy
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --proxy
-    type: bool
     default_random: false
-    name: proxy
+    name: port_jinad
   - help: Do not display the streaming of remote logs on local console
     choices: null
     default: false
@@ -937,7 +926,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 38315
+    default: 45891
     required: false
     option_strings:
     - --port-ctrl
@@ -1065,7 +1054,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 38231
+    default: 55015
     required: false
     option_strings:
     - --port-in
@@ -1075,7 +1064,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 34845
+    default: 58787
     required: false
     option_strings:
     - --port-out
@@ -1351,16 +1340,6 @@ methods:
     type: str
     default_random: false
     name: host
-  - help: The port of the host exposed to the public
-    choices: null
-    default: 37641
-    required: false
-    option_strings:
-    - --port-expose
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port_expose
   - help: If set, respect the http_proxy and https_proxy environment variables. otherwise,
       it will unset these proxy variables before start. gRPC seems to prefer no proxy
     choices: null
@@ -1371,6 +1350,16 @@ methods:
     type: bool
     default_random: false
     name: proxy
+  - help: The port that the gateway exposes for clients for GRPC connections.
+    choices: null
+    default: 58703
+    required: false
+    option_strings:
+    - --port-expose
+    type: int
+    default_random: true
+    default_factory: random_port
+    name: port_expose
   - help: The Pea attempts to terminate all of its Runtime child processes/threads
       on existing. setting it to true basically tell the Pea do not wait on the Runtime
       when closing
@@ -1633,7 +1622,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 48699
+    default: 52093
     required: false
     option_strings:
     - --port-ctrl
@@ -1761,7 +1750,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 50509
+    default: 40727
     required: false
     option_strings:
     - --port-in
@@ -1771,7 +1760,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 49375
+    default: 56401
     required: false
     option_strings:
     - --port-out
@@ -1971,26 +1960,15 @@ methods:
     type: str
     default_random: false
     name: host
-  - help: The port of the host exposed to the public
+  - help: The port of the remote machine for usage with JinaD.
     choices: null
-    default: 42403
+    default: 8000
     required: false
     option_strings:
-    - --port-expose
+    - --port-jinad
     type: int
-    default_random: true
-    default_factory: random_port
-    name: port_expose
-  - help: If set, respect the http_proxy and https_proxy environment variables. otherwise,
-      it will unset these proxy variables before start. gRPC seems to prefer no proxy
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --proxy
-    type: bool
     default_random: false
-    name: proxy
+    name: port_jinad
   - help: Do not display the streaming of remote logs on local console
     choices: null
     default: false
@@ -2161,7 +2139,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 45055
+    default: 51547
     required: false
     option_strings:
     - --port-ctrl
@@ -2289,7 +2267,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 37921
+    default: 36007
     required: false
     option_strings:
     - --port-in
@@ -2299,7 +2277,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 52833
+    default: 43235
     required: false
     option_strings:
     - --port-out
@@ -2499,26 +2477,15 @@ methods:
     type: str
     default_random: false
     name: host
-  - help: The port of the host exposed to the public
+  - help: The port of the remote machine for usage with JinaD.
     choices: null
-    default: 49473
+    default: 8000
     required: false
     option_strings:
-    - --port-expose
+    - --port-jinad
     type: int
-    default_random: true
-    default_factory: random_port
-    name: port_expose
-  - help: If set, respect the http_proxy and https_proxy environment variables. otherwise,
-      it will unset these proxy variables before start. gRPC seems to prefer no proxy
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --proxy
-    type: bool
     default_random: false
-    name: proxy
+    name: port_jinad
   - help: Do not display the streaming of remote logs on local console
     choices: null
     default: false
@@ -2740,16 +2707,6 @@ methods:
     type: str
     default_random: false
     name: host
-  - help: The port of the host exposed to the public
-    choices: null
-    default: 47525
-    required: false
-    option_strings:
-    - --port-expose
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port_expose
   - help: If set, respect the http_proxy and https_proxy environment variables. otherwise,
       it will unset these proxy variables before start. gRPC seems to prefer no proxy
     choices: null
@@ -2760,6 +2717,16 @@ methods:
     type: bool
     default_random: false
     name: proxy
+  - help: The port of the Gateway, which the client should connect to.
+    choices: null
+    default: 38689
+    required: false
+    option_strings:
+    - --port
+    type: int
+    default_random: true
+    default_factory: random_port
+    name: port
   - help: 'If set, then the input and output of this Client work in an asynchronous
       manner. '
     choices: null
