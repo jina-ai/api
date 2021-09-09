@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: d80fb81b-66b2-4155-b5fa-1b1ba94fd08f
+      default: 6f2e1718-5b1a-455a-931b-6d0aa14875c5
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 604db39e-80df-45ff-8efc-916a091c9446
+      default: 55b44559-fd5b-42bb-9e57-39d49cce1c00
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 4e0d74aa-182c-49a0-a54d-4dc8694ca636
+      default: e9d3b371-2d02-4001-b7dc-0719ee336d74
       required: false
       option_strings:
       - --workdir
@@ -251,6 +251,17 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: Defines if the routing table should be pre computed by the Flow. In this
+      case it is statically defined for each Pod and not send on every data request.
+      Can not be used in combination with external pods
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --static-routing-table
+    type: bool
+    default_random: false
+    name: static_routing_table
   - help: The identity of a ZMQRuntime. It is used for unique socket identification
       towards other ZMQRuntimes.
     choices: null
@@ -264,7 +275,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 38931
+    default: 40493
     required: false
     option_strings:
     - --port-ctrl
@@ -392,7 +403,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 49487
+    default: 41061
     required: false
     option_strings:
     - --port-in
@@ -402,7 +413,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 53433
+    default: 51323
     required: false
     option_strings:
     - --port-out
@@ -777,6 +788,17 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: Defines if the routing table should be pre computed by the Flow. In this
+      case it is statically defined for each Pod and not send on every data request.
+      Can not be used in combination with external pods
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --static-routing-table
+    type: bool
+    default_random: false
+    name: static_routing_table
   - help: The YAML file represents a flow
     choices: null
     default: null
@@ -808,17 +830,6 @@ methods:
     type: str
     default_random: false
     name: inspect
-  - help: Defines if the routing table should be pre computed by the Flow. In this
-      case it is statically defined for each Pod and not send on every data request.
-      Can not be used in combination with external pods
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --static-routing-table
-    type: bool
-    default_random: false
-    name: static_routing_table
   help: Start a Flow. Flow is how Jina streamlines and distributes Executors.
 - name: ping
   options:
@@ -923,6 +934,17 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: Defines if the routing table should be pre computed by the Flow. In this
+      case it is statically defined for each Pod and not send on every data request.
+      Can not be used in combination with external pods
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --static-routing-table
+    type: bool
+    default_random: false
+    name: static_routing_table
   - help: The identity of a ZMQRuntime. It is used for unique socket identification
       towards other ZMQRuntimes.
     choices: null
@@ -936,7 +958,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 59109
+    default: 40847
     required: false
     option_strings:
     - --port-ctrl
@@ -1064,7 +1086,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 60727
+    default: 34029
     required: false
     option_strings:
     - --port-in
@@ -1074,7 +1096,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 55621
+    default: 42393
     required: false
     option_strings:
     - --port-out
@@ -1372,7 +1394,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 50625
+    default: 50873
     required: false
     option_strings:
     - --port-expose
@@ -1629,6 +1651,17 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: Defines if the routing table should be pre computed by the Flow. In this
+      case it is statically defined for each Pod and not send on every data request.
+      Can not be used in combination with external pods
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --static-routing-table
+    type: bool
+    default_random: false
+    name: static_routing_table
   - help: The identity of a ZMQRuntime. It is used for unique socket identification
       towards other ZMQRuntimes.
     choices: null
@@ -1642,7 +1675,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 35569
+    default: 42463
     required: false
     option_strings:
     - --port-ctrl
@@ -1770,7 +1803,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 53041
+    default: 54877
     required: false
     option_strings:
     - --port-in
@@ -1780,7 +1813,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 43531
+    default: 37435
     required: false
     option_strings:
     - --port-out
@@ -2156,6 +2189,17 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: Defines if the routing table should be pre computed by the Flow. In this
+      case it is statically defined for each Pod and not send on every data request.
+      Can not be used in combination with external pods
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --static-routing-table
+    type: bool
+    default_random: false
+    name: static_routing_table
   - help: The identity of a ZMQRuntime. It is used for unique socket identification
       towards other ZMQRuntimes.
     choices: null
@@ -2169,7 +2213,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 35147
+    default: 57331
     required: false
     option_strings:
     - --port-ctrl
@@ -2297,7 +2341,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 55547
+    default: 41291
     required: false
     option_strings:
     - --port-in
@@ -2307,7 +2351,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 57367
+    default: 57735
     required: false
     option_strings:
     - --port-out
@@ -2768,7 +2812,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 60179
+    default: 55349
     required: false
     option_strings:
     - --port
