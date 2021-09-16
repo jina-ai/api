@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 1bb75ff0-5a98-4e45-b98e-58d67c6e9a13
+      default: aabd787c-636f-464e-be04-69e611c937ab
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 43ff5652-70fb-4fcd-9b46-ebc7f0a9ff6a
+      default: 1389b707-53ef-49b8-828c-91a1088e1a67
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: bcc64bd5-f51f-4bb5-bace-3c8790731d9c
+      default: 3878e998-3d22-418a-9a8b-7438a5940f20
       required: false
       option_strings:
       - --workdir
@@ -275,7 +275,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 54491
+    default: 55669
     required: false
     option_strings:
     - --port-ctrl
@@ -403,7 +403,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 48683
+    default: 43105
     required: false
     option_strings:
     - --port-in
@@ -413,7 +413,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 41011
+    default: 39725
     required: false
     option_strings:
     - --port-out
@@ -736,6 +736,24 @@ methods:
     type: bool
     default_random: false
     name: expose_public
+  - help: If set, install `requirements.txt` in the Hub Executor bundle to local
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --install-requirements
+    type: bool
+    default_random: false
+    name: install_requirements
+  - help: If set, always pull the latest Hub Executor bundle even it exists on local
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --force
+    type: bool
+    default_random: false
+    name: force
   help: Start an Executor. Executor is how Jina processes Document.
 - name: flow
   options:
@@ -958,7 +976,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 59239
+    default: 44239
     required: false
     option_strings:
     - --port-ctrl
@@ -1086,7 +1104,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 41589
+    default: 44189
     required: false
     option_strings:
     - --port-in
@@ -1096,7 +1114,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 37309
+    default: 41583
     required: false
     option_strings:
     - --port-out
@@ -1394,7 +1412,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 35267
+    default: 42667
     required: false
     option_strings:
     - --port-expose
@@ -1495,15 +1513,7 @@ methods:
       type: bool
       default_random: false
       name: no_usage
-    - help: '
-
-        The content source to be shipped into a Jina Hub executor. It can one of the
-        followings:
-
-        - a directory containing Dockerfile, manifest.yml, README.md, zero or more
-        yaml config, zero or more Python file.
-
-        '
+    - help: The Executor folder to be pushed to Jina Hub
       choices: null
       default: null
       required: true
@@ -1511,17 +1521,18 @@ methods:
       type: dir_path
       default_random: false
       name: path
-    - help: Name of the Dockerfile (Default is `path/Dockerfile`)
+    - help: The file path to the Dockerfile (default is `${cwd}/Dockerfile`)
       choices: null
       default: null
       required: false
       option_strings:
       - -f
-      - --docker-file
+      - --dockerfile
       type: None
       default_random: false
-      name: docker_file
-    - help: To overwrite the executor identified as UUID8
+      name: dockerfile
+    - help: If set, push will overwrite the Executor on the Hub that shares the same
+        UUID8 identifier
       choices: null
       default: null
       required: false
@@ -1530,7 +1541,7 @@ methods:
       type: str
       default_random: false
       name: force
-    - help: The secret key of the identified Jina Hub executor
+    - help: The secret for overwrite a Hub executor
       choices: null
       default: null
       required: false
@@ -1577,8 +1588,7 @@ methods:
       type: hub_uri
       default_random: false
       name: uri
-    - help: If set, install `requirements.txt` in the Hub Executor bundle to the local
-        system
+    - help: If set, install `requirements.txt` in the Hub Executor bundle to local
       choices: null
       default: false
       required: false
@@ -1587,6 +1597,15 @@ methods:
       type: bool
       default_random: false
       name: install_requirements
+    - help: If set, always pull the latest Hub Executor bundle even it exists on local
+      choices: null
+      default: false
+      required: false
+      option_strings:
+      - --force
+      type: bool
+      default_random: false
+      name: force
     help: Download an executor image/package from Jina hub
 - name: help
   options:
@@ -1675,7 +1694,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 46997
+    default: 46217
     required: false
     option_strings:
     - --port-ctrl
@@ -1803,7 +1822,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 41171
+    default: 53097
     required: false
     option_strings:
     - --port-in
@@ -1813,7 +1832,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 34335
+    default: 50879
     required: false
     option_strings:
     - --port-out
@@ -2136,6 +2155,24 @@ methods:
     type: bool
     default_random: false
     name: expose_public
+  - help: If set, install `requirements.txt` in the Hub Executor bundle to local
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --install-requirements
+    type: bool
+    default_random: false
+    name: install_requirements
+  - help: If set, always pull the latest Hub Executor bundle even it exists on local
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --force
+    type: bool
+    default_random: false
+    name: force
   help: Start a Pea. You should rarely use this directly unless you are doing low-level
     orchestration
 - name: pod
@@ -2213,7 +2250,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 33169
+    default: 35089
     required: false
     option_strings:
     - --port-ctrl
@@ -2341,7 +2378,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 35255
+    default: 36653
     required: false
     option_strings:
     - --port-in
@@ -2351,7 +2388,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 50975
+    default: 56477
     required: false
     option_strings:
     - --port-out
@@ -2674,7 +2711,7 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-  - help: If set, install `requirements.txt` in the Hub Executor bundle
+  - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
     required: false
@@ -2683,6 +2720,15 @@ methods:
     type: bool
     default_random: false
     name: install_requirements
+  - help: If set, always pull the latest Hub Executor bundle even it exists on local
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --force
+    type: bool
+    default_random: false
+    name: force
   - help: The executor attached after the Peas described by --uses, typically before
       sending to all parallels, accepted type follows `--uses`
     choices: null
@@ -2812,7 +2858,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 43213
+    default: 47453
     required: false
     option_strings:
     - --port
