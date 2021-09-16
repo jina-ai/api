@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 941fdb60-ae7f-4a62-9d80-f2c3509f4f7c
+      default: d92e9ddd-144e-4866-8bef-c449cf6938b9
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 0c438dcc-bf6c-4bdb-b470-dd21f8b7652b
+      default: d775640c-1aa9-4aa5-9367-0cac9f11f3a5
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 51105e89-da43-4934-a5a2-14e21a4b2dda
+      default: e3a0b4d4-838e-4827-937c-f8675416ed42
       required: false
       option_strings:
       - --workdir
@@ -226,7 +226,7 @@ methods:
     name: workspace
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -275,7 +275,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 41699
+    default: 43695
     required: false
     option_strings:
     - --port-ctrl
@@ -403,7 +403,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 57883
+    default: 36139
     required: false
     option_strings:
     - --port-in
@@ -413,7 +413,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 49417
+    default: 53997
     required: false
     option_strings:
     - --port-out
@@ -763,7 +763,7 @@ methods:
     name: workspace
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -909,7 +909,7 @@ methods:
     name: workspace
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -958,7 +958,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 56471
+    default: 53057
     required: false
     option_strings:
     - --port-ctrl
@@ -1086,7 +1086,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 48353
+    default: 58443
     required: false
     option_strings:
     - --port-in
@@ -1096,7 +1096,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 55467
+    default: 47395
     required: false
     option_strings:
     - --port-out
@@ -1394,7 +1394,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 34153
+    default: 37259
     required: false
     option_strings:
     - --port-expose
@@ -1626,7 +1626,7 @@ methods:
     name: workspace
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -1675,7 +1675,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 52945
+    default: 35229
     required: false
     option_strings:
     - --port-ctrl
@@ -1803,7 +1803,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 40491
+    default: 49577
     required: false
     option_strings:
     - --port-in
@@ -1813,7 +1813,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 53507
+    default: 39089
     required: false
     option_strings:
     - --port-out
@@ -2164,7 +2164,7 @@ methods:
     name: workspace
   - help: The YAML config of the logger used in this object.
     choices: null
-    default: /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    default: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
     required: false
     option_strings:
     - --log-config
@@ -2213,7 +2213,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 46177
+    default: 32847
     required: false
     option_strings:
     - --port-ctrl
@@ -2341,7 +2341,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 49471
+    default: 46663
     required: false
     option_strings:
     - --port-in
@@ -2351,7 +2351,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 56307
+    default: 40153
     required: false
     option_strings:
     - --port-out
@@ -2812,7 +2812,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 35389
+    default: 46195
     required: false
     option_strings:
     - --port
