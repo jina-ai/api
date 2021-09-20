@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 0d304545-b4f5-447e-a779-3573142d4ced
+      default: 85d3262c-75b6-4290-b45d-54f0fa1e7e5b
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 6181f5f3-9c75-4de7-a275-ca701236c879
+      default: 00d0dee6-a24a-4df4-af15-f79cb3d3b97f
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 638b0692-041c-4cc1-91fa-b3dc37149bb5
+      default: 06924b87-d298-4b35-8422-223d62de2732
       required: false
       option_strings:
       - --workdir
@@ -275,7 +275,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 45757
+    default: 43007
     required: false
     option_strings:
     - --port-ctrl
@@ -403,7 +403,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 59257
+    default: 37417
     required: false
     option_strings:
     - --port-in
@@ -413,7 +413,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 40533
+    default: 33553
     required: false
     option_strings:
     - --port-out
@@ -976,7 +976,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 35495
+    default: 58969
     required: false
     option_strings:
     - --port-ctrl
@@ -1104,7 +1104,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 52725
+    default: 35535
     required: false
     option_strings:
     - --port-in
@@ -1114,7 +1114,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 60903
+    default: 58505
     required: false
     option_strings:
     - --port-out
@@ -1342,6 +1342,24 @@ methods:
     type: str
     default_random: false
     name: expose_endpoints
+  - help: '
+
+      Dictionary of kwargs arguments that will be passed to Uvicorn server when starting
+      the server
+
+
+      More details can be found in Uvicorn docs: https://www.uvicorn.org/settings/
+
+
+      '
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uvicorn-kwargs
+    type: dict
+    default_random: false
+    name: uvicorn_kwargs
   - help: "\n    The compress algorithm used over the entire Flow.\n\n    Note that\
       \ this is not necessarily effective,\n    it depends on the settings of `--compress-min-bytes`\
       \ and `compress-min-ratio`"
@@ -1412,7 +1430,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 45505
+    default: 57617
     required: false
     option_strings:
     - --port-expose
@@ -1694,7 +1712,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 56155
+    default: 49967
     required: false
     option_strings:
     - --port-ctrl
@@ -1822,7 +1840,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 44065
+    default: 45283
     required: false
     option_strings:
     - --port-in
@@ -1832,7 +1850,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 52637
+    default: 41389
     required: false
     option_strings:
     - --port-out
@@ -2250,7 +2268,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 45673
+    default: 42113
     required: false
     option_strings:
     - --port-ctrl
@@ -2378,7 +2396,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 58355
+    default: 40513
     required: false
     option_strings:
     - --port-in
@@ -2388,7 +2406,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 44299
+    default: 38409
     required: false
     option_strings:
     - --port-out
@@ -2858,7 +2876,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 47293
+    default: 52477
     required: false
     option_strings:
     - --port
@@ -2866,6 +2884,15 @@ methods:
     default_random: true
     default_factory: random_port
     name: port
+  - help: If set, connect to gateway using https
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --https
+    type: bool
+    default_random: false
+    name: https
   - help: 'If set, then the input and output of this Client work in an asynchronous
       manner. '
     choices: null
