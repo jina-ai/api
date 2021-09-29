@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 0776318f-42c1-4f89-8ad0-6e0fb826ba05
+      default: ca8a354c-93fb-404b-a53e-dc9c62361dde
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 037d6e5a-7ab7-4223-aee3-a504a1d60def
+      default: 8fff9fbe-0cf7-4a08-9a99-049f05a40328
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 72570346-dc62-4491-9d91-bee36d8c7352
+      default: ba4dd02b-f17b-47b6-a41d-20b46cb61354
       required: false
       option_strings:
       - --workdir
@@ -275,7 +275,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 46207
+    default: 50691
     required: false
     option_strings:
     - --port-ctrl
@@ -403,7 +403,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 42899
+    default: 46955
     required: false
     option_strings:
     - --port-in
@@ -413,7 +413,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 36023
+    default: 53045
     required: false
     option_strings:
     - --port-out
@@ -976,7 +976,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 47875
+    default: 38289
     required: false
     option_strings:
     - --port-ctrl
@@ -1104,7 +1104,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 53699
+    default: 41689
     required: false
     option_strings:
     - --port-in
@@ -1114,7 +1114,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 39195
+    default: 50701
     required: false
     option_strings:
     - --port-out
@@ -1430,7 +1430,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 47157
+    default: 35483
     required: false
     option_strings:
     - --port-expose
@@ -1507,9 +1507,72 @@ methods:
   help: Push/Pull an Executor to/from Jina Hub
   methods:
   - name: new
-    options: []
+    options:
+    - help: Setup name of the executor
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --name
+      type: str
+      default_random: false
+      name: name
+    - help: Path to store an executor
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --path
+      type: str
+      default_random: false
+      name: path
+    - help: If set, always set up advance configuration like description, keywords
+        and url
+      choices: null
+      default: false
+      required: false
+      option_strings:
+      - --advance-configuration
+      type: bool
+      default_random: false
+      name: advance_configuration
+    - help: Give a short description of your executor
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --description
+      type: str
+      default_random: false
+      name: description
+    - help: Give some keywords to help people search your executor(separated by space)
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --keywords
+      type: str
+      default_random: false
+      name: keywords
+    - help: URL of your GitHub repo
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --url
+      type: str
+      default_random: false
+      name: url
+    - help: If set, always creates your own docker file
+      choices: null
+      default: false
+      required: false
+      option_strings:
+      - --add-dockerfile
+      type: bool
+      default_random: false
+      name: add_dockerfile
     help: Create a new executor using the template
-    methods: []
   - name: push
     options:
     - help: If set, Hub executor usage will not be printed.
@@ -1540,7 +1603,7 @@ methods:
       default_random: false
       name: dockerfile
     - help: If set, push will overwrite the Executor on the Hub that shares the same
-        UUID8 identifier
+        NAME or UUID8 identifier
       choices: null
       default: null
       required: false
@@ -1588,7 +1651,7 @@ methods:
       type: bool
       default_random: false
       name: no_usage
-    - help: The URI of the executor to pull (e.g., jinahub[+docker]://UUID8)
+    - help: The URI of the executor to pull (e.g., jinahub[+docker]://NAME)
       choices: null
       default: null
       required: true
@@ -1702,7 +1765,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 44043
+    default: 47595
     required: false
     option_strings:
     - --port-ctrl
@@ -1830,7 +1893,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 37087
+    default: 51859
     required: false
     option_strings:
     - --port-in
@@ -1840,7 +1903,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 53157
+    default: 39297
     required: false
     option_strings:
     - --port-out
@@ -2258,7 +2321,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 36707
+    default: 56857
     required: false
     option_strings:
     - --port-ctrl
@@ -2386,7 +2449,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 43257
+    default: 41889
     required: false
     option_strings:
     - --port-in
@@ -2396,7 +2459,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 57751
+    default: 57177
     required: false
     option_strings:
     - --port-out
@@ -2866,7 +2929,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 43515
+    default: 42647
     required: false
     option_strings:
     - --port
