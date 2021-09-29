@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 10753ce1-0447-4506-93cd-a0cd6af4ba32
+      default: 2b2017ed-9003-4dd3-8b81-e4260ff6f4c8
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: b3bc08e3-823a-4c91-bf46-62b66fd1e0ff
+      default: d719f83b-d5b5-4d39-9f89-ea071f6d2220
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 434119a1-0dd1-42cb-9dc2-d63b11e37a2f
+      default: 75cb130f-cb61-4a3a-a190-6a67ef4e7ff2
       required: false
       option_strings:
       - --workdir
@@ -275,7 +275,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 52731
+    default: 42005
     required: false
     option_strings:
     - --port-ctrl
@@ -403,7 +403,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 58501
+    default: 50101
     required: false
     option_strings:
     - --port-in
@@ -413,7 +413,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 55121
+    default: 38373
     required: false
     option_strings:
     - --port-out
@@ -976,7 +976,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 56423
+    default: 46733
     required: false
     option_strings:
     - --port-ctrl
@@ -1104,7 +1104,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 46135
+    default: 50253
     required: false
     option_strings:
     - --port-in
@@ -1114,7 +1114,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 56097
+    default: 38845
     required: false
     option_strings:
     - --port-out
@@ -1430,7 +1430,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 45177
+    default: 41691
     required: false
     option_strings:
     - --port-expose
@@ -1508,7 +1508,7 @@ methods:
   methods:
   - name: new
     options:
-    - help: Setup name of the executor
+    - help: the name of the Executor
       choices: null
       default: null
       required: false
@@ -1517,7 +1517,7 @@ methods:
       type: str
       default_random: false
       name: name
-    - help: Path to store an executor
+    - help: the path to store the Executor
       choices: null
       default: null
       required: false
@@ -1536,7 +1536,7 @@ methods:
       type: bool
       default_random: false
       name: advance_configuration
-    - help: Give a short description of your executor
+    - help: the short description of the Executor
       choices: null
       default: null
       required: false
@@ -1545,7 +1545,7 @@ methods:
       type: str
       default_random: false
       name: description
-    - help: Give some keywords to help people search your executor(separated by space)
+    - help: some keywords to help people search your Executor (separated by space)
       choices: null
       default: null
       required: false
@@ -1554,7 +1554,7 @@ methods:
       type: str
       default_random: false
       name: keywords
-    - help: URL of your GitHub repo
+    - help: the URL of your GitHub repo
       choices: null
       default: null
       required: false
@@ -1563,7 +1563,7 @@ methods:
       type: str
       default_random: false
       name: url
-    - help: If set, always creates your own docker file
+    - help: If set, add a Dockerfile to the created Executor bundle
       choices: null
       default: false
       required: false
@@ -1765,7 +1765,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 49693
+    default: 37413
     required: false
     option_strings:
     - --port-ctrl
@@ -1893,7 +1893,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 50747
+    default: 46717
     required: false
     option_strings:
     - --port-in
@@ -1903,7 +1903,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 51573
+    default: 50739
     required: false
     option_strings:
     - --port-out
@@ -2321,7 +2321,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 36475
+    default: 40933
     required: false
     option_strings:
     - --port-ctrl
@@ -2449,7 +2449,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 33641
+    default: 39037
     required: false
     option_strings:
     - --port-in
@@ -2459,7 +2459,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 40423
+    default: 33643
     required: false
     option_strings:
     - --port-out
@@ -2929,7 +2929,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 55523
+    default: 41361
     required: false
     option_strings:
     - --port
