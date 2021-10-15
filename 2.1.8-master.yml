@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: dfb5e185-8e1e-46e9-8042-5e2f592d6671
+      default: 7e49cd3a-15cf-4f55-9be1-dd7b4117a65d
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: f2d60b84-5a70-43df-89ff-03dfafe6995a
+      default: 1d86b9f3-0023-4fe5-9f65-2a3b29a2e26a
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: cb750889-8676-463a-bdad-527a9aa18063
+      default: 131f3eb5-c71e-40e5-8c71-fde546eca43c
       required: false
       option_strings:
       - --workdir
@@ -275,7 +275,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 45699
+    default: 56111
     required: false
     option_strings:
     - --port-ctrl
@@ -403,7 +403,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 47521
+    default: 44563
     required: false
     option_strings:
     - --port-in
@@ -413,7 +413,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 56101
+    default: 38895
     required: false
     option_strings:
     - --port-out
@@ -736,6 +736,28 @@ methods:
     type: bool
     default_random: false
     name: expose_public
+  - help: The number of shards in the pod running at the same time, `port_in` and
+      `port_out` will be set to random, and routers will be added automatically when
+      necessary
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --shards
+    - --parallel
+    type: int
+    default_random: false
+    name: shards
+  - help: The number of replicas in the pod, `port_in` and `port_out` will be set
+      to random, and routers will be added automatically when necessary
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --replicas
+    type: int
+    default_random: false
+    name: replicas
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -976,7 +998,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 38451
+    default: 39969
     required: false
     option_strings:
     - --port-ctrl
@@ -1104,7 +1126,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 53651
+    default: 37019
     required: false
     option_strings:
     - --port-in
@@ -1114,7 +1136,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 57687
+    default: 37217
     required: false
     option_strings:
     - --port-out
@@ -1430,7 +1452,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 59179
+    default: 42267
     required: false
     option_strings:
     - --port-expose
@@ -1501,6 +1523,28 @@ methods:
     type: bool
     default_random: false
     name: expose_public
+  - help: The number of shards in the pod running at the same time, `port_in` and
+      `port_out` will be set to random, and routers will be added automatically when
+      necessary
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --shards
+    - --parallel
+    type: int
+    default_random: false
+    name: shards
+  - help: The number of replicas in the pod, `port_in` and `port_out` will be set
+      to random, and routers will be added automatically when necessary
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --replicas
+    type: int
+    default_random: false
+    name: replicas
   help: Start a Gateway that receives client Requests via gRPC/REST interface
 - name: hub
   options: []
@@ -1765,7 +1809,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 37103
+    default: 44253
     required: false
     option_strings:
     - --port-ctrl
@@ -1893,7 +1937,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 54095
+    default: 52829
     required: false
     option_strings:
     - --port-in
@@ -1903,7 +1947,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 44257
+    default: 57181
     required: false
     option_strings:
     - --port-out
@@ -2226,6 +2270,28 @@ methods:
     type: bool
     default_random: false
     name: expose_public
+  - help: The number of shards in the pod running at the same time, `port_in` and
+      `port_out` will be set to random, and routers will be added automatically when
+      necessary
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --shards
+    - --parallel
+    type: int
+    default_random: false
+    name: shards
+  - help: The number of replicas in the pod, `port_in` and `port_out` will be set
+      to random, and routers will be added automatically when necessary
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --replicas
+    type: int
+    default_random: false
+    name: replicas
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -2321,7 +2387,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 60935
+    default: 35959
     required: false
     option_strings:
     - --port-ctrl
@@ -2449,7 +2515,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 44493
+    default: 53201
     required: false
     option_strings:
     - --port-in
@@ -2459,7 +2525,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 38007
+    default: 52419
     required: false
     option_strings:
     - --port-out
@@ -2782,6 +2848,28 @@ methods:
     type: bool
     default_random: false
     name: expose_public
+  - help: The number of shards in the pod running at the same time, `port_in` and
+      `port_out` will be set to random, and routers will be added automatically when
+      necessary
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --shards
+    - --parallel
+    type: int
+    default_random: false
+    name: shards
+  - help: The number of replicas in the pod, `port_in` and `port_out` will be set
+      to random, and routers will be added automatically when necessary
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --replicas
+    type: int
+    default_random: false
+    name: replicas
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -2820,28 +2908,6 @@ methods:
     type: str
     default_random: false
     name: uses_after
-  - help: The number of shards in the pod running at the same time, `port_in` and
-      `port_out` will be set to random, and routers will be added automatically when
-      necessary
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --shards
-    - --parallel
-    type: int
-    default_random: false
-    name: shards
-  - help: The number of replicas in the pod, `port_in` and `port_out` will be set
-      to random, and routers will be added automatically when necessary
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --replicas
-    type: int
-    default_random: false
-    name: replicas
   - help: '
 
       The polling strategy of the Pod (when `shards>1`)
@@ -2929,7 +2995,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 54879
+    default: 39105
     required: false
     option_strings:
     - --port
