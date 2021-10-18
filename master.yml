@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 2389f93d-16b8-4cce-96b8-9aeb555b2a9d
+      default: 1663187b-cb02-4afb-ad2c-307a6464f854
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: f0216f8c-0f72-4365-a5e9-910d972f5991
+      default: 6066ac28-e0ab-4be0-9614-85209bfcfaf4
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 2330c18d-5877-4cc3-a75a-940aac42b61c
+      default: f8647cf7-1761-4283-97a4-ed0439302e70
       required: false
       option_strings:
       - --workdir
@@ -275,7 +275,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 34919
+    default: 56505
     required: false
     option_strings:
     - --port-ctrl
@@ -403,7 +403,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 54483
+    default: 33561
     required: false
     option_strings:
     - --port-in
@@ -413,7 +413,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 58489
+    default: 56475
     required: false
     option_strings:
     - --port-out
@@ -998,7 +998,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 47755
+    default: 35681
     required: false
     option_strings:
     - --port-ctrl
@@ -1126,7 +1126,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 58589
+    default: 37317
     required: false
     option_strings:
     - --port-in
@@ -1136,7 +1136,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 34221
+    default: 38045
     required: false
     option_strings:
     - --port-out
@@ -1277,24 +1277,17 @@ methods:
     type: bool
     default_random: false
     name: runs_in_docker
-  - help: The number of pre-fetched requests from the client
+  - help: "\n    Number of requests fetched from the client before feeding into the\
+      \ first Executor. \n    \n    Used to control the speed of data input into a\
+      \ Flow. 0 disables prefetch (disabled by default)"
     choices: null
-    default: 50
+    default: 0
     required: false
     option_strings:
     - --prefetch
     type: int
     default_random: false
     name: prefetch
-  - help: The number of additional requests to fetch on every receive
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --prefetch-on-recv
-    type: int
-    default_random: false
-    name: prefetch_on_recv
   - help: The title of this HTTP server. It will be used in automatics docs such as
       Swagger UI.
     choices: null
@@ -1452,7 +1445,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 60045
+    default: 59037
     required: false
     option_strings:
     - --port-expose
@@ -1809,7 +1802,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 47841
+    default: 54477
     required: false
     option_strings:
     - --port-ctrl
@@ -1937,7 +1930,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 54161
+    default: 37835
     required: false
     option_strings:
     - --port-in
@@ -1947,7 +1940,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 48829
+    default: 58855
     required: false
     option_strings:
     - --port-out
@@ -2387,7 +2380,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 33443
+    default: 41409
     required: false
     option_strings:
     - --port-ctrl
@@ -2515,7 +2508,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 51929
+    default: 33317
     required: false
     option_strings:
     - --port-in
@@ -2525,7 +2518,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 55387
+    default: 50973
     required: false
     option_strings:
     - --port-out
@@ -2995,7 +2988,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 50135
+    default: 38995
     required: false
     option_strings:
     - --port
@@ -3034,24 +3027,6 @@ methods:
     type: str
     default_random: false
     name: protocol
-  - help: The number of pre-fetched requests from the client
-    choices: null
-    default: 50
-    required: false
-    option_strings:
-    - --prefetch
-    type: int
-    default_random: false
-    name: prefetch
-  - help: The number of additional requests to fetch on every receive
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --prefetch-on-recv
-    type: int
-    default_random: false
-    name: prefetch_on_recv
   help: Start a Python client that connects to a remote Jina gateway
 - name: export-api
   options:
