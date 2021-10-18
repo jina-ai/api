@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 16ef835f-1de2-4653-af67-7197bd08958b
+      default: c90f75cf-976f-4c5f-aa7d-7a4f552afcd0
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 099a902d-a2ce-4782-ba6f-0da7c853bd1d
+      default: ca881a21-dc4a-4637-bddb-81a5016a3893
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: b6fcaad9-fe97-4c77-8231-553d45082a7a
+      default: efd02469-e374-4df6-83fb-e3bd68d1eacf
       required: false
       option_strings:
       - --workdir
@@ -275,7 +275,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 42847
+    default: 46379
     required: false
     option_strings:
     - --port-ctrl
@@ -403,7 +403,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 55171
+    default: 50947
     required: false
     option_strings:
     - --port-in
@@ -413,7 +413,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 44265
+    default: 53783
     required: false
     option_strings:
     - --port-out
@@ -998,7 +998,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 58513
+    default: 49377
     required: false
     option_strings:
     - --port-ctrl
@@ -1126,7 +1126,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 58391
+    default: 41005
     required: false
     option_strings:
     - --port-in
@@ -1136,7 +1136,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 37209
+    default: 53319
     required: false
     option_strings:
     - --port-out
@@ -1452,7 +1452,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 50921
+    default: 55139
     required: false
     option_strings:
     - --port-expose
@@ -1809,7 +1809,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 44985
+    default: 44879
     required: false
     option_strings:
     - --port-ctrl
@@ -1937,7 +1937,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 45007
+    default: 41323
     required: false
     option_strings:
     - --port-in
@@ -1947,7 +1947,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 58399
+    default: 43965
     required: false
     option_strings:
     - --port-out
@@ -2387,7 +2387,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 34509
+    default: 50491
     required: false
     option_strings:
     - --port-ctrl
@@ -2515,7 +2515,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 33647
+    default: 50265
     required: false
     option_strings:
     - --port-in
@@ -2525,7 +2525,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 36299
+    default: 52565
     required: false
     option_strings:
     - --port-out
@@ -2995,7 +2995,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 49089
+    default: 49371
     required: false
     option_strings:
     - --port
