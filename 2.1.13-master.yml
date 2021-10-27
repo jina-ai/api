@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 55c5cf38-509d-4089-9ca1-d1b168a99493
+      default: 48d97ef3-c901-4921-9945-aa4f960e08df
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 4a92849c-06b5-4c55-ba79-6fc74b87af1c
+      default: f17d4e9b-f0b1-479d-8bfe-499ad2bebe1c
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 70fc220c-3af8-43ad-ab7a-5652d20942fd
+      default: 36bf7028-161a-4e22-b6b1-97da7dcc2390
       required: false
       option_strings:
       - --workdir
@@ -275,7 +275,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 53939
+    default: 43287
     required: false
     option_strings:
     - --port-ctrl
@@ -403,7 +403,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 47533
+    default: 56503
     required: false
     option_strings:
     - --port-in
@@ -413,7 +413,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 47051
+    default: 34919
     required: false
     option_strings:
     - --port-out
@@ -738,7 +738,7 @@ methods:
     name: expose_public
   - help: The number of shards in the pod running at the same time, `port_in` and
       `port_out` will be set to random, and routers will be added automatically when
-      necessary
+      necessary. For more details check https://docs.jina.ai/fundamentals/flow/topology/
     choices: null
     default: 1
     required: false
@@ -998,7 +998,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 34185
+    default: 36339
     required: false
     option_strings:
     - --port-ctrl
@@ -1126,7 +1126,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 58069
+    default: 55805
     required: false
     option_strings:
     - --port-in
@@ -1136,7 +1136,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 54579
+    default: 53275
     required: false
     option_strings:
     - --port-out
@@ -1445,7 +1445,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 46613
+    default: 49723
     required: false
     option_strings:
     - --port-expose
@@ -1518,7 +1518,7 @@ methods:
     name: expose_public
   - help: The number of shards in the pod running at the same time, `port_in` and
       `port_out` will be set to random, and routers will be added automatically when
-      necessary
+      necessary. For more details check https://docs.jina.ai/fundamentals/flow/topology/
     choices: null
     default: 1
     required: false
@@ -1802,7 +1802,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 35061
+    default: 40651
     required: false
     option_strings:
     - --port-ctrl
@@ -1930,7 +1930,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 52499
+    default: 54807
     required: false
     option_strings:
     - --port-in
@@ -1940,7 +1940,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 45027
+    default: 33837
     required: false
     option_strings:
     - --port-out
@@ -2265,7 +2265,7 @@ methods:
     name: expose_public
   - help: The number of shards in the pod running at the same time, `port_in` and
       `port_out` will be set to random, and routers will be added automatically when
-      necessary
+      necessary. For more details check https://docs.jina.ai/fundamentals/flow/topology/
     choices: null
     default: 1
     required: false
@@ -2380,7 +2380,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 34293
+    default: 44061
     required: false
     option_strings:
     - --port-ctrl
@@ -2508,7 +2508,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 54379
+    default: 40039
     required: false
     option_strings:
     - --port-in
@@ -2518,7 +2518,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 44955
+    default: 49335
     required: false
     option_strings:
     - --port-out
@@ -2843,7 +2843,7 @@ methods:
     name: expose_public
   - help: The number of shards in the pod running at the same time, `port_in` and
       `port_out` will be set to random, and routers will be added automatically when
-      necessary
+      necessary. For more details check https://docs.jina.ai/fundamentals/flow/topology/
     choices: null
     default: 1
     required: false
@@ -2988,7 +2988,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 45647
+    default: 51991
     required: false
     option_strings:
     - --port
