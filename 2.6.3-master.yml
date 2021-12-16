@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 269e3f80c28a4128a2ec3b614bf1b264
+      default: 3e62be5fa82140dabda40d6b671d02d1
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 80e62282fd314662acff9036b20e9052
+      default: b295a63e0203453aa9af827e118dd0a1
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 7ea8d3708950469fbf97fa9a4f7ea271
+      default: b20df5372fac4b9cbfb7aa6d02d95806
       required: false
       option_strings:
       - --workdir
@@ -262,6 +262,16 @@ methods:
     type: bool
     default_random: false
     name: static_routing_table
+  - help: If set, DocumentArray matrix will be reduced into one DocumentArray before
+      reaching this pod
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --reduce
+    type: bool
+    default_random: false
+    name: reduce
   - help: The identity of a ZMQRuntime. It is used for unique socket identification
       towards other ZMQRuntimes.
     choices: null
@@ -275,7 +285,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 51229
+    default: 46539
     required: false
     option_strings:
     - --port-ctrl
@@ -403,7 +413,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 60519
+    default: 37963
     required: false
     option_strings:
     - --port-in
@@ -413,7 +423,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 45425
+    default: 33021
     required: false
     option_strings:
     - --port-out
@@ -840,6 +850,16 @@ methods:
     type: bool
     default_random: false
     name: static_routing_table
+  - help: If set, DocumentArray matrix will be reduced into one DocumentArray before
+      reaching this pod
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --reduce
+    type: bool
+    default_random: false
+    name: reduce
   - help: The YAML file represents a flow
     choices: null
     default: null
@@ -986,6 +1006,16 @@ methods:
     type: bool
     default_random: false
     name: static_routing_table
+  - help: If set, DocumentArray matrix will be reduced into one DocumentArray before
+      reaching this pod
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --reduce
+    type: bool
+    default_random: false
+    name: reduce
   - help: The identity of a ZMQRuntime. It is used for unique socket identification
       towards other ZMQRuntimes.
     choices: null
@@ -999,7 +1029,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 37759
+    default: 40015
     required: false
     option_strings:
     - --port-ctrl
@@ -1127,7 +1157,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 43907
+    default: 59981
     required: false
     option_strings:
     - --port-in
@@ -1137,7 +1167,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 33981
+    default: 55329
     required: false
     option_strings:
     - --port-out
@@ -1446,7 +1476,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 55633
+    default: 39807
     required: false
     option_strings:
     - --port-expose
@@ -1792,6 +1822,16 @@ methods:
     type: bool
     default_random: false
     name: static_routing_table
+  - help: If set, DocumentArray matrix will be reduced into one DocumentArray before
+      reaching this pod
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --reduce
+    type: bool
+    default_random: false
+    name: reduce
   - help: The identity of a ZMQRuntime. It is used for unique socket identification
       towards other ZMQRuntimes.
     choices: null
@@ -1805,7 +1845,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 36639
+    default: 40493
     required: false
     option_strings:
     - --port-ctrl
@@ -1933,7 +1973,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 60871
+    default: 47559
     required: false
     option_strings:
     - --port-in
@@ -1943,7 +1983,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 58233
+    default: 51077
     required: false
     option_strings:
     - --port-out
@@ -2371,6 +2411,16 @@ methods:
     type: bool
     default_random: false
     name: static_routing_table
+  - help: If set, DocumentArray matrix will be reduced into one DocumentArray before
+      reaching this pod
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --reduce
+    type: bool
+    default_random: false
+    name: reduce
   - help: The identity of a ZMQRuntime. It is used for unique socket identification
       towards other ZMQRuntimes.
     choices: null
@@ -2384,7 +2434,7 @@ methods:
   - help: The port for controlling the runtime, default a random port between [49152,
       65535]
     choices: null
-    default: 35933
+    default: 41397
     required: false
     option_strings:
     - --port-ctrl
@@ -2512,7 +2562,7 @@ methods:
     name: py_modules
   - help: The port for input data, default a random port between [49152, 65535]
     choices: null
-    default: 34873
+    default: 48307
     required: false
     option_strings:
     - --port-in
@@ -2522,7 +2572,7 @@ methods:
     name: port_in
   - help: The port for output data, default a random port between [49152, 65535]
     choices: null
-    default: 38015
+    default: 35347
     required: false
     option_strings:
     - --port-out
@@ -2993,7 +3043,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 49185
+    default: 48223
     required: false
     option_strings:
     - --port
