@@ -1,6 +1,6 @@
 # Jina API Schema
 
-Every time [jina-ai/jina](https://github.com/jina-ai/jina) is updated or released, the schema of Jina command line interface is exposed to OpenAPI JSON schema. They can be used or referred in the 3rd-party applications. The schema is tagged with [the Jina's version](https://github.com/jina-ai/jina/blob/master/RELEASE.md#version-explained). 
+Every time [jina-ai/jina](https://github.com/jina-ai/jina) is updated or released, the schema of Jina command line interface is exposed to OpenAPI JSON schema. They can be used or referred in the 3rd-party applications. The schema is tagged with [the Jina's version](https://github.com/jina-ai/jina/blob/master/RELEASE.md#docker-image-versioning). 
 
 ## OpenAPI Schemas
 
