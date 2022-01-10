@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: a3b173a173f049139d1befca9e739b97
+      default: 300fe345524146939d1283fb84544757
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: ce7d8a9a12834cc7a80efbcf69c54af8
+      default: 495bc89222e24cd6b7072dbcb77c2cd3
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 2a1d96670a3947258786428420f972ca
+      default: 8e37821addfc402384bb38943a4ec503
       required: false
       option_strings:
       - --workdir
@@ -251,95 +251,29 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
-  - help: Defines if the routing table should be pre computed by the Flow. In this
-      case it is statically defined for each Pod and not send on every data request.
-      Can not be used in combination with external pods
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --static-routing-table
-    type: bool
-    default_random: false
-    name: static_routing_table
-  - help: If set, DocumentArray matrix will be reduced into one DocumentArray before
-      reaching this pod
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --reduce
-    type: bool
-    default_random: false
-    name: reduce
-  - help: The identity of a ZMQRuntime. It is used for unique socket identification
-      towards other ZMQRuntimes.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --zmq-identity
-    type: str
-    default_random: false
-    name: zmq_identity
-  - help: The port for controlling the runtime, default a random port between [49152,
-      65535]
-    choices: null
-    default: 35283
-    required: false
-    option_strings:
-    - --port-ctrl
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port_ctrl
-  - help: If set, use ipc protocol for control socket
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --ctrl-with-ipc
-    type: bool
-    default_random: false
-    name: ctrl_with_ipc
   - help: The timeout in milliseconds of the control request, -1 for waiting forever
     choices: null
-    default: 5000
+    default: 60
     required: false
     option_strings:
     - --timeout-ctrl
     type: int
     default_random: false
     name: timeout_ctrl
-  - help: The SSH server through which the tunnel will be created, can actually be
-      a fully specified `user@server:port` ssh url.
+  - help: "\n    The polling strategy of the Pod and its endpoints (when `shards>1`).\n\
+      \    Can be defined for all endpoints of a Pod or by endpoint.\n    Define per\
+      \ Pod:\n    - ANY: only one (whoever is idle) Pea polls the message\n    - ALL:\
+      \ all Peas poll the message (like a broadcast)\n    Define per Endpoint:\n \
+      \   JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
+      \ '*': 'ANY'}\n    \n    "
     choices: null
-    default: null
+    default: ANY
     required: false
     option_strings:
-    - --ssh-server
+    - --polling
     type: str
     default_random: false
-    name: ssh_server
-  - help: This specifies a key to be used in ssh login, default None. regular default
-      ssh keys will be used without specifying this argument.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --ssh-keyfile
-    type: str
-    default_random: false
-    name: ssh_keyfile
-  - help: The ssh password to the ssh server.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --ssh-password
-    type: str
-    default_random: false
-    name: ssh_password
+    name: polling
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
       \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
@@ -411,9 +345,10 @@ methods:
     type: typing.List[str]
     default_random: false
     name: py_modules
-  - help: The port for input data, default a random port between [49152, 65535]
+  - help: The port for input data to bind to, default a random port between [49152,
+      65535]
     choices: null
-    default: 40085
+    default: 60589
     required: false
     option_strings:
     - --port-in
@@ -421,26 +356,7 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_in
-  - help: The port for output data, default a random port between [49152, 65535]
-    choices: null
-    default: 44663
-    required: false
-    option_strings:
-    - --port-out
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port_out
-  - help: The host address for input, by default it is 0.0.0.0
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --hosts-in-connect
-    type: typing.List[str]
-    default_random: false
-    name: hosts_in_connect
-  - help: The host address for input, by default it is 0.0.0.0
+  - help: The host address for binding to, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
     required: false
@@ -449,103 +365,8 @@ methods:
     type: str
     default_random: false
     name: host_in
-  - help: The host address for output, by default it is 0.0.0.0
-    choices: null
-    default: 0.0.0.0
-    required: false
-    option_strings:
-    - --host-out
-    type: str
-    default_random: false
-    name: host_out
-  - help: The socket type for input port
-    choices:
-    - PULL_BIND
-    - PULL_CONNECT
-    - PUSH_BIND
-    - PUSH_CONNECT
-    - SUB_BIND
-    - SUB_CONNECT
-    - PUB_BIND
-    - PUB_CONNECT
-    - PAIR_BIND
-    - PAIR_CONNECT
-    - ROUTER_BIND
-    - DEALER_CONNECT
-    - ROUTER_CONNECT
-    default: PULL_BIND
-    required: false
-    option_strings:
-    - --socket-in
-    type: str
-    default_random: false
-    name: socket_in
-  - help: The socket type for output port
-    choices:
-    - PULL_BIND
-    - PULL_CONNECT
-    - PUSH_BIND
-    - PUSH_CONNECT
-    - SUB_BIND
-    - SUB_CONNECT
-    - PUB_BIND
-    - PUB_CONNECT
-    - PAIR_BIND
-    - PAIR_CONNECT
-    - ROUTER_BIND
-    - DEALER_CONNECT
-    - ROUTER_CONNECT
-    default: PUSH_BIND
-    required: false
-    option_strings:
-    - --socket-out
-    type: str
-    default_random: false
-    name: socket_out
-  - help: The memory high watermark of this pod in Gigabytes, pod will restart when
-      this is reached. -1 means no restriction
-    choices: null
-    default: -1
-    required: false
-    option_strings:
-    - --memory-hwm
-    type: int
-    default_random: false
-    name: memory_hwm
-  - help: '
-
-      The skip strategy on exceptions.
-
-
-      - IGNORE: Ignore it, keep running all Executors in the sequel flow
-
-      - SKIP_HANDLE: Skip all Executors in the sequel, only `pre_hook` and `post_hook`
-      are called
-
-      - THROW_EARLY: Immediately throw the exception, the sequel flow will not be
-      running at all
-
-
-      Note, `IGNORE`, `SKIP_EXECUTOR` and `SKIP_HANDLE` do not guarantee the success
-      execution in the sequel flow. If something
-
-      is wrong in the upstream, it is hard to carry this exception and moving forward
-      without any side-effect.
-
-      '
-    choices:
-    - IGNORE
-    - SKIP_HANDLE
-    - THROW_EARLY
-    default: IGNORE
-    required: false
-    option_strings:
-    - --on-error-strategy
-    type: str
-    default_random: false
-    name: on_error_strategy
   - help: If set, only native Executors is allowed, and the Executor is always run
-      inside ZEDRuntime.
+      inside WorkerRuntime.
     choices: null
     default: false
     required: false
@@ -554,16 +375,6 @@ methods:
     type: bool
     default_random: false
     name: native
-  - help: Informs a Pea that runs in a container. Important to properly set networking
-      information
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --runs-in-docker
-    type: bool
-    default_random: false
-    name: runs_in_docker
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -708,7 +519,7 @@ methods:
     name: runtime_backend
   - help: The runtime class to run inside the Pea
     choices: null
-    default: ZEDRuntime
+    default: WorkerRuntime
     required: false
     option_strings:
     - --runtime-cls
@@ -787,6 +598,33 @@ methods:
     type: bool
     default_random: false
     name: force_update
+  - help: The address of the uses-before runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-before-address
+    type: str
+    default_random: false
+    name: uses_before_address
+  - help: The address of the uses-before runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-after-address
+    type: str
+    default_random: false
+    name: uses_after_address
+  - help: dictionary JSON with a list of connections to configure
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --connection-list
+    type: str
+    default_random: false
+    name: connection_list
   help: Start an Executor. Executor is how Jina processes Document.
 - name: flow
   options:
@@ -839,27 +677,29 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
-  - help: Defines if the routing table should be pre computed by the Flow. In this
-      case it is statically defined for each Pod and not send on every data request.
-      Can not be used in combination with external pods
+  - help: The timeout in milliseconds of the control request, -1 for waiting forever
     choices: null
-    default: false
+    default: 60
     required: false
     option_strings:
-    - --static-routing-table
-    type: bool
+    - --timeout-ctrl
+    type: int
     default_random: false
-    name: static_routing_table
-  - help: If set, DocumentArray matrix will be reduced into one DocumentArray before
-      reaching this pod
+    name: timeout_ctrl
+  - help: "\n    The polling strategy of the Pod and its endpoints (when `shards>1`).\n\
+      \    Can be defined for all endpoints of a Pod or by endpoint.\n    Define per\
+      \ Pod:\n    - ANY: only one (whoever is idle) Pea polls the message\n    - ALL:\
+      \ all Peas poll the message (like a broadcast)\n    Define per Endpoint:\n \
+      \   JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
+      \ '*': 'ANY'}\n    \n    "
     choices: null
-    default: false
+    default: ANY
     required: false
     option_strings:
-    - --reduce
-    type: bool
+    - --polling
+    type: str
     default_random: false
-    name: reduce
+    name: polling
   - help: The YAML file represents a flow
     choices: null
     default: null
@@ -934,15 +774,6 @@ methods:
     type: int
     default_random: false
     name: retries
-  - help: If set, print the response when received
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --print-response
-    type: bool
-    default_random: false
-    name: print_response
   help: Ping a Pod and check its network connectivity.
 - name: gateway
   options:
@@ -995,95 +826,29 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
-  - help: Defines if the routing table should be pre computed by the Flow. In this
-      case it is statically defined for each Pod and not send on every data request.
-      Can not be used in combination with external pods
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --static-routing-table
-    type: bool
-    default_random: false
-    name: static_routing_table
-  - help: If set, DocumentArray matrix will be reduced into one DocumentArray before
-      reaching this pod
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --reduce
-    type: bool
-    default_random: false
-    name: reduce
-  - help: The identity of a ZMQRuntime. It is used for unique socket identification
-      towards other ZMQRuntimes.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --zmq-identity
-    type: str
-    default_random: false
-    name: zmq_identity
-  - help: The port for controlling the runtime, default a random port between [49152,
-      65535]
-    choices: null
-    default: 34091
-    required: false
-    option_strings:
-    - --port-ctrl
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port_ctrl
-  - help: If set, use ipc protocol for control socket
-    choices: null
-    default: true
-    required: false
-    option_strings:
-    - --ctrl-with-ipc
-    type: bool
-    default_random: false
-    name: ctrl_with_ipc
   - help: The timeout in milliseconds of the control request, -1 for waiting forever
     choices: null
-    default: 5000
+    default: 60
     required: false
     option_strings:
     - --timeout-ctrl
     type: int
     default_random: false
     name: timeout_ctrl
-  - help: The SSH server through which the tunnel will be created, can actually be
-      a fully specified `user@server:port` ssh url.
+  - help: "\n    The polling strategy of the Pod and its endpoints (when `shards>1`).\n\
+      \    Can be defined for all endpoints of a Pod or by endpoint.\n    Define per\
+      \ Pod:\n    - ANY: only one (whoever is idle) Pea polls the message\n    - ALL:\
+      \ all Peas poll the message (like a broadcast)\n    Define per Endpoint:\n \
+      \   JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
+      \ '*': 'ANY'}\n    \n    "
     choices: null
-    default: null
+    default: ANY
     required: false
     option_strings:
-    - --ssh-server
+    - --polling
     type: str
     default_random: false
-    name: ssh_server
-  - help: This specifies a key to be used in ssh login, default None. regular default
-      ssh keys will be used without specifying this argument.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --ssh-keyfile
-    type: str
-    default_random: false
-    name: ssh_keyfile
-  - help: The ssh password to the ssh server.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --ssh-password
-    type: str
-    default_random: false
-    name: ssh_password
+    name: polling
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
       \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
@@ -1155,9 +920,10 @@ methods:
     type: typing.List[str]
     default_random: false
     name: py_modules
-  - help: The port for input data, default a random port between [49152, 65535]
+  - help: The port for input data to bind to, default a random port between [49152,
+      65535]
     choices: null
-    default: 59789
+    default: 46505
     required: false
     option_strings:
     - --port-in
@@ -1165,26 +931,7 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_in
-  - help: The port for output data, default a random port between [49152, 65535]
-    choices: null
-    default: 50723
-    required: false
-    option_strings:
-    - --port-out
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port_out
-  - help: The host address for input, by default it is 0.0.0.0
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --hosts-in-connect
-    type: typing.List[str]
-    default_random: false
-    name: hosts_in_connect
-  - help: The host address for input, by default it is 0.0.0.0
+  - help: The host address for binding to, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
     required: false
@@ -1193,103 +940,8 @@ methods:
     type: str
     default_random: false
     name: host_in
-  - help: The host address for output, by default it is 0.0.0.0
-    choices: null
-    default: 0.0.0.0
-    required: false
-    option_strings:
-    - --host-out
-    type: str
-    default_random: false
-    name: host_out
-  - help: The socket type for input port
-    choices:
-    - PULL_BIND
-    - PULL_CONNECT
-    - PUSH_BIND
-    - PUSH_CONNECT
-    - SUB_BIND
-    - SUB_CONNECT
-    - PUB_BIND
-    - PUB_CONNECT
-    - PAIR_BIND
-    - PAIR_CONNECT
-    - ROUTER_BIND
-    - DEALER_CONNECT
-    - ROUTER_CONNECT
-    default: PULL_CONNECT
-    required: false
-    option_strings:
-    - --socket-in
-    type: str
-    default_random: false
-    name: socket_in
-  - help: The socket type for output port
-    choices:
-    - PULL_BIND
-    - PULL_CONNECT
-    - PUSH_BIND
-    - PUSH_CONNECT
-    - SUB_BIND
-    - SUB_CONNECT
-    - PUB_BIND
-    - PUB_CONNECT
-    - PAIR_BIND
-    - PAIR_CONNECT
-    - ROUTER_BIND
-    - DEALER_CONNECT
-    - ROUTER_CONNECT
-    default: PUSH_CONNECT
-    required: false
-    option_strings:
-    - --socket-out
-    type: str
-    default_random: false
-    name: socket_out
-  - help: The memory high watermark of this pod in Gigabytes, pod will restart when
-      this is reached. -1 means no restriction
-    choices: null
-    default: -1
-    required: false
-    option_strings:
-    - --memory-hwm
-    type: int
-    default_random: false
-    name: memory_hwm
-  - help: '
-
-      The skip strategy on exceptions.
-
-
-      - IGNORE: Ignore it, keep running all Executors in the sequel flow
-
-      - SKIP_HANDLE: Skip all Executors in the sequel, only `pre_hook` and `post_hook`
-      are called
-
-      - THROW_EARLY: Immediately throw the exception, the sequel flow will not be
-      running at all
-
-
-      Note, `IGNORE`, `SKIP_EXECUTOR` and `SKIP_HANDLE` do not guarantee the success
-      execution in the sequel flow. If something
-
-      is wrong in the upstream, it is hard to carry this exception and moving forward
-      without any side-effect.
-
-      '
-    choices:
-    - IGNORE
-    - SKIP_HANDLE
-    - THROW_EARLY
-    default: IGNORE
-    required: false
-    option_strings:
-    - --on-error-strategy
-    type: str
-    default_random: false
-    name: on_error_strategy
   - help: If set, only native Executors is allowed, and the Executor is always run
-      inside ZEDRuntime.
+      inside WorkerRuntime.
     choices: null
     default: false
     required: false
@@ -1298,16 +950,6 @@ methods:
     type: bool
     default_random: false
     name: native
-  - help: Informs a Pea that runs in a container. Important to properly set networking
-      information
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --runs-in-docker
-    type: bool
-    default_random: false
-    name: runs_in_docker
   - help: "\n    Number of requests fetched from the client before feeding into the\
       \ first Executor. \n    \n    Used to control the speed of data input into a\
       \ Flow. 0 disables prefetch (disabled by default)"
@@ -1476,7 +1118,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 48453
+    default: 52297
     required: false
     option_strings:
     - --port-expose
@@ -1484,6 +1126,24 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_expose
+  - help: Routing graph for the gateway
+    choices: null
+    default: '{}'
+    required: false
+    option_strings:
+    - --graph-description
+    type: str
+    default_random: false
+    name: graph_description
+  - help: dictionary JSON with the input addresses of each Pod
+    choices: null
+    default: '{}'
+    required: false
+    option_strings:
+    - --pods-addresses
+    type: str
+    default_random: false
+    name: pods_addresses
   - help: The Pea attempts to terminate all of its Runtime child processes/threads
       on existing. setting it to true basically tell the Pea do not wait on the Runtime
       when closing
@@ -1509,7 +1169,7 @@ methods:
     name: runtime_backend
   - help: The runtime class to run inside the Pea
     choices: null
-    default: GRPCRuntime
+    default: GRPCGatewayRuntime
     required: false
     option_strings:
     - --runtime-cls
@@ -1569,6 +1229,33 @@ methods:
     type: int
     default_random: false
     name: replicas
+  - help: The address of the uses-before runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-before-address
+    type: str
+    default_random: false
+    name: uses_before_address
+  - help: The address of the uses-before runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-after-address
+    type: str
+    default_random: false
+    name: uses_after_address
+  - help: dictionary JSON with a list of connections to configure
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --connection-list
+    type: str
+    default_random: false
+    name: connection_list
   help: Start a Gateway that receives client Requests via gRPC/REST interface
 - name: hub
   options: []
@@ -1811,95 +1498,29 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
-  - help: Defines if the routing table should be pre computed by the Flow. In this
-      case it is statically defined for each Pod and not send on every data request.
-      Can not be used in combination with external pods
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --static-routing-table
-    type: bool
-    default_random: false
-    name: static_routing_table
-  - help: If set, DocumentArray matrix will be reduced into one DocumentArray before
-      reaching this pod
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --reduce
-    type: bool
-    default_random: false
-    name: reduce
-  - help: The identity of a ZMQRuntime. It is used for unique socket identification
-      towards other ZMQRuntimes.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --zmq-identity
-    type: str
-    default_random: false
-    name: zmq_identity
-  - help: The port for controlling the runtime, default a random port between [49152,
-      65535]
-    choices: null
-    default: 38457
-    required: false
-    option_strings:
-    - --port-ctrl
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port_ctrl
-  - help: If set, use ipc protocol for control socket
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --ctrl-with-ipc
-    type: bool
-    default_random: false
-    name: ctrl_with_ipc
   - help: The timeout in milliseconds of the control request, -1 for waiting forever
     choices: null
-    default: 5000
+    default: 60
     required: false
     option_strings:
     - --timeout-ctrl
     type: int
     default_random: false
     name: timeout_ctrl
-  - help: The SSH server through which the tunnel will be created, can actually be
-      a fully specified `user@server:port` ssh url.
+  - help: "\n    The polling strategy of the Pod and its endpoints (when `shards>1`).\n\
+      \    Can be defined for all endpoints of a Pod or by endpoint.\n    Define per\
+      \ Pod:\n    - ANY: only one (whoever is idle) Pea polls the message\n    - ALL:\
+      \ all Peas poll the message (like a broadcast)\n    Define per Endpoint:\n \
+      \   JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
+      \ '*': 'ANY'}\n    \n    "
     choices: null
-    default: null
+    default: ANY
     required: false
     option_strings:
-    - --ssh-server
+    - --polling
     type: str
     default_random: false
-    name: ssh_server
-  - help: This specifies a key to be used in ssh login, default None. regular default
-      ssh keys will be used without specifying this argument.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --ssh-keyfile
-    type: str
-    default_random: false
-    name: ssh_keyfile
-  - help: The ssh password to the ssh server.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --ssh-password
-    type: str
-    default_random: false
-    name: ssh_password
+    name: polling
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
       \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
@@ -1971,9 +1592,10 @@ methods:
     type: typing.List[str]
     default_random: false
     name: py_modules
-  - help: The port for input data, default a random port between [49152, 65535]
+  - help: The port for input data to bind to, default a random port between [49152,
+      65535]
     choices: null
-    default: 52389
+    default: 58875
     required: false
     option_strings:
     - --port-in
@@ -1981,26 +1603,7 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_in
-  - help: The port for output data, default a random port between [49152, 65535]
-    choices: null
-    default: 42325
-    required: false
-    option_strings:
-    - --port-out
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port_out
-  - help: The host address for input, by default it is 0.0.0.0
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --hosts-in-connect
-    type: typing.List[str]
-    default_random: false
-    name: hosts_in_connect
-  - help: The host address for input, by default it is 0.0.0.0
+  - help: The host address for binding to, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
     required: false
@@ -2009,103 +1612,8 @@ methods:
     type: str
     default_random: false
     name: host_in
-  - help: The host address for output, by default it is 0.0.0.0
-    choices: null
-    default: 0.0.0.0
-    required: false
-    option_strings:
-    - --host-out
-    type: str
-    default_random: false
-    name: host_out
-  - help: The socket type for input port
-    choices:
-    - PULL_BIND
-    - PULL_CONNECT
-    - PUSH_BIND
-    - PUSH_CONNECT
-    - SUB_BIND
-    - SUB_CONNECT
-    - PUB_BIND
-    - PUB_CONNECT
-    - PAIR_BIND
-    - PAIR_CONNECT
-    - ROUTER_BIND
-    - DEALER_CONNECT
-    - ROUTER_CONNECT
-    default: PULL_BIND
-    required: false
-    option_strings:
-    - --socket-in
-    type: str
-    default_random: false
-    name: socket_in
-  - help: The socket type for output port
-    choices:
-    - PULL_BIND
-    - PULL_CONNECT
-    - PUSH_BIND
-    - PUSH_CONNECT
-    - SUB_BIND
-    - SUB_CONNECT
-    - PUB_BIND
-    - PUB_CONNECT
-    - PAIR_BIND
-    - PAIR_CONNECT
-    - ROUTER_BIND
-    - DEALER_CONNECT
-    - ROUTER_CONNECT
-    default: PUSH_BIND
-    required: false
-    option_strings:
-    - --socket-out
-    type: str
-    default_random: false
-    name: socket_out
-  - help: The memory high watermark of this pod in Gigabytes, pod will restart when
-      this is reached. -1 means no restriction
-    choices: null
-    default: -1
-    required: false
-    option_strings:
-    - --memory-hwm
-    type: int
-    default_random: false
-    name: memory_hwm
-  - help: '
-
-      The skip strategy on exceptions.
-
-
-      - IGNORE: Ignore it, keep running all Executors in the sequel flow
-
-      - SKIP_HANDLE: Skip all Executors in the sequel, only `pre_hook` and `post_hook`
-      are called
-
-      - THROW_EARLY: Immediately throw the exception, the sequel flow will not be
-      running at all
-
-
-      Note, `IGNORE`, `SKIP_EXECUTOR` and `SKIP_HANDLE` do not guarantee the success
-      execution in the sequel flow. If something
-
-      is wrong in the upstream, it is hard to carry this exception and moving forward
-      without any side-effect.
-
-      '
-    choices:
-    - IGNORE
-    - SKIP_HANDLE
-    - THROW_EARLY
-    default: IGNORE
-    required: false
-    option_strings:
-    - --on-error-strategy
-    type: str
-    default_random: false
-    name: on_error_strategy
   - help: If set, only native Executors is allowed, and the Executor is always run
-      inside ZEDRuntime.
+      inside WorkerRuntime.
     choices: null
     default: false
     required: false
@@ -2114,16 +1622,6 @@ methods:
     type: bool
     default_random: false
     name: native
-  - help: Informs a Pea that runs in a container. Important to properly set networking
-      information
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --runs-in-docker
-    type: bool
-    default_random: false
-    name: runs_in_docker
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -2268,7 +1766,7 @@ methods:
     name: runtime_backend
   - help: The runtime class to run inside the Pea
     choices: null
-    default: ZEDRuntime
+    default: WorkerRuntime
     required: false
     option_strings:
     - --runtime-cls
@@ -2347,6 +1845,33 @@ methods:
     type: bool
     default_random: false
     name: force_update
+  - help: The address of the uses-before runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-before-address
+    type: str
+    default_random: false
+    name: uses_before_address
+  - help: The address of the uses-before runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-after-address
+    type: str
+    default_random: false
+    name: uses_after_address
+  - help: dictionary JSON with a list of connections to configure
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --connection-list
+    type: str
+    default_random: false
+    name: connection_list
   help: Start a Pea. You should rarely use this directly unless you are doing low-level
     orchestration
 - name: pod
@@ -2400,95 +1925,29 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
-  - help: Defines if the routing table should be pre computed by the Flow. In this
-      case it is statically defined for each Pod and not send on every data request.
-      Can not be used in combination with external pods
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --static-routing-table
-    type: bool
-    default_random: false
-    name: static_routing_table
-  - help: If set, DocumentArray matrix will be reduced into one DocumentArray before
-      reaching this pod
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --reduce
-    type: bool
-    default_random: false
-    name: reduce
-  - help: The identity of a ZMQRuntime. It is used for unique socket identification
-      towards other ZMQRuntimes.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --zmq-identity
-    type: str
-    default_random: false
-    name: zmq_identity
-  - help: The port for controlling the runtime, default a random port between [49152,
-      65535]
-    choices: null
-    default: 44957
-    required: false
-    option_strings:
-    - --port-ctrl
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port_ctrl
-  - help: If set, use ipc protocol for control socket
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --ctrl-with-ipc
-    type: bool
-    default_random: false
-    name: ctrl_with_ipc
   - help: The timeout in milliseconds of the control request, -1 for waiting forever
     choices: null
-    default: 5000
+    default: 60
     required: false
     option_strings:
     - --timeout-ctrl
     type: int
     default_random: false
     name: timeout_ctrl
-  - help: The SSH server through which the tunnel will be created, can actually be
-      a fully specified `user@server:port` ssh url.
+  - help: "\n    The polling strategy of the Pod and its endpoints (when `shards>1`).\n\
+      \    Can be defined for all endpoints of a Pod or by endpoint.\n    Define per\
+      \ Pod:\n    - ANY: only one (whoever is idle) Pea polls the message\n    - ALL:\
+      \ all Peas poll the message (like a broadcast)\n    Define per Endpoint:\n \
+      \   JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
+      \ '*': 'ANY'}\n    \n    "
     choices: null
-    default: null
+    default: ANY
     required: false
     option_strings:
-    - --ssh-server
+    - --polling
     type: str
     default_random: false
-    name: ssh_server
-  - help: This specifies a key to be used in ssh login, default None. regular default
-      ssh keys will be used without specifying this argument.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --ssh-keyfile
-    type: str
-    default_random: false
-    name: ssh_keyfile
-  - help: The ssh password to the ssh server.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --ssh-password
-    type: str
-    default_random: false
-    name: ssh_password
+    name: polling
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
       \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
@@ -2560,9 +2019,10 @@ methods:
     type: typing.List[str]
     default_random: false
     name: py_modules
-  - help: The port for input data, default a random port between [49152, 65535]
+  - help: The port for input data to bind to, default a random port between [49152,
+      65535]
     choices: null
-    default: 38271
+    default: 37813
     required: false
     option_strings:
     - --port-in
@@ -2570,26 +2030,7 @@ methods:
     default_random: true
     default_factory: random_port
     name: port_in
-  - help: The port for output data, default a random port between [49152, 65535]
-    choices: null
-    default: 47811
-    required: false
-    option_strings:
-    - --port-out
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port_out
-  - help: The host address for input, by default it is 0.0.0.0
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --hosts-in-connect
-    type: typing.List[str]
-    default_random: false
-    name: hosts_in_connect
-  - help: The host address for input, by default it is 0.0.0.0
+  - help: The host address for binding to, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
     required: false
@@ -2598,103 +2039,8 @@ methods:
     type: str
     default_random: false
     name: host_in
-  - help: The host address for output, by default it is 0.0.0.0
-    choices: null
-    default: 0.0.0.0
-    required: false
-    option_strings:
-    - --host-out
-    type: str
-    default_random: false
-    name: host_out
-  - help: The socket type for input port
-    choices:
-    - PULL_BIND
-    - PULL_CONNECT
-    - PUSH_BIND
-    - PUSH_CONNECT
-    - SUB_BIND
-    - SUB_CONNECT
-    - PUB_BIND
-    - PUB_CONNECT
-    - PAIR_BIND
-    - PAIR_CONNECT
-    - ROUTER_BIND
-    - DEALER_CONNECT
-    - ROUTER_CONNECT
-    default: PULL_BIND
-    required: false
-    option_strings:
-    - --socket-in
-    type: str
-    default_random: false
-    name: socket_in
-  - help: The socket type for output port
-    choices:
-    - PULL_BIND
-    - PULL_CONNECT
-    - PUSH_BIND
-    - PUSH_CONNECT
-    - SUB_BIND
-    - SUB_CONNECT
-    - PUB_BIND
-    - PUB_CONNECT
-    - PAIR_BIND
-    - PAIR_CONNECT
-    - ROUTER_BIND
-    - DEALER_CONNECT
-    - ROUTER_CONNECT
-    default: PUSH_BIND
-    required: false
-    option_strings:
-    - --socket-out
-    type: str
-    default_random: false
-    name: socket_out
-  - help: The memory high watermark of this pod in Gigabytes, pod will restart when
-      this is reached. -1 means no restriction
-    choices: null
-    default: -1
-    required: false
-    option_strings:
-    - --memory-hwm
-    type: int
-    default_random: false
-    name: memory_hwm
-  - help: '
-
-      The skip strategy on exceptions.
-
-
-      - IGNORE: Ignore it, keep running all Executors in the sequel flow
-
-      - SKIP_HANDLE: Skip all Executors in the sequel, only `pre_hook` and `post_hook`
-      are called
-
-      - THROW_EARLY: Immediately throw the exception, the sequel flow will not be
-      running at all
-
-
-      Note, `IGNORE`, `SKIP_EXECUTOR` and `SKIP_HANDLE` do not guarantee the success
-      execution in the sequel flow. If something
-
-      is wrong in the upstream, it is hard to carry this exception and moving forward
-      without any side-effect.
-
-      '
-    choices:
-    - IGNORE
-    - SKIP_HANDLE
-    - THROW_EARLY
-    default: IGNORE
-    required: false
-    option_strings:
-    - --on-error-strategy
-    type: str
-    default_random: false
-    name: on_error_strategy
   - help: If set, only native Executors is allowed, and the Executor is always run
-      inside ZEDRuntime.
+      inside WorkerRuntime.
     choices: null
     default: false
     required: false
@@ -2703,16 +2049,6 @@ methods:
     type: bool
     default_random: false
     name: native
-  - help: Informs a Pea that runs in a container. Important to properly set networking
-      information
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --runs-in-docker
-    type: bool
-    default_random: false
-    name: runs_in_docker
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -2857,7 +2193,7 @@ methods:
     name: runtime_backend
   - help: The runtime class to run inside the Pea
     choices: null
-    default: ZEDRuntime
+    default: WorkerRuntime
     required: false
     option_strings:
     - --runtime-cls
@@ -2936,6 +2272,33 @@ methods:
     type: bool
     default_random: false
     name: force_update
+  - help: The address of the uses-before runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-before-address
+    type: str
+    default_random: false
+    name: uses_before_address
+  - help: The address of the uses-before runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-after-address
+    type: str
+    default_random: false
+    name: uses_after_address
+  - help: dictionary JSON with a list of connections to configure
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --connection-list
+    type: str
+    default_random: false
+    name: connection_list
   - help: The executor attached after the Peas described by --uses, typically before
       sending to all shards, accepted type follows `--uses`
     choices: null
@@ -2956,26 +2319,6 @@ methods:
     type: str
     default_random: false
     name: uses_after
-  - help: '
-
-      The polling strategy of the Pod (when `shards>1`)
-
-      - ANY: only one (whoever is idle) Pea polls the message
-
-      - ALL: all Peas poll the message (like a broadcast)
-
-      '
-    choices:
-    - ANY
-    - ALL
-    - ALL_ASYNC
-    default: ANY
-    required: false
-    option_strings:
-    - --polling
-    type: str
-    default_random: false
-    name: polling
   - help: The strategy of scheduling workload among Peas
     choices:
     - LOAD_BALANCE
@@ -3008,16 +2351,6 @@ methods:
     type: typing.List[str]
     default_random: false
     name: peas_hosts
-  - help: The head Pea of this Pod will connect to the TailPea of the predecessor
-      Pod.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --connect-to-predecessor
-    type: bool
-    default_random: false
-    name: connect_to_predecessor
   help: Start a Pod. You should rarely use this directly unless you are doing low-level
     orchestration
 - name: client
@@ -3043,7 +2376,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 52223
+    default: 36861
     required: false
     option_strings:
     - --port
