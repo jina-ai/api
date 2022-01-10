@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 68ec52ebb0dc4812a7f28419f2184be3
+      default: fec0d5f9c1944121b523cfc6a732d08c
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 029830252ff74794b50687484976bc63
+      default: 824341ca1ecf4da0aa238a0302921c6a
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 1a9231e8d05b43c59f6904137fc9a5db
+      default: 011a329be98a4ef488e7da643631392e
       required: false
       option_strings:
       - --workdir
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 60357
+    default: 55445
     required: false
     option_strings:
     - --port-in
@@ -921,7 +921,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 41893
+    default: 45225
     required: false
     option_strings:
     - --port-in
@@ -1116,7 +1116,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 46095
+    default: 58693
     required: false
     option_strings:
     - --port-expose
@@ -1591,7 +1591,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 50183
+    default: 39617
     required: false
     option_strings:
     - --port-in
@@ -2016,7 +2016,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 40573
+    default: 52045
     required: false
     option_strings:
     - --port-in
@@ -2357,7 +2357,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 57837
+    default: 49213
     required: false
     option_strings:
     - --port
