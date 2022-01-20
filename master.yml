@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: ab8ab21f69604c4585d7f982eb24eab9
+      default: 80cc5e69d52e4459b6745e193ab624e1
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 430a845868ac48b5ab09993df9dc1ab7
+      default: d01250b6301441f1b6e21d6c248dc0b1
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: ca46b10d713f431cba4b49a6e89dd46d
+      default: d5bc32a5307c4bd78dac17514ef075da
       required: false
       option_strings:
       - --workdir
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57879
+    default: 36087
     required: false
     option_strings:
     - --port-in
@@ -564,7 +564,6 @@ methods:
     required: false
     option_strings:
     - --shards
-    - --parallel
     type: int
     default_random: false
     name: shards
@@ -921,7 +920,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 38087
+    default: 47893
     required: false
     option_strings:
     - --port-in
@@ -1116,7 +1115,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 59615
+    default: 34575
     required: false
     option_strings:
     - --port-expose
@@ -1212,7 +1211,6 @@ methods:
     required: false
     option_strings:
     - --shards
-    - --parallel
     type: int
     default_random: false
     name: shards
@@ -1591,7 +1589,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 48497
+    default: 44513
     required: false
     option_strings:
     - --port-in
@@ -1807,7 +1805,6 @@ methods:
     required: false
     option_strings:
     - --shards
-    - --parallel
     type: int
     default_random: false
     name: shards
@@ -2016,7 +2013,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 53221
+    default: 51659
     required: false
     option_strings:
     - --port-in
@@ -2232,7 +2229,6 @@ methods:
     required: false
     option_strings:
     - --shards
-    - --parallel
     type: int
     default_random: false
     name: shards
@@ -2321,17 +2317,6 @@ methods:
     type: bool
     default_random: false
     name: external
-  - help: "The hosts of the peas when shards greater than 1.\n        Peas will be\
-      \ evenly distributed among the hosts. By default,\n        peas are running\
-      \ on host provided by the argument ``host``"
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --peas-hosts
-    type: typing.List[str]
-    default_random: false
-    name: peas_hosts
   help: Start a Pod. You should rarely use this directly unless you are doing low-level
     orchestration
 - name: client
@@ -2357,7 +2342,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 51991
+    default: 56847
     required: false
     option_strings:
     - --port
