@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: ec0c15d1e37c4c5ea34f505094bf0a1e
+      default: 07b31fc1b0ec412790929aa44af69288
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: ae0f90aad4ac41bb846fb5d2aa23cb29
+      default: c37907b09f344e83971ae910e8184616
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 7192544f50584885bcd8e34771b17889
+      default: 8d7e5bf35d8540828257acd96c6a2df7
       required: false
       option_strings:
       - --workdir
@@ -260,11 +260,11 @@ methods:
     type: int
     default_random: false
     name: timeout_ctrl
-  - help: "\n    The polling strategy of the Pod and its endpoints (when `shards>1`).\n\
-      \    Can be defined for all endpoints of a Pod or by endpoint.\n    Define per\
-      \ Pod:\n    - ANY: only one (whoever is idle) Pea polls the message\n    - ALL:\
-      \ all Peas poll the message (like a broadcast)\n    Define per Endpoint:\n \
-      \   JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
+  - help: "\n    The polling strategy of the Deployment and its endpoints (when `shards>1`).\n\
+      \    Can be defined for all endpoints of a Deployment or by endpoint.\n    Define\
+      \ per Deployment:\n    - ANY: only one (whoever is idle) Pod polls the message\n\
+      \    - ALL: all Pods poll the message (like a broadcast)\n    Define per Endpoint:\n\
+      \    JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
       \ '*': 'ANY'}\n    \n    "
     choices: null
     default: ANY
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 56695
+    default: 54432
     required: false
     option_strings:
     - --port-in
@@ -466,7 +466,7 @@ methods:
 
       The files on the host to be uploaded to the remote
 
-      workspace. This can be useful when your Pod has more
+      workspace. This can be useful when your Deployment has more
 
       file dependencies beyond a single YAML file, e.g.
 
@@ -494,8 +494,8 @@ methods:
     type: typing.List[str]
     default_random: false
     name: upload_files
-  - help: The Pea attempts to terminate all of its Runtime child processes/threads
-      on existing. setting it to true basically tell the Pea do not wait on the Runtime
+  - help: The Pod attempts to terminate all of its Runtime child processes/threads
+      on existing. setting it to true basically tell the Pod do not wait on the Runtime
       when closing
     choices: null
     default: false
@@ -505,7 +505,7 @@ methods:
     type: bool
     default_random: false
     name: daemon
-  - help: The parallel backend of the runtime inside the Pea
+  - help: The parallel backend of the runtime inside the Pod
     choices:
     - THREAD
     - PROCESS
@@ -517,7 +517,7 @@ methods:
     type: str
     default_random: false
     name: runtime_backend
-  - help: The runtime class to run inside the Pea
+  - help: The runtime class to run inside the Pod
     choices: null
     default: WorkerRuntime
     required: false
@@ -526,7 +526,7 @@ methods:
     type: str
     default_random: false
     name: runtime_cls
-  - help: The timeout in milliseconds of a Pea waits for the runtime to be ready,
+  - help: The timeout in milliseconds of a Pod waits for the runtime to be ready,
       -1 for waiting forever
     choices: null
     default: 600000
@@ -547,8 +547,8 @@ methods:
     name: env
   - help: If set, expose the public IP address to remote when necessary, by default
       it exposesprivate IP address, which only allows accessing under the same network/subnet.
-      Important to set this to true when the Pea will receive input connections from
-      remote Peas
+      Important to set this to true when the Pod will receive input connections from
+      remote Pods
     choices: null
     default: false
     required: false
@@ -557,8 +557,8 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-  - help: The number of shards in the pod running at the same time. For more details
-      check https://docs.jina.ai/fundamentals/flow/topology/
+  - help: The number of shards in the deployment running at the same time. For more
+      details check https://docs.jina.ai/fundamentals/flow/topology/
     choices: null
     default: 1
     required: false
@@ -567,7 +567,7 @@ methods:
     type: int
     default_random: false
     name: shards
-  - help: The number of replicas in the pod
+  - help: The number of replicas in the deployment
     choices: null
     default: 1
     required: false
@@ -683,11 +683,11 @@ methods:
     type: int
     default_random: false
     name: timeout_ctrl
-  - help: "\n    The polling strategy of the Pod and its endpoints (when `shards>1`).\n\
-      \    Can be defined for all endpoints of a Pod or by endpoint.\n    Define per\
-      \ Pod:\n    - ANY: only one (whoever is idle) Pea polls the message\n    - ALL:\
-      \ all Peas poll the message (like a broadcast)\n    Define per Endpoint:\n \
-      \   JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
+  - help: "\n    The polling strategy of the Deployment and its endpoints (when `shards>1`).\n\
+      \    Can be defined for all endpoints of a Deployment or by endpoint.\n    Define\
+      \ per Deployment:\n    - ANY: only one (whoever is idle) Pod polls the message\n\
+      \    - ALL: all Pods poll the message (like a broadcast)\n    Define per Endpoint:\n\
+      \    JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
       \ '*': 'ANY'}\n    \n    "
     choices: null
     default: ANY
@@ -715,8 +715,9 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: "\n    The strategy on those inspect pods in the flow.\n\n    If `REMOVE`\
-      \ is given then all inspect pods are removed when building the flow.\n    "
+  - help: "\n    The strategy on those inspect deployments in the flow.\n\n    If\
+      \ `REMOVE` is given then all inspect deployments are removed when building the\
+      \ flow.\n    "
     choices:
     - HANG
     - REMOVE
@@ -731,7 +732,7 @@ methods:
   help: Start a Flow. Flow is how Jina streamlines and distributes Executors.
 - name: ping
   options:
-  - help: The host address of the target Pea, e.g. 0.0.0.0
+  - help: The host address of the target Pod, e.g. 0.0.0.0
     choices: null
     default: null
     required: true
@@ -739,7 +740,7 @@ methods:
     type: str
     default_random: false
     name: host
-  - help: The control port of the target pod/pea
+  - help: The control port of the target deployment/pod
     choices: null
     default: null
     required: true
@@ -771,7 +772,7 @@ methods:
     type: int
     default_random: false
     name: retries
-  help: Ping a Pod and check its network connectivity.
+  help: Ping a Deployment and check its network connectivity.
 - name: gateway
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -832,11 +833,11 @@ methods:
     type: int
     default_random: false
     name: timeout_ctrl
-  - help: "\n    The polling strategy of the Pod and its endpoints (when `shards>1`).\n\
-      \    Can be defined for all endpoints of a Pod or by endpoint.\n    Define per\
-      \ Pod:\n    - ANY: only one (whoever is idle) Pea polls the message\n    - ALL:\
-      \ all Peas poll the message (like a broadcast)\n    Define per Endpoint:\n \
-      \   JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
+  - help: "\n    The polling strategy of the Deployment and its endpoints (when `shards>1`).\n\
+      \    Can be defined for all endpoints of a Deployment or by endpoint.\n    Define\
+      \ per Deployment:\n    - ANY: only one (whoever is idle) Pod polls the message\n\
+      \    - ALL: all Pods poll the message (like a broadcast)\n    Define per Endpoint:\n\
+      \    JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
       \ '*': 'ANY'}\n    \n    "
     choices: null
     default: ANY
@@ -920,7 +921,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 58067
+    default: 59589
     required: false
     option_strings:
     - --port-in
@@ -1115,7 +1116,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 63297
+    default: 57004
     required: false
     option_strings:
     - --port-expose
@@ -1132,17 +1133,17 @@ methods:
     type: str
     default_random: false
     name: graph_description
-  - help: dictionary JSON with the input addresses of each Pod
+  - help: dictionary JSON with the input addresses of each Deployment
     choices: null
     default: '{}'
     required: false
     option_strings:
-    - --pods-addresses
+    - --deployments-addresses
     type: str
     default_random: false
-    name: pods_addresses
-  - help: The Pea attempts to terminate all of its Runtime child processes/threads
-      on existing. setting it to true basically tell the Pea do not wait on the Runtime
+    name: deployments_addresses
+  - help: The Pod attempts to terminate all of its Runtime child processes/threads
+      on existing. setting it to true basically tell the Pod do not wait on the Runtime
       when closing
     choices: null
     default: false
@@ -1152,7 +1153,7 @@ methods:
     type: bool
     default_random: false
     name: daemon
-  - help: The parallel backend of the runtime inside the Pea
+  - help: The parallel backend of the runtime inside the Pod
     choices:
     - THREAD
     - PROCESS
@@ -1164,7 +1165,7 @@ methods:
     type: str
     default_random: false
     name: runtime_backend
-  - help: The runtime class to run inside the Pea
+  - help: The runtime class to run inside the Pod
     choices: null
     default: GRPCGatewayRuntime
     required: false
@@ -1173,7 +1174,7 @@ methods:
     type: str
     default_random: false
     name: runtime_cls
-  - help: The timeout in milliseconds of a Pea waits for the runtime to be ready,
+  - help: The timeout in milliseconds of a Pod waits for the runtime to be ready,
       -1 for waiting forever
     choices: null
     default: 600000
@@ -1194,8 +1195,8 @@ methods:
     name: env
   - help: If set, expose the public IP address to remote when necessary, by default
       it exposesprivate IP address, which only allows accessing under the same network/subnet.
-      Important to set this to true when the Pea will receive input connections from
-      remote Peas
+      Important to set this to true when the Pod will receive input connections from
+      remote Pods
     choices: null
     default: false
     required: false
@@ -1204,8 +1205,8 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-  - help: The number of shards in the pod running at the same time. For more details
-      check https://docs.jina.ai/fundamentals/flow/topology/
+  - help: The number of shards in the deployment running at the same time. For more
+      details check https://docs.jina.ai/fundamentals/flow/topology/
     choices: null
     default: 1
     required: false
@@ -1214,7 +1215,7 @@ methods:
     type: int
     default_random: false
     name: shards
-  - help: The number of replicas in the pod
+  - help: The number of replicas in the deployment
     choices: null
     default: 1
     required: false
@@ -1441,430 +1442,6 @@ methods:
     default_random: false
     name: query
   help: Show help text of a CLI argument
-- name: pea
-  options:
-  - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
-      - how you refer to this object in Python/YAML/CLI\n- visualization\n- log message\
-      \ header\n- ...\n\nWhen not given, then the default naming strategy will apply.\n\
-      \                    "
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --name
-    type: str
-    default_random: false
-    name: name
-  - help: The working directory for any IO operations in this object. If not set,
-      then derive from its parent `workspace`.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --workspace
-    type: str
-    default_random: false
-    name: workspace
-  - help: The YAML config of the logger used in this object.
-    choices: null
-    default: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
-    required: false
-    option_strings:
-    - --log-config
-    type: str
-    default_random: false
-    name: log_config
-  - help: If set, then no log will be emitted from this object.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --quiet
-    type: bool
-    default_random: false
-    name: quiet
-  - help: If set, then exception stack information will not be added to the log
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --quiet-error
-    type: bool
-    default_random: false
-    name: quiet_error
-  - help: The timeout in milliseconds of the control request, -1 for waiting forever
-    choices: null
-    default: 60
-    required: false
-    option_strings:
-    - --timeout-ctrl
-    type: int
-    default_random: false
-    name: timeout_ctrl
-  - help: "\n    The polling strategy of the Pod and its endpoints (when `shards>1`).\n\
-      \    Can be defined for all endpoints of a Pod or by endpoint.\n    Define per\
-      \ Pod:\n    - ANY: only one (whoever is idle) Pea polls the message\n    - ALL:\
-      \ all Peas poll the message (like a broadcast)\n    Define per Endpoint:\n \
-      \   JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
-      \ '*': 'ANY'}\n    \n    "
-    choices: null
-    default: ANY
-    required: false
-    option_strings:
-    - --polling
-    type: str
-    default_random: false
-    name: polling
-  - help: "\n        The config of the executor, it could be one of the followings:\n\
-      \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
-      \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
-      \ a docker image (must start with `docker://`)\n        * the string literal\
-      \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
-      \ literal of a JSON config\n\n        When use it under Python, one can use\
-      \ the following values additionally:\n        - a Python dict that represents\
-      \ the config\n        - a text file stream has `.read()` interface\n        "
-    choices: null
-    default: BaseExecutor
-    required: false
-    option_strings:
-    - --uses
-    type: str
-    default_random: false
-    name: uses
-  - help: "\n    Dictionary of keyword arguments that will override the `with` configuration\
-      \ in `uses`\n    "
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --uses-with
-    type: dict
-    default_random: false
-    name: uses_with
-  - help: "\n    Dictionary of keyword arguments that will override the `metas` configuration\
-      \ in `uses`\n    "
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --uses-metas
-    type: dict
-    default_random: false
-    name: uses_metas
-  - help: "\n        Dictionary of keyword arguments that will override the `requests`\
-      \ configuration in `uses`\n        "
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --uses-requests
-    type: dict
-    default_random: false
-    name: uses_requests
-  - help: '
-
-      The customized python modules need to be imported before loading the executor
-
-
-      Note that the recommended way is to only import a single module - a simple python
-      file, if your
-
-      executor can be defined in a single file, or an ``__init__.py`` file if you
-      have multiple files,
-
-      which should be structured as a python package. For more details, please see
-      the
-
-      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/repository-structure/>`__
-
-      '
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --py-modules
-    type: typing.List[str]
-    default_random: false
-    name: py_modules
-  - help: The port for input data to bind to, default a random port between [49152,
-      65535]
-    choices: null
-    default: 51042
-    required: false
-    option_strings:
-    - --port-in
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port_in
-  - help: The host address for binding to, by default it is 0.0.0.0
-    choices: null
-    default: 0.0.0.0
-    required: false
-    option_strings:
-    - --host-in
-    type: str
-    default_random: false
-    name: host_in
-  - help: If set, only native Executors is allowed, and the Executor is always run
-      inside WorkerRuntime.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --native
-    type: bool
-    default_random: false
-    name: native
-  - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
-      set then the Docker image ENTRYPOINT takes effective.
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --entrypoint
-    type: str
-    default_random: false
-    name: entrypoint
-  - help: "\nDictionary of kwargs arguments that will be passed to Docker SDK when\
-      \ starting the docker '\ncontainer. \n\nMore details can be found in the Docker\
-      \ SDK docs:  https://docker-py.readthedocs.io/en/stable/\n\n"
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --docker-kwargs
-    type: dict
-    default_random: false
-    name: docker_kwargs
-  - help: Pull the latest image before running
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --pull-latest
-    type: bool
-    default_random: false
-    name: pull_latest
-  - help: "\nThe path on the host to be mounted inside the container. \n\nNote, \n\
-      - If separated by `:`, then the first part will be considered as the local host\
-      \ path and the second part is the path in the container system. \n- If no split\
-      \ provided, then the basename of that directory will be mounted into container's\
-      \ root path, e.g. `--volumes=\"/user/test/my-workspace\"` will be mounted into\
-      \ `/my-workspace` inside the container. \n- All volumes are mounted with read-write\
-      \ mode.\n"
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --volumes
-    type: typing.List[str]
-    default_random: false
-    name: volumes
-  - help: "\n    This argument allows dockerized Jina executor discover local gpu\
-      \ devices.\n\n    Note, \n    - To access all gpus, use `--gpus all`.\n    -\
-      \ To access multiple gpus, e.g. make use of 2 gpus, use `--gpus 2`.\n    - To\
-      \ access specified gpus based on device id, use `--gpus device=[YOUR-GPU-DEVICE-ID]`\n\
-      \    - To access specified gpus based on multiple device id, use `--gpus device=[YOUR-GPU-DEVICE-ID1],device=[YOUR-GPU-DEVICE-ID2]`\n\
-      \    - To specify more parameters, use `--gpus device=[YOUR-GPU-DEVICE-ID],runtime=nvidia,capabilities=display\n\
-      \    "
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --gpus
-    type: str
-    default_random: false
-    name: gpus
-  - help: The host address of the runtime, by default it is 0.0.0.0.
-    choices: null
-    default: 0.0.0.0
-    required: false
-    option_strings:
-    - --host
-    type: str
-    default_random: false
-    name: host
-  - help: The port of the remote machine for usage with JinaD.
-    choices: null
-    default: 8000
-    required: false
-    option_strings:
-    - --port-jinad
-    type: int
-    default_random: false
-    name: port_jinad
-  - help: Do not display the streaming of remote logs on local console
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --quiet-remote-logs
-    type: bool
-    default_random: false
-    name: quiet_remote_logs
-  - help: '
-
-      The files on the host to be uploaded to the remote
-
-      workspace. This can be useful when your Pod has more
-
-      file dependencies beyond a single YAML file, e.g.
-
-      Python files, data files.
-
-
-      Note,
-
-      - currently only flatten structure is supported, which means if you upload `[./foo/a.py,
-      ./foo/b.pp, ./bar/c.yml]`, then they will be put under the _same_ workspace
-      on the remote, losing all hierarchies.
-
-      - by default, `--uses` YAML file is always uploaded.
-
-      - uploaded files are by default isolated across the runs. To ensure files are
-      submitted to the same workspace across different runs, use `--workspace-id`
-      to specify the workspace.
-
-      '
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --upload-files
-    type: typing.List[str]
-    default_random: false
-    name: upload_files
-  - help: The Pea attempts to terminate all of its Runtime child processes/threads
-      on existing. setting it to true basically tell the Pea do not wait on the Runtime
-      when closing
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --daemon
-    type: bool
-    default_random: false
-    name: daemon
-  - help: The parallel backend of the runtime inside the Pea
-    choices:
-    - THREAD
-    - PROCESS
-    default: PROCESS
-    required: false
-    option_strings:
-    - --runtime-backend
-    - --runtime
-    type: str
-    default_random: false
-    name: runtime_backend
-  - help: The runtime class to run inside the Pea
-    choices: null
-    default: WorkerRuntime
-    required: false
-    option_strings:
-    - --runtime-cls
-    type: str
-    default_random: false
-    name: runtime_cls
-  - help: The timeout in milliseconds of a Pea waits for the runtime to be ready,
-      -1 for waiting forever
-    choices: null
-    default: 600000
-    required: false
-    option_strings:
-    - --timeout-ready
-    type: int
-    default_random: false
-    name: timeout_ready
-  - help: The map of environment variables that are available inside runtime
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --env
-    type: dict
-    default_random: false
-    name: env
-  - help: If set, expose the public IP address to remote when necessary, by default
-      it exposesprivate IP address, which only allows accessing under the same network/subnet.
-      Important to set this to true when the Pea will receive input connections from
-      remote Peas
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --expose-public
-    type: bool
-    default_random: false
-    name: expose_public
-  - help: The number of shards in the pod running at the same time. For more details
-      check https://docs.jina.ai/fundamentals/flow/topology/
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --shards
-    type: int
-    default_random: false
-    name: shards
-  - help: The number of replicas in the pod
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --replicas
-    type: int
-    default_random: false
-    name: replicas
-  - help: If set, install `requirements.txt` in the Hub Executor bundle to local
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --install-requirements
-    type: bool
-    default_random: false
-    name: install_requirements
-  - help: If set, always pull the latest Hub Executor bundle even it exists on local
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --force-update
-    - --force
-    type: bool
-    default_random: false
-    name: force_update
-  - help: The address of the uses-before runtime
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --uses-before-address
-    type: str
-    default_random: false
-    name: uses_before_address
-  - help: The address of the uses-before runtime
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --uses-after-address
-    type: str
-    default_random: false
-    name: uses_after_address
-  - help: dictionary JSON with a list of connections to configure
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --connection-list
-    type: str
-    default_random: false
-    name: connection_list
-  help: Start a Pea. You should rarely use this directly unless you are doing low-level
-    orchestration
 - name: pod
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -1925,11 +1502,11 @@ methods:
     type: int
     default_random: false
     name: timeout_ctrl
-  - help: "\n    The polling strategy of the Pod and its endpoints (when `shards>1`).\n\
-      \    Can be defined for all endpoints of a Pod or by endpoint.\n    Define per\
-      \ Pod:\n    - ANY: only one (whoever is idle) Pea polls the message\n    - ALL:\
-      \ all Peas poll the message (like a broadcast)\n    Define per Endpoint:\n \
-      \   JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
+  - help: "\n    The polling strategy of the Deployment and its endpoints (when `shards>1`).\n\
+      \    Can be defined for all endpoints of a Deployment or by endpoint.\n    Define\
+      \ per Deployment:\n    - ANY: only one (whoever is idle) Pod polls the message\n\
+      \    - ALL: all Pods poll the message (like a broadcast)\n    Define per Endpoint:\n\
+      \    JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
       \ '*': 'ANY'}\n    \n    "
     choices: null
     default: ANY
@@ -2013,7 +1590,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57236
+    default: 54451
     required: false
     option_strings:
     - --port-in
@@ -2131,7 +1708,7 @@ methods:
 
       The files on the host to be uploaded to the remote
 
-      workspace. This can be useful when your Pod has more
+      workspace. This can be useful when your Deployment has more
 
       file dependencies beyond a single YAML file, e.g.
 
@@ -2159,8 +1736,8 @@ methods:
     type: typing.List[str]
     default_random: false
     name: upload_files
-  - help: The Pea attempts to terminate all of its Runtime child processes/threads
-      on existing. setting it to true basically tell the Pea do not wait on the Runtime
+  - help: The Pod attempts to terminate all of its Runtime child processes/threads
+      on existing. setting it to true basically tell the Pod do not wait on the Runtime
       when closing
     choices: null
     default: false
@@ -2170,7 +1747,7 @@ methods:
     type: bool
     default_random: false
     name: daemon
-  - help: The parallel backend of the runtime inside the Pea
+  - help: The parallel backend of the runtime inside the Pod
     choices:
     - THREAD
     - PROCESS
@@ -2182,7 +1759,7 @@ methods:
     type: str
     default_random: false
     name: runtime_backend
-  - help: The runtime class to run inside the Pea
+  - help: The runtime class to run inside the Pod
     choices: null
     default: WorkerRuntime
     required: false
@@ -2191,7 +1768,7 @@ methods:
     type: str
     default_random: false
     name: runtime_cls
-  - help: The timeout in milliseconds of a Pea waits for the runtime to be ready,
+  - help: The timeout in milliseconds of a Pod waits for the runtime to be ready,
       -1 for waiting forever
     choices: null
     default: 600000
@@ -2212,8 +1789,8 @@ methods:
     name: env
   - help: If set, expose the public IP address to remote when necessary, by default
       it exposesprivate IP address, which only allows accessing under the same network/subnet.
-      Important to set this to true when the Pea will receive input connections from
-      remote Peas
+      Important to set this to true when the Pod will receive input connections from
+      remote Pods
     choices: null
     default: false
     required: false
@@ -2222,8 +1799,8 @@ methods:
     type: bool
     default_random: false
     name: expose_public
-  - help: The number of shards in the pod running at the same time. For more details
-      check https://docs.jina.ai/fundamentals/flow/topology/
+  - help: The number of shards in the deployment running at the same time. For more
+      details check https://docs.jina.ai/fundamentals/flow/topology/
     choices: null
     default: 1
     required: false
@@ -2232,7 +1809,7 @@ methods:
     type: int
     default_random: false
     name: shards
-  - help: The number of replicas in the pod
+  - help: The number of replicas in the deployment
     choices: null
     default: 1
     required: false
@@ -2287,7 +1864,431 @@ methods:
     type: str
     default_random: false
     name: connection_list
-  - help: The executor attached after the Peas described by --uses, typically before
+  help: Start a Pod. You should rarely use this directly unless you are doing low-level
+    orchestration
+- name: deployment
+  options:
+  - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
+      - how you refer to this object in Python/YAML/CLI\n- visualization\n- log message\
+      \ header\n- ...\n\nWhen not given, then the default naming strategy will apply.\n\
+      \                    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --name
+    type: str
+    default_random: false
+    name: name
+  - help: The working directory for any IO operations in this object. If not set,
+      then derive from its parent `workspace`.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --workspace
+    type: str
+    default_random: false
+    name: workspace
+  - help: The YAML config of the logger used in this object.
+    choices: null
+    default: /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/jina/resources/logging.default.yml
+    required: false
+    option_strings:
+    - --log-config
+    type: str
+    default_random: false
+    name: log_config
+  - help: If set, then no log will be emitted from this object.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --quiet
+    type: bool
+    default_random: false
+    name: quiet
+  - help: If set, then exception stack information will not be added to the log
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --quiet-error
+    type: bool
+    default_random: false
+    name: quiet_error
+  - help: The timeout in milliseconds of the control request, -1 for waiting forever
+    choices: null
+    default: 60
+    required: false
+    option_strings:
+    - --timeout-ctrl
+    type: int
+    default_random: false
+    name: timeout_ctrl
+  - help: "\n    The polling strategy of the Deployment and its endpoints (when `shards>1`).\n\
+      \    Can be defined for all endpoints of a Deployment or by endpoint.\n    Define\
+      \ per Deployment:\n    - ANY: only one (whoever is idle) Pod polls the message\n\
+      \    - ALL: all Pods poll the message (like a broadcast)\n    Define per Endpoint:\n\
+      \    JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
+      \ '*': 'ANY'}\n    \n    "
+    choices: null
+    default: ANY
+    required: false
+    option_strings:
+    - --polling
+    type: str
+    default_random: false
+    name: polling
+  - help: "\n        The config of the executor, it could be one of the followings:\n\
+      \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
+      \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
+      \ a docker image (must start with `docker://`)\n        * the string literal\
+      \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
+      \ literal of a JSON config\n\n        When use it under Python, one can use\
+      \ the following values additionally:\n        - a Python dict that represents\
+      \ the config\n        - a text file stream has `.read()` interface\n        "
+    choices: null
+    default: BaseExecutor
+    required: false
+    option_strings:
+    - --uses
+    type: str
+    default_random: false
+    name: uses
+  - help: "\n    Dictionary of keyword arguments that will override the `with` configuration\
+      \ in `uses`\n    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-with
+    type: dict
+    default_random: false
+    name: uses_with
+  - help: "\n    Dictionary of keyword arguments that will override the `metas` configuration\
+      \ in `uses`\n    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-metas
+    type: dict
+    default_random: false
+    name: uses_metas
+  - help: "\n        Dictionary of keyword arguments that will override the `requests`\
+      \ configuration in `uses`\n        "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-requests
+    type: dict
+    default_random: false
+    name: uses_requests
+  - help: '
+
+      The customized python modules need to be imported before loading the executor
+
+
+      Note that the recommended way is to only import a single module - a simple python
+      file, if your
+
+      executor can be defined in a single file, or an ``__init__.py`` file if you
+      have multiple files,
+
+      which should be structured as a python package. For more details, please see
+      the
+
+      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/repository-structure/>`__
+
+      '
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --py-modules
+    type: typing.List[str]
+    default_random: false
+    name: py_modules
+  - help: The port for input data to bind to, default a random port between [49152,
+      65535]
+    choices: null
+    default: 50792
+    required: false
+    option_strings:
+    - --port-in
+    type: int
+    default_random: true
+    default_factory: random_port
+    name: port_in
+  - help: The host address for binding to, by default it is 0.0.0.0
+    choices: null
+    default: 0.0.0.0
+    required: false
+    option_strings:
+    - --host-in
+    type: str
+    default_random: false
+    name: host_in
+  - help: If set, only native Executors is allowed, and the Executor is always run
+      inside WorkerRuntime.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --native
+    type: bool
+    default_random: false
+    name: native
+  - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
+      set then the Docker image ENTRYPOINT takes effective.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --entrypoint
+    type: str
+    default_random: false
+    name: entrypoint
+  - help: "\nDictionary of kwargs arguments that will be passed to Docker SDK when\
+      \ starting the docker '\ncontainer. \n\nMore details can be found in the Docker\
+      \ SDK docs:  https://docker-py.readthedocs.io/en/stable/\n\n"
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --docker-kwargs
+    type: dict
+    default_random: false
+    name: docker_kwargs
+  - help: Pull the latest image before running
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --pull-latest
+    type: bool
+    default_random: false
+    name: pull_latest
+  - help: "\nThe path on the host to be mounted inside the container. \n\nNote, \n\
+      - If separated by `:`, then the first part will be considered as the local host\
+      \ path and the second part is the path in the container system. \n- If no split\
+      \ provided, then the basename of that directory will be mounted into container's\
+      \ root path, e.g. `--volumes=\"/user/test/my-workspace\"` will be mounted into\
+      \ `/my-workspace` inside the container. \n- All volumes are mounted with read-write\
+      \ mode.\n"
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --volumes
+    type: typing.List[str]
+    default_random: false
+    name: volumes
+  - help: "\n    This argument allows dockerized Jina executor discover local gpu\
+      \ devices.\n\n    Note, \n    - To access all gpus, use `--gpus all`.\n    -\
+      \ To access multiple gpus, e.g. make use of 2 gpus, use `--gpus 2`.\n    - To\
+      \ access specified gpus based on device id, use `--gpus device=[YOUR-GPU-DEVICE-ID]`\n\
+      \    - To access specified gpus based on multiple device id, use `--gpus device=[YOUR-GPU-DEVICE-ID1],device=[YOUR-GPU-DEVICE-ID2]`\n\
+      \    - To specify more parameters, use `--gpus device=[YOUR-GPU-DEVICE-ID],runtime=nvidia,capabilities=display\n\
+      \    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --gpus
+    type: str
+    default_random: false
+    name: gpus
+  - help: The host address of the runtime, by default it is 0.0.0.0.
+    choices: null
+    default: 0.0.0.0
+    required: false
+    option_strings:
+    - --host
+    type: str
+    default_random: false
+    name: host
+  - help: The port of the remote machine for usage with JinaD.
+    choices: null
+    default: 8000
+    required: false
+    option_strings:
+    - --port-jinad
+    type: int
+    default_random: false
+    name: port_jinad
+  - help: Do not display the streaming of remote logs on local console
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --quiet-remote-logs
+    type: bool
+    default_random: false
+    name: quiet_remote_logs
+  - help: '
+
+      The files on the host to be uploaded to the remote
+
+      workspace. This can be useful when your Deployment has more
+
+      file dependencies beyond a single YAML file, e.g.
+
+      Python files, data files.
+
+
+      Note,
+
+      - currently only flatten structure is supported, which means if you upload `[./foo/a.py,
+      ./foo/b.pp, ./bar/c.yml]`, then they will be put under the _same_ workspace
+      on the remote, losing all hierarchies.
+
+      - by default, `--uses` YAML file is always uploaded.
+
+      - uploaded files are by default isolated across the runs. To ensure files are
+      submitted to the same workspace across different runs, use `--workspace-id`
+      to specify the workspace.
+
+      '
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --upload-files
+    type: typing.List[str]
+    default_random: false
+    name: upload_files
+  - help: The Pod attempts to terminate all of its Runtime child processes/threads
+      on existing. setting it to true basically tell the Pod do not wait on the Runtime
+      when closing
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --daemon
+    type: bool
+    default_random: false
+    name: daemon
+  - help: The parallel backend of the runtime inside the Pod
+    choices:
+    - THREAD
+    - PROCESS
+    default: PROCESS
+    required: false
+    option_strings:
+    - --runtime-backend
+    - --runtime
+    type: str
+    default_random: false
+    name: runtime_backend
+  - help: The runtime class to run inside the Pod
+    choices: null
+    default: WorkerRuntime
+    required: false
+    option_strings:
+    - --runtime-cls
+    type: str
+    default_random: false
+    name: runtime_cls
+  - help: The timeout in milliseconds of a Pod waits for the runtime to be ready,
+      -1 for waiting forever
+    choices: null
+    default: 600000
+    required: false
+    option_strings:
+    - --timeout-ready
+    type: int
+    default_random: false
+    name: timeout_ready
+  - help: The map of environment variables that are available inside runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --env
+    type: dict
+    default_random: false
+    name: env
+  - help: If set, expose the public IP address to remote when necessary, by default
+      it exposesprivate IP address, which only allows accessing under the same network/subnet.
+      Important to set this to true when the Pod will receive input connections from
+      remote Pods
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --expose-public
+    type: bool
+    default_random: false
+    name: expose_public
+  - help: The number of shards in the deployment running at the same time. For more
+      details check https://docs.jina.ai/fundamentals/flow/topology/
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --shards
+    type: int
+    default_random: false
+    name: shards
+  - help: The number of replicas in the deployment
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --replicas
+    type: int
+    default_random: false
+    name: replicas
+  - help: If set, install `requirements.txt` in the Hub Executor bundle to local
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --install-requirements
+    type: bool
+    default_random: false
+    name: install_requirements
+  - help: If set, always pull the latest Hub Executor bundle even it exists on local
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --force-update
+    - --force
+    type: bool
+    default_random: false
+    name: force_update
+  - help: The address of the uses-before runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-before-address
+    type: str
+    default_random: false
+    name: uses_before_address
+  - help: The address of the uses-before runtime
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-after-address
+    type: str
+    default_random: false
+    name: uses_after_address
+  - help: dictionary JSON with a list of connections to configure
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --connection-list
+    type: str
+    default_random: false
+    name: connection_list
+  - help: The executor attached after the Pods described by --uses, typically before
       sending to all shards, accepted type follows `--uses`
     choices: null
     default: null
@@ -2297,7 +2298,7 @@ methods:
     type: str
     default_random: false
     name: uses_before
-  - help: The executor attached after the Peas described by --uses, typically used
+  - help: The executor attached after the Pods described by --uses, typically used
       for receiving from all shards, accepted type follows `--uses`
     choices: null
     default: null
@@ -2307,8 +2308,9 @@ methods:
     type: str
     default_random: false
     name: uses_after
-  - help: The Pod will be considered an external Pod that has been started independently
-      from the Flow.This Pod will not be context managed by the Flow.
+  - help: The Deployment will be considered an external Deployment that has been started
+      independently from the Flow.This Deployment will not be context managed by the
+      Flow.
     choices: null
     default: false
     required: false
@@ -2317,8 +2319,8 @@ methods:
     type: bool
     default_random: false
     name: external
-  help: Start a Pod. You should rarely use this directly unless you are doing low-level
-    orchestration
+  help: Start a Deployment. You should rarely use this directly unless you are doing
+    low-level orchestration
 - name: client
   options:
   - help: The host address of the runtime, by default it is 0.0.0.0.
@@ -2342,7 +2344,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 55996
+    default: 53137
     required: false
     option_strings:
     - --port
