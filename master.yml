@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 1a56d82eced046aeb2afaf54ff8ece5d
+      default: 441fcb3d85e748d3a44f6187f5d7b245
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 32fb174e8fb1419c9127bbd256f6c2ea
+      default: 93e1700013eb416ca6114de04659ffe2
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 1efbe731065b4b93a0033e45012505a1
+      default: 8803f85bea5a483b8fbdec4f8bb10ac2
       required: false
       option_strings:
       - --workdir
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 65042
+    default: 53946
     required: false
     option_strings:
     - --port-in
@@ -921,7 +921,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 58934
+    default: 57104
     required: false
     option_strings:
     - --port-in
@@ -1116,7 +1116,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 60484
+    default: 61664
     required: false
     option_strings:
     - --port-expose
@@ -1334,6 +1334,15 @@ methods:
       type: bool
       default_random: false
       name: no_usage
+    - help: If set, more information will be printed.
+      choices: null
+      default: false
+      required: false
+      option_strings:
+      - --verbose
+      type: bool
+      default_random: false
+      name: verbose
     - help: The Executor folder to be pushed to Jina Hub
       choices: null
       default: null
@@ -1590,7 +1599,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63826
+    default: 51449
     required: false
     option_strings:
     - --port-in
@@ -2014,7 +2023,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 55977
+    default: 62185
     required: false
     option_strings:
     - --port-in
@@ -2344,7 +2353,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 62611
+    default: 56496
     required: false
     option_strings:
     - --port
