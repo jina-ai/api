@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 25d95811285548d5aa73f8db9403194a
+      default: 928fe284ff4b4661aafa765ef665fe41
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 7fec31c7b2ee4da99566a94f144e44b4
+      default: 88d2f8a556bd491c8eb31239756eeb4e
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: f74941261b894a56b8aeb5934ae07cb2
+      default: 1906c32a182048698241c161c3e32d54
       required: false
       option_strings:
       - --workdir
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 50331
+    default: 63883
     required: false
     option_strings:
     - --port-in
@@ -773,6 +773,17 @@ methods:
     default_random: false
     name: retries
   help: Ping a Deployment and check its network connectivity.
+- name: new
+  options:
+  - help: The name of the project
+    choices: null
+    default: hello-jina
+    required: true
+    option_strings: []
+    type: str
+    default_random: false
+    name: name
+  help: Create a new Jina toy project with the predefined template.
 - name: gateway
   options:
   - help: "\nThe name of this object.\n\nThis will be used in the following places:\n\
@@ -921,7 +932,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57714
+    default: 59308
     required: false
     option_strings:
     - --port-in
@@ -1116,7 +1127,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 52891
+    default: 49368
     required: false
     option_strings:
     - --port-expose
@@ -1599,7 +1610,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 53935
+    default: 59767
     required: false
     option_strings:
     - --port-in
@@ -2023,7 +2034,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 59430
+    default: 61710
     required: false
     option_strings:
     - --port-in
@@ -2353,7 +2364,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 62217
+    default: 62876
     required: false
     option_strings:
     - --port
