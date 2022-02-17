@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 6819ea693de74dedb5ec2ac6fbc2c27c
+      default: 5c16118941f248a9a6ac51e2ac7165e6
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 5ca5215bba764273aac6b4eae5345190
+      default: bdab65ac20ec4398b83087b29ad82918
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: cc3ae455d6304274a78832f43c8e35ff
+      default: 9e28cf6652b44c468c90ff576828440e
       required: false
       option_strings:
       - --workdir
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 59847
+    default: 50412
     required: false
     option_strings:
     - --port-in
@@ -558,7 +558,7 @@ methods:
     default_random: false
     name: expose_public
   - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/fundamentals/flow/topology/
+      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
     choices: null
     default: 1
     required: false
@@ -932,7 +932,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57763
+    default: 60246
     required: false
     option_strings:
     - --port-in
@@ -1127,7 +1127,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 61843
+    default: 64167
     required: false
     option_strings:
     - --port-expose
@@ -1217,7 +1217,7 @@ methods:
     default_random: false
     name: expose_public
   - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/fundamentals/flow/topology/
+      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
     choices: null
     default: 1
     required: false
@@ -1610,7 +1610,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63120
+    default: 55418
     required: false
     option_strings:
     - --port-in
@@ -1820,7 +1820,7 @@ methods:
     default_random: false
     name: expose_public
   - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/fundamentals/flow/topology/
+      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
     choices: null
     default: 1
     required: false
@@ -2034,7 +2034,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 62511
+    default: 52921
     required: false
     option_strings:
     - --port-in
@@ -2244,7 +2244,7 @@ methods:
     default_random: false
     name: expose_public
   - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/fundamentals/flow/topology/
+      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
     choices: null
     default: 1
     required: false
@@ -2364,7 +2364,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 58920
+    default: 56379
     required: false
     option_strings:
     - --port
