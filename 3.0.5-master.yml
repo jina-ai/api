@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 0dbebc49e8314ca99b958e5b0da09248
+      default: 75636b4163c4490699301f3c8cf05331
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 3326c762b0204f18bd002931b34afbd9
+      default: 094020e81d3e4af28193509af894752d
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: f09e4a3409774923b1c49200d8ba3749
+      default: ab3818639aee4edea4b227768a0a044f
       required: false
       option_strings:
       - --workdir
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 52530
+    default: 57003
     required: false
     option_strings:
     - --port-in
@@ -579,7 +579,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 61983
+    default: 53031
     required: false
     option_strings:
     - --port
@@ -718,6 +718,15 @@ methods:
     type: str
     default_random: false
     name: polling
+  - help: 'If set, /graphql endpoint is removed from HTTP interface. '
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --no-graphql-endpoint
+    type: bool
+    default_random: false
+    name: no_graphql_endpoint
   - help: The YAML file represents a flow
     choices: null
     default: null
@@ -953,7 +962,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 49914
+    default: 54467
     required: false
     option_strings:
     - --port-in
@@ -1078,6 +1087,15 @@ methods:
     type: dict
     default_random: false
     name: uvicorn_kwargs
+  - help: 'If set, /graphql endpoint is removed from HTTP interface. '
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --no-graphql-endpoint
+    type: bool
+    default_random: false
+    name: no_graphql_endpoint
   - help: "\n    The compress algorithm used over the entire Flow.\n\n    Note that\
       \ this is not necessarily effective,\n    it depends on the settings of `--compress-min-bytes`\
       \ and `compress-min-ratio`"
@@ -1148,7 +1166,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 55496
+    default: 53775
     required: false
     option_strings:
     - --port-expose
@@ -1259,7 +1277,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 53762
+    default: 51129
     required: false
     option_strings:
     - --port
@@ -1652,7 +1670,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 59153
+    default: 64979
     required: false
     option_strings:
     - --port-in
@@ -1883,7 +1901,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 54943
+    default: 64531
     required: false
     option_strings:
     - --port
@@ -2097,7 +2115,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 61289
+    default: 50872
     required: false
     option_strings:
     - --port-in
@@ -2328,7 +2346,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 50308
+    default: 63020
     required: false
     option_strings:
     - --port
@@ -2448,7 +2466,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 63371
+    default: 60849
     required: false
     option_strings:
     - --port
