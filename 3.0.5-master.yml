@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: ce1e316d49a54a86a5a4b97db618db17
+      default: 9c03188f2abc4b26848aa5882582f160
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 2775c54e29994711b16a871b265c8d6c
+      default: 764ca21bc5744efe9331f6a032f9f4be
       required: false
       option_strings:
       - --workdir
@@ -123,10 +123,10 @@ methods:
       default: 8080
       required: false
       option_strings:
-      - --port-expose
+      - --port
       type: int
       default_random: false
-      name: port_expose
+      name: port
     - help: The number of replicas when index and query
       choices: null
       default: 2
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 2d896f22f0054f4a86b88b2f5d056835
+      default: 59204407abe6436fa84e57d80a7ad227
       required: false
       option_strings:
       - --workdir
@@ -172,10 +172,10 @@ methods:
       default: 8080
       required: false
       option_strings:
-      - --port-expose
+      - --port
       type: int
       default_random: false
-      name: port_expose
+      name: port
     help: Run a multimodal search demo
   - name: fork
     options:
@@ -348,14 +348,14 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 64917
+    default: 65383
     required: false
     option_strings:
     - --port-in
     type: int
     default_random: true
     default_factory: random_port
-    name: port_in
+    name: port
   - help: The host address for binding to, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
@@ -576,6 +576,17 @@ methods:
     type: int
     default_random: false
     name: replicas
+  - help: The port for input data to bind to, default is a random port between [49152,
+      65535]
+    choices: null
+    default: 64412
+    required: false
+    option_strings:
+    - --port
+    type: int
+    default_random: true
+    default_factory: random_port
+    name: port
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -942,14 +953,14 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57086
+    default: 58484
     required: false
     option_strings:
     - --port-in
     type: int
     default_random: true
     default_factory: random_port
-    name: port_in
+    name: port
   - help: The host address for binding to, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
@@ -1137,14 +1148,14 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 64846
+    default: 54378
     required: false
     option_strings:
     - --port-expose
     type: int
     default_random: true
     default_factory: random_port
-    name: port_expose
+    name: port
   - help: Routing graph for the gateway
     choices: null
     default: '{}'
@@ -1245,6 +1256,17 @@ methods:
     type: int
     default_random: false
     name: replicas
+  - help: The port for input data to bind to, default is a random port between [49152,
+      65535]
+    choices: null
+    default: 56877
+    required: false
+    option_strings:
+    - --port
+    type: int
+    default_random: true
+    default_factory: random_port
+    name: port
   - help: The address of the uses-before runtime
     choices: null
     default: null
@@ -1630,14 +1652,14 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63058
+    default: 52301
     required: false
     option_strings:
     - --port-in
     type: int
     default_random: true
     default_factory: random_port
-    name: port_in
+    name: port
   - help: The host address for binding to, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
@@ -1858,6 +1880,17 @@ methods:
     type: int
     default_random: false
     name: replicas
+  - help: The port for input data to bind to, default is a random port between [49152,
+      65535]
+    choices: null
+    default: 56149
+    required: false
+    option_strings:
+    - --port
+    type: int
+    default_random: true
+    default_factory: random_port
+    name: port
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -2064,14 +2097,14 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 54300
+    default: 64847
     required: false
     option_strings:
     - --port-in
     type: int
     default_random: true
     default_factory: random_port
-    name: port_in
+    name: port
   - help: The host address for binding to, by default it is 0.0.0.0
     choices: null
     default: 0.0.0.0
@@ -2292,6 +2325,17 @@ methods:
     type: int
     default_random: false
     name: replicas
+  - help: The port for input data to bind to, default is a random port between [49152,
+      65535]
+    choices: null
+    default: 59868
+    required: false
+    option_strings:
+    - --port
+    type: int
+    default_random: true
+    default_factory: random_port
+    name: port
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -2404,7 +2448,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 51909
+    default: 52274
     required: false
     option_strings:
     - --port
