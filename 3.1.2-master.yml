@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: f05b6c49729c4587a9aa968dd65b554b
+      default: dcdd558fe11c49c88e1db5b90c37c7ab
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 61d378de39aa48c88b253f1ccf049508
+      default: 104a7959e84742659402b2c8bdb3e674
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 725d0a97dc1c43288fad07792664e305
+      default: a269dcd305fc46d68b44ac510ee945ce
       required: false
       option_strings:
       - --workdir
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 58999
+    default: 62531
     required: false
     option_strings:
     - --port-in
@@ -545,18 +545,6 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: If set, expose the public IP address to remote when necessary, by default
-      it exposesprivate IP address, which only allows accessing under the same network/subnet.
-      Important to set this to true when the Pod will receive input connections from
-      remote Pods
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --expose-public
-    type: bool
-    default_random: false
-    name: expose_public
   - help: The number of shards in the deployment running at the same time. For more
       details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
     choices: null
@@ -579,7 +567,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 50144
+    default: 52411
     required: false
     option_strings:
     - --port
@@ -962,7 +950,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57467
+    default: 49911
     required: false
     option_strings:
     - --port-in
@@ -1129,7 +1117,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 50529
+    default: 54511
     required: false
     option_strings:
     - --port-expose
@@ -1206,18 +1194,6 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: If set, expose the public IP address to remote when necessary, by default
-      it exposesprivate IP address, which only allows accessing under the same network/subnet.
-      Important to set this to true when the Pod will receive input connections from
-      remote Pods
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --expose-public
-    type: bool
-    default_random: false
-    name: expose_public
   - help: The number of shards in the deployment running at the same time. For more
       details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
     choices: null
@@ -1240,7 +1216,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 58133
+    default: 57685
     required: false
     option_strings:
     - --port
@@ -1633,7 +1609,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57185
+    default: 60088
     required: false
     option_strings:
     - --port-in
@@ -1830,18 +1806,6 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: If set, expose the public IP address to remote when necessary, by default
-      it exposesprivate IP address, which only allows accessing under the same network/subnet.
-      Important to set this to true when the Pod will receive input connections from
-      remote Pods
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --expose-public
-    type: bool
-    default_random: false
-    name: expose_public
   - help: The number of shards in the deployment running at the same time. For more
       details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
     choices: null
@@ -1864,7 +1828,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 49667
+    default: 58633
     required: false
     option_strings:
     - --port
@@ -2078,7 +2042,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 60034
+    default: 65352
     required: false
     option_strings:
     - --port-in
@@ -2275,18 +2239,6 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: If set, expose the public IP address to remote when necessary, by default
-      it exposesprivate IP address, which only allows accessing under the same network/subnet.
-      Important to set this to true when the Pod will receive input connections from
-      remote Pods
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --expose-public
-    type: bool
-    default_random: false
-    name: expose_public
   - help: The number of shards in the deployment running at the same time. For more
       details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
     choices: null
@@ -2309,7 +2261,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 60734
+    default: 55055
     required: false
     option_strings:
     - --port
@@ -2429,7 +2381,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 58877
+    default: 61909
     required: false
     option_strings:
     - --port
