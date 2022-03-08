@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: ad565532f5c74040889e76b443a0f187
+      default: f05b6c49729c4587a9aa968dd65b554b
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: ba60d415234a4009bfad5699674bb78a
+      default: 61d378de39aa48c88b253f1ccf049508
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 32751b3ada354ce991caa41b061141f1
+      default: 725d0a97dc1c43288fad07792664e305
       required: false
       option_strings:
       - --workdir
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 59111
+    default: 58999
     required: false
     option_strings:
     - --port-in
@@ -579,7 +579,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 64693
+    default: 50144
     required: false
     option_strings:
     - --port
@@ -962,7 +962,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 60498
+    default: 57467
     required: false
     option_strings:
     - --port-in
@@ -1096,43 +1096,6 @@ methods:
     type: bool
     default_random: false
     name: no_graphql_endpoint
-  - help: "\n    The compress algorithm used over the entire Flow.\n\n    Note that\
-      \ this is not necessarily effective,\n    it depends on the settings of `--compress-min-bytes`\
-      \ and `compress-min-ratio`"
-    choices:
-    - NONE
-    - LZ4
-    - ZLIB
-    - GZIP
-    - BZ2
-    - LZMA
-    default: NONE
-    required: false
-    option_strings:
-    - --compress
-    type: str
-    default_random: false
-    name: compress
-  - help: The original message size must be larger than this number to trigger the
-      compress algorithm, -1 means disable compression.
-    choices: null
-    default: 1024
-    required: false
-    option_strings:
-    - --compress-min-bytes
-    type: int
-    default_random: false
-    name: compress_min_bytes
-  - help: The compression ratio (uncompressed_size/compressed_size) must be higher
-      than this number to trigger the compress algorithm.
-    choices: null
-    default: 1.1
-    required: false
-    option_strings:
-    - --compress-min-ratio
-    type: float
-    default_random: false
-    name: compress_min_ratio
   - help: Communication protocol between server and client.
     choices:
     - GRPC
@@ -1166,7 +1129,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 58079
+    default: 50529
     required: false
     option_strings:
     - --port-expose
@@ -1277,7 +1240,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 51652
+    default: 58133
     required: false
     option_strings:
     - --port
@@ -1670,7 +1633,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 58832
+    default: 57185
     required: false
     option_strings:
     - --port-in
@@ -1901,7 +1864,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 50510
+    default: 49667
     required: false
     option_strings:
     - --port
@@ -2115,7 +2078,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 58904
+    default: 60034
     required: false
     option_strings:
     - --port-in
@@ -2346,7 +2309,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 60370
+    default: 60734
     required: false
     option_strings:
     - --port
@@ -2466,7 +2429,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 62833
+    default: 58877
     required: false
     option_strings:
     - --port
