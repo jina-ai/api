@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: d78969334f744c75afdae5029ca2a993
+      default: cc1f05dc5424413db05da02b5aa26406
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 39213060d2074eb096d9209ee672e185
+      default: 9c6d846a2a9a44f6b15279fd9da4ba28
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: e33fafb7c7c5477cb7fba8a63908fb8c
+      default: c89f744079104fa6a0dd4a8ce8a3f9d4
       required: false
       option_strings:
       - --workdir
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 61591
+    default: 59262
     required: false
     option_strings:
     - --port-in
@@ -494,17 +494,6 @@ methods:
     type: typing.List[str]
     default_random: false
     name: upload_files
-  - help: The Pod attempts to terminate all of its Runtime child processes/threads
-      on existing. setting it to true basically tell the Pod do not wait on the Runtime
-      when closing
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --daemon
-    type: bool
-    default_random: false
-    name: daemon
   - help: The parallel backend of the runtime inside the Pod
     choices:
     - THREAD
@@ -567,7 +556,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 59648
+    default: 55209
     required: false
     option_strings:
     - --port
@@ -950,7 +939,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 62382
+    default: 59857
     required: false
     option_strings:
     - --port-in
@@ -1117,7 +1106,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 60983
+    default: 62623
     required: false
     option_strings:
     - --port-expose
@@ -1143,17 +1132,6 @@ methods:
     type: str
     default_random: false
     name: deployments_addresses
-  - help: The Pod attempts to terminate all of its Runtime child processes/threads
-      on existing. setting it to true basically tell the Pod do not wait on the Runtime
-      when closing
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --daemon
-    type: bool
-    default_random: false
-    name: daemon
   - help: The parallel backend of the runtime inside the Pod
     choices:
     - THREAD
@@ -1216,7 +1194,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 58826
+    default: 64017
     required: false
     option_strings:
     - --port
@@ -1609,7 +1587,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 60266
+    default: 52701
     required: false
     option_strings:
     - --port-in
@@ -1755,17 +1733,6 @@ methods:
     type: typing.List[str]
     default_random: false
     name: upload_files
-  - help: The Pod attempts to terminate all of its Runtime child processes/threads
-      on existing. setting it to true basically tell the Pod do not wait on the Runtime
-      when closing
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --daemon
-    type: bool
-    default_random: false
-    name: daemon
   - help: The parallel backend of the runtime inside the Pod
     choices:
     - THREAD
@@ -1828,7 +1795,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 55681
+    default: 53964
     required: false
     option_strings:
     - --port
@@ -2042,7 +2009,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 60923
+    default: 58806
     required: false
     option_strings:
     - --port-in
@@ -2188,17 +2155,6 @@ methods:
     type: typing.List[str]
     default_random: false
     name: upload_files
-  - help: The Pod attempts to terminate all of its Runtime child processes/threads
-      on existing. setting it to true basically tell the Pod do not wait on the Runtime
-      when closing
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --daemon
-    type: bool
-    default_random: false
-    name: daemon
   - help: The parallel backend of the runtime inside the Pod
     choices:
     - THREAD
@@ -2261,7 +2217,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 56093
+    default: 50350
     required: false
     option_strings:
     - --port
@@ -2381,7 +2337,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 56457
+    default: 65382
     required: false
     option_strings:
     - --port
