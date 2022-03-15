@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: ea34a656553241aba8609da3af303540
+      default: 6873f7ee1bff419d8f857afb3333231d
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 7d3b5e6d2bf24b7792a4538081a67312
+      default: 3e11fb82017843dbbb4ebf932d5e5e7e
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 7f479c742057493196fd2ba7370dc54e
+      default: f2cf00bf5319478a8aed44d016488ae8
       required: false
       option_strings:
       - --workdir
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 65377
+    default: 62523
     required: false
     option_strings:
     - --port-in
@@ -568,7 +568,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 57150
+    default: 58651
     required: false
     option_strings:
     - --port
@@ -951,7 +951,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 61589
+    default: 64477
     required: false
     option_strings:
     - --port-in
@@ -1130,7 +1130,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 54809
+    default: 57250
     required: false
     option_strings:
     - --port-expose
@@ -1147,6 +1147,16 @@ methods:
     type: str
     default_random: false
     name: graph_description
+  - help: Dictionary stating which filtering conditions each Executor in the graph
+      requires to receive Documents.
+    choices: null
+    default: '{}'
+    required: false
+    option_strings:
+    - --graph-conditions
+    type: str
+    default_random: false
+    name: graph_conditions
   - help: dictionary JSON with the input addresses of each Deployment
     choices: null
     default: '{}'
@@ -1218,7 +1228,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 53853
+    default: 58097
     required: false
     option_strings:
     - --port
@@ -1611,7 +1621,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 59237
+    default: 49614
     required: false
     option_strings:
     - --port-in
@@ -1831,7 +1841,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 62456
+    default: 53650
     required: false
     option_strings:
     - --port
@@ -2045,7 +2055,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63266
+    default: 57576
     required: false
     option_strings:
     - --port-in
@@ -2265,7 +2275,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 65319
+    default: 55917
     required: false
     option_strings:
     - --port
@@ -2349,6 +2359,16 @@ methods:
     type: str
     default_random: false
     name: uses_after
+  - help: The condition that the documents need to fulfill before reaching the Executor.The
+      condition can be defined in the form of a `DocArray query condition <https://docarray.jina.ai/fundamentals/documentarray/find/#query-by-conditions>`
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --input-condition
+    type: dict
+    default_random: false
+    name: input_condition
   - help: The Deployment will be considered an external Deployment that has been started
       independently from the Flow.This Deployment will not be context managed by the
       Flow.
@@ -2385,7 +2405,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 56852
+    default: 58877
     required: false
     option_strings:
     - --port
