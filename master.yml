@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: f6c0378ab4b1451483e67ca7a654f8e6
+      default: 1668f1cc75924d8fa4736cd0267e24f8
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 42495f9e9b544a1aa07e2ca9f0441409
+      default: fff51fac64a645b69e38d742919ca625
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: ba1f7239608d4840b0642dbe0798e329
+      default: 57de3046f90b46ad905f095acc706603
       required: false
       option_strings:
       - --workdir
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 62014
+    default: 54749
     required: false
     option_strings:
     - --port-in
@@ -559,7 +559,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 55442
+    default: 51992
     required: false
     option_strings:
     - --port
@@ -953,7 +953,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 50931
+    default: 49161
     required: false
     option_strings:
     - --port-in
@@ -1160,7 +1160,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 51508
+    default: 56708
     required: false
     option_strings:
     - --port-expose
@@ -1196,6 +1196,15 @@ methods:
     type: str
     default_random: false
     name: deployments_addresses
+  - help: list JSON disabling the built-in merging mechanism for each Deployment listed
+    choices: null
+    default: '[]'
+    required: false
+    option_strings:
+    - --deployments-disable-reduce
+    type: str
+    default_random: false
+    name: deployments_disable_reduce
   - help: 'The compression mechanism used when sending requests to Executors. Possibilites
       are: `NoCompression, Gzip, Deflate`. For more details, check https://grpc.github.io/grpc/python/grpc.html#compression.'
     choices: null
@@ -1268,7 +1277,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 53712
+    default: 65334
     required: false
     option_strings:
     - --port
@@ -1661,7 +1670,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 56371
+    default: 62817
     required: false
     option_strings:
     - --port-in
@@ -1872,7 +1881,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 53966
+    default: 49849
     required: false
     option_strings:
     - --port
@@ -2097,7 +2106,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 56613
+    default: 53993
     required: false
     option_strings:
     - --port-in
@@ -2308,7 +2317,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 64128
+    default: 51923
     required: false
     option_strings:
     - --port
@@ -2383,8 +2392,9 @@ methods:
     type: bool
     default_random: false
     name: disable_reduce
-  - help: The executor attached after the Pods described by --uses, typically before
-      sending to all shards, accepted type follows `--uses`
+  - help: The executor attached before the Pods described by --uses, typically before
+      sending to all shards, accepted type follows `--uses`. This argument only applies
+      for sharded Deployments (shards > 1).
     choices: null
     default: null
     required: false
@@ -2394,7 +2404,8 @@ methods:
     default_random: false
     name: uses_before
   - help: The executor attached after the Pods described by --uses, typically used
-      for receiving from all shards, accepted type follows `--uses`
+      for receiving from all shards, accepted type follows `--uses`. This argument
+      only applies for sharded Deployments (shards > 1).
     choices: null
     default: null
     required: false
@@ -2449,7 +2460,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 52388
+    default: 59545
     required: false
     option_strings:
     - --port
