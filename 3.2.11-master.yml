@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 3636ff6c97864ddb89ff263311b96a1f
+      default: d1666c8a3c6b463d8c6e8fd763c53430
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 5632754eba55461bafc53f8acbd9a47e
+      default: 1a364c1b031049f1960cd51b2a1e7c68
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: d0a249b88aba4cbbb23a70a3c4976663
+      default: 9d3de0d5924d4bcd99bbcc8288889438
       required: false
       option_strings:
       - --workdir
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 49785
+    default: 63412
     required: false
     option_strings:
     - --port-in
@@ -568,7 +568,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 60771
+    default: 62076
     required: false
     option_strings:
     - --port
@@ -576,6 +576,24 @@ methods:
     default_random: true
     default_factory: random_port
     name: port
+  - help: If set, spawn an http server with a prometheus endpoint to expose metrics
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --monitoring
+    type: bool
+    default_random: false
+    name: monitoring
+  - help: 'The port on which the prometheus server is exposed, default port is 9090 '
+    choices: null
+    default: 9090
+    required: false
+    option_strings:
+    - --port-monitoring
+    type: int
+    default_random: false
+    name: port_monitoring
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -962,7 +980,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 56426
+    default: 62906
     required: false
     option_strings:
     - --port-in
@@ -1169,7 +1187,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 65339
+    default: 54792
     required: false
     option_strings:
     - --port-expose
@@ -1286,7 +1304,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 64814
+    default: 49661
     required: false
     option_strings:
     - --port
@@ -1294,6 +1312,24 @@ methods:
     default_random: true
     default_factory: random_port
     name: port
+  - help: If set, spawn an http server with a prometheus endpoint to expose metrics
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --monitoring
+    type: bool
+    default_random: false
+    name: monitoring
+  - help: 'The port on which the prometheus server is exposed, default port is 9090 '
+    choices: null
+    default: 9090
+    required: false
+    option_strings:
+    - --port-monitoring
+    type: int
+    default_random: false
+    name: port_monitoring
   - help: The address of the uses-before runtime
     choices: null
     default: null
@@ -1679,7 +1715,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57578
+    default: 51771
     required: false
     option_strings:
     - --port-in
@@ -1899,7 +1935,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 64154
+    default: 63722
     required: false
     option_strings:
     - --port
@@ -1907,6 +1943,24 @@ methods:
     default_random: true
     default_factory: random_port
     name: port
+  - help: If set, spawn an http server with a prometheus endpoint to expose metrics
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --monitoring
+    type: bool
+    default_random: false
+    name: monitoring
+  - help: 'The port on which the prometheus server is exposed, default port is 9090 '
+    choices: null
+    default: 9090
+    required: false
+    option_strings:
+    - --port-monitoring
+    type: int
+    default_random: false
+    name: port_monitoring
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -2124,7 +2178,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 53566
+    default: 61247
     required: false
     option_strings:
     - --port-in
@@ -2344,7 +2398,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 54752
+    default: 50779
     required: false
     option_strings:
     - --port
@@ -2352,6 +2406,24 @@ methods:
     default_random: true
     default_factory: random_port
     name: port
+  - help: If set, spawn an http server with a prometheus endpoint to expose metrics
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --monitoring
+    type: bool
+    default_random: false
+    name: monitoring
+  - help: 'The port on which the prometheus server is exposed, default port is 9090 '
+    choices: null
+    default: 9090
+    required: false
+    option_strings:
+    - --port-monitoring
+    type: int
+    default_random: false
+    name: port_monitoring
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -2487,7 +2559,7 @@ methods:
     name: proxy
   - help: The port of the Gateway, which the client should connect to.
     choices: null
-    default: 56453
+    default: 60194
     required: false
     option_strings:
     - --port
