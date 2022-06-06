@@ -17,7 +17,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: c925cb472da0491a91f6a62b15ba0775
+      default: 8b7b371ecf214ee1a2011d781a7cc612
       required: false
       option_strings:
       - --workdir
@@ -93,7 +93,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: 3cebc7cd1e2e4dd19d24b5e2100b0313
+      default: 8f691129b2a641438deee59d5e4a8e7a
       required: false
       option_strings:
       - --workdir
@@ -142,7 +142,7 @@ methods:
     - help: The workdir for hello-world demoall data, indices, shards and outputs
         will be saved there
       choices: null
-      default: a1555cfa4f004a6ea4230caebc635060
+      default: 029ae69ae5224c158fc81970601f1525
       required: false
       option_strings:
       - --workdir
@@ -348,7 +348,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 62389
+    default: 60398
     required: false
     option_strings:
     - --port-in
@@ -547,7 +547,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 51705
+    default: 53715
     required: false
     option_strings:
     - --port
@@ -593,10 +593,12 @@ methods:
     default_random: false
     name: force_update
   - help: The compression mechanism used when sending requests from the Head to the
-      WorkerRuntimes. Possibilities are `NoCompression, Gzip, Deflate`. For more details,
-      check https://grpc.github.io/grpc/python/grpc.html#compression.
-    choices: null
-    default: NoCompression
+      WorkerRuntimes. For more details, check https://grpc.github.io/grpc/python/grpc.html#compression.
+    choices:
+    - NoCompression
+    - Deflate
+    - Gzip
+    default: null
     required: false
     option_strings:
     - --compression
@@ -937,7 +939,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 54325
+    default: 63096
     required: false
     option_strings:
     - --port-in
@@ -1017,16 +1019,7 @@ methods:
     type: bool
     default_random: false
     name: cors
-  - help: 'If set, the default swagger ui is used for `/docs` endpoint. '
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --default-swagger-ui
-    type: bool
-    default_random: false
-    name: default_swagger_ui
-  - help: 'If set, /status /post endpoints are removed from HTTP interface. '
+  - help: 'If set, `/status` `/post` endpoints are removed from HTTP interface. '
     choices: null
     default: false
     required: false
@@ -1035,8 +1028,8 @@ methods:
     type: bool
     default_random: false
     name: no_debug_endpoints
-  - help: "\n        If set, /index, /search, /update, /delete endpoints are removed\
-      \ from HTTP interface.\n\n        Any executor that has `@requests(on=...)`\
+  - help: "\n        If set, `/index`, `/search`, `/update`, `/delete` endpoints are\
+      \ removed from HTTP interface.\n\n        Any executor that has `@requests(on=...)`\
       \ bind with those values will receive data requests.\n        "
     choices: null
     default: false
@@ -1144,7 +1137,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 51932
+    default: 63758
     required: false
     option_strings:
     - --port-expose
@@ -1189,10 +1182,13 @@ methods:
     type: str
     default_random: false
     name: deployments_disable_reduce
-  - help: 'The compression mechanism used when sending requests to Executors. Possibilites
-      are: `NoCompression, Gzip, Deflate`. For more details, check https://grpc.github.io/grpc/python/grpc.html#compression.'
-    choices: null
-    default: NoCompression
+  - help: The compression mechanism used when sending requests from the Head to the
+      WorkerRuntimes. For more details, check https://grpc.github.io/grpc/python/grpc.html#compression.
+    choices:
+    - NoCompression
+    - Deflate
+    - Gzip
+    default: null
     required: false
     option_strings:
     - --compression
@@ -1259,7 +1255,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 64697
+    default: 50474
     required: false
     option_strings:
     - --port
@@ -1642,7 +1638,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 65328
+    default: 61477
     required: false
     option_strings:
     - --port-in
@@ -1841,7 +1837,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 52564
+    default: 62091
     required: false
     option_strings:
     - --port
@@ -1887,10 +1883,12 @@ methods:
     default_random: false
     name: force_update
   - help: The compression mechanism used when sending requests from the Head to the
-      WorkerRuntimes. Possibilities are `NoCompression, Gzip, Deflate`. For more details,
-      check https://grpc.github.io/grpc/python/grpc.html#compression.
-    choices: null
-    default: NoCompression
+      WorkerRuntimes. For more details, check https://grpc.github.io/grpc/python/grpc.html#compression.
+    choices:
+    - NoCompression
+    - Deflate
+    - Gzip
+    default: null
     required: false
     option_strings:
     - --compression
@@ -2094,7 +2092,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 52598
+    default: 63689
     required: false
     option_strings:
     - --port-in
@@ -2293,7 +2291,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 52224
+    default: 64265
     required: false
     option_strings:
     - --port
@@ -2339,10 +2337,12 @@ methods:
     default_random: false
     name: force_update
   - help: The compression mechanism used when sending requests from the Head to the
-      WorkerRuntimes. Possibilities are `NoCompression, Gzip, Deflate`. For more details,
-      check https://grpc.github.io/grpc/python/grpc.html#compression.
-    choices: null
-    default: NoCompression
+      WorkerRuntimes. For more details, check https://grpc.github.io/grpc/python/grpc.html#compression.
+    choices:
+    - NoCompression
+    - Deflate
+    - Gzip
+    default: null
     required: false
     option_strings:
     - --compression
