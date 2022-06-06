@@ -8,198 +8,6 @@ docs: https://docs.jina.ai
 authors: dev-team@jina.ai
 version: 3.4.12
 methods:
-- name: hello
-  options: []
-  help: Start hello world demos.
-  methods:
-  - name: fashion
-    options:
-    - help: The workdir for hello-world demoall data, indices, shards and outputs
-        will be saved there
-      choices: null
-      default: 8b7b371ecf214ee1a2011d781a7cc612
-      required: false
-      option_strings:
-      - --workdir
-      type: str
-      default_random: false
-      name: workdir
-    - help: The proxy when downloading sample data
-      choices: null
-      default: null
-      required: false
-      option_strings:
-      - --download-proxy
-      type: str
-      default_random: false
-      name: download_proxy
-    - help: The url of index data (should be in idx3-ubyte.gz format)
-      choices: null
-      default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz
-      required: false
-      option_strings:
-      - --index-data-url
-      type: str
-      default_random: false
-      name: index_data_url
-    - help: The url of index labels data (should be in idx3-ubyte.gz format)
-      choices: null
-      default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz
-      required: false
-      option_strings:
-      - --index-labels-url
-      type: str
-      default_random: false
-      name: index_labels_url
-    - help: The url of query data (should be in idx3-ubyte.gz format)
-      choices: null
-      default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz
-      required: false
-      option_strings:
-      - --query-data-url
-      type: str
-      default_random: false
-      name: query_data_url
-    - help: The url of query labels data (should be in idx3-ubyte.gz format)
-      choices: null
-      default: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz
-      required: false
-      option_strings:
-      - --query-labels-url
-      type: str
-      default_random: false
-      name: query_labels_url
-    - help: The number of queries to visualize
-      choices: null
-      default: 128
-      required: false
-      option_strings:
-      - --num-query
-      type: int
-      default_random: false
-      name: num_query
-    - help: Top-k results to retrieve and visualize
-      choices: null
-      default: 50
-      required: false
-      option_strings:
-      - --top-k
-      type: int
-      default_random: false
-      name: top_k
-    help: Run a fashion search demo
-  - name: chatbot
-    options:
-    - help: The workdir for hello-world demoall data, indices, shards and outputs
-        will be saved there
-      choices: null
-      default: 8f691129b2a641438deee59d5e4a8e7a
-      required: false
-      option_strings:
-      - --workdir
-      type: str
-      default_random: false
-      name: workdir
-    - help: The proxy when downloading sample data
-      choices: null
-      default: null
-      required: false
-      option_strings:
-      - --download-proxy
-      type: str
-      default_random: false
-      name: download_proxy
-    - help: The url of index csv data
-      choices: null
-      default: https://static.jina.ai/chatbot/dataset.csv
-      required: false
-      option_strings:
-      - --index-data-url
-      type: str
-      default_random: false
-      name: index_data_url
-    - help: The port of the host exposed to the public
-      choices: null
-      default: 8080
-      required: false
-      option_strings:
-      - --port
-      type: int
-      default_random: false
-      name: port
-    - help: The number of replicas when index and query
-      choices: null
-      default: 2
-      required: false
-      option_strings:
-      - --replicas
-      type: int
-      default_random: false
-      name: replicas
-    help: Run a chatbot QA demo
-  - name: multimodal
-    options:
-    - help: The workdir for hello-world demoall data, indices, shards and outputs
-        will be saved there
-      choices: null
-      default: 029ae69ae5224c158fc81970601f1525
-      required: false
-      option_strings:
-      - --workdir
-      type: str
-      default_random: false
-      name: workdir
-    - help: The proxy when downloading sample data
-      choices: null
-      default: null
-      required: false
-      option_strings:
-      - --download-proxy
-      type: str
-      default_random: false
-      name: download_proxy
-    - help: The url of index csv data
-      choices: null
-      default: https://static.jina.ai/multimodal/people-img.zip
-      required: false
-      option_strings:
-      - --index-data-url
-      type: str
-      default_random: false
-      name: index_data_url
-    - help: The port of the host exposed to the public
-      choices: null
-      default: 8080
-      required: false
-      option_strings:
-      - --port
-      type: int
-      default_random: false
-      name: port
-    help: Run a multimodal search demo
-  - name: fork
-    options:
-    - help: The hello world project to fork
-      choices:
-      - fashion
-      - chatbot
-      - multimodal
-      default: null
-      required: true
-      option_strings: []
-      type: str
-      default_random: false
-      name: project
-    - help: The dest directory of the forked project. Note, it can not be an existing
-        path.
-      choices: null
-      default: null
-      required: true
-      option_strings: []
-      type: str
-      default_random: false
-      name: destination
-    help: Fork a hello world project to a local directory.
 - name: executor
   options:
   - help: "\n    The name of this object.\n\n    This will be used in the following\
@@ -348,7 +156,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 60398
+    default: 51736
     required: false
     option_strings:
     - --port-in
@@ -547,7 +355,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 53715
+    default: 64043
     required: false
     option_strings:
     - --port
@@ -939,7 +747,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63096
+    default: 61494
     required: false
     option_strings:
     - --port-in
@@ -1137,7 +945,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 63758
+    default: 57587
     required: false
     option_strings:
     - --port-expose
@@ -1255,7 +1063,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 50474
+    default: 57085
     required: false
     option_strings:
     - --port
@@ -1638,7 +1446,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 61477
+    default: 62436
     required: false
     option_strings:
     - --port-in
@@ -1837,7 +1645,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 62091
+    default: 59234
     required: false
     option_strings:
     - --port
@@ -2092,7 +1900,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63689
+    default: 53848
     required: false
     option_strings:
     - --port-in
@@ -2291,7 +2099,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 64265
+    default: 49440
     required: false
     option_strings:
     - --port
