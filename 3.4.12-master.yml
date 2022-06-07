@@ -1,6 +1,5 @@
 name: Jina
-description: The Framework for Building Cross-Modal and Multi-Modal Applications on
-  the Cloud
+description: Build cross-modal and multi-modal applications on the cloud
 license: Apache 2.0
 vendor: Jina AI Limited
 source: https://github.com/jina-ai/jina/tree/master
@@ -157,7 +156,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 52185
+    default: 52046
     required: false
     option_strings:
     - --port-in
@@ -356,7 +355,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 58782
+    default: 62652
     required: false
     option_strings:
     - --port
@@ -589,6 +588,125 @@ methods:
     default_random: false
     name: retries
   help: Ping a Deployment and check its network connectivity.
+- name: export
+  options: []
+  help: Export Jina API and Flow to JSONSchema, Kubernetes YAML, or SVG flowchart.
+  methods:
+  - name: flowchart
+    options:
+    - help: The input file path of a Flow YAML
+      choices: null
+      default: null
+      required: true
+      option_strings: []
+      type: str
+      default_random: false
+      name: flowpath
+    - help: The output path
+      choices: null
+      default: null
+      required: true
+      option_strings: []
+      type: str
+      default_random: false
+      name: outpath
+    - help: If set, then the flowchart is rendered vertically from top to down.
+      choices: null
+      default: false
+      required: false
+      option_strings:
+      - --vertical-layout
+      type: bool
+      default_random: false
+      name: vertical_layout
+    help: null
+  - name: kubernetes
+    options:
+    - help: The input file path of a Flow YAML
+      choices: null
+      default: null
+      required: true
+      option_strings: []
+      type: str
+      default_random: false
+      name: flowpath
+    - help: The output path
+      choices: null
+      default: null
+      required: true
+      option_strings: []
+      type: str
+      default_random: false
+      name: outpath
+    - help: The name of the k8s namespace to set for the configurations. If None,
+        the name of the Flow will be used.
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --k8s-namespace
+      type: str
+      default_random: false
+      name: k8s_namespace
+    help: null
+  - name: docker-compose
+    options:
+    - help: The input file path of a Flow YAML
+      choices: null
+      default: null
+      required: true
+      option_strings: []
+      type: str
+      default_random: false
+      name: flowpath
+    - help: The output path
+      choices: null
+      default: null
+      required: true
+      option_strings: []
+      type: str
+      default_random: false
+      name: outpath
+    - help: The name of the network that will be used by the deployment name.
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --network_name
+      type: str
+      default_random: false
+      name: network_name
+    help: null
+  - name: schema
+    options:
+    - help: The YAML file path for storing the exported API
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --yaml-path
+      type: typing.List[str]
+      default_random: false
+      name: yaml_path
+    - help: The JSON file path for storing the exported API
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --json-path
+      type: typing.List[str]
+      default_random: false
+      name: json_path
+    - help: The JSONSchema file path for storing the exported API
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --schema-path
+      type: typing.List[str]
+      default_random: false
+      name: schema_path
+    help: null
 - name: new
   options:
   - help: The name of the project
@@ -748,7 +866,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 58018
+    default: 50821
     required: false
     option_strings:
     - --port-in
@@ -946,7 +1064,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 55072
+    default: 55008
     required: false
     option_strings:
     - --port-expose
@@ -1064,7 +1182,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 62683
+    default: 58792
     required: false
     option_strings:
     - --port
@@ -1447,7 +1565,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 52800
+    default: 57364
     required: false
     option_strings:
     - --port-in
@@ -1646,7 +1764,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 49191
+    default: 50385
     required: false
     option_strings:
     - --port
@@ -1901,7 +2019,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 60583
+    default: 50223
     required: false
     option_strings:
     - --port-in
@@ -2100,7 +2218,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 63972
+    default: 54420
     required: false
     option_strings:
     - --port
@@ -2329,35 +2447,5 @@ methods:
     type: str
     default_random: false
     name: protocol
-  help: Start a Python client that connects to a remote Jina gateway
-- name: export-api
-  options:
-  - help: The YAML file path for storing the exported API
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --yaml-path
-    type: typing.List[str]
-    default_random: false
-    name: yaml_path
-  - help: The JSON file path for storing the exported API
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --json-path
-    type: typing.List[str]
-    default_random: false
-    name: json_path
-  - help: The JSONSchema file path for storing the exported API
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --schema-path
-    type: typing.List[str]
-    default_random: false
-    name: schema_path
-  help: Export Jina API to JSON/YAML file for 3rd party applications
+  help: Start a Python client that connects to a Jina gateway
 revision: null
