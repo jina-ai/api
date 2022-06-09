@@ -156,7 +156,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57462
+    default: 62567
     required: false
     option_strings:
     - --port-in
@@ -355,7 +355,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 57129
+    default: 65256
     required: false
     option_strings:
     - --port
@@ -381,6 +381,15 @@ methods:
     type: int
     default_random: false
     name: port_monitoring
+  - help: Number of retries per gRPC call. If <0 it defaults to max(3, num_replicas)
+    choices: null
+    default: -1
+    required: false
+    option_strings:
+    - --retries
+    type: int
+    default_random: false
+    name: retries
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -866,7 +875,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 61795
+    default: 62561
     required: false
     option_strings:
     - --port-in
@@ -1064,7 +1073,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 60666
+    default: 58044
     required: false
     option_strings:
     - --port-expose
@@ -1182,7 +1191,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 57587
+    default: 54870
     required: false
     option_strings:
     - --port
@@ -1208,6 +1217,15 @@ methods:
     type: int
     default_random: false
     name: port_monitoring
+  - help: Number of retries per gRPC call. If <0 it defaults to max(3, num_replicas)
+    choices: null
+    default: -1
+    required: false
+    option_strings:
+    - --retries
+    type: int
+    default_random: false
+    name: retries
   help: Start a Gateway that receives client Requests via gRPC/REST interface
 - name: hub
   options: []
@@ -1565,7 +1583,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 58146
+    default: 62701
     required: false
     option_strings:
     - --port-in
@@ -1764,7 +1782,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 49827
+    default: 49863
     required: false
     option_strings:
     - --port
@@ -1790,6 +1808,15 @@ methods:
     type: int
     default_random: false
     name: port_monitoring
+  - help: Number of retries per gRPC call. If <0 it defaults to max(3, num_replicas)
+    choices: null
+    default: -1
+    required: false
+    option_strings:
+    - --retries
+    type: int
+    default_random: false
+    name: retries
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -2019,7 +2046,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 59307
+    default: 65018
     required: false
     option_strings:
     - --port-in
@@ -2218,7 +2245,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 51878
+    default: 50450
     required: false
     option_strings:
     - --port
@@ -2244,6 +2271,15 @@ methods:
     type: int
     default_random: false
     name: port_monitoring
+  - help: Number of retries per gRPC call. If <0 it defaults to max(3, num_replicas)
+    choices: null
+    default: -1
+    required: false
+    option_strings:
+    - --retries
+    type: int
+    default_random: false
+    name: retries
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
