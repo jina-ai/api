@@ -156,7 +156,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 51551
+    default: 57855
     required: false
     option_strings:
     - --port-in
@@ -355,7 +355,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 60182
+    default: 53574
     required: false
     option_strings:
     - --port
@@ -866,7 +866,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63729
+    default: 61509
     required: false
     option_strings:
     - --port-in
@@ -1064,7 +1064,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 55186
+    default: 55252
     required: false
     option_strings:
     - --port-expose
@@ -1182,7 +1182,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 60802
+    default: 64840
     required: false
     option_strings:
     - --port
@@ -1565,7 +1565,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 51587
+    default: 58801
     required: false
     option_strings:
     - --port-in
@@ -1764,7 +1764,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 53520
+    default: 64941
     required: false
     option_strings:
     - --port
@@ -2019,7 +2019,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 50391
+    default: 64077
     required: false
     option_strings:
     - --port-in
@@ -2218,7 +2218,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 49852
+    default: 63616
     required: false
     option_strings:
     - --port
