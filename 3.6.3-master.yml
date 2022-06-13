@@ -156,7 +156,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57013
+    default: 50483
     required: false
     option_strings:
     - --port-in
@@ -355,7 +355,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 49435
+    default: 57177
     required: false
     option_strings:
     - --port
@@ -372,14 +372,16 @@ methods:
     type: bool
     default_random: false
     name: monitoring
-  - help: 'The port on which the prometheus server is exposed, default port is 9090 '
+  - help: The port on which the prometheus server is exposed, default is a random
+      port between [49152, 65535]
     choices: null
-    default: 9090
+    default: 63087
     required: false
     option_strings:
     - --port-monitoring
     type: int
-    default_random: false
+    default_random: true
+    default_factory: random_port
     name: port_monitoring
   - help: Number of retries per gRPC call. If <0 it defaults to max(3, num_replicas)
     choices: null
@@ -875,7 +877,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 52397
+    default: 52241
     required: false
     option_strings:
     - --port-in
@@ -1073,7 +1075,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 65241
+    default: 50086
     required: false
     option_strings:
     - --port-expose
@@ -1191,7 +1193,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 54918
+    default: 56741
     required: false
     option_strings:
     - --port
@@ -1208,14 +1210,16 @@ methods:
     type: bool
     default_random: false
     name: monitoring
-  - help: 'The port on which the prometheus server is exposed, default port is 9090 '
+  - help: The port on which the prometheus server is exposed, default is a random
+      port between [49152, 65535]
     choices: null
-    default: 9090
+    default: 59738
     required: false
     option_strings:
     - --port-monitoring
     type: int
-    default_random: false
+    default_random: true
+    default_factory: random_port
     name: port_monitoring
   - help: Number of retries per gRPC call. If <0 it defaults to max(3, num_replicas)
     choices: null
@@ -1583,7 +1587,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 62992
+    default: 53430
     required: false
     option_strings:
     - --port-in
@@ -1782,7 +1786,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 50878
+    default: 51315
     required: false
     option_strings:
     - --port
@@ -1799,14 +1803,16 @@ methods:
     type: bool
     default_random: false
     name: monitoring
-  - help: 'The port on which the prometheus server is exposed, default port is 9090 '
+  - help: The port on which the prometheus server is exposed, default is a random
+      port between [49152, 65535]
     choices: null
-    default: 9090
+    default: 52608
     required: false
     option_strings:
     - --port-monitoring
     type: int
-    default_random: false
+    default_random: true
+    default_factory: random_port
     name: port_monitoring
   - help: Number of retries per gRPC call. If <0 it defaults to max(3, num_replicas)
     choices: null
@@ -2046,7 +2052,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 49345
+    default: 55732
     required: false
     option_strings:
     - --port-in
@@ -2245,7 +2251,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 52822
+    default: 58618
     required: false
     option_strings:
     - --port
@@ -2262,14 +2268,16 @@ methods:
     type: bool
     default_random: false
     name: monitoring
-  - help: 'The port on which the prometheus server is exposed, default port is 9090 '
+  - help: The port on which the prometheus server is exposed, default is a random
+      port between [49152, 65535]
     choices: null
-    default: 9090
+    default: 54561
     required: false
     option_strings:
     - --port-monitoring
     type: int
-    default_random: false
+    default_random: true
+    default_factory: random_port
     name: port_monitoring
   - help: Number of retries per gRPC call. If <0 it defaults to max(3, num_replicas)
     choices: null
