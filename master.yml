@@ -156,7 +156,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 59954
+    default: 51761
     required: false
     option_strings:
     - --port-in
@@ -355,7 +355,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 59421
+    default: 59022
     required: false
     option_strings:
     - --port
@@ -375,7 +375,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 51708
+    default: 57397
     required: false
     option_strings:
     - --port-monitoring
@@ -392,6 +392,16 @@ methods:
     type: int
     default_random: false
     name: retries
+  - help: If set, the current Pod/Deployment can not be further chained, and the next
+      `.add()` will chain after the last Pod/Deployment not this current one.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --floating
+    type: bool
+    default_random: false
+    name: floating
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -523,7 +533,8 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
-  - help: The YAML file represents a flow
+  - help: The YAML path represents a flow. It can be either a local file path or a
+      URL.
     choices: null
     default: null
     required: false
@@ -877,7 +888,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 49391
+    default: 52234
     required: false
     option_strings:
     - --port-in
@@ -1075,7 +1086,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 62016
+    default: 50279
     required: false
     option_strings:
     - --port-expose
@@ -1193,7 +1204,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 51330
+    default: 63915
     required: false
     option_strings:
     - --port
@@ -1213,7 +1224,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 65057
+    default: 57813
     required: false
     option_strings:
     - --port-monitoring
@@ -1230,6 +1241,16 @@ methods:
     type: int
     default_random: false
     name: retries
+  - help: If set, the current Pod/Deployment can not be further chained, and the next
+      `.add()` will chain after the last Pod/Deployment not this current one.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --floating
+    type: bool
+    default_random: false
+    name: floating
   help: Start a Gateway that receives client Requests via gRPC/REST interface
 - name: hub
   options: []
@@ -1587,7 +1608,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 60220
+    default: 50737
     required: false
     option_strings:
     - --port-in
@@ -1786,7 +1807,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 53321
+    default: 54568
     required: false
     option_strings:
     - --port
@@ -1806,7 +1827,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 62390
+    default: 64903
     required: false
     option_strings:
     - --port-monitoring
@@ -1823,6 +1844,16 @@ methods:
     type: int
     default_random: false
     name: retries
+  - help: If set, the current Pod/Deployment can not be further chained, and the next
+      `.add()` will chain after the last Pod/Deployment not this current one.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --floating
+    type: bool
+    default_random: false
+    name: floating
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -2052,7 +2083,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 64960
+    default: 53965
     required: false
     option_strings:
     - --port-in
@@ -2251,7 +2282,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 59908
+    default: 60194
     required: false
     option_strings:
     - --port
@@ -2271,7 +2302,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 54562
+    default: 51705
     required: false
     option_strings:
     - --port-monitoring
@@ -2288,6 +2319,16 @@ methods:
     type: int
     default_random: false
     name: retries
+  - help: If set, the current Pod/Deployment can not be further chained, and the next
+      `.add()` will chain after the last Pod/Deployment not this current one.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --floating
+    type: bool
+    default_random: false
+    name: floating
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
