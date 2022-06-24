@@ -142,7 +142,7 @@ methods:
       which should be structured as a python package. For more details, please see
       the
 
-      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/repository-structure/>`__
+      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/executor-files/>`__
 
       '
     choices: null
@@ -156,7 +156,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 50346
+    default: 59954
     required: false
     option_strings:
     - --port-in
@@ -355,7 +355,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 61987
+    default: 59421
     required: false
     option_strings:
     - --port
@@ -375,7 +375,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 58291
+    default: 51708
     required: false
     option_strings:
     - --port-monitoring
@@ -863,7 +863,7 @@ methods:
       which should be structured as a python package. For more details, please see
       the
 
-      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/repository-structure/>`__
+      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/executor-files/>`__
 
       '
     choices: null
@@ -877,7 +877,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 60347
+    default: 49391
     required: false
     option_strings:
     - --port-in
@@ -1075,7 +1075,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 56016
+    default: 62016
     required: false
     option_strings:
     - --port-expose
@@ -1193,7 +1193,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 58542
+    default: 51330
     required: false
     option_strings:
     - --port
@@ -1213,7 +1213,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 53159
+    default: 65057
     required: false
     option_strings:
     - --port-monitoring
@@ -1573,7 +1573,7 @@ methods:
       which should be structured as a python package. For more details, please see
       the
 
-      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/repository-structure/>`__
+      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/executor-files/>`__
 
       '
     choices: null
@@ -1587,7 +1587,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 59307
+    default: 60220
     required: false
     option_strings:
     - --port-in
@@ -1786,7 +1786,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 51841
+    default: 53321
     required: false
     option_strings:
     - --port
@@ -1806,7 +1806,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 58669
+    default: 62390
     required: false
     option_strings:
     - --port-monitoring
@@ -2038,7 +2038,7 @@ methods:
       which should be structured as a python package. For more details, please see
       the
 
-      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/repository-structure/>`__
+      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/executor-files/>`__
 
       '
     choices: null
@@ -2052,7 +2052,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 64702
+    default: 64960
     required: false
     option_strings:
     - --port-in
@@ -2251,7 +2251,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 52118
+    default: 59908
     required: false
     option_strings:
     - --port
@@ -2271,7 +2271,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 55178
+    default: 54562
     required: false
     option_strings:
     - --port-monitoring
