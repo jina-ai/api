@@ -156,7 +156,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63657
+    default: 49600
     required: false
     option_strings:
     - --port-in
@@ -355,7 +355,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 53362
+    default: 57477
     required: false
     option_strings:
     - --port
@@ -375,7 +375,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 55659
+    default: 56133
     required: false
     option_strings:
     - --port-monitoring
@@ -888,7 +888,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 53875
+    default: 52248
     required: false
     option_strings:
     - --port-in
@@ -1086,7 +1086,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 62103
+    default: 58161
     required: false
     option_strings:
     - --port-expose
@@ -1204,7 +1204,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 58160
+    default: 64686
     required: false
     option_strings:
     - --port
@@ -1224,7 +1224,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 50015
+    default: 53224
     required: false
     option_strings:
     - --port-monitoring
@@ -1608,7 +1608,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 52539
+    default: 53689
     required: false
     option_strings:
     - --port-in
@@ -1807,7 +1807,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 55032
+    default: 50964
     required: false
     option_strings:
     - --port
@@ -1827,7 +1827,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 57125
+    default: 63469
     required: false
     option_strings:
     - --port-monitoring
@@ -2083,7 +2083,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 54331
+    default: 53531
     required: false
     option_strings:
     - --port-in
@@ -2282,7 +2282,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 49238
+    default: 49823
     required: false
     option_strings:
     - --port
@@ -2299,17 +2299,6 @@ methods:
     type: bool
     default_random: false
     name: monitoring
-  - help: The port on which the prometheus server is exposed, default is a random
-      port between [49152, 65535]
-    choices: null
-    default: 63837
-    required: false
-    option_strings:
-    - --port-monitoring
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port_monitoring
   - help: Number of retries per gRPC call. If <0 it defaults to max(3, num_replicas)
     choices: null
     default: -1
@@ -2460,6 +2449,17 @@ methods:
     type: bool
     default_random: false
     name: tls
+  - help: The port on which the prometheus server is exposed, default is a random
+      port between [49152, 65535]
+    choices: null
+    default: '58975'
+    required: false
+    option_strings:
+    - --port-monitoring
+    type: str
+    default_random: true
+    default_factory: random_identity
+    name: port_monitoring
   help: Start a Deployment. You should rarely use this directly unless you are doing
     low-level orchestration
 - name: client
