@@ -59,6 +59,15 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: If set, disables telemetry during the Flow/Pod/Runtime start.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --optout-telemetry
+    type: bool
+    default_random: false
+    name: optout_telemetry
   - help: The timeout in milliseconds of the control request, -1 for waiting forever
     choices: null
     default: 60
@@ -156,7 +165,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 65184
+    default: 58387
     required: false
     option_strings:
     - --port-in
@@ -355,7 +364,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 51749
+    default: 56498
     required: false
     option_strings:
     - --port
@@ -375,7 +384,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 50913
+    default: 61580
     required: false
     option_strings:
     - --port-monitoring
@@ -533,6 +542,15 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: If set, disables telemetry during the Flow/Pod/Runtime start.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --optout-telemetry
+    type: bool
+    default_random: false
+    name: optout_telemetry
   - help: The YAML path represents a flow. It can be either a local file path or a
       URL.
     choices: null
@@ -791,6 +809,15 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: If set, disables telemetry during the Flow/Pod/Runtime start.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --optout-telemetry
+    type: bool
+    default_random: false
+    name: optout_telemetry
   - help: The timeout in milliseconds of the control request, -1 for waiting forever
     choices: null
     default: 60
@@ -888,7 +915,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 56160
+    default: 49227
     required: false
     option_strings:
     - --port-in
@@ -1086,7 +1113,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 62879
+    default: 57720
     required: false
     option_strings:
     - --port-expose
@@ -1204,7 +1231,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 50074
+    default: 59987
     required: false
     option_strings:
     - --port
@@ -1224,7 +1251,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 59449
+    default: 62754
     required: false
     option_strings:
     - --port-monitoring
@@ -1511,6 +1538,15 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: If set, disables telemetry during the Flow/Pod/Runtime start.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --optout-telemetry
+    type: bool
+    default_random: false
+    name: optout_telemetry
   - help: The timeout in milliseconds of the control request, -1 for waiting forever
     choices: null
     default: 60
@@ -1608,7 +1644,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 58924
+    default: 59261
     required: false
     option_strings:
     - --port-in
@@ -1807,7 +1843,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 54661
+    default: 64043
     required: false
     option_strings:
     - --port
@@ -1827,7 +1863,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 52350
+    default: 57151
     required: false
     option_strings:
     - --port-monitoring
@@ -1986,6 +2022,15 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: If set, disables telemetry during the Flow/Pod/Runtime start.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --optout-telemetry
+    type: bool
+    default_random: false
+    name: optout_telemetry
   - help: The timeout in milliseconds of the control request, -1 for waiting forever
     choices: null
     default: 60
@@ -2083,7 +2128,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 65468
+    default: 49599
     required: false
     option_strings:
     - --port-in
@@ -2282,7 +2327,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 60649
+    default: 53679
     required: false
     option_strings:
     - --port
@@ -2452,7 +2497,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '61144'
+    default: '50996'
     required: false
     option_strings:
     - --port-monitoring
