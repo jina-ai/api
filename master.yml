@@ -165,7 +165,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 64995
+    default: 50419
     required: false
     option_strings:
     - --port-in
@@ -364,7 +364,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 54242
+    default: 61258
     required: false
     option_strings:
     - --port
@@ -384,7 +384,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 60964
+    default: 63971
     required: false
     option_strings:
     - --port-monitoring
@@ -628,6 +628,32 @@ methods:
     default_random: false
     name: retries
   help: Ping a Deployment and check its network connectivity.
+- name: dryrun
+  options:
+  - help: The full host address of the Gateway, e.g. grpc://localhost:12345
+    choices: null
+    default: null
+    required: true
+    option_strings: []
+    type: str
+    default_random: false
+    name: host
+  - help: '
+
+      Timeout in millisecond of one check
+
+      -1 for waiting forever
+
+      '
+    choices: null
+    default: 3000
+    required: false
+    option_strings:
+    - --timeout
+    type: int
+    default_random: false
+    name: timeout
+  help: send a dryrun request to a Flow to check if it is working
 - name: export
   options: []
   help: Export Jina API and Flow to JSONSchema, Kubernetes YAML, or SVG flowchart.
@@ -915,7 +941,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 50445
+    default: 53209
     required: false
     option_strings:
     - --port-in
@@ -1113,7 +1139,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 55014
+    default: 56628
     required: false
     option_strings:
     - --port-expose
@@ -1231,7 +1257,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 58172
+    default: 61924
     required: false
     option_strings:
     - --port
@@ -1251,7 +1277,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 57398
+    default: 55213
     required: false
     option_strings:
     - --port-monitoring
@@ -1644,7 +1670,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 61955
+    default: 62083
     required: false
     option_strings:
     - --port-in
@@ -1843,7 +1869,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 61015
+    default: 49347
     required: false
     option_strings:
     - --port
@@ -1863,7 +1889,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 53417
+    default: 62592
     required: false
     option_strings:
     - --port-monitoring
@@ -2128,7 +2154,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 59254
+    default: 65535
     required: false
     option_strings:
     - --port-in
@@ -2327,7 +2353,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 63802
+    default: 56273
     required: false
     option_strings:
     - --port
@@ -2497,7 +2523,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '52642'
+    default: '64981'
     required: false
     option_strings:
     - --port-monitoring
