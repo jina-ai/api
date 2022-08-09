@@ -165,7 +165,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 50419
+    default: 53829
     required: false
     option_strings:
     - --port-in
@@ -364,7 +364,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 61258
+    default: 60935
     required: false
     option_strings:
     - --port
@@ -384,7 +384,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 63971
+    default: 62005
     required: false
     option_strings:
     - --port-monitoring
@@ -941,7 +941,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 53209
+    default: 56474
     required: false
     option_strings:
     - --port-in
@@ -1139,7 +1139,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 56628
+    default: 61967
     required: false
     option_strings:
     - --port-expose
@@ -1257,7 +1257,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 61924
+    default: 55119
     required: false
     option_strings:
     - --port
@@ -1277,7 +1277,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 55213
+    default: 59141
     required: false
     option_strings:
     - --port-monitoring
@@ -1425,6 +1425,15 @@ methods:
       type: str
       default_random: false
       name: force_update
+    - help: A list of environment variables. It will be used in project build phase.
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --build-env
+      type: str
+      default_random: false
+      name: build_env
     - help: The secret for overwrite a Hub executor
       choices: null
       default: null
@@ -1670,7 +1679,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 62083
+    default: 49320
     required: false
     option_strings:
     - --port-in
@@ -1869,7 +1878,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 49347
+    default: 64958
     required: false
     option_strings:
     - --port
@@ -1889,7 +1898,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 62592
+    default: 56357
     required: false
     option_strings:
     - --port-monitoring
@@ -2154,7 +2163,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 65535
+    default: 61793
     required: false
     option_strings:
     - --port-in
@@ -2353,7 +2362,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 56273
+    default: 61341
     required: false
     option_strings:
     - --port
@@ -2523,7 +2532,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '64981'
+    default: '65370'
     required: false
     option_strings:
     - --port-monitoring
