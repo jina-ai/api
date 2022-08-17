@@ -165,7 +165,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 52878
+    default: 57976
     required: false
     option_strings:
     - --port-in
@@ -364,7 +364,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 52566
+    default: 53267
     required: false
     option_strings:
     - --port
@@ -384,7 +384,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 62700
+    default: 55050
     required: false
     option_strings:
     - --port-monitoring
@@ -941,7 +941,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 54860
+    default: 58597
     required: false
     option_strings:
     - --port-in
@@ -1139,7 +1139,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 51449
+    default: 62418
     required: false
     option_strings:
     - --port-expose
@@ -1257,7 +1257,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 64887
+    default: 64440
     required: false
     option_strings:
     - --port
@@ -1277,7 +1277,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 59784
+    default: 60231
     required: false
     option_strings:
     - --port-monitoring
@@ -1510,6 +1510,67 @@ methods:
       default_random: false
       name: force_update
     help: Download an executor image/package from Jina hub
+- name: auth
+  options: []
+  help: Login to Jina AI with your GitHub/Google/Email account
+  methods:
+  - name: login
+    options:
+    - help: Force to login
+      choices: null
+      default: false
+      required: false
+      option_strings:
+      - -f
+      - --force
+      type: bool
+      default_random: false
+      name: force
+    help: Login to Jina AI Ecosystem
+  - name: logout
+    options: []
+    help: Logout from Jina AI Ecosystem
+    methods: []
+  - name: token
+    options: []
+    help: Commands for Personal Access Token
+    methods:
+    - name: create
+      options:
+      - help: Validity period (days)
+        choices: null
+        default: 7
+        required: false
+        option_strings:
+        - -e
+        - --expire
+        type: int
+        default_random: false
+        name: expire
+      - help: Name of Personal Access Token
+        choices: null
+        default: null
+        required: true
+        option_strings: []
+        type: str
+        default_random: false
+        name: name
+      help: Create a Personal Access Token
+    - name: delete
+      options:
+      - help: Name of Personal Access Token which you want to delete
+        choices: null
+        default: null
+        required: true
+        option_strings: []
+        type: str
+        default_random: false
+        name: name
+      help: Revoke a Personal Access Token
+    - name: list
+      options: []
+      help: List all Personal Access Tokens
+      methods: []
 - name: help
   options:
   - help: Lookup the usage & mention of the argument name in Jina API. The name can
@@ -1679,7 +1740,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 64610
+    default: 62454
     required: false
     option_strings:
     - --port-in
@@ -1878,7 +1939,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 53705
+    default: 49720
     required: false
     option_strings:
     - --port
@@ -1898,7 +1959,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: 57251
+    default: 50212
     required: false
     option_strings:
     - --port-monitoring
@@ -2163,7 +2224,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 61984
+    default: 54471
     required: false
     option_strings:
     - --port-in
@@ -2362,7 +2423,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 63505
+    default: 53811
     required: false
     option_strings:
     - --port
@@ -2532,7 +2593,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '63779'
+    default: '52300'
     required: false
     option_strings:
     - --port-monitoring
@@ -2613,65 +2674,4 @@ methods:
     default_random: false
     name: protocol
   help: Start a Python client that connects to a Jina gateway
-- name: auth
-  options: []
-  help: Login to Jina AI with your GitHub/Google/Email account
-  methods:
-  - name: login
-    options:
-    - help: Force to login
-      choices: null
-      default: false
-      required: false
-      option_strings:
-      - -f
-      - --force
-      type: bool
-      default_random: false
-      name: force
-    help: Login to Jina AI Ecosystem
-  - name: logout
-    options: []
-    help: Logout from Jina AI Ecosystem
-    methods: []
-  - name: token
-    options: []
-    help: Commands for Personal Access Token
-    methods:
-    - name: create
-      options:
-      - help: Validity period (days)
-        choices: null
-        default: 7
-        required: false
-        option_strings:
-        - -e
-        - --expire
-        type: int
-        default_random: false
-        name: expire
-      - help: Name of Personal Access Token
-        choices: null
-        default: null
-        required: true
-        option_strings: []
-        type: str
-        default_random: false
-        name: name
-      help: Create a Personal Access Token
-    - name: delete
-      options:
-      - help: Name of Personal Access Token which you want to delete
-        choices: null
-        default: null
-        required: true
-        option_strings: []
-        type: str
-        default_random: false
-        name: name
-      help: Revoke a Personal Access Token
-    - name: list
-      options: []
-      help: List all Personal Access Tokens
-      methods: []
 revision: null
