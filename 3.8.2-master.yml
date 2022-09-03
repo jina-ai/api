@@ -83,13 +83,14 @@ methods:
     default_random: false
     name: polling
   - help: "\n        The config of the executor, it could be one of the followings:\n\
-      \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
-      \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
-      \ a docker image (must start with `docker://`)\n        * the string literal\
-      \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
-      \ literal of a JSON config\n\n        When use it under Python, one can use\
-      \ the following values additionally:\n        - a Python dict that represents\
-      \ the config\n        - a text file stream has `.read()` interface\n        "
+      \        * the string literal of an Executor class name\n        * an Executor\
+      \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
+      \ with `jinahub://` or `jinahub+docker://`)\n        * a docker image (must\
+      \ start with `docker://`)\n        * the string literal of a YAML config (must\
+      \ start with `!` or `jtype: `)\n        * the string literal of a JSON config\n\
+      \n        When use it under Python, one can use the following values additionally:\n\
+      \        - a Python dict that represents the config\n        - a text file stream\
+      \ has `.read()` interface\n        "
     choices: null
     default: BaseExecutor
     required: false
@@ -156,7 +157,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 62157
+    default: 51185
     required: false
     option_strings:
     - --port-in
@@ -366,7 +367,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 55321
+    default: 49734
     required: false
     option_strings:
     - --port
@@ -386,7 +387,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '59455'
+    default: '55465'
     required: false
     option_strings:
     - --port-monitoring
@@ -852,13 +853,14 @@ methods:
     default_random: false
     name: polling
   - help: "\n        The config of the executor, it could be one of the followings:\n\
-      \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
-      \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
-      \ a docker image (must start with `docker://`)\n        * the string literal\
-      \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
-      \ literal of a JSON config\n\n        When use it under Python, one can use\
-      \ the following values additionally:\n        - a Python dict that represents\
-      \ the config\n        - a text file stream has `.read()` interface\n        "
+      \        * the string literal of an Executor class name\n        * an Executor\
+      \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
+      \ with `jinahub://` or `jinahub+docker://`)\n        * a docker image (must\
+      \ start with `docker://`)\n        * the string literal of a YAML config (must\
+      \ start with `!` or `jtype: `)\n        * the string literal of a JSON config\n\
+      \n        When use it under Python, one can use the following values additionally:\n\
+      \        - a Python dict that represents the config\n        - a text file stream\
+      \ has `.read()` interface\n        "
     choices: null
     default: BaseExecutor
     required: false
@@ -925,7 +927,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 49779
+    default: 64523
     required: false
     option_strings:
     - --port-in
@@ -1124,7 +1126,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 52188
+    default: 62274
     required: false
     option_strings:
     - --port-expose
@@ -1242,7 +1244,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 55451
+    default: 63471
     required: false
     option_strings:
     - --port
@@ -1262,7 +1264,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '58467'
+    default: '55705'
     required: false
     option_strings:
     - --port-monitoring
@@ -1663,13 +1665,14 @@ methods:
     default_random: false
     name: polling
   - help: "\n        The config of the executor, it could be one of the followings:\n\
-      \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
-      \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
-      \ a docker image (must start with `docker://`)\n        * the string literal\
-      \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
-      \ literal of a JSON config\n\n        When use it under Python, one can use\
-      \ the following values additionally:\n        - a Python dict that represents\
-      \ the config\n        - a text file stream has `.read()` interface\n        "
+      \        * the string literal of an Executor class name\n        * an Executor\
+      \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
+      \ with `jinahub://` or `jinahub+docker://`)\n        * a docker image (must\
+      \ start with `docker://`)\n        * the string literal of a YAML config (must\
+      \ start with `!` or `jtype: `)\n        * the string literal of a JSON config\n\
+      \n        When use it under Python, one can use the following values additionally:\n\
+      \        - a Python dict that represents the config\n        - a text file stream\
+      \ has `.read()` interface\n        "
     choices: null
     default: BaseExecutor
     required: false
@@ -1736,7 +1739,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 62213
+    default: 55572
     required: false
     option_strings:
     - --port-in
@@ -1946,7 +1949,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 61303
+    default: 54071
     required: false
     option_strings:
     - --port
@@ -1966,7 +1969,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '56776'
+    default: '55120'
     required: false
     option_strings:
     - --port-monitoring
@@ -2149,13 +2152,14 @@ methods:
     default_random: false
     name: polling
   - help: "\n        The config of the executor, it could be one of the followings:\n\
-      \        * an Executor YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub\
-      \ Executor (must start with `jinahub://` or `jinahub+docker://`)\n        *\
-      \ a docker image (must start with `docker://`)\n        * the string literal\
-      \ of a YAML config (must start with `!` or `jtype: `)\n        * the string\
-      \ literal of a JSON config\n\n        When use it under Python, one can use\
-      \ the following values additionally:\n        - a Python dict that represents\
-      \ the config\n        - a text file stream has `.read()` interface\n        "
+      \        * the string literal of an Executor class name\n        * an Executor\
+      \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
+      \ with `jinahub://` or `jinahub+docker://`)\n        * a docker image (must\
+      \ start with `docker://`)\n        * the string literal of a YAML config (must\
+      \ start with `!` or `jtype: `)\n        * the string literal of a JSON config\n\
+      \n        When use it under Python, one can use the following values additionally:\n\
+      \        - a Python dict that represents the config\n        - a text file stream\
+      \ has `.read()` interface\n        "
     choices: null
     default: BaseExecutor
     required: false
@@ -2222,7 +2226,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 65124
+    default: 58385
     required: false
     option_strings:
     - --port-in
@@ -2432,7 +2436,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 64418
+    default: 57033
     required: false
     option_strings:
     - --port
@@ -2452,7 +2456,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '50297'
+    default: '53789'
     required: false
     option_strings:
     - --port-monitoring
