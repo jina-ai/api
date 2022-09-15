@@ -157,7 +157,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 59177
+    default: 57253
     required: false
     option_strings:
     - --port-in
@@ -376,7 +376,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 57158
+    default: 62467
     required: false
     option_strings:
     - --port
@@ -396,7 +396,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '61948'
+    default: '59514'
     required: false
     option_strings:
     - --port-monitoring
@@ -912,7 +912,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 65017
+    default: 51794
     required: false
     option_strings:
     - --port-in
@@ -1120,7 +1120,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 57066
+    default: 57190
     required: false
     option_strings:
     - --port-expose
@@ -1238,7 +1238,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 51582
+    default: 52487
     required: false
     option_strings:
     - --port
@@ -1258,7 +1258,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '64032'
+    default: '57391'
     required: false
     option_strings:
     - --port-monitoring
@@ -1556,6 +1556,46 @@ methods:
       default_random: false
       name: force_update
     help: Download an executor image/package from Jina hub
+  - name: status
+    options:
+    - help: The Executor folder to be pushed to Jina Hub.
+      choices: null
+      default: .
+      required: false
+      option_strings: []
+      type: dir_path
+      default_random: false
+      name: path
+    - help: If set, you can get the specified building state of a pushed Executor.
+      choices: null
+      default: null
+      required: false
+      option_strings:
+      - --id
+      type: str
+      default_random: false
+      name: id
+    - help: If set, more building status information of a pushed Executor will be
+        printed.
+      choices: null
+      default: false
+      required: false
+      option_strings:
+      - --verbose
+      type: bool
+      default_random: false
+      name: verbose
+    - help: If set, history building status information of a pushed Executor will
+        be printed.
+      choices: null
+      default: false
+      required: false
+      option_strings:
+      - --replay
+      type: bool
+      default_random: false
+      name: replay
+    help: Query an executor building status of of a pushed Executor from Jina hub
 - name: cloud
   options:
   - help: Set the loglevel of the logger
@@ -1733,7 +1773,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 50892
+    default: 62062
     required: false
     option_strings:
     - --port-in
@@ -1952,7 +1992,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 52654
+    default: 54561
     required: false
     option_strings:
     - --port
@@ -1972,7 +2012,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '49430'
+    default: '51379'
     required: false
     option_strings:
     - --port-monitoring
@@ -2229,7 +2269,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 52817
+    default: 57744
     required: false
     option_strings:
     - --port-in
@@ -2448,7 +2488,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 61382
+    default: 50992
     required: false
     option_strings:
     - --port
@@ -2468,7 +2508,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '52330'
+    default: '60589'
     required: false
     option_strings:
     - --port-monitoring
