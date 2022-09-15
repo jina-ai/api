@@ -82,6 +82,15 @@ methods:
     type: str
     default_random: false
     name: polling
+  - help: List of exceptions that will cause the Executor to shut down.
+    choices: null
+    default: []
+    required: false
+    option_strings:
+    - --exit-on-exceptions
+    type: typing.List[str]
+    default_random: false
+    name: exit_on_exceptions
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * the string literal of an Executor class name\n        * an Executor\
       \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
@@ -157,7 +166,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 60935
+    default: 54587
     required: false
     option_strings:
     - --port-in
@@ -367,7 +376,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 64283
+    default: 56487
     required: false
     option_strings:
     - --port
@@ -387,7 +396,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '64433'
+    default: '50459'
     required: false
     option_strings:
     - --port-monitoring
@@ -828,6 +837,15 @@ methods:
     type: str
     default_random: false
     name: polling
+  - help: List of exceptions that will cause the Executor to shut down.
+    choices: null
+    default: []
+    required: false
+    option_strings:
+    - --exit-on-exceptions
+    type: typing.List[str]
+    default_random: false
+    name: exit_on_exceptions
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * the string literal of an Executor class name\n        * an Executor\
       \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
@@ -903,7 +921,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 60523
+    default: 63607
     required: false
     option_strings:
     - --port-in
@@ -1102,7 +1120,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 54660
+    default: 56273
     required: false
     option_strings:
     - --port-expose
@@ -1220,7 +1238,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 49586
+    default: 62954
     required: false
     option_strings:
     - --port
@@ -1240,7 +1258,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '57115'
+    default: '52433'
     required: false
     option_strings:
     - --port-monitoring
@@ -1640,6 +1658,15 @@ methods:
     type: str
     default_random: false
     name: polling
+  - help: List of exceptions that will cause the Executor to shut down.
+    choices: null
+    default: []
+    required: false
+    option_strings:
+    - --exit-on-exceptions
+    type: typing.List[str]
+    default_random: false
+    name: exit_on_exceptions
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * the string literal of an Executor class name\n        * an Executor\
       \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
@@ -1715,7 +1742,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 53382
+    default: 65134
     required: false
     option_strings:
     - --port-in
@@ -1925,7 +1952,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 53609
+    default: 61557
     required: false
     option_strings:
     - --port
@@ -1945,7 +1972,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '54937'
+    default: '51335'
     required: false
     option_strings:
     - --port-monitoring
@@ -2127,6 +2154,15 @@ methods:
     type: str
     default_random: false
     name: polling
+  - help: List of exceptions that will cause the Executor to shut down.
+    choices: null
+    default: []
+    required: false
+    option_strings:
+    - --exit-on-exceptions
+    type: typing.List[str]
+    default_random: false
+    name: exit_on_exceptions
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * the string literal of an Executor class name\n        * an Executor\
       \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
@@ -2202,7 +2238,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 53850
+    default: 49741
     required: false
     option_strings:
     - --port-in
@@ -2412,7 +2448,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 53744
+    default: 51396
     required: false
     option_strings:
     - --port
@@ -2432,7 +2468,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '53746'
+    default: '57574'
     required: false
     option_strings:
     - --port-monitoring
