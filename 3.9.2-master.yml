@@ -82,15 +82,6 @@ methods:
     type: str
     default_random: false
     name: polling
-  - help: List of exceptions that will cause the Executor to shut down.
-    choices: null
-    default: []
-    required: false
-    option_strings:
-    - --exit-on-exceptions
-    type: typing.List[str]
-    default_random: false
-    name: exit_on_exceptions
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * the string literal of an Executor class name\n        * an Executor\
       \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
@@ -166,7 +157,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 54587
+    default: 59177
     required: false
     option_strings:
     - --port-in
@@ -216,6 +207,15 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
+  - help: List of exceptions that will cause the Executor to shut down.
+    choices: null
+    default: []
+    required: false
+    option_strings:
+    - --exit-on-exceptions
+    type: typing.List[str]
+    default_random: false
+    name: exit_on_exceptions
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -376,7 +376,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 56487
+    default: 57158
     required: false
     option_strings:
     - --port
@@ -396,7 +396,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '50459'
+    default: '61948'
     required: false
     option_strings:
     - --port-monitoring
@@ -837,15 +837,6 @@ methods:
     type: str
     default_random: false
     name: polling
-  - help: List of exceptions that will cause the Executor to shut down.
-    choices: null
-    default: []
-    required: false
-    option_strings:
-    - --exit-on-exceptions
-    type: typing.List[str]
-    default_random: false
-    name: exit_on_exceptions
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * the string literal of an Executor class name\n        * an Executor\
       \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
@@ -921,7 +912,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63607
+    default: 65017
     required: false
     option_strings:
     - --port-in
@@ -971,6 +962,15 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
+  - help: List of exceptions that will cause the Executor to shut down.
+    choices: null
+    default: []
+    required: false
+    option_strings:
+    - --exit-on-exceptions
+    type: typing.List[str]
+    default_random: false
+    name: exit_on_exceptions
   - help: "\n    Number of requests fetched from the client before feeding into the\
       \ first Executor. \n    \n    Used to control the speed of data input into a\
       \ Flow. 0 disables prefetch (1000 requests is the default)"
@@ -1120,7 +1120,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 56273
+    default: 57066
     required: false
     option_strings:
     - --port-expose
@@ -1238,7 +1238,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 62954
+    default: 51582
     required: false
     option_strings:
     - --port
@@ -1258,7 +1258,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '52433'
+    default: '64032'
     required: false
     option_strings:
     - --port-monitoring
@@ -1658,15 +1658,6 @@ methods:
     type: str
     default_random: false
     name: polling
-  - help: List of exceptions that will cause the Executor to shut down.
-    choices: null
-    default: []
-    required: false
-    option_strings:
-    - --exit-on-exceptions
-    type: typing.List[str]
-    default_random: false
-    name: exit_on_exceptions
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * the string literal of an Executor class name\n        * an Executor\
       \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
@@ -1742,7 +1733,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 65134
+    default: 50892
     required: false
     option_strings:
     - --port-in
@@ -1792,6 +1783,15 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
+  - help: List of exceptions that will cause the Executor to shut down.
+    choices: null
+    default: []
+    required: false
+    option_strings:
+    - --exit-on-exceptions
+    type: typing.List[str]
+    default_random: false
+    name: exit_on_exceptions
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -1952,7 +1952,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 61557
+    default: 52654
     required: false
     option_strings:
     - --port
@@ -1972,7 +1972,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '51335'
+    default: '49430'
     required: false
     option_strings:
     - --port-monitoring
@@ -2154,15 +2154,6 @@ methods:
     type: str
     default_random: false
     name: polling
-  - help: List of exceptions that will cause the Executor to shut down.
-    choices: null
-    default: []
-    required: false
-    option_strings:
-    - --exit-on-exceptions
-    type: typing.List[str]
-    default_random: false
-    name: exit_on_exceptions
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * the string literal of an Executor class name\n        * an Executor\
       \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
@@ -2238,7 +2229,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 49741
+    default: 52817
     required: false
     option_strings:
     - --port-in
@@ -2288,6 +2279,15 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
+  - help: List of exceptions that will cause the Executor to shut down.
+    choices: null
+    default: []
+    required: false
+    option_strings:
+    - --exit-on-exceptions
+    type: typing.List[str]
+    default_random: false
+    name: exit_on_exceptions
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -2448,7 +2448,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 51396
+    default: 61382
     required: false
     option_strings:
     - --port
@@ -2468,7 +2468,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '57574'
+    default: '52330'
     required: false
     option_strings:
     - --port-monitoring
