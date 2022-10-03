@@ -157,7 +157,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 65094
+    default: 64550
     required: false
     option_strings:
     - --port-in
@@ -376,7 +376,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 54858
+    default: 62704
     required: false
     option_strings:
     - --port
@@ -396,7 +396,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '65431'
+    default: '56213'
     required: false
     option_strings:
     - --port-monitoring
@@ -927,7 +927,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 60554
+    default: 53801
     required: false
     option_strings:
     - --port-in
@@ -1135,7 +1135,7 @@ methods:
     name: proxy
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 55763
+    default: 56532
     required: false
     option_strings:
     - --port-expose
@@ -1253,7 +1253,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 61455
+    default: 50459
     required: false
     option_strings:
     - --port
@@ -1273,7 +1273,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '55884'
+    default: '59957'
     required: false
     option_strings:
     - --port-monitoring
@@ -1788,7 +1788,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 52791
+    default: 56319
     required: false
     option_strings:
     - --port-in
@@ -2007,7 +2007,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 55653
+    default: 52630
     required: false
     option_strings:
     - --port
@@ -2027,7 +2027,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '52105'
+    default: '62016'
     required: false
     option_strings:
     - --port-monitoring
@@ -2284,7 +2284,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 62513
+    default: 59044
     required: false
     option_strings:
     - --port-in
@@ -2503,7 +2503,7 @@ methods:
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]
     choices: null
-    default: 59317
+    default: 51851
     required: false
     option_strings:
     - --port
@@ -2523,7 +2523,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '53031'
+    default: '63671'
     required: false
     option_strings:
     - --port-monitoring
