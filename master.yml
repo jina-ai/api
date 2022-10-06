@@ -157,7 +157,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 58357
+    default: 57451
     required: false
     option_strings:
     - --port-in
@@ -276,7 +276,10 @@ methods:
     type: bool
     default_random: false
     name: disable_auto_volume
-  - help: The host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
+      an external Executor (`--external` or `external=True`) this can be a list of
+      hosts, separated by commas. Then, every resulting address will be considered
+      as one replica of the Executor.
     choices: null
     default: 0.0.0.0
     required: false
@@ -374,15 +377,17 @@ methods:
     default_random: false
     name: replicas
   - help: The port for input data to bind to, default is a random port between [49152,
-      65535]
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas. Then, every resulting address
+      will be considered as one replica of the Executor.
     choices: null
-    default: 56540
+    default: '61866'
     required: false
     option_strings:
     - --port
-    type: int
+    type: str
     default_random: true
-    default_factory: random_port
+    default_factory: random_identity
     name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
@@ -396,7 +401,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '60152'
+    default: '62113'
     required: false
     option_strings:
     - --port-monitoring
@@ -1040,7 +1045,10 @@ methods:
     type: str
     default_random: false
     name: protocol
-  - help: The host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
+      an external Executor (`--external` or `external=True`) this can be a list of
+      hosts, separated by commas. Then, every resulting address will be considered
+      as one replica of the Executor.
     choices: null
     default: 0.0.0.0
     required: false
@@ -1110,7 +1118,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 51082
+    default: 64571
     required: false
     option_strings:
     - --port-in
@@ -1171,7 +1179,7 @@ methods:
     name: exit_on_exceptions
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 60128
+    default: 60764
     required: false
     option_strings:
     - --port-expose
@@ -1287,15 +1295,17 @@ methods:
     default_random: false
     name: replicas
   - help: The port for input data to bind to, default is a random port between [49152,
-      65535]
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas. Then, every resulting address
+      will be considered as one replica of the Executor.
     choices: null
-    default: 54281
+    default: '52822'
     required: false
     option_strings:
     - --port
-    type: int
+    type: str
     default_random: true
-    default_factory: random_port
+    default_factory: random_identity
     name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
@@ -1309,7 +1319,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '59540'
+    default: '63664'
     required: false
     option_strings:
     - --port-monitoring
@@ -1824,7 +1834,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57268
+    default: 59651
     required: false
     option_strings:
     - --port-in
@@ -1943,7 +1953,10 @@ methods:
     type: bool
     default_random: false
     name: disable_auto_volume
-  - help: The host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
+      an external Executor (`--external` or `external=True`) this can be a list of
+      hosts, separated by commas. Then, every resulting address will be considered
+      as one replica of the Executor.
     choices: null
     default: 0.0.0.0
     required: false
@@ -2041,15 +2054,17 @@ methods:
     default_random: false
     name: replicas
   - help: The port for input data to bind to, default is a random port between [49152,
-      65535]
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas. Then, every resulting address
+      will be considered as one replica of the Executor.
     choices: null
-    default: 55060
+    default: '62009'
     required: false
     option_strings:
     - --port
-    type: int
+    type: str
     default_random: true
-    default_factory: random_port
+    default_factory: random_identity
     name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
@@ -2063,7 +2078,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '56449'
+    default: '61515'
     required: false
     option_strings:
     - --port-monitoring
@@ -2320,7 +2335,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 56419
+    default: 49227
     required: false
     option_strings:
     - --port-in
@@ -2439,7 +2454,10 @@ methods:
     type: bool
     default_random: false
     name: disable_auto_volume
-  - help: The host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
+      an external Executor (`--external` or `external=True`) this can be a list of
+      hosts, separated by commas. Then, every resulting address will be considered
+      as one replica of the Executor.
     choices: null
     default: 0.0.0.0
     required: false
@@ -2537,15 +2555,17 @@ methods:
     default_random: false
     name: replicas
   - help: The port for input data to bind to, default is a random port between [49152,
-      65535]
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas. Then, every resulting address
+      will be considered as one replica of the Executor.
     choices: null
-    default: 49647
+    default: '63592'
     required: false
     option_strings:
     - --port
-    type: int
+    type: str
     default_random: true
-    default_factory: random_port
+    default_factory: random_identity
     name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
@@ -2559,7 +2579,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '64840'
+    default: '60037'
     required: false
     option_strings:
     - --port-monitoring
@@ -2721,7 +2741,10 @@ methods:
     low-level orchestration
 - name: client
   options:
-  - help: The host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
+      an external Executor (`--external` or `external=True`) this can be a list of
+      hosts, separated by commas. Then, every resulting address will be considered
+      as one replica of the Executor.
     choices: null
     default: 0.0.0.0
     required: false
