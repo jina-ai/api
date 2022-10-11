@@ -6,7 +6,7 @@ source: https://github.com/jina-ai/jina/tree/master
 url: https://jina.ai
 docs: https://docs.jina.ai
 authors: dev-team@jina.ai
-version: 3.9.3
+version: 3.10.2
 methods:
 - name: executor
   options:
@@ -157,7 +157,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 49795
+    default: 56221
     required: false
     option_strings:
     - --port-in
@@ -276,7 +276,10 @@ methods:
     type: bool
     default_random: false
     name: disable_auto_volume
-  - help: The host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
+      an external Executor (`--external` or `external=True`) this can be a list of
+      hosts, separated by commas. Then, every resulting address will be considered
+      as one replica of the Executor.
     choices: null
     default: 0.0.0.0
     required: false
@@ -374,15 +377,17 @@ methods:
     default_random: false
     name: replicas
   - help: The port for input data to bind to, default is a random port between [49152,
-      65535]
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas. Then, every resulting address
+      will be considered as one replica of the Executor.
     choices: null
-    default: 60099
+    default: '51903'
     required: false
     option_strings:
     - --port
-    type: int
+    type: str
     default_random: true
-    default_factory: random_port
+    default_factory: random_identity
     name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
@@ -396,7 +401,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '56079'
+    default: '62341'
     required: false
     option_strings:
     - --port-monitoring
@@ -423,6 +428,68 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
+      and will be enabled for automatic tracing of requests and customer span creation.
+      Otherwise a no-op implementation will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --tracing
+    type: bool
+    default_random: false
+    name: tracing
+  - help: If tracing is enabled, this hostname will be used to configure the trace
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-host
+    type: str
+    default_random: false
+    name: traces_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the trace exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-port
+    type: int
+    default_random: false
+    name: traces_exporter_port
+  - help: If set, the sdk implementation of the OpenTelemetry metrics will be available
+      for default monitoring and custom measurements. Otherwise a no-op implementation
+      will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --metrics
+    type: bool
+    default_random: false
+    name: metrics
+  - help: If tracing is enabled, this hostname will be used to configure the metrics
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-host
+    type: str
+    default_random: false
+    name: metrics_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the metrics exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-port
+    type: int
+    default_random: false
+    name: metrics_exporter_port
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -852,140 +919,66 @@ methods:
     type: str
     default_random: false
     name: polling
-  - help: "\n        The config of the executor, it could be one of the followings:\n\
-      \        * the string literal of an Executor class name\n        * an Executor\
-      \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
-      \ with `jinahub://` or `jinahub+docker://`)\n        * a docker image (must\
-      \ start with `docker://`)\n        * the string literal of a YAML config (must\
-      \ start with `!` or `jtype: `)\n        * the string literal of a JSON config\n\
-      \n        When use it under Python, one can use the following values additionally:\n\
-      \        - a Python dict that represents the config\n        - a text file stream\
-      \ has `.read()` interface\n        "
+  - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
+      set then the Docker image ENTRYPOINT takes effective.
     choices: null
-    default: BaseExecutor
+    default: null
     required: false
     option_strings:
-    - --uses
+    - --entrypoint
     type: str
     default_random: false
-    name: uses
-  - help: "\n    Dictionary of keyword arguments that will override the `with` configuration\
-      \ in `uses`\n    "
+    name: entrypoint
+  - help: "\nDictionary of kwargs arguments that will be passed to Docker SDK when\
+      \ starting the docker '\ncontainer. \n\nMore details can be found in the Docker\
+      \ SDK docs:  https://docker-py.readthedocs.io/en/stable/\n\n"
     choices: null
     default: null
     required: false
     option_strings:
-    - --uses-with
+    - --docker-kwargs
     type: dict
     default_random: false
-    name: uses_with
-  - help: "\n    Dictionary of keyword arguments that will override the `metas` configuration\
-      \ in `uses`\n    "
+    name: docker_kwargs
+  - help: "\nThe path on the host to be mounted inside the container. \n\nNote, \n\
+      - If separated by `:`, then the first part will be considered as the local host\
+      \ path and the second part is the path in the container system. \n- If no split\
+      \ provided, then the basename of that directory will be mounted into container's\
+      \ root path, e.g. `--volumes=\"/user/test/my-workspace\"` will be mounted into\
+      \ `/my-workspace` inside the container. \n- All volumes are mounted with read-write\
+      \ mode.\n"
     choices: null
     default: null
     required: false
     option_strings:
-    - --uses-metas
-    type: dict
-    default_random: false
-    name: uses_metas
-  - help: "\n        Dictionary of keyword arguments that will override the `requests`\
-      \ configuration in `uses`\n        "
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --uses-requests
-    type: dict
-    default_random: false
-    name: uses_requests
-  - help: '
-
-      The customized python modules need to be imported before loading the executor
-
-
-      Note that the recommended way is to only import a single module - a simple python
-      file, if your
-
-      executor can be defined in a single file, or an ``__init__.py`` file if you
-      have multiple files,
-
-      which should be structured as a python package. For more details, please see
-      the
-
-      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/executor-files/>`__
-
-      '
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --py-modules
+    - --volumes
     type: typing.List[str]
     default_random: false
-    name: py_modules
-  - help: The port for input data to bind to, default a random port between [49152,
-      65535]
+    name: volumes
+  - help: "\n    This argument allows dockerized Jina executor discover local gpu\
+      \ devices.\n\n    Note, \n    - To access all gpus, use `--gpus all`.\n    -\
+      \ To access multiple gpus, e.g. make use of 2 gpus, use `--gpus 2`.\n    - To\
+      \ access specified gpus based on device id, use `--gpus device=[YOUR-GPU-DEVICE-ID]`\n\
+      \    - To access specified gpus based on multiple device id, use `--gpus device=[YOUR-GPU-DEVICE-ID1],device=[YOUR-GPU-DEVICE-ID2]`\n\
+      \    - To specify more parameters, use `--gpus device=[YOUR-GPU-DEVICE-ID],runtime=nvidia,capabilities=display\n\
+      \    "
     choices: null
-    default: 58010
+    default: null
     required: false
     option_strings:
-    - --port-in
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port
-  - help: The host address for binding to, by default it is 0.0.0.0
-    choices: null
-    default: 0.0.0.0
-    required: false
-    option_strings:
-    - --host-in
+    - --gpus
     type: str
     default_random: false
-    name: host_in
-  - help: If set, only native Executors is allowed, and the Executor is always run
-      inside WorkerRuntime.
+    name: gpus
+  - help: Do not automatically mount a volume for dockerized Executors.
     choices: null
     default: false
     required: false
     option_strings:
-    - --native
+    - --disable-auto-volume
     type: bool
     default_random: false
-    name: native
-  - help: "\nThe type of array `tensor` and `embedding` will be serialized to.\n\n\
-      Supports the same types as `docarray.to_protobuf(.., ndarray_type=...)`, which\
-      \ can be found \n`here <https://docarray.jina.ai/fundamentals/document/serialization/#from-to-protobuf>`.\n\
-      Defaults to retaining whatever type is returned by the Executor.\n"
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --output-array-type
-    type: str
-    default_random: false
-    name: output_array_type
-  - help: 'Dictionary of kwargs arguments that will be passed to the grpc server as
-      options when starting the server, example : {''grpc.max_send_message_length'':
-      -1}'
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --grpc-server-options
-    type: dict
-    default_random: false
-    name: grpc_server_options
-  - help: List of exceptions that will cause the Executor to shut down.
-    choices: null
-    default: []
-    required: false
-    option_strings:
-    - --exit-on-exceptions
-    type: typing.List[str]
-    default_random: false
-    name: exit_on_exceptions
+    name: disable_auto_volume
   - help: "\n    Number of requests fetched from the client before feeding into the\
       \ first Executor. \n    \n    Used to control the speed of data input into a\
       \ Flow. 0 disables prefetch (1000 requests is the default)"
@@ -1114,7 +1107,10 @@ methods:
     type: str
     default_random: false
     name: protocol
-  - help: The host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
+      an external Executor (`--external` or `external=True`) this can be a list of
+      hosts, separated by commas. Then, every resulting address will be considered
+      as one replica of the Executor.
     choices: null
     default: 0.0.0.0
     required: false
@@ -1133,9 +1129,119 @@ methods:
     type: bool
     default_random: false
     name: proxy
+  - help: "\n        The config of the gateway, it could be one of the followings:\n\
+      \        * the string literal of an Gateway class name\n        * a Gateway\
+      \ YAML file (.yml, .yaml, .jaml)\n        * a docker image (must start with\
+      \ `docker://`)\n        * the string literal of a YAML config (must start with\
+      \ `!` or `jtype: `)\n        * the string literal of a JSON config\n\n     \
+      \   When use it under Python, one can use the following values additionally:\n\
+      \        - a Python dict that represents the config\n        - a text file stream\
+      \ has `.read()` interface\n        "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses
+    type: str
+    default_random: false
+    name: uses
+  - help: "\n    Dictionary of keyword arguments that will override the `with` configuration\
+      \ in `uses`\n    "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-with
+    type: dict
+    default_random: false
+    name: uses_with
+  - help: '
+
+      The customized python modules need to be imported before loading the gateway
+
+
+      Note that the recommended way is to only import a single module - a simple python
+      file, if your
+
+      gateway can be defined in a single file, or an ``__init__.py`` file if you have
+      multiple files,
+
+      which should be structured as a python package.
+
+      '
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --py-modules
+    type: typing.List[str]
+    default_random: false
+    name: py_modules
+  - help: The port for input data to bind to, default a random port between [49152,
+      65535]
+    choices: null
+    default: 62627
+    required: false
+    option_strings:
+    - --port-in
+    type: int
+    default_random: true
+    default_factory: random_port
+    name: port
+  - help: The host address for binding to, by default it is 0.0.0.0
+    choices: null
+    default: 0.0.0.0
+    required: false
+    option_strings:
+    - --host-in
+    type: str
+    default_random: false
+    name: host_in
+  - help: If set, only native Executors is allowed, and the Executor is always run
+      inside WorkerRuntime.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --native
+    type: bool
+    default_random: false
+    name: native
+  - help: "\nThe type of array `tensor` and `embedding` will be serialized to.\n\n\
+      Supports the same types as `docarray.to_protobuf(.., ndarray_type=...)`, which\
+      \ can be found \n`here <https://docarray.jina.ai/fundamentals/document/serialization/#from-to-protobuf>`.\n\
+      Defaults to retaining whatever type is returned by the Executor.\n"
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --output-array-type
+    type: str
+    default_random: false
+    name: output_array_type
+  - help: 'Dictionary of kwargs arguments that will be passed to the grpc server as
+      options when starting the server, example : {''grpc.max_send_message_length'':
+      -1}'
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --grpc-server-options
+    type: dict
+    default_random: false
+    name: grpc_server_options
+  - help: List of exceptions that will cause the Executor to shut down.
+    choices: null
+    default: []
+    required: false
+    option_strings:
+    - --exit-on-exceptions
+    type: typing.List[str]
+    default_random: false
+    name: exit_on_exceptions
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 55725
+    default: 59847
     required: false
     option_strings:
     - --port-expose
@@ -1205,7 +1311,7 @@ methods:
     name: timeout_send
   - help: The runtime class to run inside the Pod
     choices: null
-    default: GRPCGatewayRuntime
+    default: GatewayRuntime
     required: false
     option_strings:
     - --runtime-cls
@@ -1251,15 +1357,17 @@ methods:
     default_random: false
     name: replicas
   - help: The port for input data to bind to, default is a random port between [49152,
-      65535]
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas. Then, every resulting address
+      will be considered as one replica of the Executor.
     choices: null
-    default: 61412
+    default: '51013'
     required: false
     option_strings:
     - --port
-    type: int
+    type: str
     default_random: true
-    default_factory: random_port
+    default_factory: random_identity
     name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
@@ -1273,7 +1381,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '50099'
+    default: '59716'
     required: false
     option_strings:
     - --port-monitoring
@@ -1300,6 +1408,68 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
+      and will be enabled for automatic tracing of requests and customer span creation.
+      Otherwise a no-op implementation will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --tracing
+    type: bool
+    default_random: false
+    name: tracing
+  - help: If tracing is enabled, this hostname will be used to configure the trace
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-host
+    type: str
+    default_random: false
+    name: traces_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the trace exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-port
+    type: int
+    default_random: false
+    name: traces_exporter_port
+  - help: If set, the sdk implementation of the OpenTelemetry metrics will be available
+      for default monitoring and custom measurements. Otherwise a no-op implementation
+      will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --metrics
+    type: bool
+    default_random: false
+    name: metrics
+  - help: If tracing is enabled, this hostname will be used to configure the metrics
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-host
+    type: str
+    default_random: false
+    name: metrics_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the metrics exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-port
+    type: int
+    default_random: false
+    name: metrics_exporter_port
   help: Start a Gateway that receives client Requests via gRPC/REST interface
 - name: auth
   options: []
@@ -1788,7 +1958,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63302
+    default: 50227
     required: false
     option_strings:
     - --port-in
@@ -1907,7 +2077,10 @@ methods:
     type: bool
     default_random: false
     name: disable_auto_volume
-  - help: The host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
+      an external Executor (`--external` or `external=True`) this can be a list of
+      hosts, separated by commas. Then, every resulting address will be considered
+      as one replica of the Executor.
     choices: null
     default: 0.0.0.0
     required: false
@@ -2005,15 +2178,17 @@ methods:
     default_random: false
     name: replicas
   - help: The port for input data to bind to, default is a random port between [49152,
-      65535]
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas. Then, every resulting address
+      will be considered as one replica of the Executor.
     choices: null
-    default: 64859
+    default: '52144'
     required: false
     option_strings:
     - --port
-    type: int
+    type: str
     default_random: true
-    default_factory: random_port
+    default_factory: random_identity
     name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
@@ -2027,7 +2202,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '55817'
+    default: '55241'
     required: false
     option_strings:
     - --port-monitoring
@@ -2054,6 +2229,68 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
+      and will be enabled for automatic tracing of requests and customer span creation.
+      Otherwise a no-op implementation will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --tracing
+    type: bool
+    default_random: false
+    name: tracing
+  - help: If tracing is enabled, this hostname will be used to configure the trace
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-host
+    type: str
+    default_random: false
+    name: traces_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the trace exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-port
+    type: int
+    default_random: false
+    name: traces_exporter_port
+  - help: If set, the sdk implementation of the OpenTelemetry metrics will be available
+      for default monitoring and custom measurements. Otherwise a no-op implementation
+      will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --metrics
+    type: bool
+    default_random: false
+    name: metrics
+  - help: If tracing is enabled, this hostname will be used to configure the metrics
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-host
+    type: str
+    default_random: false
+    name: metrics_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the metrics exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-port
+    type: int
+    default_random: false
+    name: metrics_exporter_port
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -2284,7 +2521,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 54353
+    default: 57973
     required: false
     option_strings:
     - --port-in
@@ -2403,7 +2640,10 @@ methods:
     type: bool
     default_random: false
     name: disable_auto_volume
-  - help: The host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
+      an external Executor (`--external` or `external=True`) this can be a list of
+      hosts, separated by commas. Then, every resulting address will be considered
+      as one replica of the Executor.
     choices: null
     default: 0.0.0.0
     required: false
@@ -2501,15 +2741,17 @@ methods:
     default_random: false
     name: replicas
   - help: The port for input data to bind to, default is a random port between [49152,
-      65535]
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas. Then, every resulting address
+      will be considered as one replica of the Executor.
     choices: null
-    default: 53230
+    default: '61515'
     required: false
     option_strings:
     - --port
-    type: int
+    type: str
     default_random: true
-    default_factory: random_port
+    default_factory: random_identity
     name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
@@ -2523,7 +2765,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '59551'
+    default: '58511'
     required: false
     option_strings:
     - --port-monitoring
@@ -2550,6 +2792,68 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
+      and will be enabled for automatic tracing of requests and customer span creation.
+      Otherwise a no-op implementation will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --tracing
+    type: bool
+    default_random: false
+    name: tracing
+  - help: If tracing is enabled, this hostname will be used to configure the trace
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-host
+    type: str
+    default_random: false
+    name: traces_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the trace exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-port
+    type: int
+    default_random: false
+    name: traces_exporter_port
+  - help: If set, the sdk implementation of the OpenTelemetry metrics will be available
+      for default monitoring and custom measurements. Otherwise a no-op implementation
+      will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --metrics
+    type: bool
+    default_random: false
+    name: metrics
+  - help: If tracing is enabled, this hostname will be used to configure the metrics
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-host
+    type: str
+    default_random: false
+    name: metrics_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the metrics exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-port
+    type: int
+    default_random: false
+    name: metrics_exporter_port
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -2685,7 +2989,10 @@ methods:
     low-level orchestration
 - name: client
   options:
-  - help: The host address of the runtime, by default it is 0.0.0.0.
+  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
+      an external Executor (`--external` or `external=True`) this can be a list of
+      hosts, separated by commas. Then, every resulting address will be considered
+      as one replica of the Executor.
     choices: null
     default: 0.0.0.0
     required: false
@@ -2732,6 +3039,68 @@ methods:
     type: bool
     default_random: false
     name: asyncio
+  - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
+      and will be enabled for automatic tracing of requests and customer span creation.
+      Otherwise a no-op implementation will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --tracing
+    type: bool
+    default_random: false
+    name: tracing
+  - help: If tracing is enabled, this hostname will be used to configure the trace
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-host
+    type: str
+    default_random: false
+    name: traces_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the trace exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-port
+    type: int
+    default_random: false
+    name: traces_exporter_port
+  - help: If set, the sdk implementation of the OpenTelemetry metrics will be available
+      for default monitoring and custom measurements. Otherwise a no-op implementation
+      will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --metrics
+    type: bool
+    default_random: false
+    name: metrics
+  - help: If tracing is enabled, this hostname will be used to configure the metrics
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-host
+    type: str
+    default_random: false
+    name: metrics_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the metrics exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-port
+    type: int
+    default_random: false
+    name: metrics_exporter_port
   - help: Communication protocol between server and client.
     choices:
     - GRPC

@@ -157,7 +157,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 55511
+    default: 56221
     required: false
     option_strings:
     - --port-in
@@ -381,7 +381,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '54719'
+    default: '51903'
     required: false
     option_strings:
     - --port
@@ -401,7 +401,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '59824'
+    default: '62341'
     required: false
     option_strings:
     - --port-monitoring
@@ -428,6 +428,68 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
+      and will be enabled for automatic tracing of requests and customer span creation.
+      Otherwise a no-op implementation will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --tracing
+    type: bool
+    default_random: false
+    name: tracing
+  - help: If tracing is enabled, this hostname will be used to configure the trace
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-host
+    type: str
+    default_random: false
+    name: traces_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the trace exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-port
+    type: int
+    default_random: false
+    name: traces_exporter_port
+  - help: If set, the sdk implementation of the OpenTelemetry metrics will be available
+      for default monitoring and custom measurements. Otherwise a no-op implementation
+      will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --metrics
+    type: bool
+    default_random: false
+    name: metrics
+  - help: If tracing is enabled, this hostname will be used to configure the metrics
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-host
+    type: str
+    default_random: false
+    name: metrics_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the metrics exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-port
+    type: int
+    default_random: false
+    name: metrics_exporter_port
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -1118,7 +1180,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 49396
+    default: 62627
     required: false
     option_strings:
     - --port-in
@@ -1179,7 +1241,7 @@ methods:
     name: exit_on_exceptions
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 60663
+    default: 59847
     required: false
     option_strings:
     - --port-expose
@@ -1299,7 +1361,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '49549'
+    default: '51013'
     required: false
     option_strings:
     - --port
@@ -1319,7 +1381,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '54671'
+    default: '59716'
     required: false
     option_strings:
     - --port-monitoring
@@ -1346,6 +1408,68 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
+      and will be enabled for automatic tracing of requests and customer span creation.
+      Otherwise a no-op implementation will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --tracing
+    type: bool
+    default_random: false
+    name: tracing
+  - help: If tracing is enabled, this hostname will be used to configure the trace
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-host
+    type: str
+    default_random: false
+    name: traces_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the trace exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-port
+    type: int
+    default_random: false
+    name: traces_exporter_port
+  - help: If set, the sdk implementation of the OpenTelemetry metrics will be available
+      for default monitoring and custom measurements. Otherwise a no-op implementation
+      will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --metrics
+    type: bool
+    default_random: false
+    name: metrics
+  - help: If tracing is enabled, this hostname will be used to configure the metrics
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-host
+    type: str
+    default_random: false
+    name: metrics_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the metrics exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-port
+    type: int
+    default_random: false
+    name: metrics_exporter_port
   help: Start a Gateway that receives client Requests via gRPC/REST interface
 - name: auth
   options: []
@@ -1834,7 +1958,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 61903
+    default: 50227
     required: false
     option_strings:
     - --port-in
@@ -2058,7 +2182,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '65293'
+    default: '52144'
     required: false
     option_strings:
     - --port
@@ -2078,7 +2202,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '55498'
+    default: '55241'
     required: false
     option_strings:
     - --port-monitoring
@@ -2105,6 +2229,68 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
+      and will be enabled for automatic tracing of requests and customer span creation.
+      Otherwise a no-op implementation will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --tracing
+    type: bool
+    default_random: false
+    name: tracing
+  - help: If tracing is enabled, this hostname will be used to configure the trace
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-host
+    type: str
+    default_random: false
+    name: traces_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the trace exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-port
+    type: int
+    default_random: false
+    name: traces_exporter_port
+  - help: If set, the sdk implementation of the OpenTelemetry metrics will be available
+      for default monitoring and custom measurements. Otherwise a no-op implementation
+      will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --metrics
+    type: bool
+    default_random: false
+    name: metrics
+  - help: If tracing is enabled, this hostname will be used to configure the metrics
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-host
+    type: str
+    default_random: false
+    name: metrics_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the metrics exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-port
+    type: int
+    default_random: false
+    name: metrics_exporter_port
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -2335,7 +2521,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63945
+    default: 57973
     required: false
     option_strings:
     - --port-in
@@ -2559,7 +2745,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '53822'
+    default: '61515'
     required: false
     option_strings:
     - --port
@@ -2579,7 +2765,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '62375'
+    default: '58511'
     required: false
     option_strings:
     - --port-monitoring
@@ -2606,6 +2792,68 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
+      and will be enabled for automatic tracing of requests and customer span creation.
+      Otherwise a no-op implementation will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --tracing
+    type: bool
+    default_random: false
+    name: tracing
+  - help: If tracing is enabled, this hostname will be used to configure the trace
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-host
+    type: str
+    default_random: false
+    name: traces_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the trace exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-port
+    type: int
+    default_random: false
+    name: traces_exporter_port
+  - help: If set, the sdk implementation of the OpenTelemetry metrics will be available
+      for default monitoring and custom measurements. Otherwise a no-op implementation
+      will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --metrics
+    type: bool
+    default_random: false
+    name: metrics
+  - help: If tracing is enabled, this hostname will be used to configure the metrics
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-host
+    type: str
+    default_random: false
+    name: metrics_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the metrics exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-port
+    type: int
+    default_random: false
+    name: metrics_exporter_port
   - help: If set, install `requirements.txt` in the Hub Executor bundle to local
     choices: null
     default: false
@@ -2791,6 +3039,68 @@ methods:
     type: bool
     default_random: false
     name: asyncio
+  - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
+      and will be enabled for automatic tracing of requests and customer span creation.
+      Otherwise a no-op implementation will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --tracing
+    type: bool
+    default_random: false
+    name: tracing
+  - help: If tracing is enabled, this hostname will be used to configure the trace
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-host
+    type: str
+    default_random: false
+    name: traces_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the trace exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --traces-exporter-port
+    type: int
+    default_random: false
+    name: traces_exporter_port
+  - help: If set, the sdk implementation of the OpenTelemetry metrics will be available
+      for default monitoring and custom measurements. Otherwise a no-op implementation
+      will be provided.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --metrics
+    type: bool
+    default_random: false
+    name: metrics
+  - help: If tracing is enabled, this hostname will be used to configure the metrics
+      exporter agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-host
+    type: str
+    default_random: false
+    name: metrics_exporter_host
+  - help: If tracing is enabled, this port will be used to configure the metrics exporter
+      agent.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --metrics-exporter-port
+    type: int
+    default_random: false
+    name: metrics_exporter_port
   - help: Communication protocol between server and client.
     choices:
     - GRPC
