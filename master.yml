@@ -157,7 +157,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63959
+    default: 64483
     required: false
     option_strings:
     - --port-in
@@ -381,7 +381,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '55551'
+    default: '49734'
     required: false
     option_strings:
     - --port
@@ -401,7 +401,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '62459'
+    default: '55232'
     required: false
     option_strings:
     - --port-monitoring
@@ -1180,7 +1180,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 55945
+    default: 58331
     required: false
     option_strings:
     - --port-in
@@ -1241,7 +1241,7 @@ methods:
     name: exit_on_exceptions
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 56522
+    default: 58111
     required: false
     option_strings:
     - --port-expose
@@ -1361,7 +1361,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '62565'
+    default: '65380'
     required: false
     option_strings:
     - --port
@@ -1381,7 +1381,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '58730'
+    default: '55649'
     required: false
     option_strings:
     - --port-monitoring
@@ -1781,6 +1781,10 @@ methods:
       default_random: false
       name: replay
     help: Query an executor building status of of a pushed Executor from Jina hub
+  - name: list
+    options: []
+    help: List your local Jina Executors
+    methods: []
 - name: cloud
   options:
   - help: Set the loglevel of the logger
@@ -1958,7 +1962,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57511
+    default: 53866
     required: false
     option_strings:
     - --port-in
@@ -2182,7 +2186,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '63786'
+    default: '60319'
     required: false
     option_strings:
     - --port
@@ -2202,7 +2206,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '63369'
+    default: '62262'
     required: false
     option_strings:
     - --port-monitoring
@@ -2521,7 +2525,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 60148
+    default: 65401
     required: false
     option_strings:
     - --port-in
@@ -2745,7 +2749,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '57925'
+    default: '58781'
     required: false
     option_strings:
     - --port
@@ -2765,7 +2769,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '56437'
+    default: '61071'
     required: false
     option_strings:
     - --port-monitoring
