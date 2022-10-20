@@ -157,7 +157,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57484
+    default: 57137
     required: false
     option_strings:
     - --port-in
@@ -381,7 +381,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '57157'
+    default: '57401'
     required: false
     option_strings:
     - --port
@@ -401,7 +401,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '51109'
+    default: '49685'
     required: false
     option_strings:
     - --port-monitoring
@@ -1180,7 +1180,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63738
+    default: 55922
     required: false
     option_strings:
     - --port-in
@@ -1241,7 +1241,7 @@ methods:
     name: exit_on_exceptions
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 65452
+    default: 57150
     required: false
     option_strings:
     - --port-expose
@@ -1268,7 +1268,7 @@ methods:
     type: str
     default_random: false
     name: graph_conditions
-  - help: dictionary JSON with the input addresses of each Deployment
+  - help: JSON dictionary with the input addresses of each Deployment
     choices: null
     default: '{}'
     required: false
@@ -1277,6 +1277,15 @@ methods:
     type: str
     default_random: false
     name: deployments_addresses
+  - help: JSON dictionary with the request metadata for each Deployment
+    choices: null
+    default: '{}'
+    required: false
+    option_strings:
+    - --deployments-metadata
+    type: str
+    default_random: false
+    name: deployments_metadata
   - help: list JSON disabling the built-in merging mechanism for each Deployment listed
     choices: null
     default: '[]'
@@ -1361,7 +1370,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '62578'
+    default: '57462'
     required: false
     option_strings:
     - --port
@@ -1381,7 +1390,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '54409'
+    default: '60706'
     required: false
     option_strings:
     - --port-monitoring
@@ -1962,7 +1971,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 49426
+    default: 64532
     required: false
     option_strings:
     - --port-in
@@ -2186,7 +2195,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '61849'
+    default: '59055'
     required: false
     option_strings:
     - --port
@@ -2206,7 +2215,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '61221'
+    default: '61332'
     required: false
     option_strings:
     - --port-monitoring
@@ -2525,7 +2534,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 57431
+    default: 50532
     required: false
     option_strings:
     - --port-in
@@ -2749,7 +2758,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '61610'
+    default: '62332'
     required: false
     option_strings:
     - --port
@@ -2769,7 +2778,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '61725'
+    default: '52516'
     required: false
     option_strings:
     - --port-monitoring
@@ -2980,6 +2989,15 @@ methods:
     type: bool
     default_random: false
     name: external
+  - help: The metadata to be passed to the gRPC request.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --grpc-metadata
+    type: dict
+    default_random: false
+    name: grpc_metadata
   - help: If set, connect to deployment using tls encryption
     choices: null
     default: false
