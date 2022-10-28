@@ -82,6 +82,35 @@ methods:
     type: str
     default_random: false
     name: polling
+  - help: The number of shards in the deployment running at the same time. For more
+      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --shards
+    type: int
+    default_random: false
+    name: shards
+  - help: The number of replicas in the deployment
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --replicas
+    type: int
+    default_random: false
+    name: replicas
+  - help: If set, only native Executors is allowed, and the Executor is always run
+      inside WorkerRuntime.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --native
+    type: bool
+    default_random: false
+    name: native
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * the string literal of an Executor class name\n        * an Executor\
       \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
@@ -154,10 +183,31 @@ methods:
     type: typing.List[str]
     default_random: false
     name: py_modules
+  - help: "\nThe type of array `tensor` and `embedding` will be serialized to.\n\n\
+      Supports the same types as `docarray.to_protobuf(.., ndarray_type=...)`, which\
+      \ can be found \n`here <https://docarray.jina.ai/fundamentals/document/serialization/#from-to-protobuf>`.\n\
+      Defaults to retaining whatever type is returned by the Executor.\n"
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --output-array-type
+    type: str
+    default_random: false
+    name: output_array_type
+  - help: List of exceptions that will cause the Executor to shut down.
+    choices: null
+    default: []
+    required: false
+    option_strings:
+    - --exit-on-exceptions
+    type: typing.List[str]
+    default_random: false
+    name: exit_on_exceptions
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 63669
+    default: 54157
     required: false
     option_strings:
     - --port-in
@@ -174,28 +224,6 @@ methods:
     type: str
     default_random: false
     name: host_in
-  - help: If set, only native Executors is allowed, and the Executor is always run
-      inside WorkerRuntime.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --native
-    type: bool
-    default_random: false
-    name: native
-  - help: "\nThe type of array `tensor` and `embedding` will be serialized to.\n\n\
-      Supports the same types as `docarray.to_protobuf(.., ndarray_type=...)`, which\
-      \ can be found \n`here <https://docarray.jina.ai/fundamentals/document/serialization/#from-to-protobuf>`.\n\
-      Defaults to retaining whatever type is returned by the Executor.\n"
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --output-array-type
-    type: str
-    default_random: false
-    name: output_array_type
   - help: 'Dictionary of kwargs arguments that will be passed to the grpc server as
       options when starting the server, example : {''grpc.max_send_message_length'':
       -1}'
@@ -207,15 +235,6 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
-  - help: List of exceptions that will cause the Executor to shut down.
-    choices: null
-    default: []
-    required: false
-    option_strings:
-    - --exit-on-exceptions
-    type: typing.List[str]
-    default_random: false
-    name: exit_on_exceptions
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -243,7 +262,7 @@ methods:
       \ provided, then the basename of that directory will be mounted into container's\
       \ root path, e.g. `--volumes=\"/user/test/my-workspace\"` will be mounted into\
       \ `/my-workspace` inside the container. \n- All volumes are mounted with read-write\
-      \ mode.\n"
+      \ mode.\n    "
     choices: null
     default: null
     required: false
@@ -252,13 +271,13 @@ methods:
     type: typing.List[str]
     default_random: false
     name: volumes
-  - help: "\n    This argument allows dockerized Jina executor discover local gpu\
-      \ devices.\n\n    Note, \n    - To access all gpus, use `--gpus all`.\n    -\
-      \ To access multiple gpus, e.g. make use of 2 gpus, use `--gpus 2`.\n    - To\
-      \ access specified gpus based on device id, use `--gpus device=[YOUR-GPU-DEVICE-ID]`\n\
+  - help: "\n    This argument allows dockerized Jina Executors to discover local\
+      \ gpu devices.\n    \n    Note, \n    - To access all gpus, use `--gpus all`.\n\
+      \    - To access multiple gpus, e.g. make use of 2 gpus, use `--gpus 2`.\n \
+      \   - To access specified gpus based on device id, use `--gpus device=[YOUR-GPU-DEVICE-ID]`\n\
       \    - To access specified gpus based on multiple device id, use `--gpus device=[YOUR-GPU-DEVICE-ID1],device=[YOUR-GPU-DEVICE-ID2]`\n\
       \    - To specify more parameters, use `--gpus device=[YOUR-GPU-DEVICE-ID],runtime=nvidia,capabilities=display\n\
-      \    "
+      \        "
     choices: null
     default: null
     required: false
@@ -357,31 +376,12 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --shards
-    type: int
-    default_random: false
-    name: shards
-  - help: The number of replicas in the deployment
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --replicas
-    type: int
-    default_random: false
-    name: replicas
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]. In the case of an external Executor (`--external` or `external=True`)
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '60023'
+    default: '55640'
     required: false
     option_strings:
     - --port
@@ -401,7 +401,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '51583'
+    default: '63146'
     required: false
     option_strings:
     - --port-monitoring
@@ -905,20 +905,6 @@ methods:
     type: int
     default_random: false
     name: timeout_ctrl
-  - help: "\n    The polling strategy of the Deployment and its endpoints (when `shards>1`).\n\
-      \    Can be defined for all endpoints of a Deployment or by endpoint.\n    Define\
-      \ per Deployment:\n    - ANY: only one (whoever is idle) Pod polls the message\n\
-      \    - ALL: all Pods poll the message (like a broadcast)\n    Define per Endpoint:\n\
-      \    JSON dict, {endpoint: PollingType}\n    {'/custom': 'ALL', '/search': 'ANY',\
-      \ '*': 'ANY'}\n    \n    "
-    choices: null
-    default: ANY
-    required: false
-    option_strings:
-    - --polling
-    type: str
-    default_random: false
-    name: polling
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -940,45 +926,6 @@ methods:
     type: dict
     default_random: false
     name: docker_kwargs
-  - help: "\nThe path on the host to be mounted inside the container. \n\nNote, \n\
-      - If separated by `:`, then the first part will be considered as the local host\
-      \ path and the second part is the path in the container system. \n- If no split\
-      \ provided, then the basename of that directory will be mounted into container's\
-      \ root path, e.g. `--volumes=\"/user/test/my-workspace\"` will be mounted into\
-      \ `/my-workspace` inside the container. \n- All volumes are mounted with read-write\
-      \ mode.\n"
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --volumes
-    type: typing.List[str]
-    default_random: false
-    name: volumes
-  - help: "\n    This argument allows dockerized Jina executor discover local gpu\
-      \ devices.\n\n    Note, \n    - To access all gpus, use `--gpus all`.\n    -\
-      \ To access multiple gpus, e.g. make use of 2 gpus, use `--gpus 2`.\n    - To\
-      \ access specified gpus based on device id, use `--gpus device=[YOUR-GPU-DEVICE-ID]`\n\
-      \    - To access specified gpus based on multiple device id, use `--gpus device=[YOUR-GPU-DEVICE-ID1],device=[YOUR-GPU-DEVICE-ID2]`\n\
-      \    - To specify more parameters, use `--gpus device=[YOUR-GPU-DEVICE-ID],runtime=nvidia,capabilities=display\n\
-      \    "
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --gpus
-    type: str
-    default_random: false
-    name: gpus
-  - help: Do not automatically mount a volume for dockerized Executors.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --disable-auto-volume
-    type: bool
-    default_random: false
-    name: disable_auto_volume
   - help: "\n    Number of requests fetched from the client before feeding into the\
       \ first Executor. \n    \n    Used to control the speed of data input into a\
       \ Flow. 0 disables prefetch (1000 requests is the default)"
@@ -1031,7 +978,7 @@ methods:
     name: no_debug_endpoints
   - help: "\n        If set, `/index`, `/search`, `/update`, `/delete` endpoints are\
       \ removed from HTTP interface.\n\n        Any executor that has `@requests(on=...)`\
-      \ bind with those values will receive data requests.\n        "
+      \ bound with those values will receive data requests.\n        "
     choices: null
     default: false
     required: false
@@ -1180,7 +1127,7 @@ methods:
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 53890
+    default: 56484
     required: false
     option_strings:
     - --port-in
@@ -1197,28 +1144,6 @@ methods:
     type: str
     default_random: false
     name: host_in
-  - help: If set, only native Executors is allowed, and the Executor is always run
-      inside WorkerRuntime.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --native
-    type: bool
-    default_random: false
-    name: native
-  - help: "\nThe type of array `tensor` and `embedding` will be serialized to.\n\n\
-      Supports the same types as `docarray.to_protobuf(.., ndarray_type=...)`, which\
-      \ can be found \n`here <https://docarray.jina.ai/fundamentals/document/serialization/#from-to-protobuf>`.\n\
-      Defaults to retaining whatever type is returned by the Executor.\n"
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --output-array-type
-    type: str
-    default_random: false
-    name: output_array_type
   - help: 'Dictionary of kwargs arguments that will be passed to the grpc server as
       options when starting the server, example : {''grpc.max_send_message_length'':
       -1}'
@@ -1230,18 +1155,9 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
-  - help: List of exceptions that will cause the Executor to shut down.
-    choices: null
-    default: []
-    required: false
-    option_strings:
-    - --exit-on-exceptions
-    type: typing.List[str]
-    default_random: false
-    name: exit_on_exceptions
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 53358
+    default: 63004
     required: false
     option_strings:
     - --port-expose
@@ -1346,31 +1262,12 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --shards
-    type: int
-    default_random: false
-    name: shards
-  - help: The number of replicas in the deployment
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --replicas
-    type: int
-    default_random: false
-    name: replicas
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]. In the case of an external Executor (`--external` or `external=True`)
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '53554'
+    default: '60981'
     required: false
     option_strings:
     - --port
@@ -1390,7 +1287,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '49837'
+    default: '62342'
     required: false
     option_strings:
     - --port-monitoring
@@ -1896,6 +1793,35 @@ methods:
     type: str
     default_random: false
     name: polling
+  - help: The number of shards in the deployment running at the same time. For more
+      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --shards
+    type: int
+    default_random: false
+    name: shards
+  - help: The number of replicas in the deployment
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --replicas
+    type: int
+    default_random: false
+    name: replicas
+  - help: If set, only native Executors is allowed, and the Executor is always run
+      inside WorkerRuntime.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --native
+    type: bool
+    default_random: false
+    name: native
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * the string literal of an Executor class name\n        * an Executor\
       \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
@@ -1968,10 +1894,31 @@ methods:
     type: typing.List[str]
     default_random: false
     name: py_modules
+  - help: "\nThe type of array `tensor` and `embedding` will be serialized to.\n\n\
+      Supports the same types as `docarray.to_protobuf(.., ndarray_type=...)`, which\
+      \ can be found \n`here <https://docarray.jina.ai/fundamentals/document/serialization/#from-to-protobuf>`.\n\
+      Defaults to retaining whatever type is returned by the Executor.\n"
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --output-array-type
+    type: str
+    default_random: false
+    name: output_array_type
+  - help: List of exceptions that will cause the Executor to shut down.
+    choices: null
+    default: []
+    required: false
+    option_strings:
+    - --exit-on-exceptions
+    type: typing.List[str]
+    default_random: false
+    name: exit_on_exceptions
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 64623
+    default: 53408
     required: false
     option_strings:
     - --port-in
@@ -1988,28 +1935,6 @@ methods:
     type: str
     default_random: false
     name: host_in
-  - help: If set, only native Executors is allowed, and the Executor is always run
-      inside WorkerRuntime.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --native
-    type: bool
-    default_random: false
-    name: native
-  - help: "\nThe type of array `tensor` and `embedding` will be serialized to.\n\n\
-      Supports the same types as `docarray.to_protobuf(.., ndarray_type=...)`, which\
-      \ can be found \n`here <https://docarray.jina.ai/fundamentals/document/serialization/#from-to-protobuf>`.\n\
-      Defaults to retaining whatever type is returned by the Executor.\n"
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --output-array-type
-    type: str
-    default_random: false
-    name: output_array_type
   - help: 'Dictionary of kwargs arguments that will be passed to the grpc server as
       options when starting the server, example : {''grpc.max_send_message_length'':
       -1}'
@@ -2021,15 +1946,6 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
-  - help: List of exceptions that will cause the Executor to shut down.
-    choices: null
-    default: []
-    required: false
-    option_strings:
-    - --exit-on-exceptions
-    type: typing.List[str]
-    default_random: false
-    name: exit_on_exceptions
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -2057,7 +1973,7 @@ methods:
       \ provided, then the basename of that directory will be mounted into container's\
       \ root path, e.g. `--volumes=\"/user/test/my-workspace\"` will be mounted into\
       \ `/my-workspace` inside the container. \n- All volumes are mounted with read-write\
-      \ mode.\n"
+      \ mode.\n    "
     choices: null
     default: null
     required: false
@@ -2066,13 +1982,13 @@ methods:
     type: typing.List[str]
     default_random: false
     name: volumes
-  - help: "\n    This argument allows dockerized Jina executor discover local gpu\
-      \ devices.\n\n    Note, \n    - To access all gpus, use `--gpus all`.\n    -\
-      \ To access multiple gpus, e.g. make use of 2 gpus, use `--gpus 2`.\n    - To\
-      \ access specified gpus based on device id, use `--gpus device=[YOUR-GPU-DEVICE-ID]`\n\
+  - help: "\n    This argument allows dockerized Jina Executors to discover local\
+      \ gpu devices.\n    \n    Note, \n    - To access all gpus, use `--gpus all`.\n\
+      \    - To access multiple gpus, e.g. make use of 2 gpus, use `--gpus 2`.\n \
+      \   - To access specified gpus based on device id, use `--gpus device=[YOUR-GPU-DEVICE-ID]`\n\
       \    - To access specified gpus based on multiple device id, use `--gpus device=[YOUR-GPU-DEVICE-ID1],device=[YOUR-GPU-DEVICE-ID2]`\n\
       \    - To specify more parameters, use `--gpus device=[YOUR-GPU-DEVICE-ID],runtime=nvidia,capabilities=display\n\
-      \    "
+      \        "
     choices: null
     default: null
     required: false
@@ -2171,31 +2087,12 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --shards
-    type: int
-    default_random: false
-    name: shards
-  - help: The number of replicas in the deployment
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --replicas
-    type: int
-    default_random: false
-    name: replicas
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]. In the case of an external Executor (`--external` or `external=True`)
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '59875'
+    default: '49229'
     required: false
     option_strings:
     - --port
@@ -2215,7 +2112,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '64093'
+    default: '50103'
     required: false
     option_strings:
     - --port-monitoring
@@ -2459,6 +2356,35 @@ methods:
     type: str
     default_random: false
     name: polling
+  - help: The number of shards in the deployment running at the same time. For more
+      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --shards
+    type: int
+    default_random: false
+    name: shards
+  - help: The number of replicas in the deployment
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --replicas
+    type: int
+    default_random: false
+    name: replicas
+  - help: If set, only native Executors is allowed, and the Executor is always run
+      inside WorkerRuntime.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --native
+    type: bool
+    default_random: false
+    name: native
   - help: "\n        The config of the executor, it could be one of the followings:\n\
       \        * the string literal of an Executor class name\n        * an Executor\
       \ YAML file (.yml, .yaml, .jaml)\n        * a Jina Hub Executor (must start\
@@ -2531,10 +2457,31 @@ methods:
     type: typing.List[str]
     default_random: false
     name: py_modules
+  - help: "\nThe type of array `tensor` and `embedding` will be serialized to.\n\n\
+      Supports the same types as `docarray.to_protobuf(.., ndarray_type=...)`, which\
+      \ can be found \n`here <https://docarray.jina.ai/fundamentals/document/serialization/#from-to-protobuf>`.\n\
+      Defaults to retaining whatever type is returned by the Executor.\n"
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --output-array-type
+    type: str
+    default_random: false
+    name: output_array_type
+  - help: List of exceptions that will cause the Executor to shut down.
+    choices: null
+    default: []
+    required: false
+    option_strings:
+    - --exit-on-exceptions
+    type: typing.List[str]
+    default_random: false
+    name: exit_on_exceptions
   - help: The port for input data to bind to, default a random port between [49152,
       65535]
     choices: null
-    default: 52943
+    default: 57818
     required: false
     option_strings:
     - --port-in
@@ -2551,28 +2498,6 @@ methods:
     type: str
     default_random: false
     name: host_in
-  - help: If set, only native Executors is allowed, and the Executor is always run
-      inside WorkerRuntime.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --native
-    type: bool
-    default_random: false
-    name: native
-  - help: "\nThe type of array `tensor` and `embedding` will be serialized to.\n\n\
-      Supports the same types as `docarray.to_protobuf(.., ndarray_type=...)`, which\
-      \ can be found \n`here <https://docarray.jina.ai/fundamentals/document/serialization/#from-to-protobuf>`.\n\
-      Defaults to retaining whatever type is returned by the Executor.\n"
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --output-array-type
-    type: str
-    default_random: false
-    name: output_array_type
   - help: 'Dictionary of kwargs arguments that will be passed to the grpc server as
       options when starting the server, example : {''grpc.max_send_message_length'':
       -1}'
@@ -2584,15 +2509,6 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
-  - help: List of exceptions that will cause the Executor to shut down.
-    choices: null
-    default: []
-    required: false
-    option_strings:
-    - --exit-on-exceptions
-    type: typing.List[str]
-    default_random: false
-    name: exit_on_exceptions
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -2620,7 +2536,7 @@ methods:
       \ provided, then the basename of that directory will be mounted into container's\
       \ root path, e.g. `--volumes=\"/user/test/my-workspace\"` will be mounted into\
       \ `/my-workspace` inside the container. \n- All volumes are mounted with read-write\
-      \ mode.\n"
+      \ mode.\n    "
     choices: null
     default: null
     required: false
@@ -2629,13 +2545,13 @@ methods:
     type: typing.List[str]
     default_random: false
     name: volumes
-  - help: "\n    This argument allows dockerized Jina executor discover local gpu\
-      \ devices.\n\n    Note, \n    - To access all gpus, use `--gpus all`.\n    -\
-      \ To access multiple gpus, e.g. make use of 2 gpus, use `--gpus 2`.\n    - To\
-      \ access specified gpus based on device id, use `--gpus device=[YOUR-GPU-DEVICE-ID]`\n\
+  - help: "\n    This argument allows dockerized Jina Executors to discover local\
+      \ gpu devices.\n    \n    Note, \n    - To access all gpus, use `--gpus all`.\n\
+      \    - To access multiple gpus, e.g. make use of 2 gpus, use `--gpus 2`.\n \
+      \   - To access specified gpus based on device id, use `--gpus device=[YOUR-GPU-DEVICE-ID]`\n\
       \    - To access specified gpus based on multiple device id, use `--gpus device=[YOUR-GPU-DEVICE-ID1],device=[YOUR-GPU-DEVICE-ID2]`\n\
       \    - To specify more parameters, use `--gpus device=[YOUR-GPU-DEVICE-ID],runtime=nvidia,capabilities=display\n\
-      \    "
+      \        "
     choices: null
     default: null
     required: false
@@ -2734,31 +2650,12 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --shards
-    type: int
-    default_random: false
-    name: shards
-  - help: The number of replicas in the deployment
-    choices: null
-    default: 1
-    required: false
-    option_strings:
-    - --replicas
-    type: int
-    default_random: false
-    name: replicas
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]. In the case of an external Executor (`--external` or `external=True`)
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '61853'
+    default: '49255'
     required: false
     option_strings:
     - --port
@@ -2778,7 +2675,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '60444'
+    default: '52179'
     required: false
     option_strings:
     - --port-monitoring
