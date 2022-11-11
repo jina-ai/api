@@ -204,26 +204,17 @@ methods:
     type: typing.List[str]
     default_random: false
     name: exit_on_exceptions
-  - help: The port for input data to bind to, default a random port between [49152,
-      65535]
+  - help: Disable the built-in reduction mechanism. Set this if the reduction is to
+      be handled by the Executor itself by operating on a `docs_matrix` or `docs_map`
     choices: null
-    default: 64554
+    default: false
     required: false
     option_strings:
-    - --port-in
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port
-  - help: The host address for binding to, by default it is 0.0.0.0
-    choices: null
-    default: 0.0.0.0
-    required: false
-    option_strings:
-    - --host-in
-    type: str
+    - --no-reduce
+    - --disable-reduce
+    type: bool
     default_random: false
-    name: host_in
+    name: no_reduce
   - help: 'Dictionary of kwargs arguments that will be passed to the grpc server as
       options when starting the server, example : {''grpc.max_send_message_length'':
       -1}'
@@ -304,6 +295,7 @@ methods:
     required: false
     option_strings:
     - --host
+    - --host-in
     type: str
     default_random: false
     name: host
@@ -377,14 +369,15 @@ methods:
     default_random: false
     name: env
   - help: The port for input data to bind to, default is a random port between [49152,
-      65535]. In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports, separated by commas. Then, every resulting address
+      65535].In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas.  Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '59020'
+    default: '62728'
     required: false
     option_strings:
     - --port
+    - --port-in
     type: str
     default_random: true
     default_factory: random_identity
@@ -401,7 +394,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '56017'
+    default: '63737'
     required: false
     option_strings:
     - --port-monitoring
@@ -549,16 +542,6 @@ methods:
     type: str
     default_random: false
     name: connection_list
-  - help: Disable the built-in reduce mechanism, set this if the reduction is to be
-      handled by the Executor connected to this Head
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --disable-reduce
-    type: bool
-    default_random: false
-    name: disable_reduce
   - help: The timeout in milliseconds used when sending data requests to Executors,
       -1 means no timeout, disabled by default
     choices: null
@@ -1063,6 +1046,7 @@ methods:
     required: false
     option_strings:
     - --host
+    - --host-in
     type: str
     default_random: false
     name: host
@@ -1124,26 +1108,6 @@ methods:
     type: typing.List[str]
     default_random: false
     name: py_modules
-  - help: The port for input data to bind to, default a random port between [49152,
-      65535]
-    choices: null
-    default: 62293
-    required: false
-    option_strings:
-    - --port-in
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port
-  - help: The host address for binding to, by default it is 0.0.0.0
-    choices: null
-    default: 0.0.0.0
-    required: false
-    option_strings:
-    - --host-in
-    type: str
-    default_random: false
-    name: host_in
   - help: 'Dictionary of kwargs arguments that will be passed to the grpc server as
       options when starting the server, example : {''grpc.max_send_message_length'':
       -1}'
@@ -1157,7 +1121,7 @@ methods:
     name: grpc_server_options
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 51861
+    default: 58384
     required: false
     option_strings:
     - --port-expose
@@ -1207,10 +1171,11 @@ methods:
     default: '[]'
     required: false
     option_strings:
+    - --deployments-no-reduce
     - --deployments-disable-reduce
     type: str
     default_random: false
-    name: deployments_disable_reduce
+    name: deployments_no_reduce
   - help: The compression mechanism used when sending requests from the Head to the
       WorkerRuntimes. For more details, check https://grpc.github.io/grpc/python/grpc.html#compression.
     choices:
@@ -1263,14 +1228,15 @@ methods:
     default_random: false
     name: env
   - help: The port for input data to bind to, default is a random port between [49152,
-      65535]. In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports, separated by commas. Then, every resulting address
+      65535].In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas.  Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '61945'
+    default: '62184'
     required: false
     option_strings:
     - --port
+    - --port-in
     type: str
     default_random: true
     default_factory: random_identity
@@ -1287,7 +1253,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '63139'
+    default: '60172'
     required: false
     option_strings:
     - --port-monitoring
@@ -1915,26 +1881,17 @@ methods:
     type: typing.List[str]
     default_random: false
     name: exit_on_exceptions
-  - help: The port for input data to bind to, default a random port between [49152,
-      65535]
+  - help: Disable the built-in reduction mechanism. Set this if the reduction is to
+      be handled by the Executor itself by operating on a `docs_matrix` or `docs_map`
     choices: null
-    default: 59730
+    default: false
     required: false
     option_strings:
-    - --port-in
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port
-  - help: The host address for binding to, by default it is 0.0.0.0
-    choices: null
-    default: 0.0.0.0
-    required: false
-    option_strings:
-    - --host-in
-    type: str
+    - --no-reduce
+    - --disable-reduce
+    type: bool
     default_random: false
-    name: host_in
+    name: no_reduce
   - help: 'Dictionary of kwargs arguments that will be passed to the grpc server as
       options when starting the server, example : {''grpc.max_send_message_length'':
       -1}'
@@ -2015,6 +1972,7 @@ methods:
     required: false
     option_strings:
     - --host
+    - --host-in
     type: str
     default_random: false
     name: host
@@ -2088,14 +2046,15 @@ methods:
     default_random: false
     name: env
   - help: The port for input data to bind to, default is a random port between [49152,
-      65535]. In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports, separated by commas. Then, every resulting address
+      65535].In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas.  Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '53154'
+    default: '57434'
     required: false
     option_strings:
     - --port
+    - --port-in
     type: str
     default_random: true
     default_factory: random_identity
@@ -2112,7 +2071,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '50118'
+    default: '49348'
     required: false
     option_strings:
     - --port-monitoring
@@ -2260,16 +2219,6 @@ methods:
     type: str
     default_random: false
     name: connection_list
-  - help: Disable the built-in reduce mechanism, set this if the reduction is to be
-      handled by the Executor connected to this Head
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --disable-reduce
-    type: bool
-    default_random: false
-    name: disable_reduce
   - help: The timeout in milliseconds used when sending data requests to Executors,
       -1 means no timeout, disabled by default
     choices: null
@@ -2478,26 +2427,17 @@ methods:
     type: typing.List[str]
     default_random: false
     name: exit_on_exceptions
-  - help: The port for input data to bind to, default a random port between [49152,
-      65535]
+  - help: Disable the built-in reduction mechanism. Set this if the reduction is to
+      be handled by the Executor itself by operating on a `docs_matrix` or `docs_map`
     choices: null
-    default: 58945
+    default: false
     required: false
     option_strings:
-    - --port-in
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port
-  - help: The host address for binding to, by default it is 0.0.0.0
-    choices: null
-    default: 0.0.0.0
-    required: false
-    option_strings:
-    - --host-in
-    type: str
+    - --no-reduce
+    - --disable-reduce
+    type: bool
     default_random: false
-    name: host_in
+    name: no_reduce
   - help: 'Dictionary of kwargs arguments that will be passed to the grpc server as
       options when starting the server, example : {''grpc.max_send_message_length'':
       -1}'
@@ -2578,6 +2518,7 @@ methods:
     required: false
     option_strings:
     - --host
+    - --host-in
     type: str
     default_random: false
     name: host
@@ -2651,14 +2592,15 @@ methods:
     default_random: false
     name: env
   - help: The port for input data to bind to, default is a random port between [49152,
-      65535]. In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports, separated by commas. Then, every resulting address
+      65535].In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas.  Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '51917'
+    default: '51919'
     required: false
     option_strings:
     - --port
+    - --port-in
     type: str
     default_random: true
     default_factory: random_identity
@@ -2675,7 +2617,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '61931'
+    default: '58098'
     required: false
     option_strings:
     - --port-monitoring
@@ -2823,16 +2765,6 @@ methods:
     type: str
     default_random: false
     name: connection_list
-  - help: Disable the built-in reduce mechanism, set this if the reduction is to be
-      handled by the Executor connected to this Head
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --disable-reduce
-    type: bool
-    default_random: false
-    name: disable_reduce
   - help: The timeout in milliseconds used when sending data requests to Executors,
       -1 means no timeout, disabled by default
     choices: null
@@ -2917,6 +2849,7 @@ methods:
     required: false
     option_strings:
     - --host
+    - --host-in
     type: str
     default_random: false
     name: host
