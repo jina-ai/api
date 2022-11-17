@@ -373,7 +373,7 @@ methods:
       this can be a list of ports, separated by commas.  Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '50530'
+    default: '54814'
     required: false
     option_strings:
     - --port
@@ -394,7 +394,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '62908'
+    default: '63287'
     required: false
     option_strings:
     - --port-monitoring
@@ -1121,7 +1121,7 @@ methods:
     name: grpc_server_options
   - help: The port that the gateway exposes for clients for GRPC connections.
     choices: null
-    default: 58653
+    default: 49884
     required: false
     option_strings:
     - --port-expose
@@ -1232,7 +1232,7 @@ methods:
       this can be a list of ports, separated by commas.  Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '58401'
+    default: '59770'
     required: false
     option_strings:
     - --port
@@ -1253,7 +1253,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '56161'
+    default: '51746'
     required: false
     option_strings:
     - --port-monitoring
@@ -2050,7 +2050,7 @@ methods:
       this can be a list of ports, separated by commas.  Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '63110'
+    default: '49273'
     required: false
     option_strings:
     - --port
@@ -2071,7 +2071,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '64811'
+    default: '53795'
     required: false
     option_strings:
     - --port-monitoring
@@ -2596,7 +2596,7 @@ methods:
       this can be a list of ports, separated by commas.  Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: '54220'
+    default: '52240'
     required: false
     option_strings:
     - --port
@@ -2617,7 +2617,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '49293'
+    default: '55599'
     required: false
     option_strings:
     - --port-monitoring
