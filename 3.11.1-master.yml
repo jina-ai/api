@@ -368,20 +368,6 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: The port for input data to bind to, default is a random port between [49152,
-      65535].In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports, separated by commas.  Then, every resulting address
-      will be considered as one replica of the Executor.
-    choices: null
-    default: '54814'
-    required: false
-    option_strings:
-    - --port
-    - --port-in
-    type: str
-    default_random: true
-    default_factory: random_identity
-    name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -394,7 +380,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '63287'
+    default: '54406'
     required: false
     option_strings:
     - --port-monitoring
@@ -1025,16 +1011,20 @@ methods:
     type: bool
     default_random: false
     name: expose_graphql_endpoint
-  - help: Communication protocol between server and client.
+  - help: 'Possible communication protocols between server and client. Depending on
+      your chosen gateway, choose the convenient protocols from: [''GRPC'', ''HTTP'',
+      ''WEBSOCKET''].'
     choices:
     - GRPC
     - HTTP
     - WEBSOCKET
-    default: GRPC
+    default:
+    - "GRPC"
     required: false
     option_strings:
     - --protocol
-    type: str
+    - --protocols
+    type: typing.List[str]
     default_random: false
     name: protocol
   - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
@@ -1119,16 +1109,6 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
-  - help: The port that the gateway exposes for clients for GRPC connections.
-    choices: null
-    default: 49884
-    required: false
-    option_strings:
-    - --port-expose
-    type: int
-    default_random: true
-    default_factory: random_port
-    name: port
   - help: Routing graph for the gateway
     choices: null
     default: '{}'
@@ -1227,20 +1207,6 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: The port for input data to bind to, default is a random port between [49152,
-      65535].In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports, separated by commas.  Then, every resulting address
-      will be considered as one replica of the Executor.
-    choices: null
-    default: '59770'
-    required: false
-    option_strings:
-    - --port
-    - --port-in
-    type: str
-    default_random: true
-    default_factory: random_identity
-    name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -1253,7 +1219,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '51746'
+    default: '58213'
     required: false
     option_strings:
     - --port-monitoring
@@ -2045,20 +2011,6 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: The port for input data to bind to, default is a random port between [49152,
-      65535].In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports, separated by commas.  Then, every resulting address
-      will be considered as one replica of the Executor.
-    choices: null
-    default: '49273'
-    required: false
-    option_strings:
-    - --port
-    - --port-in
-    type: str
-    default_random: true
-    default_factory: random_identity
-    name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -2071,7 +2023,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '53795'
+    default: '50845'
     required: false
     option_strings:
     - --port-monitoring
@@ -2591,20 +2543,6 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: The port for input data to bind to, default is a random port between [49152,
-      65535].In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports, separated by commas.  Then, every resulting address
-      will be considered as one replica of the Executor.
-    choices: null
-    default: '52240'
-    required: false
-    option_strings:
-    - --port
-    - --port-in
-    type: str
-    default_random: true
-    default_factory: random_identity
-    name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -2617,7 +2555,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '55599'
+    default: '59278'
     required: false
     option_strings:
     - --port-monitoring
