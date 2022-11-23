@@ -368,6 +368,16 @@ methods:
     type: dict
     default_random: false
     name: env
+  - help: If set, the current Pod/Deployment can not be further chained, and the next
+      `.add()` will chain after the last Pod/Deployment not this current one.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --floating
+    type: bool
+    default_random: false
+    name: floating
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -380,7 +390,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '55928'
+    default: '59132'
     required: false
     option_strings:
     - --port-monitoring
@@ -397,16 +407,6 @@ methods:
     type: int
     default_random: false
     name: retries
-  - help: If set, the current Pod/Deployment can not be further chained, and the next
-      `.add()` will chain after the last Pod/Deployment not this current one.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --floating
-    type: bool
-    default_random: false
-    name: floating
   - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
       and will be enabled for automatic tracing of requests and customer span creation.
       Otherwise a no-op implementation will be provided.
@@ -1207,6 +1207,16 @@ methods:
     type: dict
     default_random: false
     name: env
+  - help: If set, the current Pod/Deployment can not be further chained, and the next
+      `.add()` will chain after the last Pod/Deployment not this current one.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --floating
+    type: bool
+    default_random: false
+    name: floating
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -1219,7 +1229,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '51992'
+    default: '59329'
     required: false
     option_strings:
     - --port-monitoring
@@ -1236,16 +1246,6 @@ methods:
     type: int
     default_random: false
     name: retries
-  - help: If set, the current Pod/Deployment can not be further chained, and the next
-      `.add()` will chain after the last Pod/Deployment not this current one.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --floating
-    type: bool
-    default_random: false
-    name: floating
   - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
       and will be enabled for automatic tracing of requests and customer span creation.
       Otherwise a no-op implementation will be provided.
@@ -2011,6 +2011,16 @@ methods:
     type: dict
     default_random: false
     name: env
+  - help: If set, the current Pod/Deployment can not be further chained, and the next
+      `.add()` will chain after the last Pod/Deployment not this current one.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --floating
+    type: bool
+    default_random: false
+    name: floating
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -2023,7 +2033,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '57868'
+    default: '57361'
     required: false
     option_strings:
     - --port-monitoring
@@ -2040,16 +2050,6 @@ methods:
     type: int
     default_random: false
     name: retries
-  - help: If set, the current Pod/Deployment can not be further chained, and the next
-      `.add()` will chain after the last Pod/Deployment not this current one.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --floating
-    type: bool
-    default_random: false
-    name: floating
   - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
       and will be enabled for automatic tracing of requests and customer span creation.
       Otherwise a no-op implementation will be provided.
@@ -2543,6 +2543,16 @@ methods:
     type: dict
     default_random: false
     name: env
+  - help: If set, the current Pod/Deployment can not be further chained, and the next
+      `.add()` will chain after the last Pod/Deployment not this current one.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --floating
+    type: bool
+    default_random: false
+    name: floating
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -2555,7 +2565,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '60313'
+    default: '59245'
     required: false
     option_strings:
     - --port-monitoring
@@ -2572,16 +2582,6 @@ methods:
     type: int
     default_random: false
     name: retries
-  - help: If set, the current Pod/Deployment can not be further chained, and the next
-      `.add()` will chain after the last Pod/Deployment not this current one.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --floating
-    type: bool
-    default_random: false
-    name: floating
   - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
       and will be enabled for automatic tracing of requests and customer span creation.
       Otherwise a no-op implementation will be provided.
