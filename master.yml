@@ -390,7 +390,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '53988'
+    default: '59616'
     required: false
     option_strings:
     - --port-monitoring
@@ -1011,9 +1011,9 @@ methods:
     type: bool
     default_random: false
     name: expose_graphql_endpoint
-  - help: 'Possible communication protocols between server and client. Depending on
-      your chosen gateway, choose the convenient protocols from: [''GRPC'', ''HTTP'',
-      ''WEBSOCKET''].'
+  - help: 'Communication protocol of the server exposed by the Gateway. This can be
+      a single value or a list of protocols, depending on your chosen Gateway. Choose
+      the convenient protocols from: [''GRPC'', ''HTTP'', ''WEBSOCKET''].'
     choices:
     - GRPC
     - HTTP
@@ -1229,7 +1229,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '54551'
+    default: '60490'
     required: false
     option_strings:
     - --port-monitoring
@@ -2033,7 +2033,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '54501'
+    default: '51912'
     required: false
     option_strings:
     - --port-monitoring
@@ -2565,7 +2565,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '56880'
+    default: '49754'
     required: false
     option_strings:
     - --port-monitoring
