@@ -337,6 +337,15 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the Executor reloads the modules as they change
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --reload
+    type: bool
+    default_random: false
+    name: reload
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -349,7 +358,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '53961'
+    default: '58196'
     required: false
     option_strings:
     - --port-monitoring
@@ -1188,7 +1197,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '53417'
+    default: '50471'
     required: false
     option_strings:
     - --port-monitoring
@@ -1939,6 +1948,15 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the Executor reloads the modules as they change
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --reload
+    type: bool
+    default_random: false
+    name: reload
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -1951,7 +1969,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '49335'
+    default: '52115'
     required: false
     option_strings:
     - --port-monitoring
@@ -2430,6 +2448,15 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the Executor reloads the modules as they change
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --reload
+    type: bool
+    default_random: false
+    name: reload
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -2442,7 +2469,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '57218'
+    default: '60656'
     required: false
     option_strings:
     - --port-monitoring
