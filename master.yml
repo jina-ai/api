@@ -349,7 +349,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '59724'
+    default: '53961'
     required: false
     option_strings:
     - --port-monitoring
@@ -1188,7 +1188,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '49304'
+    default: '53417'
     required: false
     option_strings:
     - --port-monitoring
@@ -1510,7 +1510,7 @@ methods:
       type: bool
       default_random: false
       name: no_usage
-    - help: The URI of the executor to pull (e.g., jinahub[+docker]://NAME)
+    - help: The URI of the executor to pull (e.g., jinaai[+docker]://<username>/NAME)
       choices: null
       default: null
       required: true
@@ -1951,7 +1951,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '52138'
+    default: '49335'
     required: false
     option_strings:
     - --port-monitoring
@@ -2442,7 +2442,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '64589'
+    default: '57218'
     required: false
     option_strings:
     - --port-monitoring
