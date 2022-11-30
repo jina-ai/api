@@ -358,7 +358,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '54250'
+    default: '54500'
     required: false
     option_strings:
     - --port-monitoring
@@ -1197,7 +1197,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '61537'
+    default: '63689'
     required: false
     option_strings:
     - --port-monitoring
@@ -1969,7 +1969,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '51732'
+    default: '49308'
     required: false
     option_strings:
     - --port-monitoring
@@ -2469,7 +2469,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '50367'
+    default: '53972'
     required: false
     option_strings:
     - --port-monitoring
