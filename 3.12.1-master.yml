@@ -358,7 +358,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '54500'
+    default: '56045'
     required: false
     option_strings:
     - --port-monitoring
@@ -1197,7 +1197,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '63689'
+    default: '58534'
     required: false
     option_strings:
     - --port-monitoring
@@ -1462,15 +1462,6 @@ methods:
       type: str
       default_random: false
       name: force_update
-    - help: A list of environment variables. It will be used in project build phase.
-      choices: null
-      default: null
-      required: false
-      option_strings:
-      - --build-env
-      type: str
-      default_random: false
-      name: build_env
     - help: The secret for overwrite a Hub executor
       choices: null
       default: null
@@ -1969,7 +1960,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '49308'
+    default: '60822'
     required: false
     option_strings:
     - --port-monitoring
@@ -2469,7 +2460,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '53972'
+    default: '50028'
     required: false
     option_strings:
     - --port-monitoring
