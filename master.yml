@@ -83,7 +83,7 @@ methods:
     default_random: false
     name: polling
   - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
+      details check https://docs.jina.ai/concepts/flow/create-flow/#complex-flow-topologies
     choices: null
     default: 1
     required: false
@@ -172,7 +172,7 @@ methods:
       which should be structured as a python package. For more details, please see
       the
 
-      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/executor-files/>`__
+      `Executor cookbook <https://docs.jina.ai/concepts/executor/executor-files/>`__
 
       '
     choices: null
@@ -348,6 +348,20 @@ methods:
     type: bool
     default_random: false
     name: restart
+  - help: The port for input data to bind to, default is a random port between [49152,
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas. Then, every resulting address
+      will be considered as one replica of the Executor.
+    choices: null
+    default: 51709
+    required: false
+    option_strings:
+    - --port
+    - --port-in
+    type: typing.Union[int, typing.List[int]]
+    default_random: true
+    default_factory: random_port
+    name: port
   - help: If set, the Executor reloads the modules as they change
     choices: null
     default: false
@@ -369,7 +383,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '53539'
+    default: '58683'
     required: false
     option_strings:
     - --port-monitoring
@@ -1216,6 +1230,21 @@ methods:
     type: bool
     default_random: false
     name: restart
+  - help: The port for input data to bind the gateway server to, by default, random
+      ports between range [49152, 65535] will be assigned. The port argument can be
+      either 1 single value in case only 1 protocol is used or multiple values when
+      many protocols are used.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --port
+    - --port-expose
+    - --port-in
+    - --ports
+    type: typing.Union[int, typing.List[int]]
+    default_random: false
+    name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -1228,7 +1257,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '53152'
+    default: '64951'
     required: false
     option_strings:
     - --port-monitoring
@@ -1716,7 +1745,7 @@ methods:
     default_random: false
     name: polling
   - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
+      details check https://docs.jina.ai/concepts/flow/create-flow/#complex-flow-topologies
     choices: null
     default: 1
     required: false
@@ -1805,7 +1834,7 @@ methods:
       which should be structured as a python package. For more details, please see
       the
 
-      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/executor-files/>`__
+      `Executor cookbook <https://docs.jina.ai/concepts/executor/executor-files/>`__
 
       '
     choices: null
@@ -1981,6 +2010,20 @@ methods:
     type: bool
     default_random: false
     name: restart
+  - help: The port for input data to bind to, default is a random port between [49152,
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas. Then, every resulting address
+      will be considered as one replica of the Executor.
+    choices: null
+    default: 59586
+    required: false
+    option_strings:
+    - --port
+    - --port-in
+    type: typing.Union[int, typing.List[int]]
+    default_random: true
+    default_factory: random_port
+    name: port
   - help: If set, the Executor reloads the modules as they change
     choices: null
     default: false
@@ -2002,7 +2045,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '61420'
+    default: '49776'
     required: false
     option_strings:
     - --port-monitoring
@@ -2227,7 +2270,7 @@ methods:
     default_random: false
     name: polling
   - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/fundamentals/flow/create-flow/#complex-flow-topologies
+      details check https://docs.jina.ai/concepts/flow/create-flow/#complex-flow-topologies
     choices: null
     default: 1
     required: false
@@ -2316,7 +2359,7 @@ methods:
       which should be structured as a python package. For more details, please see
       the
 
-      `Executor cookbook <https://docs.jina.ai/fundamentals/executor/executor-files/>`__
+      `Executor cookbook <https://docs.jina.ai/concepts/executor/executor-files/>`__
 
       '
     choices: null
@@ -2492,6 +2535,20 @@ methods:
     type: bool
     default_random: false
     name: restart
+  - help: The port for input data to bind to, default is a random port between [49152,
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports, separated by commas. Then, every resulting address
+      will be considered as one replica of the Executor.
+    choices: null
+    default: 57844
+    required: false
+    option_strings:
+    - --port
+    - --port-in
+    type: typing.Union[int, typing.List[int]]
+    default_random: true
+    default_factory: random_port
+    name: port
   - help: If set, the Executor reloads the modules as they change
     choices: null
     default: false
@@ -2513,7 +2570,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '58538'
+    default: '63883'
     required: false
     option_strings:
     - --port-monitoring
