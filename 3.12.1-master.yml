@@ -337,6 +337,17 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the Executor will restart while serving if the YAML configuration
+      source is changed. This differs from `reload` argument in that this will restart
+      the server and more configuration can be changed, like number of replicas.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --restart
+    type: bool
+    default_random: false
+    name: restart
   - help: If set, the Executor reloads the modules as they change
     choices: null
     default: false
@@ -358,7 +369,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '56834'
+    default: '63202'
     required: false
     option_strings:
     - --port-monitoring
@@ -568,6 +579,16 @@ methods:
     type: str
     default_random: false
     name: uses
+  - help: If set, the Flow will restart while blocked if the YAML configuration source
+      is changed.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --restart
+    type: bool
+    default_random: false
+    name: restart
   - help: The map of environment variables that are available inside runtime
     choices: null
     default: null
@@ -1185,6 +1206,16 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the Gateway will restart while serving if the YAML configuration
+      source is changed.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --restart
+    type: bool
+    default_random: false
+    name: restart
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -1197,7 +1228,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '58703'
+    default: '54745'
     required: false
     option_strings:
     - --port-monitoring
@@ -1939,6 +1970,17 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the Executor will restart while serving if the YAML configuration
+      source is changed. This differs from `reload` argument in that this will restart
+      the server and more configuration can be changed, like number of replicas.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --restart
+    type: bool
+    default_random: false
+    name: restart
   - help: If set, the Executor reloads the modules as they change
     choices: null
     default: false
@@ -1960,7 +2002,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '61584'
+    default: '60009'
     required: false
     option_strings:
     - --port-monitoring
@@ -2439,6 +2481,17 @@ methods:
     type: bool
     default_random: false
     name: floating
+  - help: If set, the Executor will restart while serving if the YAML configuration
+      source is changed. This differs from `reload` argument in that this will restart
+      the server and more configuration can be changed, like number of replicas.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --restart
+    type: bool
+    default_random: false
+    name: restart
   - help: If set, the Executor reloads the modules as they change
     choices: null
     default: false
@@ -2460,7 +2513,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '52403'
+    default: '63892'
     required: false
     option_strings:
     - --port-monitoring
