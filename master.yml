@@ -353,7 +353,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: 51709
+    default: 60283
     required: false
     option_strings:
     - --port
@@ -383,7 +383,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '58683'
+    default: '63450'
     required: false
     option_strings:
     - --port-monitoring
@@ -1257,7 +1257,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '64951'
+    default: '65185'
     required: false
     option_strings:
     - --port-monitoring
@@ -2015,7 +2015,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: 59586
+    default: 54457
     required: false
     option_strings:
     - --port
@@ -2045,7 +2045,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '49776'
+    default: '53039'
     required: false
     option_strings:
     - --port-monitoring
@@ -2540,7 +2540,7 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: 57844
+    default: 53636
     required: false
     option_strings:
     - --port
@@ -2570,7 +2570,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '63883'
+    default: '63245'
     required: false
     option_strings:
     - --port-monitoring
