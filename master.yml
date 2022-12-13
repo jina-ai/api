@@ -158,6 +158,16 @@ methods:
     type: dict
     default_random: false
     name: uses_requests
+  - help: "\n        Dictionary of keyword arguments that will override the `dynamic_batching`\
+      \ configuration in `uses`\n        "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-dynamic-batching
+    type: dict
+    default_random: false
+    name: uses_dynamic_batching
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -353,12 +363,12 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: 63590
+    default: 59905
     required: false
     option_strings:
     - --port
     - --port-in
-    type: typing.Union[int, typing.List[int]]
+    type: int
     default_random: true
     default_factory: random_port
     name: port
@@ -383,7 +393,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '52873'
+    default: '64457'
     required: false
     option_strings:
     - --port-monitoring
@@ -1242,7 +1252,7 @@ methods:
     - --port-expose
     - --port-in
     - --ports
-    type: typing.Union[int, typing.List[int]]
+    type: int
     default_random: false
     name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
@@ -1257,7 +1267,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '61629'
+    default: '64477'
     required: false
     option_strings:
     - --port-monitoring
@@ -1820,6 +1830,16 @@ methods:
     type: dict
     default_random: false
     name: uses_requests
+  - help: "\n        Dictionary of keyword arguments that will override the `dynamic_batching`\
+      \ configuration in `uses`\n        "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-dynamic-batching
+    type: dict
+    default_random: false
+    name: uses_dynamic_batching
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -2015,12 +2035,12 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: 56440
+    default: 56016
     required: false
     option_strings:
     - --port
     - --port-in
-    type: typing.Union[int, typing.List[int]]
+    type: int
     default_random: true
     default_factory: random_port
     name: port
@@ -2045,7 +2065,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '58211'
+    default: '64238'
     required: false
     option_strings:
     - --port-monitoring
@@ -2345,6 +2365,16 @@ methods:
     type: dict
     default_random: false
     name: uses_requests
+  - help: "\n        Dictionary of keyword arguments that will override the `dynamic_batching`\
+      \ configuration in `uses`\n        "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uses-dynamic-batching
+    type: dict
+    default_random: false
+    name: uses_dynamic_batching
   - help: '
 
       The customized python modules need to be imported before loading the executor
@@ -2540,12 +2570,12 @@ methods:
       this can be a list of ports, separated by commas. Then, every resulting address
       will be considered as one replica of the Executor.
     choices: null
-    default: 50729
+    default: 62746
     required: false
     option_strings:
     - --port
     - --port-in
-    type: typing.Union[int, typing.List[int]]
+    type: int
     default_random: true
     default_factory: random_port
     name: port
@@ -2570,7 +2600,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '52199'
+    default: '52866'
     required: false
     option_strings:
     - --port-monitoring
