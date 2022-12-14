@@ -361,13 +361,24 @@ methods:
     type: bool
     default_random: false
     name: reload
+  - help: If set, try to install `requirements.txt` from the local Executor if exists
+      in the Executor folder. If using Hub, install `requirements.txt` in the Hub
+      Executor bundle to local.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --install-requirements
+    type: bool
+    default_random: false
+    name: install_requirements
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]. In the case of an external Executor (`--external` or `external=True`)
       this can be a list of ports. Then, every resulting address will be considered
       as one replica of the Executor.
     choices: null
     default:
-    - 59598
+    - 60514
     required: false
     option_strings:
     - --port
@@ -388,7 +399,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 54157
+    - 51811
     required: false
     option_strings:
     - --port-monitoring
@@ -466,15 +477,6 @@ methods:
     type: int
     default_random: false
     name: metrics_exporter_port
-  - help: If set, install `requirements.txt` in the Hub Executor bundle to local
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --install-requirements
-    type: bool
-    default_random: false
-    name: install_requirements
   - help: If set, always pull the latest Hub Executor bundle even it exists on local
     choices: null
     default: false
@@ -1260,7 +1262,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 63441
+    - 65453
     required: false
     option_strings:
     - --port-monitoring
@@ -2025,13 +2027,24 @@ methods:
     type: bool
     default_random: false
     name: reload
+  - help: If set, try to install `requirements.txt` from the local Executor if exists
+      in the Executor folder. If using Hub, install `requirements.txt` in the Hub
+      Executor bundle to local.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --install-requirements
+    type: bool
+    default_random: false
+    name: install_requirements
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]. In the case of an external Executor (`--external` or `external=True`)
       this can be a list of ports. Then, every resulting address will be considered
       as one replica of the Executor.
     choices: null
     default:
-    - 65449
+    - 53900
     required: false
     option_strings:
     - --port
@@ -2052,7 +2065,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 57988
+    - 57471
     required: false
     option_strings:
     - --port-monitoring
@@ -2130,15 +2143,6 @@ methods:
     type: int
     default_random: false
     name: metrics_exporter_port
-  - help: If set, install `requirements.txt` in the Hub Executor bundle to local
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --install-requirements
-    type: bool
-    default_random: false
-    name: install_requirements
   - help: If set, always pull the latest Hub Executor bundle even it exists on local
     choices: null
     default: false
@@ -2554,13 +2558,24 @@ methods:
     type: bool
     default_random: false
     name: reload
+  - help: If set, try to install `requirements.txt` from the local Executor if exists
+      in the Executor folder. If using Hub, install `requirements.txt` in the Hub
+      Executor bundle to local.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --install-requirements
+    type: bool
+    default_random: false
+    name: install_requirements
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]. In the case of an external Executor (`--external` or `external=True`)
       this can be a list of ports. Then, every resulting address will be considered
       as one replica of the Executor.
     choices: null
     default:
-    - 64314
+    - 52973
     required: false
     option_strings:
     - --port
@@ -2581,7 +2596,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 50237
+    - 63074
     required: false
     option_strings:
     - --port-monitoring
@@ -2659,15 +2674,6 @@ methods:
     type: int
     default_random: false
     name: metrics_exporter_port
-  - help: If set, install `requirements.txt` in the Hub Executor bundle to local
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --install-requirements
-    type: bool
-    default_random: false
-    name: install_requirements
   - help: If set, always pull the latest Hub Executor bundle even it exists on local
     choices: null
     default: false
