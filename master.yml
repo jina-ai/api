@@ -296,17 +296,18 @@ methods:
     type: bool
     default_random: false
     name: disable_auto_volume
-  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
-      an external Executor (`--external` or `external=True`) this can be a list of
-      hosts, separated by commas. Then, every resulting address will be considered
+  - help: The host of the Gateway, which the client should connect to, by default
+      it is 0.0.0.0. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of hosts.  Then, every resulting address will be considered
       as one replica of the Executor.
     choices: null
-    default: 0.0.0.0
+    default:
+    - 0.0.0.0
     required: false
     option_strings:
     - --host
     - --host-in
-    type: str
+    type: typing.List[str]
     default_random: false
     name: host
   - help: The runtime class to run inside the Pod
@@ -360,17 +361,17 @@ methods:
     name: restart
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]. In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports, separated by commas. Then, every resulting address
-      will be considered as one replica of the Executor.
+      this can be a list of ports. Then, every resulting address will be considered
+      as one replica of the Executor.
     choices: null
-    default: 58790
+    default:
+    - 51950
     required: false
     option_strings:
     - --port
     - --port-in
     type: int
     default_random: true
-    default_factory: random_port
     name: port
   - help: If set, the Executor reloads the modules as they change
     choices: null
@@ -393,13 +394,13 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '55287'
+    default:
+    - 51723
     required: false
     option_strings:
     - --port-monitoring
-    type: str
+    type: int
     default_random: true
-    default_factory: random_identity
     name: port_monitoring
   - help: Number of retries per gRPC call. If <0 it defaults to max(3, num_replicas)
     choices: null
@@ -1040,10 +1041,7 @@ methods:
     type: typing.List[str]
     default_random: false
     name: protocol
-  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
-      an external Executor (`--external` or `external=True`) this can be a list of
-      hosts, separated by commas. Then, every resulting address will be considered
-      as one replica of the Executor.
+  - help: The host address of the runtime, by default it is 0.0.0.0.
     choices: null
     default: 0.0.0.0
     required: false
@@ -1267,13 +1265,13 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '59492'
+    default:
+    - 55296
     required: false
     option_strings:
     - --port-monitoring
-    type: str
+    type: int
     default_random: true
-    default_factory: random_identity
     name: port_monitoring
   - help: Number of retries per gRPC call. If <0 it defaults to max(3, num_replicas)
     choices: null
@@ -1968,17 +1966,18 @@ methods:
     type: bool
     default_random: false
     name: disable_auto_volume
-  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
-      an external Executor (`--external` or `external=True`) this can be a list of
-      hosts, separated by commas. Then, every resulting address will be considered
+  - help: The host of the Gateway, which the client should connect to, by default
+      it is 0.0.0.0. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of hosts.  Then, every resulting address will be considered
       as one replica of the Executor.
     choices: null
-    default: 0.0.0.0
+    default:
+    - 0.0.0.0
     required: false
     option_strings:
     - --host
     - --host-in
-    type: str
+    type: typing.List[str]
     default_random: false
     name: host
   - help: The runtime class to run inside the Pod
@@ -2032,17 +2031,17 @@ methods:
     name: restart
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]. In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports, separated by commas. Then, every resulting address
-      will be considered as one replica of the Executor.
+      this can be a list of ports. Then, every resulting address will be considered
+      as one replica of the Executor.
     choices: null
-    default: 53215
+    default:
+    - 53923
     required: false
     option_strings:
     - --port
     - --port-in
     type: int
     default_random: true
-    default_factory: random_port
     name: port
   - help: If set, the Executor reloads the modules as they change
     choices: null
@@ -2065,13 +2064,13 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '54750'
+    default:
+    - 63470
     required: false
     option_strings:
     - --port-monitoring
-    type: str
+    type: int
     default_random: true
-    default_factory: random_identity
     name: port_monitoring
   - help: Number of retries per gRPC call. If <0 it defaults to max(3, num_replicas)
     choices: null
@@ -2503,17 +2502,18 @@ methods:
     type: bool
     default_random: false
     name: disable_auto_volume
-  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
-      an external Executor (`--external` or `external=True`) this can be a list of
-      hosts, separated by commas. Then, every resulting address will be considered
+  - help: The host of the Gateway, which the client should connect to, by default
+      it is 0.0.0.0. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of hosts.  Then, every resulting address will be considered
       as one replica of the Executor.
     choices: null
-    default: 0.0.0.0
+    default:
+    - 0.0.0.0
     required: false
     option_strings:
     - --host
     - --host-in
-    type: str
+    type: typing.List[str]
     default_random: false
     name: host
   - help: The runtime class to run inside the Pod
@@ -2567,17 +2567,17 @@ methods:
     name: restart
   - help: The port for input data to bind to, default is a random port between [49152,
       65535]. In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports, separated by commas. Then, every resulting address
-      will be considered as one replica of the Executor.
+      this can be a list of ports. Then, every resulting address will be considered
+      as one replica of the Executor.
     choices: null
-    default: 56955
+    default:
+    - 55194
     required: false
     option_strings:
     - --port
     - --port-in
     type: int
     default_random: true
-    default_factory: random_port
     name: port
   - help: If set, the Executor reloads the modules as they change
     choices: null
@@ -2600,13 +2600,13 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '61224'
+    default:
+    - 49911
     required: false
     option_strings:
     - --port-monitoring
-    type: str
+    type: int
     default_random: true
-    default_factory: random_identity
     name: port_monitoring
   - help: Number of retries per gRPC call. If <0 it defaults to max(3, num_replicas)
     choices: null
@@ -2813,19 +2813,6 @@ methods:
     low-level orchestration
 - name: client
   options:
-  - help: The host address of the runtime, by default it is 0.0.0.0. In the case of
-      an external Executor (`--external` or `external=True`) this can be a list of
-      hosts, separated by commas. Then, every resulting address will be considered
-      as one replica of the Executor.
-    choices: null
-    default: 0.0.0.0
-    required: false
-    option_strings:
-    - --host
-    - --host-in
-    type: str
-    default_random: false
-    name: host
   - help: If set, respect the http_proxy and https_proxy environment variables. otherwise,
       it will unset these proxy variables before start. gRPC seems to prefer no proxy
     choices: null
@@ -2836,6 +2823,17 @@ methods:
     type: bool
     default_random: false
     name: proxy
+  - help: The host of the Gateway, which the client should connect to, by default
+      it is 0.0.0.0.
+    choices: null
+    default: 0.0.0.0
+    required: false
+    option_strings:
+    - --host
+    - --host-in
+    type: str
+    default_random: false
+    name: host
   - help: The port of the Gateway, which the client should connect to.
     choices: null
     default: null
