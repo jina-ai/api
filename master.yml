@@ -348,32 +348,11 @@ methods:
     type: bool
     default_random: false
     name: floating
-  - help: If set, the Executor will restart while serving if the YAML configuration
-      source is changed. This differs from `reload` argument in that this will restart
-      the server and more configuration can be changed, like number of replicas.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --restart
-    type: bool
-    default_random: false
-    name: restart
-  - help: The port for input data to bind to, default is a random port between [49152,
-      65535]. In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports. Then, every resulting address will be considered
-      as one replica of the Executor.
-    choices: null
-    default:
-    - 51950
-    required: false
-    option_strings:
-    - --port
-    - --port-in
-    type: int
-    default_random: true
-    name: port
-  - help: If set, the Executor reloads the modules as they change
+  - help: If set, the Executor will restart while serving if YAML configuration source
+      or Executor modules are changed. If YAML configuration is changed, the whole
+      deployment is reloaded and new processes will be restarted. If only Python modules
+      of the Executor have changed, they will be reloaded to the interpreter without
+      restarting process.
     choices: null
     default: false
     required: false
@@ -382,6 +361,20 @@ methods:
     type: bool
     default_random: false
     name: reload
+  - help: The port for input data to bind to, default is a random port between [49152,
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports. Then, every resulting address will be considered
+      as one replica of the Executor.
+    choices: null
+    default:
+    - 53323
+    required: false
+    option_strings:
+    - --port
+    - --port-in
+    type: int
+    default_random: true
+    name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -395,7 +388,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 51723
+    - 49509
     required: false
     option_strings:
     - --port-monitoring
@@ -604,16 +597,17 @@ methods:
     type: str
     default_random: false
     name: uses
-  - help: If set, the Flow will restart while blocked if the YAML configuration source
-      is changed.
+  - help: 'If set, auto-reloading on file changes is enabled: the Flow will restart
+      while blocked if  YAML configuration source is changed. This also applies apply
+      to underlying Executors, if their source code or YAML configuration has changed.'
     choices: null
     default: false
     required: false
     option_strings:
-    - --restart
+    - --reload
     type: bool
     default_random: false
-    name: restart
+    name: reload
   - help: The map of environment variables that are available inside runtime
     choices: null
     default: null
@@ -1228,16 +1222,16 @@ methods:
     type: bool
     default_random: false
     name: floating
-  - help: If set, the Gateway will restart while serving if the YAML configuration
-      source is changed.
+  - help: If set, the Gateway will restart while serving if YAML configuration source
+      is changed.
     choices: null
     default: false
     required: false
     option_strings:
-    - --restart
+    - --reload
     type: bool
     default_random: false
-    name: restart
+    name: reload
   - help: The port for input data to bind the gateway server to, by default, random
       ports between range [49152, 65535] will be assigned. The port argument can be
       either 1 single value in case only 1 protocol is used or multiple values when
@@ -1266,7 +1260,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 55296
+    - 51186
     required: false
     option_strings:
     - --port-monitoring
@@ -2018,32 +2012,11 @@ methods:
     type: bool
     default_random: false
     name: floating
-  - help: If set, the Executor will restart while serving if the YAML configuration
-      source is changed. This differs from `reload` argument in that this will restart
-      the server and more configuration can be changed, like number of replicas.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --restart
-    type: bool
-    default_random: false
-    name: restart
-  - help: The port for input data to bind to, default is a random port between [49152,
-      65535]. In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports. Then, every resulting address will be considered
-      as one replica of the Executor.
-    choices: null
-    default:
-    - 53923
-    required: false
-    option_strings:
-    - --port
-    - --port-in
-    type: int
-    default_random: true
-    name: port
-  - help: If set, the Executor reloads the modules as they change
+  - help: If set, the Executor will restart while serving if YAML configuration source
+      or Executor modules are changed. If YAML configuration is changed, the whole
+      deployment is reloaded and new processes will be restarted. If only Python modules
+      of the Executor have changed, they will be reloaded to the interpreter without
+      restarting process.
     choices: null
     default: false
     required: false
@@ -2052,6 +2025,20 @@ methods:
     type: bool
     default_random: false
     name: reload
+  - help: The port for input data to bind to, default is a random port between [49152,
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports. Then, every resulting address will be considered
+      as one replica of the Executor.
+    choices: null
+    default:
+    - 52288
+    required: false
+    option_strings:
+    - --port
+    - --port-in
+    type: int
+    default_random: true
+    name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -2065,7 +2052,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 63470
+    - 50953
     required: false
     option_strings:
     - --port-monitoring
@@ -2554,32 +2541,11 @@ methods:
     type: bool
     default_random: false
     name: floating
-  - help: If set, the Executor will restart while serving if the YAML configuration
-      source is changed. This differs from `reload` argument in that this will restart
-      the server and more configuration can be changed, like number of replicas.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --restart
-    type: bool
-    default_random: false
-    name: restart
-  - help: The port for input data to bind to, default is a random port between [49152,
-      65535]. In the case of an external Executor (`--external` or `external=True`)
-      this can be a list of ports. Then, every resulting address will be considered
-      as one replica of the Executor.
-    choices: null
-    default:
-    - 55194
-    required: false
-    option_strings:
-    - --port
-    - --port-in
-    type: int
-    default_random: true
-    name: port
-  - help: If set, the Executor reloads the modules as they change
+  - help: If set, the Executor will restart while serving if YAML configuration source
+      or Executor modules are changed. If YAML configuration is changed, the whole
+      deployment is reloaded and new processes will be restarted. If only Python modules
+      of the Executor have changed, they will be reloaded to the interpreter without
+      restarting process.
     choices: null
     default: false
     required: false
@@ -2588,6 +2554,20 @@ methods:
     type: bool
     default_random: false
     name: reload
+  - help: The port for input data to bind to, default is a random port between [49152,
+      65535]. In the case of an external Executor (`--external` or `external=True`)
+      this can be a list of ports. Then, every resulting address will be considered
+      as one replica of the Executor.
+    choices: null
+    default:
+    - 55680
+    required: false
+    option_strings:
+    - --port
+    - --port-in
+    type: int
+    default_random: true
+    name: port
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -2601,7 +2581,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 49911
+    - 58068
     required: false
     option_strings:
     - --port-monitoring
