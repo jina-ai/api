@@ -6,7 +6,7 @@ source: https://github.com/jina-ai/jina/tree/master
 url: https://jina.ai
 docs: https://docs.jina.ai
 authors: dev-team@jina.ai
-version: 3.12.0
+version: 3.11.1
 methods:
 - name: executor
   options:
@@ -368,16 +368,6 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: If set, the current Pod/Deployment can not be further chained, and the next
-      `.add()` will chain after the last Pod/Deployment not this current one.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --floating
-    type: bool
-    default_random: false
-    name: floating
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -390,7 +380,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '53413'
+    default: '59060'
     required: false
     option_strings:
     - --port-monitoring
@@ -407,6 +397,16 @@ methods:
     type: int
     default_random: false
     name: retries
+  - help: If set, the current Pod/Deployment can not be further chained, and the next
+      `.add()` will chain after the last Pod/Deployment not this current one.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --floating
+    type: bool
+    default_random: false
+    name: floating
   - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
       and will be enabled for automatic tracing of requests and customer span creation.
       Otherwise a no-op implementation will be provided.
@@ -1207,16 +1207,6 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: If set, the current Pod/Deployment can not be further chained, and the next
-      `.add()` will chain after the last Pod/Deployment not this current one.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --floating
-    type: bool
-    default_random: false
-    name: floating
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -1229,7 +1219,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '56434'
+    default: '56794'
     required: false
     option_strings:
     - --port-monitoring
@@ -1246,6 +1236,16 @@ methods:
     type: int
     default_random: false
     name: retries
+  - help: If set, the current Pod/Deployment can not be further chained, and the next
+      `.add()` will chain after the last Pod/Deployment not this current one.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --floating
+    type: bool
+    default_random: false
+    name: floating
   - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
       and will be enabled for automatic tracing of requests and customer span creation.
       Otherwise a no-op implementation will be provided.
@@ -1494,15 +1494,6 @@ methods:
       type: str
       default_random: false
       name: force_update
-    - help: A list of environment variables. It will be used in project build phase.
-      choices: null
-      default: null
-      required: false
-      option_strings:
-      - --build-env
-      type: str
-      default_random: false
-      name: build_env
     - help: The secret for overwrite a Hub executor
       choices: null
       default: null
@@ -1551,7 +1542,7 @@ methods:
       type: bool
       default_random: false
       name: no_usage
-    - help: The URI of the executor to pull (e.g., jinahub[+docker]://NAME)
+    - help: The URI of the executor to pull (e.g., jinaai[+docker]://<username>/NAME)
       choices: null
       default: null
       required: true
@@ -2011,16 +2002,6 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: If set, the current Pod/Deployment can not be further chained, and the next
-      `.add()` will chain after the last Pod/Deployment not this current one.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --floating
-    type: bool
-    default_random: false
-    name: floating
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -2033,7 +2014,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '56232'
+    default: '53157'
     required: false
     option_strings:
     - --port-monitoring
@@ -2050,6 +2031,16 @@ methods:
     type: int
     default_random: false
     name: retries
+  - help: If set, the current Pod/Deployment can not be further chained, and the next
+      `.add()` will chain after the last Pod/Deployment not this current one.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --floating
+    type: bool
+    default_random: false
+    name: floating
   - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
       and will be enabled for automatic tracing of requests and customer span creation.
       Otherwise a no-op implementation will be provided.
@@ -2543,16 +2534,6 @@ methods:
     type: dict
     default_random: false
     name: env
-  - help: If set, the current Pod/Deployment can not be further chained, and the next
-      `.add()` will chain after the last Pod/Deployment not this current one.
-    choices: null
-    default: false
-    required: false
-    option_strings:
-    - --floating
-    type: bool
-    default_random: false
-    name: floating
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -2565,7 +2546,7 @@ methods:
   - help: The port on which the prometheus server is exposed, default is a random
       port between [49152, 65535]
     choices: null
-    default: '58482'
+    default: '60946'
     required: false
     option_strings:
     - --port-monitoring
@@ -2582,6 +2563,16 @@ methods:
     type: int
     default_random: false
     name: retries
+  - help: If set, the current Pod/Deployment can not be further chained, and the next
+      `.add()` will chain after the last Pod/Deployment not this current one.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --floating
+    type: bool
+    default_random: false
+    name: floating
   - help: If set, the sdk implementation of the OpenTelemetry tracer will be available
       and will be enabled for automatic tracing of requests and customer span creation.
       Otherwise a no-op implementation will be provided.
