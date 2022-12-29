@@ -338,6 +338,15 @@ methods:
     type: dict
     default_random: false
     name: env
+  - help: The map of environment variables that are read from kubernetes cluster secrets
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --env-from-secret
+    type: dict
+    default_random: false
+    name: env_from_secret
   - help: If set, the current Pod/Deployment can not be further chained, and the next
       `.add()` will chain after the last Pod/Deployment not this current one.
     choices: null
@@ -378,7 +387,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 58233
+    - 62456
     required: false
     option_strings:
     - --port
@@ -399,7 +408,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 52003
+    - 53203
     required: false
     option_strings:
     - --port-monitoring
@@ -1214,6 +1223,15 @@ methods:
     type: dict
     default_random: false
     name: env
+  - help: The map of environment variables that are read from kubernetes cluster secrets
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --env-from-secret
+    type: dict
+    default_random: false
+    name: env_from_secret
   - help: If set, the current Pod/Deployment can not be further chained, and the next
       `.add()` will chain after the last Pod/Deployment not this current one.
     choices: null
@@ -1262,7 +1280,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 64228
+    - 56981
     required: false
     option_strings:
     - --port-monitoring
@@ -2004,6 +2022,15 @@ methods:
     type: dict
     default_random: false
     name: env
+  - help: The map of environment variables that are read from kubernetes cluster secrets
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --env-from-secret
+    type: dict
+    default_random: false
+    name: env_from_secret
   - help: If set, the current Pod/Deployment can not be further chained, and the next
       `.add()` will chain after the last Pod/Deployment not this current one.
     choices: null
@@ -2044,7 +2071,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 57416
+    - 60923
     required: false
     option_strings:
     - --port
@@ -2065,7 +2092,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 52586
+    - 52421
     required: false
     option_strings:
     - --port-monitoring
@@ -2535,6 +2562,15 @@ methods:
     type: dict
     default_random: false
     name: env
+  - help: The map of environment variables that are read from kubernetes cluster secrets
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --env-from-secret
+    type: dict
+    default_random: false
+    name: env_from_secret
   - help: If set, the current Pod/Deployment can not be further chained, and the next
       `.add()` will chain after the last Pod/Deployment not this current one.
     choices: null
@@ -2575,7 +2611,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 57355
+    - 58488
     required: false
     option_strings:
     - --port
@@ -2596,7 +2632,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 55844
+    - 55325
     required: false
     option_strings:
     - --port-monitoring
