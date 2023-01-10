@@ -387,7 +387,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 57466
+    - 60432
     required: false
     option_strings:
     - --port
@@ -408,7 +408,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 63997
+    - 59132
     required: false
     option_strings:
     - --port-monitoring
@@ -1280,7 +1280,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 59803
+    - 59797
     required: false
     option_strings:
     - --port-monitoring
@@ -1610,15 +1610,6 @@ methods:
       type: hub_uri
       default_random: false
       name: uri
-    - help: If set, install `requirements.txt` in the Hub Executor bundle to local
-      choices: null
-      default: false
-      required: false
-      option_strings:
-      - --install-requirements
-      type: bool
-      default_random: false
-      name: install_requirements
     - help: If set, always pull the latest Hub Executor bundle even it exists on local
       choices: null
       default: false
@@ -1638,6 +1629,15 @@ methods:
       type: str
       default_random: false
       name: prefer_platform
+    - help: If set, install `requirements.txt` in the Hub Executor bundle to local
+      choices: null
+      default: false
+      required: false
+      option_strings:
+      - --install-requirements
+      type: bool
+      default_random: false
+      name: install_requirements
     help: Download an executor image/package from Jina hub
   - name: status
     options:
@@ -2090,7 +2090,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 63176
+    - 59656
     required: false
     option_strings:
     - --port
@@ -2111,7 +2111,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 56893
+    - 56485
     required: false
     option_strings:
     - --port-monitoring
@@ -2630,7 +2630,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 56016
+    - 65099
     required: false
     option_strings:
     - --port
@@ -2651,7 +2651,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 55229
+    - 60617
     required: false
     option_strings:
     - --port-monitoring
