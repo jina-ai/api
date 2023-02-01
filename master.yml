@@ -388,7 +388,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 49457
+    - 55087
     required: false
     option_strings:
     - --port
@@ -409,7 +409,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 58073
+    - 63156
     required: false
     option_strings:
     - --port-monitoring
@@ -609,6 +609,15 @@ methods:
     type: bool
     default_random: false
     name: quiet_error
+  - help: If set, then no root handlers will be suppressed from logging.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --suppress-root-logging
+    type: bool
+    default_random: false
+    name: suppress_root_logging
   - help: The YAML path represents a flow. It can be either a local file path or a
       URL.
     choices: null
@@ -1292,7 +1301,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 53064
+    - 60529
     required: false
     option_strings:
     - --port-monitoring
@@ -2103,7 +2112,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 52195
+    - 60284
     required: false
     option_strings:
     - --port
@@ -2124,7 +2133,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 60768
+    - 54016
     required: false
     option_strings:
     - --port-monitoring
@@ -2653,7 +2662,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 49593
+    - 49931
     required: false
     option_strings:
     - --port
@@ -2674,7 +2683,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 55364
+    - 53057
     required: false
     option_strings:
     - --port-monitoring
@@ -3030,5 +3039,14 @@ methods:
     type: int
     default_random: false
     name: prefetch
+  - help: If set, then no root handlers will be suppressed from logging.
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --suppress-root-logging
+    type: bool
+    default_random: false
+    name: suppress_root_logging
   help: Start a Python client that connects to a Jina Gateway
 revision: null
