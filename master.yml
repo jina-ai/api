@@ -32,7 +32,8 @@ methods:
     type: str
     default_random: false
     name: workspace
-  - help: The YAML config of the logger used in this object.
+  - help: The config name or the absolute path to the YAML config file of the logger
+      used in this object.
     choices: null
     default: default
     required: false
@@ -387,7 +388,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 65404
+    - 49457
     required: false
     option_strings:
     - --port
@@ -408,7 +409,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 64564
+    - 58073
     required: false
     option_strings:
     - --port-monitoring
@@ -580,7 +581,8 @@ methods:
     type: str
     default_random: false
     name: workspace
-  - help: The YAML config of the logger used in this object.
+  - help: The config name or the absolute path to the YAML config file of the logger
+      used in this object.
     choices: null
     default: default
     required: false
@@ -866,7 +868,8 @@ methods:
     type: str
     default_random: false
     name: workspace
-  - help: The YAML config of the logger used in this object.
+  - help: The config name or the absolute path to the YAML config file of the logger
+      used in this object.
     choices: null
     default: default
     required: false
@@ -1289,7 +1292,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 50909
+    - 53064
     required: false
     option_strings:
     - --port-monitoring
@@ -1744,7 +1747,8 @@ methods:
     type: str
     default_random: false
     name: workspace
-  - help: The YAML config of the logger used in this object.
+  - help: The config name or the absolute path to the YAML config file of the logger
+      used in this object.
     choices: null
     default: default
     required: false
@@ -2099,7 +2103,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 58650
+    - 52195
     required: false
     option_strings:
     - --port
@@ -2120,7 +2124,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 65505
+    - 60768
     required: false
     option_strings:
     - --port-monitoring
@@ -2293,7 +2297,8 @@ methods:
     type: str
     default_random: false
     name: workspace
-  - help: The YAML config of the logger used in this object.
+  - help: The config name or the absolute path to the YAML config file of the logger
+      used in this object.
     choices: null
     default: default
     required: false
@@ -2648,7 +2653,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 60115
+    - 49593
     required: false
     option_strings:
     - --port
@@ -2669,7 +2674,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 61463
+    - 55364
     required: false
     option_strings:
     - --port-monitoring
@@ -2992,6 +2997,16 @@ methods:
     type: int
     default_random: false
     name: metrics_exporter_port
+  - help: The config name or the absolute path to the YAML config file of the logger
+      used in this object.
+    choices: null
+    default: default
+    required: false
+    option_strings:
+    - --log-config
+    type: str
+    default_random: false
+    name: log_config
   - help: Communication protocol between server and client.
     choices:
     - GRPC
