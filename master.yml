@@ -388,7 +388,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 50609
+    - 64741
     required: false
     option_strings:
     - --port
@@ -409,7 +409,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 52945
+    - 60140
     required: false
     option_strings:
     - --port-monitoring
@@ -1135,6 +1135,16 @@ methods:
     type: typing.List[str]
     default_random: false
     name: py_modules
+  - help: The number of replicas of the Gateway. This replicas will only be applied
+      when converted into Kubernetes YAML
+    choices: null
+    default: 1
+    required: false
+    option_strings:
+    - --replicas
+    type: int
+    default_random: false
+    name: replicas
   - help: 'Dictionary of kwargs arguments that will be passed to the grpc server as
       options when starting the server, example : {''grpc.max_send_message_length'':
       -1}'
@@ -1301,7 +1311,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 62437
+    - 61240
     required: false
     option_strings:
     - --port-monitoring
@@ -2121,7 +2131,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 63919
+    - 58606
     required: false
     option_strings:
     - --port
@@ -2142,7 +2152,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 55172
+    - 51411
     required: false
     option_strings:
     - --port-monitoring
@@ -2671,7 +2681,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 62932
+    - 61711
     required: false
     option_strings:
     - --port
@@ -2692,7 +2702,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 63682
+    - 49284
     required: false
     option_strings:
     - --port-monitoring
