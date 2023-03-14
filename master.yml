@@ -388,7 +388,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 51463
+    - 63078
     required: false
     option_strings:
     - --port
@@ -409,7 +409,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 52027
+    - 63301
     required: false
     option_strings:
     - --port-monitoring
@@ -852,6 +852,15 @@ methods:
     type: str
     default_random: false
     name: name
+  - help: The type of project to be created (either flow or deployment)
+    choices: null
+    default: flow
+    required: false
+    option_strings:
+    - --type
+    type: str
+    default_random: false
+    name: type
   help: Create a new Jina toy project with the predefined template.
 - name: gateway
   options:
@@ -1311,7 +1320,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 58917
+    - 54685
     required: false
     option_strings:
     - --port-monitoring
@@ -2131,7 +2140,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 63129
+    - 59642
     required: false
     option_strings:
     - --port
@@ -2152,7 +2161,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 49177
+    - 63121
     required: false
     option_strings:
     - --port-monitoring
@@ -2681,7 +2690,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 52831
+    - 60057
     required: false
     option_strings:
     - --port
@@ -2702,7 +2711,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 54283
+    - 58767
     required: false
     option_strings:
     - --port-monitoring
