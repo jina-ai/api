@@ -237,6 +237,17 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
+  - help: 'Dictionary of kwargs arguments that will be passed to the grpc channel
+      as options when creating a channel, example : {''grpc.max_send_message_length'':
+      -1}. When max_attempts > 1, the ''grpc.service_config'' option will not be applicable.'
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --grpc-channel-options
+    type: dict
+    default_random: false
+    name: grpc_channel_options
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -388,7 +399,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 62987
+    - 60463
     required: false
     option_strings:
     - --port
@@ -409,7 +420,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 58610
+    - 58626
     required: false
     option_strings:
     - --port-monitoring
@@ -1165,6 +1176,17 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
+  - help: 'Dictionary of kwargs arguments that will be passed to the grpc channel
+      as options when creating a channel, example : {''grpc.max_send_message_length'':
+      -1}. When max_attempts > 1, the ''grpc.service_config'' option will not be applicable.'
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --grpc-channel-options
+    type: dict
+    default_random: false
+    name: grpc_channel_options
   - help: Routing graph for the gateway
     choices: null
     default: '{}'
@@ -1298,7 +1320,7 @@ methods:
       many protocols are used.
     choices: null
     default:
-    - 57363
+    - 64654
     required: false
     option_strings:
     - --port
@@ -1321,7 +1343,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 60404
+    - 57437
     required: false
     option_strings:
     - --port-monitoring
@@ -1990,6 +2012,17 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
+  - help: 'Dictionary of kwargs arguments that will be passed to the grpc channel
+      as options when creating a channel, example : {''grpc.max_send_message_length'':
+      -1}. When max_attempts > 1, the ''grpc.service_config'' option will not be applicable.'
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --grpc-channel-options
+    type: dict
+    default_random: false
+    name: grpc_channel_options
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -2141,7 +2174,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 52504
+    - 55064
     required: false
     option_strings:
     - --port
@@ -2162,7 +2195,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 63621
+    - 50946
     required: false
     option_strings:
     - --port-monitoring
@@ -2540,6 +2573,17 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
+  - help: 'Dictionary of kwargs arguments that will be passed to the grpc channel
+      as options when creating a channel, example : {''grpc.max_send_message_length'':
+      -1}. When max_attempts > 1, the ''grpc.service_config'' option will not be applicable.'
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --grpc-channel-options
+    type: dict
+    default_random: false
+    name: grpc_channel_options
   - help: The entrypoint command overrides the ENTRYPOINT in Docker image. when not
       set then the Docker image ENTRYPOINT takes effective.
     choices: null
@@ -2691,7 +2735,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 53796
+    - 50718
     required: false
     option_strings:
     - --port
@@ -2712,7 +2756,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 62509
+    - 58791
     required: false
     option_strings:
     - --port-monitoring
@@ -3057,6 +3101,17 @@ methods:
     type: str
     default_random: false
     name: protocol
+  - help: 'Dictionary of kwargs arguments that will be passed to the grpc channel
+      as options when creating a channel, example : {''grpc.max_send_message_length'':
+      -1}. When max_attempts > 1, the ''grpc.service_config'' option will not be applicable.'
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --grpc-channel-options
+    type: dict
+    default_random: false
+    name: grpc_channel_options
   - help: "\n    Number of requests fetched from the client before feeding into the\
       \ first Executor. \n    \n    Used to control the speed of data input into a\
       \ Flow. 0 disables prefetch (1000 requests is the default)"
