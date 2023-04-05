@@ -409,7 +409,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 52336
+    - 63317
     required: false
     option_strings:
     - --port
@@ -417,6 +417,22 @@ methods:
     type: int
     default_random: true
     name: port
+  - help: 'Communication protocol of the server exposed by the Executor. This can
+      be a single value or a list of protocols, depending on your chosen Gateway.
+      Choose the convenient protocols from: [''GRPC'', ''HTTP'', ''WEBSOCKET''].'
+    choices:
+    - GRPC
+    - HTTP
+    - WEBSOCKET
+    default:
+    - "GRPC"
+    required: false
+    option_strings:
+    - --protocol
+    - --protocols
+    type: typing.List[str]
+    default_random: false
+    name: protocol
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -430,7 +446,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 62102
+    - 50500
     required: false
     option_strings:
     - --port-monitoring
@@ -1006,6 +1022,42 @@ methods:
     type: bool
     default_random: false
     name: cors
+  - help: '
+
+      Dictionary of kwargs arguments that will be passed to Uvicorn server when starting
+      the server
+
+
+      More details can be found in Uvicorn docs: https://www.uvicorn.org/settings/
+
+
+      '
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uvicorn-kwargs
+    type: dict
+    default_random: false
+    name: uvicorn_kwargs
+  - help: "\n        the path to the certificate file\n        "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --ssl-certfile
+    type: str
+    default_random: false
+    name: ssl_certfile
+  - help: "\n            the path to the key file\n            "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --ssl-keyfile
+    type: str
+    default_random: false
+    name: ssl_keyfile
   - help: 'If set, `/status` `/post` endpoints are removed from HTTP interface. '
     choices: null
     default: false
@@ -1036,42 +1088,6 @@ methods:
     type: str
     default_random: false
     name: expose_endpoints
-  - help: '
-
-      Dictionary of kwargs arguments that will be passed to Uvicorn server when starting
-      the server
-
-
-      More details can be found in Uvicorn docs: https://www.uvicorn.org/settings/
-
-
-      '
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --uvicorn-kwargs
-    type: dict
-    default_random: false
-    name: uvicorn_kwargs
-  - help: "\n        the path to the certificate file\n        "
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --ssl-certfile
-    type: str
-    default_random: false
-    name: ssl_certfile
-  - help: "\n        the path to the key file\n        "
-    choices: null
-    default: null
-    required: false
-    option_strings:
-    - --ssl-keyfile
-    type: str
-    default_random: false
-    name: ssl_keyfile
   - help: 'If set, /graphql endpoint is added to HTTP interface. '
     choices: null
     default: false
@@ -1081,22 +1097,6 @@ methods:
     type: bool
     default_random: false
     name: expose_graphql_endpoint
-  - help: 'Communication protocol of the server exposed by the Gateway. This can be
-      a single value or a list of protocols, depending on your chosen Gateway. Choose
-      the convenient protocols from: [''GRPC'', ''HTTP'', ''WEBSOCKET''].'
-    choices:
-    - GRPC
-    - HTTP
-    - WEBSOCKET
-    default:
-    - "GRPC"
-    required: false
-    option_strings:
-    - --protocol
-    - --protocols
-    type: typing.List[str]
-    default_random: false
-    name: protocol
   - help: The host address of the runtime, by default it is 0.0.0.0.
     choices: null
     default: 0.0.0.0
@@ -1330,7 +1330,7 @@ methods:
       many protocols are used.
     choices: null
     default:
-    - 57888
+    - 50614
     required: false
     option_strings:
     - --port
@@ -1340,6 +1340,22 @@ methods:
     type: int
     default_random: true
     name: port
+  - help: 'Communication protocol of the server exposed by the Gateway. This can be
+      a single value or a list of protocols, depending on your chosen Gateway. Choose
+      the convenient protocols from: [''GRPC'', ''HTTP'', ''WEBSOCKET''].'
+    choices:
+    - GRPC
+    - HTTP
+    - WEBSOCKET
+    default:
+    - "GRPC"
+    required: false
+    option_strings:
+    - --protocol
+    - --protocols
+    type: typing.List[str]
+    default_random: false
+    name: protocol
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -1353,7 +1369,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 51623
+    - 64286
     required: false
     option_strings:
     - --port-monitoring
@@ -2194,7 +2210,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 57560
+    - 56645
     required: false
     option_strings:
     - --port
@@ -2202,6 +2218,22 @@ methods:
     type: int
     default_random: true
     name: port
+  - help: 'Communication protocol of the server exposed by the Executor. This can
+      be a single value or a list of protocols, depending on your chosen Gateway.
+      Choose the convenient protocols from: [''GRPC'', ''HTTP'', ''WEBSOCKET''].'
+    choices:
+    - GRPC
+    - HTTP
+    - WEBSOCKET
+    default:
+    - "GRPC"
+    required: false
+    option_strings:
+    - --protocol
+    - --protocols
+    type: typing.List[str]
+    default_random: false
+    name: protocol
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -2215,7 +2247,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 62827
+    - 49266
     required: false
     option_strings:
     - --port-monitoring
@@ -2765,7 +2797,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 51114
+    - 65147
     required: false
     option_strings:
     - --port
@@ -2773,6 +2805,22 @@ methods:
     type: int
     default_random: true
     name: port
+  - help: 'Communication protocol of the server exposed by the Executor. This can
+      be a single value or a list of protocols, depending on your chosen Gateway.
+      Choose the convenient protocols from: [''GRPC'', ''HTTP'', ''WEBSOCKET''].'
+    choices:
+    - GRPC
+    - HTTP
+    - WEBSOCKET
+    default:
+    - "GRPC"
+    required: false
+    option_strings:
+    - --protocol
+    - --protocols
+    type: typing.List[str]
+    default_random: false
+    name: protocol
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -2786,7 +2834,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 59110
+    - 57683
     required: false
     option_strings:
     - --port-monitoring
@@ -2994,6 +3042,72 @@ methods:
     type: bool
     default_random: false
     name: tls
+  - help: The title of this HTTP server. It will be used in automatics docs such as
+      Swagger UI.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --title
+    type: str
+    default_random: false
+    name: title
+  - help: The description of this HTTP server. It will be used in automatics docs
+      such as Swagger UI.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --description
+    type: str
+    default_random: false
+    name: description
+  - help: "\n        If set, a CORS middleware is added to FastAPI frontend to allow\
+      \ cross-origin access.\n        "
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --cors
+    type: bool
+    default_random: false
+    name: cors
+  - help: '
+
+      Dictionary of kwargs arguments that will be passed to Uvicorn server when starting
+      the server
+
+
+      More details can be found in Uvicorn docs: https://www.uvicorn.org/settings/
+
+
+      '
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --uvicorn-kwargs
+    type: dict
+    default_random: false
+    name: uvicorn_kwargs
+  - help: "\n        the path to the certificate file\n        "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --ssl-certfile
+    type: str
+    default_random: false
+    name: ssl_certfile
+  - help: "\n            the path to the key file\n            "
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --ssl-keyfile
+    type: str
+    default_random: false
+    name: ssl_keyfile
   help: Start a Deployment. You should rarely use this directly unless you are doing
     low-level orchestration
 - name: client
