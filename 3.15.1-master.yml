@@ -409,7 +409,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 58507
+    - 53447
     required: false
     option_strings:
     - --port
@@ -446,7 +446,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 49688
+    - 53657
     required: false
     option_strings:
     - --port-monitoring
@@ -593,7 +593,7 @@ methods:
     type: int
     default_random: false
     name: timeout_send
-  help: Start an Executor. Executor is how Jina processes Document.
+  help: Start an Executor. Jina uses Executors process Documents
 - name: flow
   options:
   - help: "\n    The name of this object.\n\n    This will be used in the following\
@@ -699,7 +699,7 @@ methods:
     type: str
     default_random: false
     name: inspect
-  help: Start a Flow. Flow is how Jina streamlines and distributes Executors.
+  help: Start a Flow. Jina uses Flows to streamline and distribute Executors
 - name: ping
   options:
   - help: The target type to ping. For `executor` and `gateway`, checks the readiness
@@ -759,10 +759,10 @@ methods:
     type: int
     default_random: false
     name: min_successful_attempts
-  help: Ping a remote Executor or a Flow.
+  help: Ping a remote Executor or Flow.
 - name: export
   options: []
-  help: Export Jina API and Flow to JSONSchema, Kubernetes YAML, or SVG flowchart.
+  help: Export Jina API and Flow to JSONSchema, Kubernetes YAML, or SVG flowchart
   methods:
   - name: flowchart
     options:
@@ -898,7 +898,7 @@ methods:
     type: str
     default_random: false
     name: type
-  help: Create a new Jina toy project with the predefined template.
+  help: Create a new Jina project with a predefined template
 - name: gateway
   options:
   - help: "\n    The name of this object.\n\n    This will be used in the following\
@@ -1330,7 +1330,7 @@ methods:
       many protocols are used.
     choices: null
     default:
-    - 56198
+    - 56713
     required: false
     option_strings:
     - --port
@@ -1369,7 +1369,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 51348
+    - 57004
     required: false
     option_strings:
     - --port-monitoring
@@ -1447,10 +1447,10 @@ methods:
     type: int
     default_random: false
     name: metrics_exporter_port
-  help: Start a Gateway that receives client Requests via gRPC/REST interface
+  help: Start a Gateway to receive client Requests via gRPC/RESTful interface
 - name: auth
   options: []
-  help: Login to Jina AI with your GitHub/Google/Email account
+  help: Log in to Jina AI with your GitHub/Google/Email account
   methods:
   - name: login
     options:
@@ -1520,7 +1520,7 @@ methods:
       methods: []
 - name: hub
   options: []
-  help: Push/Pull an Executor to/from Jina Hub
+  help: Push/pull Executor to/from Executor Hub
   methods:
   - name: new
     options:
@@ -1799,8 +1799,7 @@ methods:
   help: Manage Flows on Jina Cloud
 - name: help
   options:
-  - help: Lookup the usage & mention of the argument name in Jina API. The name can
-      be fuzzy
+  - help: Look up usage & mention of argument name in Jina API. The name can be fuzzy
     choices: null
     default: null
     required: true
@@ -2210,7 +2209,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 58411
+    - 61794
     required: false
     option_strings:
     - --port
@@ -2247,7 +2246,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 56071
+    - 53307
     required: false
     option_strings:
     - --port-monitoring
@@ -2797,7 +2796,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 49492
+    - 55885
     required: false
     option_strings:
     - --port
@@ -2834,7 +2833,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 54545
+    - 61725
     required: false
     option_strings:
     - --port-monitoring
