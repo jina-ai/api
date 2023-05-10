@@ -247,6 +247,16 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
+  - help: Dictionary of kwargs arguments that will be passed to the RAFT node as configuration
+      options when starting the RAFT node.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --raft-configuration
+    type: dict
+    default_random: false
+    name: raft_configuration
   - help: 'Dictionary of kwargs arguments that will be passed to the grpc channel
       as options when creating a channel, example : {''grpc.max_send_message_length'':
       -1}. When max_attempts > 1, the ''grpc.service_config'' option will not be applicable.'
@@ -409,7 +419,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 56617
+    - 55296
     required: false
     option_strings:
     - --port
@@ -446,7 +456,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 60409
+    - 53794
     required: false
     option_strings:
     - --port-monitoring
@@ -524,6 +534,16 @@ methods:
     type: int
     default_random: false
     name: metrics_exporter_port
+  - help: If set, start consensus module to make sure write operations are properly
+      replicated between all the replicas
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --stateful
+    type: bool
+    default_random: false
+    name: stateful
   - help: If set, always pull the latest Hub Executor bundle even it exists on local
     choices: null
     default: false
@@ -1330,7 +1350,7 @@ methods:
       many protocols are used.
     choices: null
     default:
-    - 64394
+    - 55512
     required: false
     option_strings:
     - --port
@@ -1369,7 +1389,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 56525
+    - 49340
     required: false
     option_strings:
     - --port-monitoring
@@ -1447,6 +1467,16 @@ methods:
     type: int
     default_random: false
     name: metrics_exporter_port
+  - help: If set, start consensus module to make sure write operations are properly
+      replicated between all the replicas
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --stateful
+    type: bool
+    default_random: false
+    name: stateful
   help: Start a Gateway to receive client Requests via gRPC/RESTful interface
 - name: auth
   options: []
@@ -2047,6 +2077,16 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
+  - help: Dictionary of kwargs arguments that will be passed to the RAFT node as configuration
+      options when starting the RAFT node.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --raft-configuration
+    type: dict
+    default_random: false
+    name: raft_configuration
   - help: 'Dictionary of kwargs arguments that will be passed to the grpc channel
       as options when creating a channel, example : {''grpc.max_send_message_length'':
       -1}. When max_attempts > 1, the ''grpc.service_config'' option will not be applicable.'
@@ -2209,7 +2249,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 58729
+    - 49163
     required: false
     option_strings:
     - --port
@@ -2246,7 +2286,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 64679
+    - 64968
     required: false
     option_strings:
     - --port-monitoring
@@ -2324,6 +2364,16 @@ methods:
     type: int
     default_random: false
     name: metrics_exporter_port
+  - help: If set, start consensus module to make sure write operations are properly
+      replicated between all the replicas
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --stateful
+    type: bool
+    default_random: false
+    name: stateful
   - help: If set, always pull the latest Hub Executor bundle even it exists on local
     choices: null
     default: false
@@ -2634,6 +2684,16 @@ methods:
     type: dict
     default_random: false
     name: grpc_server_options
+  - help: Dictionary of kwargs arguments that will be passed to the RAFT node as configuration
+      options when starting the RAFT node.
+    choices: null
+    default: null
+    required: false
+    option_strings:
+    - --raft-configuration
+    type: dict
+    default_random: false
+    name: raft_configuration
   - help: 'Dictionary of kwargs arguments that will be passed to the grpc channel
       as options when creating a channel, example : {''grpc.max_send_message_length'':
       -1}. When max_attempts > 1, the ''grpc.service_config'' option will not be applicable.'
@@ -2796,7 +2856,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 52112
+    - 65087
     required: false
     option_strings:
     - --port
@@ -2833,7 +2893,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 56311
+    - 51914
     required: false
     option_strings:
     - --port-monitoring
@@ -2911,6 +2971,16 @@ methods:
     type: int
     default_random: false
     name: metrics_exporter_port
+  - help: If set, start consensus module to make sure write operations are properly
+      replicated between all the replicas
+    choices: null
+    default: false
+    required: false
+    option_strings:
+    - --stateful
+    type: bool
+    default_random: false
+    name: stateful
   - help: If set, always pull the latest Hub Executor bundle even it exists on local
     choices: null
     default: false
