@@ -410,7 +410,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 58429
+    - 61894
     required: false
     option_strings:
     - --port
@@ -434,6 +434,19 @@ methods:
     type: typing.List[str]
     default_random: false
     name: protocol
+  - help: 'If set, Executor is translated to a custom container compatible with the
+      chosen provider. Choose the convenient providers from: [''NONE'', ''SAGEMAKER''].'
+    choices:
+    - NONE
+    - SAGEMAKER
+    default:
+    - "NONE"
+    required: false
+    option_strings:
+    - --provider
+    type: str
+    default_random: false
+    name: provider
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -447,7 +460,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 52606
+    - 60133
     required: false
     option_strings:
     - --port-monitoring
@@ -1332,7 +1345,7 @@ methods:
       many protocols are used.
     choices: null
     default:
-    - 54979
+    - 56313
     required: false
     option_strings:
     - --port
@@ -1358,6 +1371,19 @@ methods:
     type: typing.List[str]
     default_random: false
     name: protocol
+  - help: 'If set, Executor is translated to a custom container compatible with the
+      chosen provider. Choose the convenient providers from: [''NONE'', ''SAGEMAKER''].'
+    choices:
+    - NONE
+    - SAGEMAKER
+    default:
+    - "NONE"
+    required: false
+    option_strings:
+    - --provider
+    type: str
+    default_random: false
+    name: provider
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -1371,7 +1397,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 56106
+    - 63533
     required: false
     option_strings:
     - --port-monitoring
@@ -2222,7 +2248,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 53760
+    - 53532
     required: false
     option_strings:
     - --port
@@ -2246,6 +2272,19 @@ methods:
     type: typing.List[str]
     default_random: false
     name: protocol
+  - help: 'If set, Executor is translated to a custom container compatible with the
+      chosen provider. Choose the convenient providers from: [''NONE'', ''SAGEMAKER''].'
+    choices:
+    - NONE
+    - SAGEMAKER
+    default:
+    - "NONE"
+    required: false
+    option_strings:
+    - --provider
+    type: str
+    default_random: false
+    name: provider
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -2259,7 +2298,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 49622
+    - 64048
     required: false
     option_strings:
     - --port-monitoring
@@ -2820,7 +2859,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 49556
+    - 57497
     required: false
     option_strings:
     - --port
@@ -2844,6 +2883,19 @@ methods:
     type: typing.List[str]
     default_random: false
     name: protocol
+  - help: 'If set, Executor is translated to a custom container compatible with the
+      chosen provider. Choose the convenient providers from: [''NONE'', ''SAGEMAKER''].'
+    choices:
+    - NONE
+    - SAGEMAKER
+    default:
+    - "NONE"
+    required: false
+    option_strings:
+    - --provider
+    type: str
+    default_random: false
+    name: provider
   - help: If set, spawn an http server with a prometheus endpoint to expose metrics
     choices: null
     default: false
@@ -2857,7 +2909,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 50729
+    - 52190
     required: false
     option_strings:
     - --port-monitoring
