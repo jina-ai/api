@@ -4,7 +4,7 @@ license: Apache 2.0
 vendor: Jina AI Limited
 source: https://github.com/jina-ai/jina/tree/master
 url: https://jina.ai
-docs: https://docs.jina.ai
+docs: https://jina.ai/serve
 authors: dev-team@jina.ai
 version: 3.27.18
 methods:
@@ -84,7 +84,7 @@ methods:
     default_random: false
     name: polling
   - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/concepts/flow/create-flow/#complex-flow-topologies
+      details check https://jina.ai/serve/concepts/flow/create-flow/#complex-flow-topologies
     choices: null
     default: 1
     required: false
@@ -183,7 +183,7 @@ methods:
       which should be structured as a python package. For more details, please see
       the
 
-      `Executor cookbook <https://docs.jina.ai/concepts/executor/executor-files/>`__
+      `Executor cookbook <https://jina.ai/serve/concepts/executor/executor-files/>`__
 
       '
     choices: null
@@ -410,7 +410,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 55229
+    - 54173
     required: false
     option_strings:
     - --port
@@ -472,7 +472,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 58722
+    - 50005
     required: false
     option_strings:
     - --port-monitoring
@@ -1357,7 +1357,7 @@ methods:
       many protocols are used.
     choices: null
     default:
-    - 55730
+    - 59002
     required: false
     option_strings:
     - --port
@@ -1421,7 +1421,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 60787
+    - 54330
     required: false
     option_strings:
     - --port-monitoring
@@ -1946,7 +1946,7 @@ methods:
     default_random: false
     name: polling
   - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/concepts/flow/create-flow/#complex-flow-topologies
+      details check https://jina.ai/serve/concepts/flow/create-flow/#complex-flow-topologies
     choices: null
     default: 1
     required: false
@@ -2045,7 +2045,7 @@ methods:
       which should be structured as a python package. For more details, please see
       the
 
-      `Executor cookbook <https://docs.jina.ai/concepts/executor/executor-files/>`__
+      `Executor cookbook <https://jina.ai/serve/concepts/executor/executor-files/>`__
 
       '
     choices: null
@@ -2272,7 +2272,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 58270
+    - 60731
     required: false
     option_strings:
     - --port
@@ -2334,7 +2334,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 56979
+    - 49697
     required: false
     option_strings:
     - --port-monitoring
@@ -2569,7 +2569,7 @@ methods:
     default_random: false
     name: polling
   - help: The number of shards in the deployment running at the same time. For more
-      details check https://docs.jina.ai/concepts/flow/create-flow/#complex-flow-topologies
+      details check https://jina.ai/serve/concepts/flow/create-flow/#complex-flow-topologies
     choices: null
     default: 1
     required: false
@@ -2668,7 +2668,7 @@ methods:
       which should be structured as a python package. For more details, please see
       the
 
-      `Executor cookbook <https://docs.jina.ai/concepts/executor/executor-files/>`__
+      `Executor cookbook <https://jina.ai/serve/concepts/executor/executor-files/>`__
 
       '
     choices: null
@@ -2895,7 +2895,7 @@ methods:
       as one replica of the Executor.
     choices: null
     default:
-    - 62931
+    - 59466
     required: false
     option_strings:
     - --port
@@ -2957,7 +2957,7 @@ methods:
       port between [49152, 65535]
     choices: null
     default:
-    - 49154
+    - 64065
     required: false
     option_strings:
     - --port-monitoring
